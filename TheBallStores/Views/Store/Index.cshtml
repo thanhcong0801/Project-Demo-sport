@@ -1,0 +1,75 @@
+﻿@model IEnumerable<TheBallStores.Models.SanPham>
+@{
+    ViewData["Title"] = "Cửa hàng";
+    var cacLoai = ViewBag.CacLoai as List<TheBallStores.Models.LoaiSanPham>;
+    var maLoaiHienTai = ViewBag.MaLoaiHienTai as int?;
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- MENU BÊN TRÁI -->
+        <div class="col-md-3 mb-4">
+            <div class="card-vortex p-3">
+                <h4 class="text-info mb-3">DANH MỤC</h4>
+                <div class="list-group">
+                    <a asp-action="Index" class="list-group-item list-group-item-action bg-transparent text-light border-secondary @(maLoaiHienTai == null ? "active bg-info border-info" : "")">
+                        Tất cả sản phẩm
+                    </a>
+                    @if (cacLoai != null)
+                    {
+                        foreach (var loai in cacLoai)
+                        {
+                            <a asp-action="Index" asp-route-maLoai="@loai.MaLoai"
+                               class="list-group-item list-group-item-action bg-transparent text-light border-secondary @(maLoaiHienTai == loai.MaLoai ? "active bg-info border-info" : "")">
+                                @loai.TenLoai
+                            </a>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- DANH SÁCH SẢN PHẨM BÊN PHẢI -->
+        <div class="col-md-9">
+            <!-- Form Tìm kiếm -->
+            <div class="mb-4">
+                <form asp-action="Index" method="get" class="d-flex gap-2">
+                    @if (maLoaiHienTai != null)
+                    {
+                        <input type="hidden" name="maLoai" value="@maLoaiHienTai" />
+                    }
+                    <input type="text" class="form-control form-control-vortex" placeholder="Tìm kiếm sản phẩm..." name="searchString" value="@ViewBag.SearchString">
+                    <button class="btn btn-vortex" type="submit">TÌM KIẾM</button>
+                </form>
+            </div>
+
+            <!-- Grid Sản phẩm -->
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach (var item in Model)
+                {
+                    <div class="col">
+                        <div class="card h-100 card-vortex">
+                            <div class="position-relative p-3" style="height: 200px; display:flex; align-items:center; justify-content:center;">
+                                <a asp-controller="Store" asp-action="Details" asp-route-id="@item.MaSp">
+                                    @if (!string.IsNullOrEmpty(item.AnhDaiDien))
+                                    {
+                                        <img src="~/images/products/@item.AnhDaiDien" class="img-fluid" style="max-height: 100%;" alt="@item.TenSp">
+                                    }
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <small class="text-muted">@item.MaLoaiNavigation?.TenLoai</small>
+                                <h5 class="card-title text-truncate mt-1">
+                                    <a asp-controller="Store" asp-action="Details" asp-route-id="@item.MaSp" class="text-light text-decoration-none">
+                                        @item.TenSp
+                                    </a>
+                                </h5>
+                                <p class="card-text fw-bold text-info">@item.GiaBan.ToString("#,##0") đ</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

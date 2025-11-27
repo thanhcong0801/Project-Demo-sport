@@ -1,0 +1,37 @@
+﻿@model TheBallStores.Models.KhachHang
+@{
+    ViewData["Title"] = "Đăng Ký";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card-vortex p-5">
+            <h2 class="text-center mb-4" style="color: var(--accent-purple);">THIẾT LẬP DANH TÍNH</h2>
+
+            <form asp-action="Register" method="post">
+                <div class="mb-3">
+                    <label class="form-label text-muted">HỌ VÀ TÊN</label>
+                    <input asp-for="HoTen" class="form-control form-control-vortex" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-muted">EMAIL</label>
+                    <input asp-for="Email" type="email" class="form-control form-control-vortex" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-muted">MẬT KHẨU</label>
+                    <input asp-for="MatKhau" type="password" class="form-control form-control-vortex" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-muted">SỐ ĐIỆN THOẠI</label>
+                    <input asp-for="DienThoai" class="form-control form-control-vortex" />
+                </div>
+                <div class="mb-4">
+                    <label class="form-label text-muted">ĐỊA CHỈ</label>
+                    <input asp-for="DiaChi" class="form-control form-control-vortex" />
+                </div>
+
+                <button type="submit" class="btn btn-vortex w-100">XÁC NHẬN</button>
+            </form>
+        </div>
+    </div>
+</div>

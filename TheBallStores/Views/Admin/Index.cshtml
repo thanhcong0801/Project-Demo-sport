@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Trung tâm chỉ huy";
+}
+
+<div class="text-center mb-5">
+    <h1 class="display-4" style="text-shadow: var(--accent-glow);">TRUNG TÂM CHỈ HUY (ADMIN)</h1>
+    <p class="text-muted">Quản lý toàn bộ hệ thống Kicks Vortex</p>
+</div>
+
+<div class="row g-4">
+    <!-- Quản lý Sản phẩm -->
+    <div class="col-md-4">
+        <div class="card-vortex p-4 h-100 text-center">
+            <i class="bi bi-box-seam fs-1 mb-3" style="color: var(--accent-purple);"></i>
+            <h3>KHO VŨ KHÍ</h3>
+            <p class="text-muted">Quản lý nhập/xuất giày, chỉnh sửa thông tin sản phẩm.</p>
+            <a asp-controller="SanPhams" asp-action="Index" class="btn btn-vortex w-100">TRUY CẬP</a>
+        </div>
+    </div>
+
+    <!-- Quản lý Doanh thu -->
+    <div class="col-md-4">
+        <div class="card-vortex p-4 h-100 text-center">
+            <i class="bi bi-graph-up-arrow fs-1 mb-3 text-success"></i>
+            <h3>DÒNG NĂNG LƯỢNG</h3>
+            <p class="text-muted">Thống kê doanh thu, báo cáo đơn hàng.</p>
+            <a href="#" class="btn btn-vortex w-100">PHÂN TÍCH</a>
+        </div>
+    </div>
+
+    <!-- Quản lý Tài khoản -->
+    <div class="col-md-4">
+        <div class="card-vortex p-4 h-100 text-center">
+            <i class="bi bi-people fs-1 mb-3 text-info"></i>
+            <h3>NHÂN SỰ</h3>
+            <p class="text-muted">Quản lý danh sách khách hàng và nhân viên.</p>
+            <a href="#" class="btn btn-vortex w-100">QUẢN LÝ</a>
+        </div>
+    </div>
+</div>

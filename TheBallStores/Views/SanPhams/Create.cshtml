@@ -1,0 +1,64 @@
+﻿@model TheBallStores.Models.SanPham
+
+@{
+    ViewData["Title"] = "Thêm Sản Phẩm Mới";
+}
+
+<h1 class="text-info">NHẬP KHO VŨ KHÍ</h1>
+<h4 class="text-white">Thêm Sản Phẩm Cơ Bản</h4>
+<hr class="border-secondary" />
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card-vortex p-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <!-- Tên Sản Phẩm -->
+                <div class="form-group mb-3">
+                    <label asp-for="TenSp" class="control-label text-muted">Tên Sản Phẩm</label>
+                    <input asp-for="TenSp" class="form-control form-control-vortex" required />
+                    <span asp-validation-for="TenSp" class="text-danger"></span>
+                </div>
+
+                <!-- Giá Bán -->
+                <div class="form-group mb-3">
+                    <label asp-for="GiaBan" class="control-label text-muted">Giá Bán (VNĐ)</label>
+                    <input asp-for="GiaBan" class="form-control form-control-vortex" required />
+                    <span asp-validation-for="GiaBan" class="text-danger"></span>
+                </div>
+
+                <!-- Loại Sản Phẩm (Dropdown) -->
+                <div class="form-group mb-3">
+                    <label asp-for="MaLoai" class="control-label text-muted">Loại Sản Phẩm</label>
+                    <select asp-for="MaLoai" class="form-control form-control-vortex" asp-items="ViewBag.MaLoai" required>
+                        <option value="">-- Chọn Loại --</option>
+                    </select>
+                </div>
+
+                <!-- Mô Tả -->
+                <div class="form-group mb-4">
+                    <label asp-for="MoTa" class="control-label text-muted">Mô Tả Ngắn</label>
+                    <textarea asp-for="MoTa" class="form-control form-control-vortex"></textarea>
+                    <span asp-validation-for="MoTa" class="text-danger"></span>
+                </div>
+
+                <!-- Ô NHẬP ẢNH ĐÃ BỊ XÓA vì ta sẽ dùng mặc định "default.jpg" hoặc nhập sau -->
+                <input type="hidden" asp-for="AnhDaiDien" value="default.jpg" />
+
+                <!-- Nút Submit -->
+                <div class="form-group d-flex justify-content-between">
+                    <input type="submit" value="Lưu & Nhập Kho" class="btn btn-vortex" />
+                    <!-- Nút Quay lại Dashboard -->
+                    <a asp-action="Index" class="btn btn-secondary text-white">Quay lại Danh sách</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

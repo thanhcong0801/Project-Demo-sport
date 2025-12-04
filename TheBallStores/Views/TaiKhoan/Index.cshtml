@@ -1,0 +1,44 @@
+﻿@model IEnumerable<TheBallStores.Models.KhachHang>
+@{
+    ViewData["Title"] = "Quản lý Tài khoản";
+}
+
+<h1 class="text-info mb-4">QUẢN LÝ NHÂN SỰ (@Model.Count())</h1>
+<p class="text-muted">Quản lý tài khoản khách hàng và quản trị viên.</p>
+<hr class="border-secondary" />
+
+<div class="card-vortex p-4">
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Mã KH</th>
+                <th>Họ Tên</th>
+                <th>Email</th>
+                <th>Vai Trò</th>
+                <th>Số ĐT</th>
+                <th>Địa Chỉ</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-muted">@item.MaKh</td>
+                    <td>@item.HoTen</td>
+                    <td>@item.Email</td>
+                    <td class="fw-bold @(item.VaiTro == "Admin" ? "text-danger" : "text-info")">@item.VaiTro</td>
+                    <td>@item.DienThoai</td>
+                    <td>@item.DiaChi</td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-primary">Sửa</a>
+                        <a href="#" class="btn btn-sm btn-danger">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="text-center mt-3">
+        <a asp-controller="Account" asp-action="Register" class="btn btn-secondary">Thêm Tài khoản mới</a>
+    </div>
+</div>

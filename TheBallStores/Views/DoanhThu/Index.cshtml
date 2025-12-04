@@ -1,0 +1,87 @@
+﻿@using TheBallStores.Models
+@{
+    ViewData["Title"] = "BÁO CÁO DOANH THU";
+    // Đảm bảo list đơn hàng không bao giờ null
+    var lastOrders = ViewBag.LastOrders as List<DonHang> ?? new List<DonHang>();
+}
+
+<h1 class="text-info mb-4">BÁO CÁO DOANH THU </h1>
+<p class="text-muted">Tổng quan doanh thu và các đơn hàng gần nhất.</p>
+<hr class="border-secondary" />
+
+<div class="row g-4 mb-5">
+    <!-- Thẻ 1: TỔNG DOANH THU -->
+    <div class="col-md-4">
+        <div class="card-vortex p-4 text-center">
+            <!-- Xử lý null an toàn cho ViewBag.TotalRevenue -->
+            <h3 class="text-success">
+                @((ViewBag.TotalRevenue as decimal? ?? 0).ToString("#,##0")) VNĐ
+            </h3>
+            <p class="text-muted mb-0">TỔNG DOANH THU</p>
+        </div>
+    </div>
+    <!-- Thẻ 2: TỔNG SỐ ĐƠN HÀNG -->
+    <div class="col-md-4">
+        <div class="card-vortex p-4 text-center">
+            <h3 class="text-info">@(ViewBag.TotalOrders ?? 0)</h3>
+            <p class="text-muted mb-0">TỔNG SỐ ĐƠN HÀNG</p>
+        </div>
+    </div>
+    <!-- Thẻ 3: ĐƠN HÀNG MỚI -->
+    <div class="col-md-4">
+        <div class="card-vortex p-4 text-center">
+            <h3 class="text-warning">@(ViewBag.NewOrders ?? 0)</h3>
+            <p class="text-muted mb-0">ĐƠN HÀNG MỚI</p>
+        </div>
+    </div>
+</div>
+
+<!-- KHU VỰC BIỂU ĐỒ (MỚI) -->
+<h4 class="text-white mb-3">TỔNG QUAN HIỆU SUẤT</h4>
+<div class="card-vortex p-4 mb-5">
+    <!-- Thẻ canvas giả lập biểu đồ cột -->
+    <div style="height: 300px; background-color: #1A1A2E; border: 1px solid #333; display: flex; align-items: flex-end; justify-content: space-around; padding: 20px;">
+        <div style="width: 10%; height: 60%; background-color: var(--accent-purple); border-radius: 5px 5px 0 0; box-shadow: var(--glow);"></div>
+        <div style="width: 10%; height: 85%; background-color: var(--accent-purple); border-radius: 5px 5px 0 0; box-shadow: var(--glow);"></div>
+        <div style="width: 10%; height: 70%; background-color: var(--accent-purple); border-radius: 5px 5px 0 0; box-shadow: var(--glow);"></div>
+        <div style="width: 10%; height: 45%; background-color: var(--accent-purple); border-radius: 5px 5px 0 0; box-shadow: var(--glow);"></div>
+    </div>
+    <p class="text-center text-muted mt-2">Biểu đồ giả lập tăng trưởng 4 quý</p>
+</div>
+<!-- KẾT THÚC KHU VỰC BIỂU ĐỒ -->
+
+<h4 class="text-white mb-3">10 ĐƠN HÀNG GẦN NHẤT</h4>
+<div class="card-vortex p-4">
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Mã ĐH</th>
+                <th>Khách hàng</th>
+                <th>Ngày đặt</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in lastOrders)
+            {
+                <tr>
+                    <td class="text-muted">@order.MaDonHang</td>
+                    <!-- Sửa lỗi Dereference null: Hiển thị tên người nhận nếu không null -->
+                    <td class="text-info">@(order.TenNguoiNhan ?? "Khách vãng lai")</td>
+
+                    <!-- Sửa lỗi ToString cho DateTime? -->
+                    <td class="text-muted">@(order.NgayDat.HasValue ? order.NgayDat.Value.ToString("dd/MM/yyyy") : "N/A")</td>
+
+                    <!-- Sửa lỗi ToString cho decimal? -->
+                    <td class="text-success fw-bold">@(order.TongTien.HasValue ? order.TongTien.Value.ToString("#,##0") : "0") đ</td>
+
+                    <td class="text-muted">@(order.TrangThai ?? "Không rõ")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="text-center mt-3">
+        <a href="#" class="btn btn-secondary">Xem tất cả Đơn hàng</a>
+    </div>
+</div>

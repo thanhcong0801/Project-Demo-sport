@@ -1,28 +1,16 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAssetEndpoint Include="_content/TheBallStores/css/kicks.6r0nswy1ni.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\kicks.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"6r0nswy1ni"},{"Name":"integrity","Value":"sha256-kt\u002BvS9Zr4Z45p9KaqvelexqaOcOJ8IlkwtlUGrN1ic4="},{"Name":"label","Value":"_content/TheBallStores/css/kicks.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2854"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022kt\u002BvS9Zr4Z45p9KaqvelexqaOcOJ8IlkwtlUGrN1ic4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Nov 2025 21:00:24 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/TheBallStores/css/kicks.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\kicks.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-kt\u002BvS9Zr4Z45p9KaqvelexqaOcOJ8IlkwtlUGrN1ic4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2854"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022kt\u002BvS9Zr4Z45p9KaqvelexqaOcOJ8IlkwtlUGrN1ic4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Nov 2025 21:00:24 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-T3OTG3nhQ25vzK36/afElnIMqG7uvOMT\u002Bgu5IR1Jaog="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"7345"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022T3OTG3nhQ25vzK36/afElnIMqG7uvOMT\u002Bgu5IR1Jaog=\u0022"},{"Name":"Last-Modified","Value":"Thu, 04 Dec 2025 17:48:50 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/TheBallStores/css/site.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/TheBallStores/css/kicks.fcdb7h5f6f.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\kicks.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-aJ8nWf4D3msOBIXtt/ufn5SY4t3C7Vj\u002BE6y29GNnehk="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2772"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022aJ8nWf4D3msOBIXtt/ufn5SY4t3C7Vj\u002BE6y29GNnehk=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Nov 2025 21:00:24 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/TheBallStores/css/site.gqfr7kyf2d.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"gqfr7kyf2d"},{"Name":"integrity","Value":"sha256-aJ8nWf4D3msOBIXtt/ufn5SY4t3C7Vj\u002BE6y29GNnehk="},{"Name":"label","Value":"_content/TheBallStores/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2772"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022aJ8nWf4D3msOBIXtt/ufn5SY4t3C7Vj\u002BE6y29GNnehk=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Nov 2025 21:00:24 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fcdb7h5f6f"},{"Name":"integrity","Value":"sha256-T3OTG3nhQ25vzK36/afElnIMqG7uvOMT\u002Bgu5IR1Jaog="},{"Name":"label","Value":"_content/TheBallStores/css/kicks.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"7345"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022T3OTG3nhQ25vzK36/afElnIMqG7uvOMT\u002Bgu5IR1Jaog=\u0022"},{"Name":"Last-Modified","Value":"Thu, 04 Dec 2025 17:48:50 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/TheBallStores/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>

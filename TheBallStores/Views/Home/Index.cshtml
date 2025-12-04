@@ -1,100 +1,90 @@
 ﻿@model IEnumerable<TheBallStores.Models.SanPham>
 @{
     ViewData["Title"] = "Kicks Vortex";
-    // Định nghĩa biến CSS (Chỉ dùng trong View này)
-    var accentColor = "rgba(102, 252, 241, 0.5)"; 
+    var accentColor = "rgba(102, 252, 241, 0.5)";
 }
 
-<!-- STYLE CHO HIỆU ỨNG BAY/GLOW -->
 <style>
-
     @@keyframes float {
-        0%, 100% { transform: translateY(0) rotate(-3deg); }
-        50% { transform: translateY(-15px) rotate(3deg); }
+        0%, 100% {
+            transform: translateY(0) rotate(-3deg);
+        }
+
+        50% {
+            transform: translateY(-15px) rotate(3deg);
+        }
     }
-    
+
     .carousel-item img {
         transition: transform 0.5s ease-in-out;
     }
-    
+
     .btn-neon {
-        /* Định nghĩa lại button neon để nó hoạt động */
         background: transparent;
         border: 2px solid var(--accent);
         color: var(--accent);
         font-family: var(--font-heading);
-        padding: 10px 30px;
+        padding: 15px 40px;
         font-weight: 700;
         text-transform: uppercase;
         transition: 0.4s;
         position: relative;
         overflow: hidden;
         box-shadow: 0 0 10px var(--accent-glow);
+        text-decoration: none;
+        display: inline-block;
     }
 
-    .btn-neon:hover {
-        background: var(--accent);
-        color: var(--bg-deep);
-        box-shadow: var(--glow);
-    }
+        .btn-neon:hover {
+            background: var(--accent);
+            color: var(--bg-deep);
+            box-shadow: var(--glow);
+        }
 </style>
 
-<div class="text-center py-5 hero-section">
+<div class="text-center py-5 hero-section" style="min-height: 80vh; display: flex; flex-direction: column; justify-content: center;">
     <div class="hero-glow" style="top: 10%; left: 10%;"></div>
-    
-    <h1 class="display-3 fw-bold text-white mb-3" style="text-shadow: 0 0 20px @accentColor;">
-        KIỂM SOÁT TRẬN ĐẤU
-    </h1>
-    <p class="lead text-muted mb-5">Nắm giữ sức mạnh công nghệ, định đoạt số phận cuộc chơi.</p>
 
-    <!-- Carousel (Hiển thị 4 sản phẩm ngẫu nhiên) -->
-    <div id="productCarousel" class="carousel slide mb-5 mx-auto card-vortex" data-bs-ride="carousel" style="max-width: 800px; border: 1px solid rgba(255,255,255,0.1);">
-        <div class="carousel-inner rounded-3">
+    <h1 class="display-2 fw-bold text-white mb-3" style="text-shadow: 0 0 30px @accentColor; letter-spacing: 5px;">
+        KICKS VORTEX
+    </h1>
+    <p class="lead text-muted mb-5 fs-4">ĐỊNH HÌNH PHONG CÁCH - KIẾN TẠO TƯƠNG LAI</p>
+
+    <!-- Carousel (Hiển thị 4 sản phẩm ngẫu nhiên để làm cảnh) -->
+    <div id="productCarousel" class="carousel slide mb-5 mx-auto" data-bs-ride="carousel" style="max-width: 600px;">
+        <div class="carousel-inner">
             @{
-                // Lấy sản phẩm để lặp
-                var sanPhams = Model.ToList();
+                var sanPhams = Model?.ToList() ?? new List<TheBallStores.Models.SanPham>();
             }
             @for (int i = 0; i < sanPhams.Count; i++)
             {
                 var item = sanPhams[i];
                 <div class="carousel-item @(i == 0 ? "active" : "")">
-                    <div class="d-flex align-items-center justify-content-center bg-transparent p-5" style="height: 400px;">
-                         @if (!string.IsNullOrEmpty(item.AnhDaiDien))
+                    <div class="d-flex align-items-center justify-content-center" style="height: 350px;">
+                        @if (!string.IsNullOrEmpty(item.AnhDaiDien))
                         {
-                            <!-- Thêm animation bay lượn -->
-                            <img src="~/images/products/@item.AnhDaiDien" class="d-block img-fluid" style="max-height: 100%; max-width: 80%; object-fit: contain; filter: drop-shadow(0 0 25px @accentColor); animation: float 6s ease-in-out infinite;" alt="@item.TenSp">
-                        }
-                        else
-                        {
-                            <div class="text-white">Ảnh đang được cập nhật</div>
+                            <img src="~/images/products/@item.AnhDaiDien" class="d-block img-fluid" style="max-height: 100%; filter: drop-shadow(0 0 40px @accentColor); animation: float 6s ease-in-out infinite;" alt="@item.TenSp">
                         }
                     </div>
                 </div>
             }
         </div>
-        <!-- Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
     </div>
 
     <!-- Nút Khám Phá Ngay -->
-    <div>
+    <div class="mt-4">
         @if (Context.Session.GetString("HoTen") != null)
         {
             <!-- Đã đăng nhập -> Vào trang Store -->
-            <a asp-controller="Store" asp-action="Index" class="btn btn-neon btn-lg px-5 py-3 fs-4">
+            <a asp-controller="Store" asp-action="Index" class="btn-neon fs-4">
                 KHÁM PHÁ NGAY <i class="bi bi-arrow-right ms-2"></i>
             </a>
         }
         else
         {
             <!-- Chưa đăng nhập -> Vào trang Login -->
-            <a asp-controller="Account" asp-action="Login" class="btn btn-neon btn-lg px-5 py-3 fs-4">
-                ĐĂNG NHẬP ĐỂ XEM <i class="bi bi-box-arrow-in-right ms-2"></i>
+            <a asp-controller="Account" asp-action="Login" class="btn-neon fs-4">
+                ĐĂNG NHẬP ĐỂ KHÁM PHÁ <i class="bi bi-box-arrow-in-right ms-2"></i>
             </a>
         }
     </div>

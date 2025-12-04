@@ -1,0 +1,136 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using TheBallStores.Helpers;
+using TheBallStores.Models;
+using System.Security.Claims;
+
+namespace TheBallStores.Controllers
+{
+    public class CheckoutController : Controller
+    {
+        private readonly TheballStoreContext _context;
+
+        public CheckoutController(TheballStoreContext context)
+        {
+            _context = context;
+        }
+
+        // GET: Checkout/Index (Trang xác nhận thông tin giao hàng)
+        public async Task<IActionResult>
+    Index()
+    {
+    // BẢO MẬT: Kiểm tra đăng nhập
+    if (HttpContext.Session.GetString("HoTen") == null)
+    {
+    return RedirectToAction("Login", "Account");
+    }
+
+    // Lấy Email từ Session để truy vấn Database
+    var userEmail = HttpContext.Session.GetString("Email");
+
+    // SỬA LỖI NULL: Kiểm tra email có tồn tại không
+    if (string.IsNullOrEmpty(userEmail))
+    {
+    // Nếu không có Email trong Session, coi như chưa đăng nhập hoàn chỉnh
+    return RedirectToAction("Logout", "Account");
+    }
+
+    // Lấy thông tin khách hàng từ Database
+    var khachHang = await _context.KhachHangs.FirstOrDefaultAsync(k => k.Email == userEmail);
+
+    if (khachHang == null)
+    {
+    return RedirectToAction("Logout", "Account");
+    }
+
+    // Lấy giỏ hàng để kiểm tra
+    var gioHangController = new GioHangController(_context);
+    var cart = gioHangController.LayGioHang();
+
+    if (cart == null || cart.Count == 0)
+    {
+    TempData["Error"] = "Giỏ hàng trống! Vui lòng chọn sản phẩm.";
+    return RedirectToAction("Index", "Store");
+    }
+
+    // Gửi thông tin Khách hàng (làm mẫu cho giao hàng) và tổng tiền sang View
+    ViewBag.Cart = cart;
+    ViewBag.TongTien = cart.Sum(item => item.ThanhTien);
+
+    return View(khachHang); // Trả về Model KhachHang
+    }
+
+    // POST: Checkout/Confirm (Xử lý lưu Đơn hàng và chuyển sang trang Thanh toán)
+    [HttpPost]
+    public async Task<IActionResult>
+        Confirm(KhachHang khachHang)
+        {
+        // BẢO MẬT: Kiểm tra đăng nhập
+        if (HttpContext.Session.GetString("HoTen") == null)
+        {
+        return RedirectToAction("Login", "Account");
+        }
+
+        // 1. Lấy thông tin giỏ hàng
+        var gioHangController = new GioHangController(_context);
+        var cart = gioHangController.LayGioHang();
+
+        // Sửa lỗi tham chiếu null tiềm ẩn: Đảm bảo dữ liệu không bị null trước khi lưu
+        // Chúng ta cần lấy lại MaKH chính xác từ Database (không tin tưởng dữ liệu từ form 100%)
+        var originalKhachHang = await _context.KhachHangs.FindAsync(khachHang.MaKh);
+        if (originalKhachHang == null)
+        {
+        return RedirectToAction("Logout", "Account");
+        }
+
+        // 2. Tạo đơn hàng mới
+        var donHang = new DonHang
+        {
+        MaKH = originalKhachHang.MaKh, // Lấy Mã KH gốc
+        NgayDat = DateTime.Now,
+        TongTien = cart.Sum(item => item.ThanhTien),
+        TrangThai = "Mới đặt",
+        // Lấy các thông tin giao hàng đã được xác nhận từ Form POST
+        TenNguoiNhan = khachHang.HoTen ?? originalKhachHang.HoTen,
+        DiaChiGiaoHang = khachHang.DiaChi ?? originalKhachHang.DiaChi,
+        SoDienThoaiNguoiNhan = khachHang.DienThoai ?? originalKhachHang.DienThoai
+        };
+
+        _context.Add(donHang);
+        await _context.SaveChangesAsync(); // Lưu đơn hàng để có MaDonHang
+
+        // 3. Tạo Chi tiết đơn hàng
+        foreach (var item in cart)
+        {
+        // Giả định MaChiTiet trong DonHang là MaChiTiet của SanPhamChiTiets
+        var chiTiet = new ChiTietDonHang
+        {
+        MaDonHang = donHang.MaDonHang,
+        MaChiTiet = item.MaSize, // LƯU Ý: Đây là MaSize, nhưng cột tên MaChiTiet (Cần kiểm tra lại Model của bạn)
+        SoLuong = item.SoLuong,
+        DonGia = item.DonGia
+        };
+        _context.Add(chiTiet);
+        }
+        await _context.SaveChangesAsync();
+
+        // 4. Xóa giỏ hàng khỏi Session sau khi đặt hàng thành công
+        HttpContext.Session.Remove("GioHang");
+
+        // Chuyển hướng đến trang Thanh toán
+        return RedirectToAction("PaymentSuccess", new { orderId = donHang.MaDonHang });
+        }
+
+        // GET: Checkout/PaymentSuccess (Trang hiển thị QR và STK)
+        public IActionResult PaymentSuccess(int orderId)
+        {
+        // Lấy lại tổng tiền cần chuyển khoản (Từ DB hoặc tính lại)
+        var donHang = _context.DonHangs.Find(orderId);
+
+        ViewBag.TongTien = donHang?.TongTien ?? 0;
+        ViewBag.MaDonHang = donHang?.MaDonHang ?? 0;
+
+        return View();
+        }
+        }
+        }

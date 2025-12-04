@@ -26,20 +26,24 @@ namespace TheBallStores.Controllers
         }
 
         // GET: SanPhams/Details/5
+        // GET: Store/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.SanPhams == null)
+            // BẢO MẬT: Phải đăng nhập mới xem được
+            if (HttpContext.Session.GetString("HoTen") == null)
             {
-                return NotFound();
+                return RedirectToAction("Login", "Account");
             }
+
+            if (id == null) return NotFound();
 
             var sanPham = await _context.SanPhams
                 .Include(s => s.MaLoaiNavigation)
+                .Include(s => s.SanPhamChiTiets) // Lấy kho hàng
+                    .ThenInclude(kho => kho.MaSizeNavigation) // Lấy tên Size (39, 40...)
                 .FirstOrDefaultAsync(m => m.MaSp == id);
-            if (sanPham == null)
-            {
-                return NotFound();
-            }
+
+            if (sanPham == null) return NotFound();
 
             return View(sanPham);
         }

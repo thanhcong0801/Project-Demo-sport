@@ -85,51 +85,6 @@
       ]
     },
     {
-      "Route": "css/kicks.6r0nswy1ni.css",
-      "AssetFile": "css/kicks.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2854"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"kt+vS9Zr4Z45p9KaqvelexqaOcOJ8IlkwtlUGrN1ic4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Nov 2025 21:00:24 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "6r0nswy1ni"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-kt+vS9Zr4Z45p9KaqvelexqaOcOJ8IlkwtlUGrN1ic4="
-        },
-        {
-          "Name": "label",
-          "Value": "css/kicks.css"
-        }
-      ]
-    },
-    {
       "Route": "css/kicks.css",
       "AssetFile": "css/kicks.css",
       "Selectors": [],
@@ -144,7 +99,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2854"
+          "Value": "7345"
         },
         {
           "Name": "Content-Type",
@@ -152,60 +107,23 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"kt+vS9Zr4Z45p9KaqvelexqaOcOJ8IlkwtlUGrN1ic4=\""
+          "Value": "\"T3OTG3nhQ25vzK36/afElnIMqG7uvOMT+gu5IR1Jaog=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Nov 2025 21:00:24 GMT"
+          "Value": "Thu, 04 Dec 2025 17:48:50 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-kt+vS9Zr4Z45p9KaqvelexqaOcOJ8IlkwtlUGrN1ic4="
+          "Value": "sha256-T3OTG3nhQ25vzK36/afElnIMqG7uvOMT+gu5IR1Jaog="
         }
       ]
     },
     {
-      "Route": "css/site.css",
-      "AssetFile": "css/site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2772"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"aJ8nWf4D3msOBIXtt/ufn5SY4t3C7Vj+E6y29GNnehk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Nov 2025 21:00:24 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-aJ8nWf4D3msOBIXtt/ufn5SY4t3C7Vj+E6y29GNnehk="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.gqfr7kyf2d.css",
-      "AssetFile": "css/site.css",
+      "Route": "css/kicks.fcdb7h5f6f.css",
+      "AssetFile": "css/kicks.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -218,7 +136,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2772"
+          "Value": "7345"
         },
         {
           "Name": "Content-Type",
@@ -226,25 +144,25 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aJ8nWf4D3msOBIXtt/ufn5SY4t3C7Vj+E6y29GNnehk=\""
+          "Value": "\"T3OTG3nhQ25vzK36/afElnIMqG7uvOMT+gu5IR1Jaog=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Nov 2025 21:00:24 GMT"
+          "Value": "Thu, 04 Dec 2025 17:48:50 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "gqfr7kyf2d"
+          "Value": "fcdb7h5f6f"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-aJ8nWf4D3msOBIXtt/ufn5SY4t3C7Vj+E6y29GNnehk="
+          "Value": "sha256-T3OTG3nhQ25vzK36/afElnIMqG7uvOMT+gu5IR1Jaog="
         },
         {
           "Name": "label",
-          "Value": "css/site.css"
+          "Value": "css/kicks.css"
         }
       ]
     },

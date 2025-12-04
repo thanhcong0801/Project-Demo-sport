@@ -11,14 +11,14 @@ builder.Services.AddDbContext<TheballStoreContext>(options =>
 // 2. Đăng ký dịch vụ MVC
 builder.Services.AddControllersWithViews();
 
-// === [MỚI THÊM 1] ĐĂNG KÝ DỊCH VỤ SESSION ===
+// === [ĐÃ CẤU HÌNH] ĐĂNG KÝ DỊCH VỤ SESSION (Sẽ được gọi bởi builder) ===
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30); // Thời gian hết hạn session (30 phút)
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
-// ============================================
+// =========================================================================
 
 var app = builder.Build();
 
@@ -39,14 +39,14 @@ app.UseStaticFiles(new StaticFileOptions
     ContentTypeProvider = provider
 });
 
-// === [MỚI THÊM 2] KÍCH HOẠT SESSION (Phải đặt trước UseRouting) ===
-
-// ==================================================================
+// === [ĐÃ KÍCH HOẠT] MIDDLEWARE SESSION (Phải đặt trước UseRouting) ===
+app.UseSession();
+// ======================================================================
 
 app.UseRouting();
 
 app.UseAuthorization();
-app.UseSession();
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

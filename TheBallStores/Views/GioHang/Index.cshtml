@@ -1,0 +1,95 @@
+﻿@model List<TheBallStores.Models.GioHangItem>
+@{
+    ViewData["Title"] = "Giỏ hàng của bạn";
+}
+
+<h1 class="text-info mb-4">GIỎ HÀNG CỦA BẠN</h1>
+
+@if (Model.Count == 0)
+{
+    <div class="text-center py-5">
+        <h3 class="text-muted">Giỏ hàng đang trống</h3>
+        <a asp-controller="Store" asp-action="Index" class="btn btn-neon mt-3 text-white">TIẾP TỤC MUA SẮM</a>
+    </div>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card-vortex p-0 overflow-hidden">
+                <table class="table table-dark table-hover mb-0">
+                    <thead>
+                        <tr class="text-info">
+                            <th>Sản phẩm</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="~/images/products/@item.AnhDaiDien" style="width: 60px; height: 60px; object-fit: cover; border-radius: 5px;" class="me-3">
+                                        <div>
+                                            <div class="fw-bold">@item.TenSp</div>
+                                            <small class="text-muted">Size: @item.TenSize</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="align-middle">@item.DonGia.ToString("#,##0") đ</td>
+                                <td class="align-middle">
+                                    <!-- FORM CẬP NHẬT SỐ LƯỢNG -->
+                                    <form asp-controller="GioHang" asp-action="CapNhatSoLuong" method="post" onchange="this.submit()">
+                                        <input type="hidden" name="maSp" value="@item.MaSp" />
+                                        <input type="hidden" name="maSize" value="@item.MaSize" />
+                                        <input type="number" name="soLuongMoi" value="@item.SoLuong" min="1" class="form-control form-control-vortex text-center" style="width: 60px;">
+                                    </form>
+                                </td>
+                                <td class="align-middle text-warning fw-bold">@item.ThanhTien.ToString("#,##0") đ</td>
+                                <td class="align-middle">
+                                    <!-- NÚT XÓA -->
+                                    <a asp-controller="GioHang" asp-action="XoaKhoiGio" asp-route-maSp="@item.MaSp" asp-route-maSize="@item.MaSize" class="text-danger">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- KHỐI TỔNG TIỀN VÀ NÚT THANH TOÁN -->
+        <div class="col-md-4">
+            <div class="card-vortex p-4">
+                <h4 class="text-white mb-4">TỔNG ĐƠN HÀNG</h4>
+
+                <!-- BẮT ĐẦU FORM THANH TOÁN (ĐÃ SỬA) -->
+                <form asp-controller="Checkout" asp-action="Index" method="get">
+
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="text-muted">Tạm tính:</span>
+                        <span class="text-white">@Model.Sum(x => x.ThanhTien).ToString("#,##0") đ</span>
+                    </div>
+                    <hr class="border-secondary">
+                    <div class="d-flex justify-content-between mb-4">
+                        <span class="text-info fs-5 fw-bold">TỔNG CỘNG:</span>
+                        <span class="text-info fs-5 fw-bold">@ViewBag.TongTien.ToString("#,##0") đ</span>
+                    </div>
+
+                    <!-- THAY THẾ BẰNG BUTTON SUBMIT -->
+                    <button type="submit" class="text-white btn btn-neon w-100 py-3">
+                        THANH TOÁN NGAY
+                    </button>
+
+                </form>
+                <!-- KẾT THÚC FORM THANH TOÁN -->
+
+            </div>
+        </div>
+    </div>
+}

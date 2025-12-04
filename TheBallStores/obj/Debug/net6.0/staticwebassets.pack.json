@@ -9,10 +9,6 @@
       "PackagePath": "staticwebassets\\css\\kicks.css"
     },
     {
-      "Id": "D:\\TheBallStores\\TheBallStores\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
-    },
-    {
       "Id": "D:\\TheBallStores\\TheBallStores\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

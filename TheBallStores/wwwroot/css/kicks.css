@@ -1,4 +1,4 @@
-/* --- KICKS VORTEX THEME --- */
+﻿/* --- KICKS VORTEX THEME --- */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;500;700&display=swap');
 
 :root {
@@ -116,3 +116,196 @@ h1, h2, h3, h4, h5 {
     opacity: 0.2;
     z-index: -1;
 }
+/* --- FOOTER STYLES --- */
+.footer-vortex {
+    background: rgba(15, 15, 20, 0.95);
+    border-top: 1px solid rgba(102, 252, 241, 0.2);
+    backdrop-filter: blur(10px);
+    padding-top: 3rem;
+    margin-top: auto; /* Đẩy footer xuống đáy */
+    position: relative;
+    z-index: 10;
+}
+
+.footer-brand {
+    font-family: var(--font-heading);
+    color: var(--accent) !important;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: var(--glow);
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.footer-heading {
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-left: 10px;
+    border-left: 3px solid var(--accent);
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    transition: 0.3s;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+    .footer-links a:hover {
+        color: var(--accent);
+        padding-left: 5px; /* Hiệu ứng trượt nhẹ */
+    }
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    color: var(--text-muted);
+    margin-right: 10px;
+    transition: 0.4s;
+}
+
+    .social-icons a:hover {
+        background: var(--accent);
+        color: var(--bg-deep);
+        border-color: var(--accent);
+        box-shadow: var(--glow);
+        transform: translateY(-3px);
+    }
+
+.copyright {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 20px 0;
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: #666;
+}
+.footer {
+    background-color: #000; /* Nền đen tuyền */
+    color: #fff;
+    padding: 60px 0 20px;
+    font-family: var(--font-body); /* Dùng font của web */
+    border-top: 1px solid #333;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* Cột đầu to gấp đôi các cột sau */
+    gap: 40px;
+    padding: 0 15px;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* 1 cột trên mobile */
+        text-align: center;
+    }
+}
+
+.footer-col h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-ivory);
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+    /* Gạch chân dưới tiêu đề cột */
+    .footer-col h3::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 30px;
+        height: 2px;
+        background-color: var(--accent-purple);
+    }
+
+@media (max-width: 768px) {
+    .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.footer-col p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .footer-col ul li {
+        margin-bottom: 10px;
+    }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+            .footer-col ul li a:hover {
+                color: var(--accent-purple);
+                padding-left: 5px; /* Hiệu ứng trượt */
+            }
+
+/* Phần dưới cùng */
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.social-icons a {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-left: 15px;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #333;
+    border-radius: 50%;
+}
+
+    .social-icons a:hover {
+        color: #fff;
+        background-color: var(--accent-purple);
+        border-color: var(--accent-purple);
+        box-shadow: 0 0 10px var(--accent-purple);
+        transform: translateY(-3px);
+    }

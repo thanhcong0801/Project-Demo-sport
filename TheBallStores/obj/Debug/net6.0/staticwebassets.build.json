@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "p4KEWSoZrCACJv5+AJxbz+FrXo3UaYLOItdvtcdHSD8=",
+  "Hash": "xeLktPh7XkOhAaUTO8HkWnhsPJG0544jbZw4TcsV76w=",
   "Source": "TheBallStores",
   "BasePath": "_content/TheBallStores",
   "Mode": "Default",
@@ -73,32 +73,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "6r0nswy1ni",
-      "Integrity": "kt+vS9Zr4Z45p9KaqvelexqaOcOJ8IlkwtlUGrN1ic4=",
+      "Fingerprint": "fcdb7h5f6f",
+      "Integrity": "T3OTG3nhQ25vzK36/afElnIMqG7uvOMT+gu5IR1Jaog=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\kicks.css"
-    },
-    {
-      "Identity": "D:\\TheBallStores\\TheBallStores\\wwwroot\\css\\site.css",
-      "SourceId": "TheBallStores",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\TheBallStores\\TheBallStores\\wwwroot\\",
-      "BasePath": "_content/TheBallStores",
-      "RelativePath": "css/site#[.{fingerprint}]?.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "gqfr7kyf2d",
-      "Integrity": "aJ8nWf4D3msOBIXtt/ufn5SY4t3C7Vj+E6y29GNnehk=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
       "Identity": "D:\\TheBallStores\\TheBallStores\\wwwroot\\favicon.ico",
@@ -3442,51 +3421,6 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/kicks.6r0nswy1ni.css",
-      "AssetFile": "D:\\TheBallStores\\TheBallStores\\wwwroot\\css\\kicks.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2854"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"kt+vS9Zr4Z45p9KaqvelexqaOcOJ8IlkwtlUGrN1ic4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Nov 2025 21:00:24 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "6r0nswy1ni"
-        },
-        {
-          "Name": "label",
-          "Value": "css/kicks.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-kt+vS9Zr4Z45p9KaqvelexqaOcOJ8IlkwtlUGrN1ic4="
-        }
-      ]
-    },
-    {
       "Route": "css/kicks.css",
       "AssetFile": "D:\\TheBallStores\\TheBallStores\\wwwroot\\css\\kicks.css",
       "Selectors": [],
@@ -3497,7 +3431,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2854"
+          "Value": "7345"
         },
         {
           "Name": "Content-Type",
@@ -3505,11 +3439,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"kt+vS9Zr4Z45p9KaqvelexqaOcOJ8IlkwtlUGrN1ic4=\""
+          "Value": "\"T3OTG3nhQ25vzK36/afElnIMqG7uvOMT+gu5IR1Jaog=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Nov 2025 21:00:24 GMT"
+          "Value": "Thu, 04 Dec 2025 17:48:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3519,13 +3453,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-kt+vS9Zr4Z45p9KaqvelexqaOcOJ8IlkwtlUGrN1ic4="
+          "Value": "sha256-T3OTG3nhQ25vzK36/afElnIMqG7uvOMT+gu5IR1Jaog="
         }
       ]
     },
     {
-      "Route": "css/site.css",
-      "AssetFile": "D:\\TheBallStores\\TheBallStores\\wwwroot\\css\\site.css",
+      "Route": "css/kicks.fcdb7h5f6f.css",
+      "AssetFile": "D:\\TheBallStores\\TheBallStores\\wwwroot\\css\\kicks.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3534,7 +3468,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2772"
+          "Value": "7345"
         },
         {
           "Name": "Content-Type",
@@ -3542,48 +3476,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aJ8nWf4D3msOBIXtt/ufn5SY4t3C7Vj+E6y29GNnehk=\""
+          "Value": "\"T3OTG3nhQ25vzK36/afElnIMqG7uvOMT+gu5IR1Jaog=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Nov 2025 21:00:24 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-aJ8nWf4D3msOBIXtt/ufn5SY4t3C7Vj+E6y29GNnehk="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.gqfr7kyf2d.css",
-      "AssetFile": "D:\\TheBallStores\\TheBallStores\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2772"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"aJ8nWf4D3msOBIXtt/ufn5SY4t3C7Vj+E6y29GNnehk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Nov 2025 21:00:24 GMT"
+          "Value": "Thu, 04 Dec 2025 17:48:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3593,15 +3490,15 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "gqfr7kyf2d"
+          "Value": "fcdb7h5f6f"
         },
         {
           "Name": "label",
-          "Value": "css/site.css"
+          "Value": "css/kicks.css"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-aJ8nWf4D3msOBIXtt/ufn5SY4t3C7Vj+E6y29GNnehk="
+          "Value": "sha256-T3OTG3nhQ25vzK36/afElnIMqG7uvOMT+gu5IR1Jaog="
         }
       ]
     },

@@ -58,7 +58,6 @@ namespace TheBallStores.Controllers
         {
             // Tìm user trong DB (So sánh plain text cho đơn giản, thực tế cần hash)
             var user = _context.KhachHangs.FirstOrDefault(u => u.Email == email && u.MatKhau == password);
-
             if (user != null)
             {
                 // 1. Lưu Session

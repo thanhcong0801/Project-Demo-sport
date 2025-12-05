@@ -1,0 +1,73 @@
+﻿@model IEnumerable<TheBallStores.Models.DonHang>
+
+@{
+    ViewData["Title"] = "Lịch sử Giao dịch";
+    var totalOrders = Model.Count();
+}
+
+<h1 class="text-info mb-4">LỊCH SỬ GIAO DỊCH CỦA BẠN (@totalOrders)</h1>
+<p class="text-muted">Tất cả các đơn hàng đã đặt.</p>
+<hr class="border-secondary" />
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+
+<div class="card-vortex p-0 overflow-hidden">
+    <table class="table table-dark table-striped table-hover mb-0">
+        <thead>
+            <tr class="text-warning">
+                <th>Mã ĐH</th>
+                <th>Ngày Đặt</th>
+                <th>Tổng Tiền</th>
+                <th>Trạng Thái</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                var trangThaiClass = order.TrangThai switch
+                {
+                    "Hoàn thành" => "bg-success",
+                    "Đã hủy" => "bg-danger",
+                    "Chờ thanh toán" => "bg-warning",
+                    _ => "bg-info"
+                };
+
+                <tr>
+                    <td>
+                        <a asp-controller="DonHangs" asp-action="Details" asp-route-id="@order.MaDonHang" class="text-info fw-bold">
+                            #@order.MaDonHang
+                        </a>
+                    </td>
+                    
+                    <td>@order.NgayDat?.ToString("dd/MM/yyyy HH:mm")</td>
+                    
+                    <td class="text-success fw-bold">@(order.TongTien?.ToString("#,##0") ?? "0") đ</td>
+                    
+                    <td>
+                        <span class="badge @trangThaiClass">@order.TrangThai</span>
+                    </td>
+                    
+                    <td>
+                        <a asp-controller="DonHangs" asp-action="Details" asp-route-id="@order.MaDonHang" class="btn btn-sm btn-primary">Xem</a>
+                        
+                        @* CHỈ HIỂN THỊ NÚT HỦY KHI Ở TRẠNG THÁI CHO PHÉP *@
+                        @if (order.TrangThai == "Chờ thanh toán" || order.TrangThai == "Mới đặt (COD)")
+                        {
+                            <a asp-controller="DonHangs" asp-action="HuyDonHang" asp-route-id="@order.MaDonHang" 
+                               class="btn btn-sm btn-danger" 
+                               onclick="return confirm('Bạn có chắc chắn muốn hủy đơn hàng #@order.MaDonHang?');">Hủy</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

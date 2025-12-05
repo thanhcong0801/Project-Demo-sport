@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TheBallStores.Models; // Sửa thành namespace của bạn
+using Microsoft.EntityFrameworkCore; // Cần thiết cho FindAsync hoặc FirstOrDefault
+using TheBallStores.Models;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -58,12 +59,18 @@ namespace TheBallStores.Controllers
         {
             // Tìm user trong DB (So sánh plain text cho đơn giản, thực tế cần hash)
             var user = _context.KhachHangs.FirstOrDefault(u => u.Email == email && u.MatKhau == password);
+
             if (user != null)
             {
                 // 1. Lưu Session
-                HttpContext.Session.SetString("Email", user.Email ?? ""); // Nếu Email null thì lưu chuỗi rỗng
-                HttpContext.Session.SetString("HoTen", user.HoTen ?? "Khách hàng"); // Nếu HoTen null thì lưu là "Khách hàng"
-                HttpContext.Session.SetString("VaiTro", user.VaiTro ?? "Customer"); // Nếu VaiTro null thì mặc định là "Customer"
+                HttpContext.Session.SetString("Email", user.Email ?? "");
+                HttpContext.Session.SetString("HoTen", user.HoTen ?? "Khách hàng");
+                HttpContext.Session.SetString("VaiTro", user.VaiTro ?? "Customer");
+
+                // === LƯU MÃ KHÁCH HÀNG VÀO SESSION (ĐÃ FIX) ===
+                // Đây là FIX quan trọng để Lịch sử Giao dịch hoạt động
+                HttpContext.Session.SetInt32("MaKh", user.MaKh);
+                // ==============================================
 
                 // 2. Phân quyền chuyển hướng
                 if (user.VaiTro == "Admin")
@@ -72,7 +79,7 @@ namespace TheBallStores.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Index", "Home"); // Chuyển về trang chủ
+                    return RedirectToAction("Index", "Store"); // Chuyển về trang chủ mua hàng
                 }
             }
 

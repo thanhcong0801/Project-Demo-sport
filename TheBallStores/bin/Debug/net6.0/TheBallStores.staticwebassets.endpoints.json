@@ -6481,6 +6481,88 @@
       ]
     },
     {
+      "Route": "images/products/qrcode.jpg",
+      "AssetFile": "images/products/qrcode.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89407"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ttZBSzr8+r9pmv+Uvkp2L2me4KIKSgBM6NP+GAyR56o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 05 Dec 2025 00:37:38 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ttZBSzr8+r9pmv+Uvkp2L2me4KIKSgBM6NP+GAyR56o="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/qrcode.uan750simk.jpg",
+      "AssetFile": "images/products/qrcode.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89407"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ttZBSzr8+r9pmv+Uvkp2L2me4KIKSgBM6NP+GAyR56o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 05 Dec 2025 00:37:38 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uan750simk"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ttZBSzr8+r9pmv+Uvkp2L2me4KIKSgBM6NP+GAyR56o="
+        },
+        {
+          "Name": "label",
+          "Value": "images/products/qrcode.jpg"
+        }
+      ]
+    },
+    {
       "Route": "images/products/Áo Bóng Đá Câu Lạc Bộ Al Nassr Vàng 2025-2026.avif",
       "AssetFile": "images/products/Áo Bóng Đá Câu Lạc Bộ Al Nassr Vàng 2025-2026.avif",
       "Selectors": [],

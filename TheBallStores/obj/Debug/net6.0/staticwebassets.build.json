@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xeLktPh7XkOhAaUTO8HkWnhsPJG0544jbZw4TcsV76w=",
+  "Hash": "WdYyp3nbOhA0e7OU402KWgEUXaYlQcFzeAUk6UUbWnQ=",
   "Source": "TheBallStores",
   "BasePath": "_content/TheBallStores",
   "Mode": "Default",
@@ -2010,6 +2010,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\NikeCourt Lite 4-2,189,000vnd.avif"
+    },
+    {
+      "Identity": "D:\\TheBallStores\\TheBallStores\\wwwroot\\images\\products\\qrcode.jpg",
+      "SourceId": "TheBallStores",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TheBallStores\\TheBallStores\\wwwroot\\",
+      "BasePath": "_content/TheBallStores",
+      "RelativePath": "images/products/qrcode#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "uan750simk",
+      "Integrity": "ttZBSzr8+r9pmv+Uvkp2L2me4KIKSgBM6NP+GAyR56o=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\qrcode.jpg"
     },
     {
       "Identity": "D:\\TheBallStores\\TheBallStores\\wwwroot\\images\\products\\QUẢ BÓNG CHUYỀN THĂNG LONG DG7120-680,000vnd.avif",
@@ -11043,6 +11064,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-CqSNhw7uQtFzEkf9bjukbW7QpsFVWvwAn9BhptY3zSg="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/qrcode.jpg",
+      "AssetFile": "D:\\TheBallStores\\TheBallStores\\wwwroot\\images\\products\\qrcode.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89407"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ttZBSzr8+r9pmv+Uvkp2L2me4KIKSgBM6NP+GAyR56o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 05 Dec 2025 00:37:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ttZBSzr8+r9pmv+Uvkp2L2me4KIKSgBM6NP+GAyR56o="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/qrcode.uan750simk.jpg",
+      "AssetFile": "D:\\TheBallStores\\TheBallStores\\wwwroot\\images\\products\\qrcode.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89407"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ttZBSzr8+r9pmv+Uvkp2L2me4KIKSgBM6NP+GAyR56o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 05 Dec 2025 00:37:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uan750simk"
+        },
+        {
+          "Name": "label",
+          "Value": "images/products/qrcode.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ttZBSzr8+r9pmv+Uvkp2L2me4KIKSgBM6NP+GAyR56o="
         }
       ]
     },

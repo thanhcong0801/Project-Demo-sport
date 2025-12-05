@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using TheBallStores.Models;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace TheBallStores.Controllers
 {
@@ -24,7 +25,6 @@ namespace TheBallStores.Controllers
             }
 
             // Lấy 10 đơn hàng gần nhất
-            // Giả định DonHang có MaKhNavigation và TenNguoiNhan
             var lastOrders = await _context.DonHangs
                 .OrderByDescending(d => d.NgayDat)
                 .Take(10)
@@ -32,14 +32,28 @@ namespace TheBallStores.Controllers
 
             ViewBag.LastOrders = lastOrders;
 
-            // Thống kê đơn giản
-            ViewBag.TotalRevenue = _context.DonHangs.Where(d => d.TrangThai == "Hoàn thành").Sum(d => d.TongTien) ?? 0;
-            ViewBag.TotalOrders = _context.DonHangs.Count();
-            ViewBag.NewOrders = _context.DonHangs.Count(d => d.TrangThai == "Mới đặt");
+            // === LOGIC TÍNH TOÁN CHÍNH XÁC (ĐÃ SỬA LỖI NULL) ===
+
+            // 1. Tổng Doanh thu (Chỉ tính đơn đã Hoàn thành)
+            // Sửa lỗi: Chuyển đổi d.TongTien ?? 0 để đảm bảo không cộng null
+            var completedOrders = _context.DonHangs.Where(d => d.TrangThai == "Hoàn thành");
+
+            // Cách fix: Select ra TongTien trước, xử lý null, rồi mới Sum
+            ViewBag.TotalRevenue = await completedOrders
+                .Select(d => d.TongTien ?? 0)
+                .SumAsync();
+
+            // 2. Tổng Số Đơn Hàng (Trừ đơn Đã hủy)
+            ViewBag.TotalOrders = await _context.DonHangs
+                .CountAsync(d => d.TrangThai != "Đã hủy");
+
+            // 3. Đơn mới cần xử lý (COD mới đặt hoặc Online chờ thanh toán)
+            ViewBag.NewOrders = await _context.DonHangs
+                .CountAsync(d => d.TrangThai == "Mới đặt (COD)" || d.TrangThai == "Chờ thanh toán");
+
+            // ===========================================
 
             return View();
         }
-
-        // (Thêm các Action khác như QuanLyDonHang, ThongKe...)
     }
 }

@@ -13,9 +13,9 @@
     <div class="stars-container" id="starContainer"></div>
 
     <header>
-        <nav class="navbar navbar-expand-sm navbar-dark navbar-vortex fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-vortex fixed-top">
             <div class="container-fluid px-4">
-                <!-- Dùng container-fluid để rộng hơn -->
+
                 <!-- 1. LOGO BÊN TRÁI -->
                 <a class="navbar-brand" asp-controller="Home" asp-action="Index">KICKS VORTEX</a>
 
@@ -31,6 +31,7 @@
                             <a class="nav-link" asp-controller="Home" asp-action="Index">TRANG CHỦ</a>
                         </li>
                         <li class="nav-item">
+                            <!-- Link SẢN PHẨM: Kiểm tra đăng nhập -->
                             @if (Context.Session.GetString("HoTen") != null)
                             {
                                 <a class="nav-link" asp-controller="Store" asp-action="Index">SẢN PHẨM</a>
@@ -40,20 +41,30 @@
                                 <a class="nav-link" asp-controller="Account" asp-action="Login">SẢN PHẨM</a>
                             }
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">TIN TỨC</a>
+                        </li>
+                        <!-- === LIÊN KẾT LỊCH SỬ GIAO DỊCH (MỚI) === -->
+                        @if (Context.Session.GetString("HoTen") != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-controller="DonHangs" asp-action="LichSuGiaoDich">
+                                    <i class="bi bi-clock-history me-1"></i> LỊCH SỬ GIAO DỊCH
+                                </a>
+                            </li>
+                        }
+                        <!-- ======================================= -->
                     </ul>
 
                     <!-- 3. GIỎ HÀNG VÀ AUTH (BÊN PHẢI) -->
                     <ul class="navbar-nav ms-auto d-flex align-items-center">
 
-                        <!-- GIỎ HÀNG (MỚI THÊM VÀO) -->
                         <!-- GIỎ HÀNG -->
                         <li class="nav-item me-4 position-relative">
                             <a class="nav-link" asp-controller="GioHang" asp-action="Index">
-                                <!-- ĐÃ THÊM CONTROLLER -->
                                 <i class="bi bi-bag-fill fs-5 text-white"></i>
-                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">
-                                    @await Component.InvokeAsync("CartBadge")
-                                </span>
+                                <!-- Badge số lượng -->
+                                @await Component.InvokeAsync("CartBadge")
                             </a>
                         </li>
 
@@ -96,6 +107,7 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
+
             <!-- CỘT 1 -->
             <div class="footer-col">
                 <h3>KICKS VORTEX - FUTURE OF FOOTBALL</h3>
@@ -148,11 +160,15 @@
                 for (let i = 0; i < 100; i++) {
                     let star = document.createElement('div');
                     star.className = 'star';
+                    let duration = Math.random() * (3 - 1) + 1;
+                    let size = Math.random() * (2 - 0.5) + 0.5; // Kích thước sao nhỏ hơn
+
                     star.style.left = Math.random() * 100 + '%';
                     star.style.top = Math.random() * 100 + '%';
-                    star.style.width = (Math.random() * 2 + 1) + 'px';
-                    star.style.height = star.style.width;
-                    star.style.animationDuration = (Math.random() * 2 + 1) + 's';
+                    star.style.width = size + 'px';
+                    star.style.height = size + 'px';
+                    star.style.animationDuration = duration + 's';
+
                     container.appendChild(star);
                 }
             }

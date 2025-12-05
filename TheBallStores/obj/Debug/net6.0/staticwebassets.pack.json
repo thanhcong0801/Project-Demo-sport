@@ -317,6 +317,10 @@
       "PackagePath": "staticwebassets\\images\\products\\Tatum 4 Premium PF-3,669,000vnd.avif"
     },
     {
+      "Id": "D:\\TheBallStores\\TheBallStores\\wwwroot\\images\\products\\qrcode.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\qrcode.jpg"
+    },
+    {
       "Id": "D:\\TheBallStores\\TheBallStores\\wwwroot\\images\\products\\Áo Bóng Đá Câu Lạc Bộ Al Nassr Vàng 2025-2026.avif",
       "PackagePath": "staticwebassets\\images\\products\\Áo Bóng Đá Câu Lạc Bộ Al Nassr Vàng 2025-2026.avif"
     },

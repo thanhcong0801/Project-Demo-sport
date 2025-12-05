@@ -1,0 +1,87 @@
+﻿@model TheBallStores.Models.DonHang
+
+@{
+    ViewData["Title"] = "Thanh toán Online";
+    var tongTien = Model.TongTien ?? 0;
+
+    // THÔNG TIN TÀI KHOẢN CỦA BẠN
+    var stk = "1032162391";
+    var bankName = "Ngân hàng Vietcombank";
+    var accountName = "NGUYỄN THÀNH CÔNG";
+
+    // Tạo nội dung QR Code (Giả định)
+    var qrContent = $"STK:{stk}, BANK: {bankName}, AMOUNT: {tongTien.ToString("F0")}, NAME: {accountName}";
+    var qrCodeUrl = $"https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={Uri.EscapeDataString(qrContent)}";
+}
+
+<h1 class="text-info mb-4">XÁC NHẬN THANH TOÁN ONLINE</h1>
+<p class="text-muted">Vui lòng kiểm tra lại thông tin đơn hàng và tiến hành thanh toán.</p>
+<hr class="border-secondary" />
+
+<div class="row g-4">
+    <!-- CỘT TRÁI: THÔNG TIN TỔNG QUAN VÀ THANH TOÁN -->
+    <div class="col-md-5">
+        <div class="card-vortex p-4">
+            <h4 class="text-warning mb-3">TỔNG QUAN ĐƠN HÀNG #@Model.MaDonHang</h4>
+            <ul class="list-unstyled">
+                <li><span class="fw-bold text-white">Trạng thái:</span> <span class="badge bg-warning">@Model.TrangThai</span></li>
+                <li><span class="fw-bold text-white">Ngày đặt:</span> @Model.NgayDat?.ToString("dd/MM/yyyy HH:mm")</li>
+                <li><span class="fw-bold text-white">Tổng tiền thanh toán:</span> <span class="text-success fw-bold fs-5">@tongTien.ToString("#,##0") đ</span></li>
+            </ul>
+        </div>
+
+        <div class="card-vortex p-4 mt-4 text-center">
+            <h4 class="text-info mb-3">QUÉT MÃ QR ĐỂ CHUYỂN KHOẢN</h4>
+            <!-- Mã QR hiển thị thông tin STK, Tên, Số tiền -->
+            <img src="@qrCodeUrl" alt="QR Code Thanh Toán" class="img-fluid rounded border border-info mx-auto d-block" style="max-width: 200px;">
+            <p class="text-muted mt-2">Nội dung CK: Mã đơn hàng #@Model.MaDonHang</p>
+        </div>
+    </div>
+
+    <!-- CỘT PHẢI: CHI TIẾT SẢN PHẨM & GIAO HÀNG -->
+    <div class="col-md-7">
+        <h4 class="text-info mb-3">CHI TIẾT SẢN PHẨM</h4>
+        <div class="card-vortex p-0 overflow-hidden mb-4">
+            <table class="table table-dark table-hover mb-0">
+                <thead>
+                    <tr class="text-warning">
+                        <th>Sản phẩm</th>
+                        <th>Size</th>
+                        <th>SL</th>
+                        <th>Đơn giá</th>
+                        <th>Thành tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ChiTietDonHangs)
+                    {
+                        var tenSp = item.MaChiTietNavigation?.MaSpNavigation?.TenSp ?? "Sản phẩm không rõ";
+                        var tenSize = item.MaChiTietNavigation?.MaSizeNavigation?.TenSize ?? "N/A";
+                        var thanhTien = item.SoLuong * (item.DonGia ?? 0);
+
+                        <tr>
+                            <td>@tenSp</td>
+                            <td>@tenSize</td>
+                            <td>@item.SoLuong</td>
+                            <td>@item.DonGia?.ToString("#,##0") đ</td>
+                            <td class="text-success fw-bold">@thanhTien?.ToString("#,##0") đ</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card-vortex p-4">
+            <h4 class="text-warning mb-3">THÔNG TIN CHUYỂN KHOẢN</h4>
+            <ul class="list-unstyled">
+                <li><span class="fw-bold text-white">Ngân hàng:</span> <span class="text-muted float-end">@bankName</span></li>
+                <li><span class="fw-bold text-white">Chủ tài khoản:</span> <span class="text-muted float-end">@accountName</span></li>
+                <li class="border-top border-secondary pt-2 mt-2"><span class="fw-bold text-danger">Số tài khoản:</span> <span class="text-danger float-end fw-bold fs-5">@stk</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-5">
+    <a asp-controller="Store" asp-action="Index" class="btn btn-neon btn-lg">HOÀN TẤT & TIẾP TỤC MUA SẮM</a>
+</div>

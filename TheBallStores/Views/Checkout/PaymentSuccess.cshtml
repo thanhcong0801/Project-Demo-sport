@@ -1,35 +1,56 @@
 ﻿@{
     ViewData["Title"] = "Thanh toán";
     var tongTien = ViewBag.TongTien as decimal? ?? 0;
+    var maDonHang = ViewBag.MaDonHang as int? ?? 0; // Đã thêm biến MaDonHang
+
+    // ===============================================
+    // THÔNG TIN TÀI KHOẢN CỦA BẠN (Đã xác nhận)
+    // ===============================================
     var stk = "1032162391";
-    var bankName = "Ngân hàng Techcombank";
+    var bankName = "Ngân hàng Vietcombank"; // SỬ DỤNG VCB
     var accountName = "NGUYỄN THÀNH CÔNG";
 
-    // Tạo nội dung QR Code (Giả định)
-    var qrContent = $"STK:{stk}, BANK: {bankName}, AMOUNT: {tongTien.ToString("F0")}, NAME: {accountName}";
-    var qrCodeUrl = $"[https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=){Uri.EscapeDataString(qrContent)}";
+    // TẠO NỘI DUNG MÃ QR DỰA TRÊN API CHUYỂN KHOẢN VIỆT NAM (Giả định MoMo/VietQR)
+    // Nội dung chuyển khoản cần có: STK, Tên, Ngân hàng, Số tiền
+    var qrContent = $"STK:{stk}|BANK:{bankName}|AMOUNT:{tongTien.ToString("F0")}|NAME:{accountName}|ORDER:KV{maDonHang}";
+
+    // SỬA LỖI: Dùng QR API để tạo mã QR động
+    var qrCodeUrl = $"https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={Uri.EscapeDataString(qrContent)}";
 }
+
 
 <div class="text-center py-5">
     <h1 class="display-4 fw-bold text-success mb-3">ĐẶT HÀNG THÀNH CÔNG!</h1>
-    <p class="lead text-white">Đơn hàng của bạn đã được ghi nhận. Vui lòng thanh toán để đơn hàng được xử lý.</p>
+    <p class="lead text-white">Đơn hàng của bạn **#KV@maDonHang** đã được ghi nhận. Vui lòng thanh toán để đơn hàng được xử lý.</p>
     <hr class="border-secondary mx-auto" style="max-width: 500px;">
 
     <div class="card-vortex p-5 mx-auto" style="max-width: 700px;">
         <h3 class="text-warning mb-4">TỔNG SỐ TIỀN CẦN CHUYỂN</h3>
+
         <span class="display-3 fw-bold text-success mb-5 d-block">
             @tongTien.ToString("#,##0") VNĐ
         </span>
 
         <div class="row">
+            <!-- Cột QR CODE -->
             <div class="col-md-6 border-end border-secondary">
                 <h5 class="text-info mb-3">QUÉT MÃ QR ĐỂ CHUYỂN KHOẢN</h5>
-                <img src="@qrCodeUrl" alt="QR Code Thanh Toán" class="img-fluid rounded border border-info" style="max-width: 200px;">
-                <p class="text-muted mt-2">Nội dung chuyển khoản: Mã đơn hàng (Ví dụ: KV@Model.MaDonHang)</p>
+
+                <!-- SỬ DỤNG QR CODE ĐƯỢC TẠO TỪ API -->
+                <img src="@qrCodeUrl"
+                     alt="QR Code Thanh Toán"
+                     class="img-fluid rounded border border-info"
+                     style="max-width: 200px;" />
+
+                <p class="text-muted mt-2">
+                    Nội dung chuyển khoản: **KV@maDonHang**
+                </p>
             </div>
 
+            <!-- Cột Thông tin tài khoản -->
             <div class="col-md-6 text-start ps-5">
                 <h5 class="text-info mb-3">CHI TIẾT TÀI KHOẢN</h5>
+
                 <p class="mb-1 fw-bold text-white">Ngân hàng:</p>
                 <span class="text-muted">@bankName</span>
 
@@ -43,6 +64,8 @@
     </div>
 
     <div class="mt-5">
-        <a asp-controller="Store" asp-action="Index" class="btn btn-neon btn-lg">TIẾP TỤC MUA SẮM</a>
+        <a asp-controller="Store" asp-action="Index" class="btn btn-neon btn-lg">
+            TIẾP TỤC MUA SẮM
+        </a>
     </div>
 </div>

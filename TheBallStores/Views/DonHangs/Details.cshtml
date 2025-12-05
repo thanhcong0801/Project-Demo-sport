@@ -1,0 +1,128 @@
+﻿@model TheBallStores.Models.DonHang
+@{
+    ViewData["Title"] = "Chi tiết Đơn hàng #" + Model.MaDonHang;
+    var tongTien = Model.TongTien ?? 0;
+
+    // Danh sách các trạng thái Admin có thể chọn
+    var statuses = new List<string> { "Mới đặt (COD)", "Chờ thanh toán", "Đang giao", "Đã hủy", "Hoàn thành" };
+
+    // Kiểm tra quyền Admin
+    var isAdmin = Context.Session.GetString("VaiTro") == "Admin";
+
+    // Logic chọn màu badge trạng thái
+    var trangThaiClass = Model.TrangThai switch
+    {
+        "Hoàn thành" => "bg-success",
+        "Đã hủy" => "bg-danger",
+        "Chờ thanh toán" => "bg-warning text-dark",
+        "Mới đặt (COD)" => "bg-primary",
+        "Đang giao" => "bg-info text-dark",
+        _ => "bg-secondary"
+    };
+}
+
+<h1 class="text-info mb-4">CHI TIẾT ĐƠN HÀNG #@Model.MaDonHang</h1>
+<p class="text-muted">Đặt bởi: @Model.MaKhNavigation?.HoTen (@Model.MaKhNavigation?.Email)</p>
+<hr class="border-secondary" />
+
+<div class="row g-4">
+    <!-- CỘT TRÁI: THÔNG TIN TỔNG QUAN -->
+    <div class="col-md-5">
+        <div class="card-vortex p-4">
+            <h4 class="text-warning mb-3">TỔNG QUAN ĐƠN HÀNG</h4>
+            <ul class="list-unstyled">
+                <!-- SỬA: Hiển thị trạng thái với Badge màu -->
+                <li class="mb-2">
+                    <span class="fw-bold text-white">Trạng thái:</span>
+                    <span class="badge @trangThaiClass fs-6">@Model.TrangThai</span>
+                </li>
+
+                <li class="mb-2"><span class="fw-bold text-white">Ngày đặt:</span> @Model.NgayDat?.ToString("dd/MM/yyyy HH:mm")</li>
+                <li class="mb-2"><span class="fw-bold text-white">Tổng tiền:</span> <span class="text-success fw-bold fs-5">@tongTien.ToString("#,##0") đ</span></li>
+            </ul>
+        </div>
+
+        <!-- FORM CẬP NHẬT TRẠNG THÁI (CHỈ ADMIN) -->
+        @if (isAdmin)
+        {
+            <div class="card-vortex p-4 mt-4">
+                <h4 class="text-info mb-3">CẬP NHẬT TRẠNG THÁI</h4>
+                <form asp-controller="DonHangs" asp-action="CapNhatTrangThai" method="post">
+                    <input type="hidden" name="maDonHang" value="@Model.MaDonHang" />
+
+                    <div class="mb-3">
+                        <select name="trangThaiMoi" class="form-select form-control-vortex">
+                            @foreach (var status in statuses)
+                            {
+                                <option value="@status" selected="@(status == Model.TrangThai)">@status</option>
+                            }
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-warning w-100 fw-bold">LƯU TRẠNG THÁI</button>
+                </form>
+            </div>
+        }
+
+        <div class="card-vortex p-4 mt-4 @(isAdmin ? "" : "border-top border-secondary")">
+            <h4 class="text-info mb-3">THÔNG TIN GIAO HÀNG</h4>
+            <ul class="list-unstyled">
+                <li class="mb-2"><span class="fw-bold text-white">Người nhận:</span> @(Model.TenNguoiNhan ?? "N/A")</li>
+                <li class="mb-2"><span class="fw-bold text-white">Điện thoại:</span> @(Model.SoDienThoaiNguoiNhan ?? "N/A")</li>
+                <li class="mb-2"><span class="fw-bold text-white">Địa chỉ:</span> @(Model.DiaChiGiaoHang ?? "N/A")</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- CỘT PHẢI: CHI TIẾT SẢN PHẨM -->
+    <div class="col-md-7">
+        <h4 class="text-info mb-3">SẢN PHẨM ĐÃ MUA</h4>
+        <div class="card-vortex p-0 overflow-hidden">
+            <table class="table table-dark table-hover mb-0 align-middle">
+                <thead>
+                    <tr class="text-warning">
+                        <th>Sản phẩm</th>
+                        <th class="text-center">Size</th>
+                        <th class="text-center">SL</th>
+                        <th class="text-end">Đơn giá</th>
+                        <th class="text-end">Thành tiền & Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ChiTietDonHangs)
+                    {
+                        var tenSp = item.MaChiTietNavigation?.MaSpNavigation?.TenSp ?? "Sản phẩm không rõ";
+                        var tenSize = item.MaChiTietNavigation?.MaSizeNavigation?.TenSize ?? "N/A";
+                        var thanhTien = item.SoLuong * (item.DonGia ?? 0);
+
+                        <tr>
+                            <td>
+                                <span class="fw-bold text-white">@tenSp</span>
+                            </td>
+                            <td class="text-center"><span class="badge bg-secondary">@tenSize</span></td>
+                            <td class="text-center">@item.SoLuong</td>
+                            <td class="text-end">@item.DonGia?.ToString("#,##0") đ</td>
+                            <td class="text-end">
+                                <div class="d-flex justify-content-end align-items-center">
+                                    <span class="text-success fw-bold me-2">@thanhTien?.ToString("#,##0") đ</span>
+                                    <span class="badge @trangThaiClass">@Model.TrangThai</span>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="text-end mt-4">
+            @if (isAdmin)
+            {
+                <a asp-action="Index" class="btn btn-vortex">Quay lại Danh sách Đơn hàng</a>
+            }
+            else
+            {
+                <a asp-action="LichSuGiaoDich" class="btn btn-vortex">Quay lại Lịch sử</a>
+            }
+        </div>
+    </div>
+</div>

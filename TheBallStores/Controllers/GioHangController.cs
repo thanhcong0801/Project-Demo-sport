@@ -41,7 +41,8 @@ namespace TheBallStores.Controllers
 
         // Hàm Thêm vào giỏ (Được gọi từ trang Chi tiết)
         [HttpPost]
-        public async Task<IActionResult> ThemVaoGio(int maSp, int maSize, int soLuong)
+        // SỬA LỖI 1: Bỏ async/await vì hàm dùng Find() đồng bộ
+        public IActionResult ThemVaoGio(int maSp, int maSize, int soLuong)
         {
             // Kiểm tra đăng nhập
             if (HttpContext.Session.GetString("HoTen") == null)
@@ -60,12 +61,12 @@ namespace TheBallStores.Controllers
             else
             {
                 // Nếu chưa có thì truy vấn DB lấy thông tin và thêm mới
-                var sp = await _context.SanPhams.FindAsync(maSp);
-                var size = await _context.KichThuocs.FindAsync(maSize);
+                var sp = _context.SanPhams.Find(maSp);
+                var size = _context.KichThuocs.Find(maSize);
 
+                // SỬA LỖI 2: Kiểm tra null an toàn trước khi tạo GioHangItem
                 if (sp != null && size != null)
                 {
-                    // FIX LỖI NULL: Đã khởi tạo string.Empty trong GioHangItem.cs
                     item = new GioHangItem
                     {
                         MaSp = sp.MaSp,

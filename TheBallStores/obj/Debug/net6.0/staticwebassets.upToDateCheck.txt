@@ -91,6 +91,7 @@ wwwroot\images\products\Nike Zoom Fly 6-4,999,000vnd.avif
 wwwroot\images\products\Nike Zoom GP Challenge 1-3,527,199vnd.avif
 wwwroot\images\products\Nike Zoom Mercurial Superfly 9 Elite Marcus Rashford-8,649,000vnd.avif
 wwwroot\images\products\NikeCourt Lite 4-2,189,000vnd.avif
+wwwroot\images\products\qrcode.jpg
 wwwroot\images\products\QUẢ BÓNG CHUYỀN THĂNG LONG DG7120-680,000vnd.avif
 wwwroot\images\products\QUẢ BÓNG CHUYỀN THĂNG LONG DG7700 - VÀNG-980,000vnd.avif
 wwwroot\images\products\QUẢ BÓNG CHUYỀN THĂNG LONG DRAGON DG300-335,000vnd.avif

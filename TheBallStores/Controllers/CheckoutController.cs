@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TheBallStores.Helpers;
+using TheBallStores.Helpers; // Cần namespace này để dùng GetObjectFromJson
 using TheBallStores.Models;
-using System.Linq; // Cần dùng cho .Any() và .Sum()
+using System.Linq;
 
 namespace TheBallStores.Controllers
 {
@@ -15,10 +15,17 @@ namespace TheBallStores.Controllers
             _context = context;
         }
 
+        // HÀM NỘI BỘ LẤY GIỎ HÀNG (Sử dụng HttpContext của chính nó)
+        private List<GioHangItem> LayGioHangTuSession()
+        {
+            var cart = HttpContext.Session.GetObjectFromJson<List<GioHangItem>>("GioHang");
+            return cart ?? new List<GioHangItem>();
+        }
+
+
         // GET: Checkout/Index (Trang xác nhận thông tin giao hàng)
         public async Task<IActionResult> Index()
         {
-            // BẢO MẬT: Kiểm tra đăng nhập
             if (HttpContext.Session.GetString("HoTen") == null)
             {
                 return RedirectToAction("Login", "Account");
@@ -26,13 +33,11 @@ namespace TheBallStores.Controllers
 
             var userEmail = HttpContext.Session.GetString("Email");
 
-            // Kiểm tra email có tồn tại không
             if (string.IsNullOrEmpty(userEmail))
             {
                 return RedirectToAction("Logout", "Account");
             }
 
-            // Lấy thông tin khách hàng từ Database
             var khachHang = await _context.KhachHangs.FirstOrDefaultAsync(k => k.Email == userEmail);
 
             if (khachHang == null)
@@ -40,11 +45,9 @@ namespace TheBallStores.Controllers
                 return RedirectToAction("Logout", "Account");
             }
 
-            // Lấy giỏ hàng để kiểm tra
-            var gioHangController = new GioHangController(_context);
-            var cart = gioHangController.LayGioHang();
+            var cart = LayGioHangTuSession();
 
-            if (cart == null || !cart.Any()) // FIX LỖI: Sử dụng .Any() để kiểm tra giỏ hàng
+            if (!cart.Any())
             {
                 TempData["Error"] = "Giỏ hàng trống! Vui lòng chọn sản phẩm.";
                 return RedirectToAction("Index", "Store");
@@ -58,19 +61,16 @@ namespace TheBallStores.Controllers
 
         // POST: Checkout/Confirm (Xử lý lưu Đơn hàng và chuyển sang trang Thanh toán)
         [HttpPost]
-        public async Task<IActionResult> Confirm(KhachHang khachHang)
+        public async Task<IActionResult> Confirm(KhachHang khachHang, string HinhThucThanhToan) // NHẬN THÊM THAM SỐ
         {
-            // BẢO MẬT: Kiểm tra đăng nhập
             if (HttpContext.Session.GetString("HoTen") == null)
             {
                 return RedirectToAction("Login", "Account");
             }
 
-            // 1. Lấy thông tin giỏ hàng
-            var gioHangController = new GioHangController(_context);
-            var cart = gioHangController.LayGioHang();
+            var cart = LayGioHangTuSession();
 
-            if (cart == null || !cart.Any()) // Kiểm tra giỏ hàng rỗng lần nữa
+            if (!cart.Any())
             {
                 TempData["Error"] = "Giỏ hàng trống! Không thể đặt hàng.";
                 return RedirectToAction("Index", "Store");
@@ -89,9 +89,11 @@ namespace TheBallStores.Controllers
                 MaKh = originalKhachHang.MaKh,
                 NgayDat = DateTime.Now,
                 TongTien = cart.Sum(item => item.ThanhTien),
-                TrangThai = "Mới đặt",
 
-                // FIX LỖI NULL: Sử dụng ?? string.Empty để đảm bảo giá trị string không null
+                // LƯU TRẠNG THÁI DỰA TRÊN HÌNH THỨC THANH TOÁN
+                TrangThai = HinhThucThanhToan == "ONLINE" ? "Chờ thanh toán" : "Mới đặt (COD)",
+
+                // FIX LỖI 1: Lấy DiaChiGiaoHang từ form POST (khachHang.DiaChiGiaoHang)
                 TenNguoiNhan = khachHang.HoTen ?? originalKhachHang.HoTen ?? string.Empty,
                 DiaChiGiaoHang = khachHang.DiaChi ?? originalKhachHang.DiaChi ?? string.Empty,
                 SoDienThoaiNguoiNhan = khachHang.DienThoai ?? originalKhachHang.DienThoai ?? string.Empty
@@ -100,31 +102,32 @@ namespace TheBallStores.Controllers
             _context.Add(donHang);
             await _context.SaveChangesAsync(); // Lưu đơn hàng để có MaDonHang
 
-            // 3. Tạo Chi tiết đơn hàng
+            // 3. Tạo Chi tiết đơn hàng và giảm tồn kho
             foreach (var item in cart)
             {
-                // BƯỚC 3.1: TÌM MaChiTiet của SanPhamChiTiets dựa trên MaSp và MaSize
                 var sanPhamChiTiet = await _context.SanPhamChiTiets
                     .FirstOrDefaultAsync(ct => ct.MaSp == item.MaSp && ct.MaSize == item.MaSize);
 
                 if (sanPhamChiTiet == null)
                 {
                     TempData["Error"] = "Lỗi kho hàng: Không tìm thấy chi tiết sản phẩm/size.";
-                    // Giữ lại item trong giỏ hàng để khách biết bị lỗi
                     continue;
                 }
 
                 var chiTiet = new ChiTietDonHang
                 {
                     MaDonHang = donHang.MaDonHang,
-                    MaChiTiet = sanPhamChiTiet.MaChiTiet, // LƯU ID CHÍNH XÁC CỦA SP_CHI_TIET
+                    MaChiTiet = sanPhamChiTiet.MaChiTiet,
                     SoLuong = item.SoLuong,
                     DonGia = item.DonGia
                 };
 
-                // BƯỚC 3.2: GIẢM TỒN KHO
-                sanPhamChiTiet.SoLuongTon -= item.SoLuong;
-                _context.Update(sanPhamChiTiet);
+                // GIẢM TỒN KHO
+                if (sanPhamChiTiet.SoLuongTon >= item.SoLuong)
+                {
+                    sanPhamChiTiet.SoLuongTon -= item.SoLuong;
+                    _context.Update(sanPhamChiTiet);
+                }
 
                 _context.Add(chiTiet);
             }
@@ -133,14 +136,27 @@ namespace TheBallStores.Controllers
             // 4. Xóa giỏ hàng khỏi Session
             HttpContext.Session.Remove("GioHang");
 
-            // Chuyển hướng đến trang Thanh toán
-            return RedirectToAction("PaymentSuccess", new { orderId = donHang.MaDonHang });
+            // 5. ĐIỀU HƯỚNG DỰA TRÊN HÌNH THỨC THANH TOÁN
+            if (HinhThucThanhToan == "ONLINE")
+            {
+                return RedirectToAction("PaymentSuccess", new { orderId = donHang.MaDonHang });
+            }
+            else // COD
+            {
+                return RedirectToAction("OrderSuccess", new { orderId = donHang.MaDonHang });
+            }
+        }
+
+        // GET: Checkout/OrderSuccess (Trang xác nhận COD)
+        public IActionResult OrderSuccess(int orderId)
+        {
+            ViewBag.MaDonHang = orderId;
+            return View();
         }
 
         // GET: Checkout/PaymentSuccess (Trang hiển thị QR và STK)
         public IActionResult PaymentSuccess(int orderId)
         {
-            // Lấy lại tổng tiền cần chuyển khoản (Từ DB hoặc tính lại)
             var donHang = _context.DonHangs.Find(orderId);
 
             ViewBag.TongTien = donHang?.TongTien ?? 0;

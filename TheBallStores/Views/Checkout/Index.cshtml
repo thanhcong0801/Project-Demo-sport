@@ -1,136 +1,93 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using TheBallStores.Helpers;
-using TheBallStores.Models;
-using System.Security.Claims;
+﻿@model TheBallStores.Models.KhachHang
+@{
+    ViewData["Title"] = "Xác nhận Đơn hàng";
+    var cart = ViewBag.Cart as List<TheBallStores.Models.GioHangItem>;
+    var tongTien = ViewBag.TongTien as decimal? ?? 0;
+}
 
-namespace TheBallStores.Controllers
-{
-    public class CheckoutController : Controller
-    {
-        private readonly TheballStoreContext _context;
+<h1 class="text-info mb-4">XÁC NHẬN ĐƠN HÀNG VÀ THANH TOÁN</h1>
+<hr class="border-secondary" />
 
-        public CheckoutController(TheballStoreContext context)
-        {
-            _context = context;
-        }
+<div class="row g-4">
+    <!-- CỘT 1: THÔNG TIN GIAO HÀNG & HÌNH THỨC TT -->
+    <div class="col-md-6">
+        <div class="card-vortex p-4">
+            <h4 class="text-warning mb-3">THÔNG TIN GIAO HÀNG</h4>
+            <p class="text-muted">Vui lòng xác nhận thông tin dưới đây là chính xác.</p>
 
-        // GET: Checkout/Index (Trang xác nhận thông tin giao hàng)
-        public async Task<IActionResult>
-    Index()
-    {
-    // BẢO MẬT: Kiểm tra đăng nhập
-    if (HttpContext.Session.GetString("HoTen") == null)
-    {
-    return RedirectToAction("Login", "Account");
-    }
+            <form asp-action="Confirm" method="post">
+                <!-- Mã Khách hàng là BẮT BUỘC -->
+                <input type="hidden" name="MaKh" value="@Model.MaKh" />
 
-    // Lấy Email từ Session để truy vấn Database
-    var userEmail = HttpContext.Session.GetString("Email");
+                <!-- 1. Họ tên người nhận -->
+                <div class="mb-3">
+                    <label class="form-label text-white">Họ tên người nhận</label>
+                    <input name="HoTen" class="form-control form-control-vortex" value="@(Model.HoTen ?? "")" required />
+                </div>
+                <!-- 2. Email (CHỈ ĐỌC) -->
+                <div class="mb-3">
+                    <label class="form-label text-white">Email</label>
+                    <input name="Email" class="form-control form-control-vortex" value="@(Model.Email ?? "")" readonly />
+                </div>
+                <!-- 3. Số điện thoại -->
+                <div class="mb-3">
+                    <label class="form-label text-white">Số điện thoại</label>
+                    <input name="DienThoai" class="form-control form-control-vortex" value="@(Model.DienThoai ?? "")" required />
+                </div>
+                <!-- 4. Địa chỉ giao hàng (ĐÃ SỬA TÊN INPUT) -->
+                <div class="mb-4">
+                    <label class="form-label text-white">Địa chỉ giao hàng</label>
+                    <textarea name="DiaChiGiaoHang" class="form-control form-control-vortex" required>@(Model.DiaChi ?? "")</textarea>
+                </div>
 
-    // SỬA LỖI NULL: Kiểm tra email có tồn tại không
-    if (string.IsNullOrEmpty(userEmail))
-    {
-    // Nếu không có Email trong Session, coi như chưa đăng nhập hoàn chỉnh
-    return RedirectToAction("Logout", "Account");
-    }
+                <!-- HÌNH THỨC THANH TOÁN -->
+                <h4 class="text-info mb-3 mt-4">HÌNH THỨC THANH TOÁN</h4>
+                <div class="card-vortex p-3 mb-4">
+                    <!-- COD (Thanh toán khi nhận hàng) -->
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="HinhThucThanhToan" id="paymentCod" value="COD" checked required>
+                        <label class="form-check-label text-white" for="paymentCod">
+                            Thanh toán khi nhận hàng (COD)
+                        </label>
+                    </div>
+                    <!-- ONLINE (Chuyển khoản) -->
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="HinhThucThanhToan" id="paymentOnline" value="ONLINE" required>
+                        <label class="form-check-label text-white" for="paymentOnline">
+                            Chuyển khoản Ngân hàng (Online)
+                        </label>
+                    </div>
+                </div>
 
-    // Lấy thông tin khách hàng từ Database
-    var khachHang = await _context.KhachHangs.FirstOrDefaultAsync(k => k.Email == userEmail);
+                <button type="submit" class="btn btn-neon w-100 py-2">
+                    <i class="bi bi-box-seam me-2"></i> XÁC NHẬN & ĐẶT HÀNG
+                </button>
+            </form>
+        </div>
+    </div>
 
-    if (khachHang == null)
-    {
-    return RedirectToAction("Logout", "Account");
-    }
+    <!-- CỘT 2: CHI TIẾT ĐƠN HÀNG & TỔNG KẾT (Giữ nguyên) -->
+    <div class="col-md-6">
+        <div class="card-vortex p-4">
+            <h4 class="text-info mb-3">CHI TIẾT ĐƠN HÀNG</h4>
+            @if (cart != null)
+            {
+                @foreach (var item in cart)
+                {
+                    <div class="d-flex justify-content-between mb-2 pb-2 border-bottom border-secondary">
+                        <span class="text-muted">@item.TenSp (@item.TenSize) x @item.SoLuong</span>
+                        <span class="text-white">@item.ThanhTien.ToString("#,##0") đ</span>
+                    </div>
+                }
+            }
 
-    // Lấy giỏ hàng để kiểm tra
-    var gioHangController = new GioHangController(_context);
-    var cart = gioHangController.LayGioHang();
+            <h4 class="text-white mt-4 pt-3 border-top border-secondary">
+                TỔNG TIỀN: <span class="text-success fw-bold float-end">@tongTien.ToString("#,##0") đ</span>
+            </h4>
 
-    if (cart == null || cart.Count == 0)
-    {
-    TempData["Error"] = "Giỏ hàng trống! Vui lòng chọn sản phẩm.";
-    return RedirectToAction("Index", "Store");
-    }
-
-    // Gửi thông tin Khách hàng (làm mẫu cho giao hàng) và tổng tiền sang View
-    ViewBag.Cart = cart;
-    ViewBag.TongTien = cart.Sum(item => item.ThanhTien);
-
-    return View(khachHang); // Trả về Model KhachHang
-    }
-
-    // POST: Checkout/Confirm (Xử lý lưu Đơn hàng và chuyển sang trang Thanh toán)
-    [HttpPost]
-    public async Task<IActionResult>
-        Confirm(KhachHang khachHang)
-        {
-        // BẢO MẬT: Kiểm tra đăng nhập
-        if (HttpContext.Session.GetString("HoTen") == null)
-        {
-        return RedirectToAction("Login", "Account");
-        }
-
-        // 1. Lấy thông tin giỏ hàng
-        var gioHangController = new GioHangController(_context);
-        var cart = gioHangController.LayGioHang();
-
-        // Sửa lỗi tham chiếu null tiềm ẩn: Đảm bảo dữ liệu không bị null trước khi lưu
-        // Chúng ta cần lấy lại MaKH chính xác từ Database (không tin tưởng dữ liệu từ form 100%)
-        var originalKhachHang = await _context.KhachHangs.FindAsync(khachHang.MaKh);
-        if (originalKhachHang == null)
-        {
-        return RedirectToAction("Logout", "Account");
-        }
-
-        // 2. Tạo đơn hàng mới
-        var donHang = new DonHang
-        {
-        MaKH = originalKhachHang.MaKh, // Lấy Mã KH gốc
-        NgayDat = DateTime.Now,
-        TongTien = cart.Sum(item => item.ThanhTien),
-        TrangThai = "Mới đặt",
-        // Lấy các thông tin giao hàng đã được xác nhận từ Form POST
-        TenNguoiNhan = khachHang.HoTen ?? originalKhachHang.HoTen,
-        DiaChiGiaoHang = khachHang.DiaChi ?? originalKhachHang.DiaChi,
-        SoDienThoaiNguoiNhan = khachHang.DienThoai ?? originalKhachHang.DienThoai
-        };
-
-        _context.Add(donHang);
-        await _context.SaveChangesAsync(); // Lưu đơn hàng để có MaDonHang
-
-        // 3. Tạo Chi tiết đơn hàng
-        foreach (var item in cart)
-        {
-        // Giả định MaChiTiet trong DonHang là MaChiTiet của SanPhamChiTiets
-        var chiTiet = new ChiTietDonHang
-        {
-        MaDonHang = donHang.MaDonHang,
-        MaChiTiet = item.MaSize, // LƯU Ý: Đây là MaSize, nhưng cột tên MaChiTiet (Cần kiểm tra lại Model của bạn)
-        SoLuong = item.SoLuong,
-        DonGia = item.DonGia
-        };
-        _context.Add(chiTiet);
-        }
-        await _context.SaveChangesAsync();
-
-        // 4. Xóa giỏ hàng khỏi Session sau khi đặt hàng thành công
-        HttpContext.Session.Remove("GioHang");
-
-        // Chuyển hướng đến trang Thanh toán
-        return RedirectToAction("PaymentSuccess", new { orderId = donHang.MaDonHang });
-        }
-
-        // GET: Checkout/PaymentSuccess (Trang hiển thị QR và STK)
-        public IActionResult PaymentSuccess(int orderId)
-        {
-        // Lấy lại tổng tiền cần chuyển khoản (Từ DB hoặc tính lại)
-        var donHang = _context.DonHangs.Find(orderId);
-
-        ViewBag.TongTien = donHang?.TongTien ?? 0;
-        ViewBag.MaDonHang = donHang?.MaDonHang ?? 0;
-
-        return View();
-        }
-        }
-        }
+            <p class="text-warning mt-3">
+                Xin cảm ơn sự tin tưởng của bạn!
+            </p>
+        </div>
+    </div>
+</div>

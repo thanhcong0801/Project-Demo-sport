@@ -24,7 +24,7 @@
             <tr class="text-warning">
                 <th>Mã ĐH</th>
                 <th>Ngày Đặt</th>
-                <th>Tổng Tiền</th>
+                <th>Tổng Thanh Toán</th>
                 <th>Trạng Thái</th>
                 <th>Thao tác</th>
             </tr>
@@ -36,33 +36,44 @@
                 {
                     "Hoàn thành" => "bg-success",
                     "Đã hủy" => "bg-danger",
-                    "Chờ thanh toán" => "bg-warning",
-                    _ => "bg-info"
+                    "Chờ thanh toán" => "bg-warning text-dark",
+                    _ => "bg-info text-dark"
                 };
+
+                // Kiểm tra xem đơn có dùng voucher không
+                var coVoucher = (order.SoTienGiam ?? 0) > 0;
 
                 <tr>
                     <td>
-                        <a asp-controller="DonHangs" asp-action="Details" asp-route-id="@order.MaDonHang" class="text-info fw-bold">
+                        <a asp-controller="DonHangs" asp-action="Details" asp-route-id="@order.MaDonHang" class="text-info fw-bold text-decoration-none">
                             #@order.MaDonHang
                         </a>
                     </td>
-                    
+
                     <td>@order.NgayDat?.ToString("dd/MM/yyyy HH:mm")</td>
-                    
-                    <td class="text-success fw-bold">@(order.TongTien?.ToString("#,##0") ?? "0") đ</td>
-                    
+
+                    <td>
+                        <span class="text-success fw-bold">@(order.TongTien?.ToString("#,##0") ?? "0") đ</span>
+                        @if (coVoucher)
+                        {
+                            <span class="badge bg-secondary ms-1" title="Đã dùng voucher" style="font-size: 0.7rem;">
+                                <i class="bi bi-tag-fill text-warning"></i>
+                            </span>
+                        }
+                    </td>
+
                     <td>
                         <span class="badge @trangThaiClass">@order.TrangThai</span>
                     </td>
-                    
+
                     <td>
                         <a asp-controller="DonHangs" asp-action="Details" asp-route-id="@order.MaDonHang" class="btn btn-sm btn-primary">Xem</a>
-                        
+
                         @* CHỈ HIỂN THỊ NÚT HỦY KHI Ở TRẠNG THÁI CHO PHÉP *@
                         @if (order.TrangThai == "Chờ thanh toán" || order.TrangThai == "Mới đặt (COD)")
                         {
-                            <a asp-controller="DonHangs" asp-action="HuyDonHang" asp-route-id="@order.MaDonHang" 
-                               class="btn btn-sm btn-danger" 
+                            <a asp-controller="DonHangs" asp-action="HuyDonHang" asp-route-id="@order.MaDonHang"
+                               class="btn btn-sm btn-danger ms-1"
                                onclick="return confirm('Bạn có chắc chắn muốn hủy đơn hàng #@order.MaDonHang?');">Hủy</a>
                         }
                     </td>

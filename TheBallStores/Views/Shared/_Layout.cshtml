@@ -11,7 +11,6 @@
 <body class="d-flex flex-column min-vh-100">
     <!-- Nền sao (Hiệu ứng) -->
     <div class="stars-container" id="starContainer"></div>
-
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark navbar-vortex fixed-top">
             <div class="container-fluid px-4">
@@ -98,11 +97,9 @@
     </header>
 
     <!-- CONTAINER CHÍNH -->
-    <div class="container" style="margin-top: 100px; min-height: 80vh;">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer">

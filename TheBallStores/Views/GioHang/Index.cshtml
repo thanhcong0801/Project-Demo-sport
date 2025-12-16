@@ -1,11 +1,22 @@
-﻿@model List<TheBallStores.Models.GioHangItem>
+﻿@model TheBallStores.Models.GioHangViewModel
+
 @{
     ViewData["Title"] = "Giỏ hàng của bạn";
 }
 
 <h1 class="text-info mb-4">GIỎ HÀNG CỦA BẠN</h1>
 
-@if (Model.Count == 0)
+<!-- HIỂN THỊ THÔNG BÁO (Logic Mới) -->
+@if (!string.IsNullOrEmpty(Model.ThongBao))
+{
+    var alertClass = Model.ThongBao.Contains("thành công") ? "alert-success" : "alert-danger";
+    <div class="alert @alertClass alert-dismissible fade show mb-4" role="alert">
+        @Model.ThongBao
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@if (Model.Items.Count == 0)
 {
     <div class="text-center py-5">
         <h3 class="text-muted">Giỏ hàng đang trống</h3>
@@ -15,6 +26,7 @@
 else
 {
     <div class="row">
+        <!-- CỘT TRÁI: DANH SÁCH SẢN PHẨM (Logic Cũ + Model Mới) -->
         <div class="col-md-8">
             <div class="card-vortex p-0 overflow-hidden">
                 <table class="table table-dark table-hover mb-0">
@@ -28,12 +40,13 @@ else
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model)
+                        @foreach (var item in Model.Items)
                         {
                             <tr>
                                 <td>
                                     <div class="d-flex align-items-center">
-                                        <img src="~/images/products/@item.AnhDaiDien" style="width: 60px; height: 60px; object-fit: cover; border-radius: 5px;" class="me-3">
+                                        <img src="@(string.IsNullOrEmpty(item.AnhDaiDien) ? "/images/no-image.png" : "/images/products/" + item.AnhDaiDien)"
+                                             style="width: 60px; height: 60px; object-fit: cover; border-radius: 5px;" class="me-3">
                                         <div>
                                             <div class="fw-bold">@item.TenSp</div>
                                             <small class="text-muted">Size: @item.TenSize</small>
@@ -42,7 +55,7 @@ else
                                 </td>
                                 <td class="align-middle">@item.DonGia.ToString("#,##0") đ</td>
                                 <td class="align-middle">
-                                    <!-- FORM CẬP NHẬT SỐ LƯỢNG -->
+                                    <!-- Form Cập Nhật Số Lượng (Logic Cũ) -->
                                     <form asp-controller="GioHang" asp-action="CapNhatSoLuong" method="post" onchange="this.submit()">
                                         <input type="hidden" name="maSp" value="@item.MaSp" />
                                         <input type="hidden" name="maSize" value="@item.MaSize" />
@@ -51,7 +64,7 @@ else
                                 </td>
                                 <td class="align-middle text-warning fw-bold">@item.ThanhTien.ToString("#,##0") đ</td>
                                 <td class="align-middle">
-                                    <!-- NÚT XÓA -->
+                                    <!-- Nút Xóa (Logic Cũ) -->
                                     <a asp-controller="GioHang" asp-action="XoaKhoiGio" asp-route-maSp="@item.MaSp" asp-route-maSize="@item.MaSize" class="text-danger">
                                         <i class="bi bi-trash-fill"></i>
                                     </a>
@@ -63,31 +76,64 @@ else
             </div>
         </div>
 
-        <!-- KHỐI TỔNG TIỀN VÀ NÚT THANH TOÁN -->
+        <!-- CỘT PHẢI: TỔNG TIỀN VÀ VOUCHER -->
         <div class="col-md-4">
             <div class="card-vortex p-4">
                 <h4 class="text-white mb-4">TỔNG ĐƠN HÀNG</h4>
 
-                <!-- BẮT ĐẦU FORM THANH TOÁN (ĐÃ SỬA) -->
+                <!-- KHU VỰC VOUCHER (MỚI - Style theo Theme) -->
+                <div class="mb-4">
+                    <label class="text-muted small mb-2 text-uppercase">Mã giảm giá</label>
+                    @if (Model.SoTienGiam > 0)
+                    {
+                        // Đã áp dụng voucher
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-dark text-success fw-bold border-success" value="@Model.MaVoucher" readonly />
+                            <a href="@Url.Action("HuyVoucher")" class="btn btn-outline-danger">Hủy</a>
+                        </div>
+                        <small class="text-success mt-1 d-block"><i class="bi bi-check-circle-fill"></i> Đã giảm @Model.SoTienGiam.ToString("#,##0")đ</small>
+                    }
+                    else
+                    {
+                        // Chưa áp dụng voucher
+                        <form asp-action="ApDungVoucher" method="post">
+                            <div class="input-group">
+                                <input type="text" name="maVoucher" class="form-control form-control-vortex text-white" placeholder="Nhập mã voucher..." required />
+                                <button class="btn btn-outline-info" type="submit">Áp dụng</button>
+                            </div>
+                        </form>
+                    }
+                </div>
+
+                <hr class="border-secondary">
+
+                <!-- TÍNH TOÁN TIỀN -->
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Tạm tính:</span>
+                    <span class="text-white">@Model.TongTienHang.ToString("#,##0") đ</span>
+                </div>
+
+                @if (Model.SoTienGiam > 0)
+                {
+                    <div class="d-flex justify-content-between mb-2 text-success">
+                        <span>Giảm giá:</span>
+                        <span>- @Model.SoTienGiam.ToString("#,##0") đ</span>
+                    </div>
+                }
+
+                <hr class="border-secondary">
+
+                <div class="d-flex justify-content-between mb-4">
+                    <span class="text-info fs-5 fw-bold">TỔNG CỘNG:</span>
+                    <span class="text-info fs-5 fw-bold">@Model.TongThanhToan.ToString("#,##0") đ</span>
+                </div>
+
+                <!-- NÚT THANH TOÁN (Logic Cũ) -->
                 <form asp-controller="Checkout" asp-action="Index" method="get">
-
-                    <div class="d-flex justify-content-between mb-3">
-                        <span class="text-muted">Tạm tính:</span>
-                        <span class="text-white">@Model.Sum(x => x.ThanhTien).ToString("#,##0") đ</span>
-                    </div>
-                    <hr class="border-secondary">
-                    <div class="d-flex justify-content-between mb-4">
-                        <span class="text-info fs-5 fw-bold">TỔNG CỘNG:</span>
-                        <span class="text-info fs-5 fw-bold">@ViewBag.TongTien.ToString("#,##0") đ</span>
-                    </div>
-
-                    <!-- THAY THẾ BẰNG BUTTON SUBMIT -->
-                    <button type="submit" class="text-white btn btn-neon w-100 py-3">
+                    <button type="submit" class="text-white btn btn-neon w-100 py-3 fw-bold">
                         THANH TOÁN NGAY
                     </button>
-
                 </form>
-                <!-- KẾT THÚC FORM THANH TOÁN -->
 
             </div>
         </div>

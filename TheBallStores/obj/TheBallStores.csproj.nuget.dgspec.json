@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TheBallStores\\TheBallStores\\TheBallStores.csproj": {}
+    "D:\\Project-Demo-sport\\TheBallStores\\TheBallStores.csproj": {}
   },
   "projects": {
-    "D:\\TheBallStores\\TheBallStores\\TheBallStores.csproj": {
+    "D:\\Project-Demo-sport\\TheBallStores\\TheBallStores.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TheBallStores\\TheBallStores\\TheBallStores.csproj",
+        "projectUniqueName": "D:\\Project-Demo-sport\\TheBallStores\\TheBallStores.csproj",
         "projectName": "TheBallStores",
-        "projectPath": "D:\\TheBallStores\\TheBallStores\\TheBallStores.csproj",
+        "projectPath": "D:\\Project-Demo-sport\\TheBallStores\\TheBallStores.csproj",
         "packagesPath": "C:\\Users\\thanh\\.nuget\\packages\\",
-        "outputPath": "D:\\TheBallStores\\TheBallStores\\obj\\",
+        "outputPath": "D:\\Project-Demo-sport\\TheBallStores\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

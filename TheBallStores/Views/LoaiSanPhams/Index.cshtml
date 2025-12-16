@@ -1,0 +1,63 @@
+﻿@model IEnumerable<TheBallStores.Models.LoaiSanPham>
+
+@{
+    ViewData["Title"] = "Quản lý Danh Mục";
+}
+
+<h1 class="text-info">QUẢN LÝ DANH MỤC SẢN PHẨM</h1>
+<p class="mb-4">
+    <a asp-action="Create" class="btn btn-primary">Tạo Danh Mục Mới</a>
+    <a asp-controller="Admin" asp-action="Index" class="btn btn-secondary">Về Dashboard</a>
+</p>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<div class="card p-0 shadow overflow-hidden">
+    <table class="table table-striped table-hover mb-0">
+        <thead>
+            <tr class="table-dark">
+                <th>
+                    @Html.DisplayNameFor(model => model.MaLoai)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenLoai)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NhomLoai)
+                </th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaLoai)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenLoai)
+                    </td>
+                    <td>
+                        @(item.NhomLoai ?? "Không có")
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.MaLoai" class="btn btn-sm btn-info text-white">Sửa</a>
+                        <a asp-action="Delete" asp-route-id="@item.MaLoai" class="btn btn-sm btn-danger">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

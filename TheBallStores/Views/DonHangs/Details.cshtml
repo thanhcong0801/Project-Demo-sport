@@ -1,7 +1,11 @@
 ﻿@model TheBallStores.Models.DonHang
 @{
     ViewData["Title"] = "Chi tiết Đơn hàng #" + Model.MaDonHang;
-    var tongTien = Model.TongTien ?? 0;
+
+    // Tính toán hiển thị
+    var thucTra = Model.TongTien ?? 0;
+    var giamGia = Model.SoTienGiam ?? 0;
+    var tamTinh = thucTra + giamGia; // Tính ngược lại tạm tính ban đầu
 
     // Danh sách các trạng thái Admin có thể chọn
     var statuses = new List<string> { "Mới đặt (COD)", "Chờ thanh toán", "Đang giao", "Đã hủy", "Hoàn thành" };
@@ -31,14 +35,32 @@
         <div class="card-vortex p-4">
             <h4 class="text-warning mb-3">TỔNG QUAN ĐƠN HÀNG</h4>
             <ul class="list-unstyled">
-                <!-- SỬA: Hiển thị trạng thái với Badge màu -->
-                <li class="mb-2">
+                <li class="mb-3">
                     <span class="fw-bold text-white">Trạng thái:</span>
                     <span class="badge @trangThaiClass fs-6">@Model.TrangThai</span>
                 </li>
 
                 <li class="mb-2"><span class="fw-bold text-white">Ngày đặt:</span> @Model.NgayDat?.ToString("dd/MM/yyyy HH:mm")</li>
-                <li class="mb-2"><span class="fw-bold text-white">Tổng tiền:</span> <span class="text-success fw-bold fs-5">@tongTien.ToString("#,##0") đ</span></li>
+
+                <!-- PHẦN HIỂN THỊ TIỀN CHI TIẾT -->
+                <li class="mb-2 d-flex justify-content-between">
+                    <span class="fw-bold text-muted">Tạm tính:</span>
+                    <span class="text-white">@tamTinh.ToString("#,##0") đ</span>
+                </li>
+
+                @if (giamGia > 0)
+                {
+                    <li class="mb-2 d-flex justify-content-between text-success">
+                        <span class="fw-bold"><i class="bi bi-tag-fill me-1"></i>Voucher (@(Model.MaVoucher ?? "N/A")):</span>
+                        <span>- @giamGia.ToString("#,##0") đ</span>
+                    </li>
+                    <li class="border-bottom border-secondary my-2"></li>
+                }
+
+                <li class="mb-2 d-flex justify-content-between align-items-center">
+                    <span class="fw-bold text-white fs-5">Thành tiền:</span>
+                    <span class="text-info fw-bold fs-4">@thucTra.ToString("#,##0") đ</span>
+                </li>
             </ul>
         </div>
 
@@ -85,7 +107,7 @@
                         <th class="text-center">Size</th>
                         <th class="text-center">SL</th>
                         <th class="text-end">Đơn giá</th>
-                        <th class="text-end">Thành tiền & Trạng thái</th>
+                        <th class="text-end">Thành tiền</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -103,10 +125,7 @@
                             <td class="text-center">@item.SoLuong</td>
                             <td class="text-end">@item.DonGia?.ToString("#,##0") đ</td>
                             <td class="text-end">
-                                <div class="d-flex justify-content-end align-items-center">
-                                    <span class="text-success fw-bold me-2">@thanhTien?.ToString("#,##0") đ</span>
-                                    <span class="badge @trangThaiClass">@Model.TrangThai</span>
-                                </div>
+                                <span class="text-success fw-bold">@thanhTien?.ToString("#,##0") đ</span>
                             </td>
                         </tr>
                     }

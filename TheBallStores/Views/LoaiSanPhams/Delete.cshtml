@@ -1,0 +1,43 @@
+﻿@model TheBallStores.Models.LoaiSanPham
+
+@{
+    ViewData["Title"] = "Xóa Danh Mục";
+}
+
+<h1 class="text-danger mb-4">XÓA DANH MỤC</h1>
+<hr class="border-secondary" />
+
+<h3 class="text-warning">Bạn có chắc chắn muốn xóa danh mục này?</h3>
+<div class="alert alert-warning">
+    <i class="bi bi-exclamation-triangle-fill"></i> Việc xóa có thể ảnh hưởng đến các sản phẩm đã có.
+</div>
+
+<div class="card-vortex p-4">
+    <h4 class="text-info mb-3">Chi tiết Loại Sản Phẩm</h4>
+    <dl class="row text-white">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.MaLoai)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.MaLoai)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.TenLoai)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.TenLoai)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.NhomLoai)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.NhomLoai)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" class="mt-4">
+        <input type="hidden" asp-for="MaLoai" />
+        <input type="submit" value="XÓA VĨNH VIỄN" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+    </form>
+</div>

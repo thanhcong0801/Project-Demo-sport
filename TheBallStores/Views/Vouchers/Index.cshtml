@@ -1,0 +1,182 @@
+﻿@model IEnumerable<TheBallStores.Models.Voucher>
+
+@{
+    ViewData["Title"] = "Quản lý Voucher";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container py-5 bg-light">
+    <!-- Header Section -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold text-dark mb-1">Danh Sách Mã Giảm Giá</h2>
+            <p class="text-muted mb-0">Quản lý các chương trình khuyến mãi và voucher của cửa hàng.</p>
+        </div>
+        <a asp-action="Create" class="btn btn-primary btn-lg rounded-pill shadow-sm hover-scale px-4">
+            <i class="fa fa-plus me-2"></i> Tạo Voucher Mới
+        </a>
+    </div>
+
+    <!-- Search/Filter Bar (Giao diện) -->
+    <div class="card border-0 shadow-sm mb-4 rounded-3">
+        <div class="card-body p-2">
+            <div class="input-group">
+                <span class="input-group-text bg-white border-0 ps-3"><i class="fa fa-search text-muted"></i></span>
+                <input type="text" class="form-control border-0 shadow-none" placeholder="Tìm kiếm voucher theo mã hoặc tên chương trình..." />
+            </div>
+        </div>
+    </div>
+
+    <!-- Table Section -->
+    <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="bg-light text-uppercase small fw-bold text-secondary">
+                        <tr>
+                            <th class="ps-4 py-3">Mã Voucher</th>
+                            <th class="py-3">Chương Trình</th>
+                            <th class="py-3">Giá Trị Giảm</th>
+                            <th class="py-3">Đơn Tối Thiểu</th>
+                            <th class="text-center py-3">Sử Dụng</th>
+                            <th class="py-3">Thời Gian</th>
+                            <th class="py-3">Trạng Thái</th>
+                            <th class="text-end pe-4 py-3">Hành Động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Any())
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="ps-4">
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-light rounded p-2 me-3 text-center" style="min-width: 45px;">
+                                                <i class="fa fa-ticket text-primary fs-5"></i>
+                                            </div>
+                                            <div>
+                                                <span class="fw-bold text-dark text-uppercase d-block">@item.MaVoucher</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="fw-medium text-dark">@item.TenChuongTrinh</span>
+                                    </td>
+                                    <td>
+                                        @if (item.LoaiGiamGia == 1)
+                                        {
+                                            <span class="badge bg-info bg-opacity-10 text-info border border-info rounded-pill px-3">
+                                                Giảm @item.GiaTriGiam.ToString("0")%
+                                            </span>
+                                            @if (item.GiamToiDa.HasValue)
+                                            {
+                                                <div class="small text-muted mt-1">Tối đa: @item.GiamToiDa.Value.ToString("#,##0")đ</div>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-success bg-opacity-10 text-success border border-success rounded-pill px-3">
+                                                Giảm @item.GiaTriGiam.ToString("#,##0")đ
+                                            </span>
+                                        }
+                                    </td>
+                                    <td class="text-muted fw-medium">
+                                        @item.DonToiThieu.ToString("#,##0")đ
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <span class="fw-bold text-dark">@item.SoLuongConLai</span>
+                                            <span class="small text-muted">còn lại</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column small">
+                                            <span class="text-muted"><i class="fa fa-calendar-check-o me-1"></i> @item.NgayBatDau.ToString("dd/MM/yy")</span>
+                                            <span class="text-muted"><i class="fa fa-calendar-times-o me-1"></i> @item.NgayKetThuc.ToString("dd/MM/yy")</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        @if (item.IsValid())
+                                        {
+                                            <span class="badge bg-success rounded-pill px-3 py-2">
+                                                <i class="fa fa-check-circle me-1"></i> Đang chạy
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            if (!item.KichHoat)
+                                            {
+                                                <span class="badge bg-secondary rounded-pill px-3 py-2">Đã tắt</span>
+                                            }
+                                            else if (item.SoLuongConLai <= 0)
+                                            {
+                                                <span class="badge bg-danger rounded-pill px-3 py-2">Hết mã</span>
+                                            }
+                                            else if (DateTime.Now > item.NgayKetThuc)
+                                            {
+                                                <span class="badge bg-warning text-dark rounded-pill px-3 py-2">Hết hạn</span>
+                                            }
+                                            else if (DateTime.Now < item.NgayBatDau)
+                                            {
+                                                <span class="badge bg-info text-dark rounded-pill px-3 py-2">Sắp tới</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td class="text-end pe-4">
+                                        <div class="btn-group">
+                                            <a asp-action="Edit" asp-route-id="@item.MaVoucher" class="btn btn-white border shadow-sm btn-sm text-warning" title="Sửa">
+                                                <i class="fa fa-pencil"></i>
+                                            </a>
+                                            <a asp-action="Delete" asp-route-id="@item.MaVoucher" class="btn btn-white border shadow-sm btn-sm text-danger ms-1" title="Xóa">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="8" class="text-center py-5">
+                                    <div class="my-4">
+                                        <i class="fa fa-ticket fa-3x text-muted opacity-50 mb-3"></i>
+                                        <h5 class="text-muted fw-normal">Chưa có mã giảm giá nào được tạo</h5>
+                                        <a asp-action="Create" class="btn btn-outline-primary rounded-pill mt-3 px-4">
+                                            Tạo voucher ngay
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        @if (Model != null && Model.Any())
+        {
+            <div class="card-footer bg-white border-top-0 py-3">
+                <div class="small text-muted text-center">Hiển thị @Model.Count() mã giảm giá</div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .hover-scale {
+        transition: transform 0.2s;
+    }
+
+        .hover-scale:hover {
+            transform: scale(1.03);
+        }
+
+    .btn-white {
+        background-color: #fff;
+    }
+
+        .btn-white:hover {
+            background-color: #f8f9fa;
+        }
+</style>

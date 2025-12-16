@@ -1,214 +1,278 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\TheBallStores\\",
+  "WorkspaceRootPath": "D:\\Project-Demo-sport\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\checkout\\ordersuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\checkout\\ordersuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\checkout\\paymentsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\checkout\\paymentsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\checkout\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\checkout\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\controllers\\doanhthucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\doanhthucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\controllers\\donhangscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\donhangscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\controllers\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\controllers\\sanphamscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\sanphamscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\donhangs\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\donhangs\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\doanhthu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\doanhthu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\helpers\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\helpers\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\helpers\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\helpers\\vnpaylibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\helpers\\vnpaylibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\donhangs\\lichsugiaodich.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\donhangs\\lichsugiaodich.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\donhangs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\donhangs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\sanphams\\nhapkho.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\sanphams\\nhapkho.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\thanhtoan\\online.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\thanhtoan\\online.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\giohang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\giohang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\store\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\store\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\models\\giohangviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\giohangviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\sanphams\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\sanphams\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\shared\\components\\cartbadge\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\shared\\components\\cartbadge\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\viewcomponents\\cartbadgeviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\viewcomponents\\cartbadgeviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\theballstores.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\theballstores.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\store\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\store\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\models\\chitietdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\chitietdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\models\\sanphamchitiet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\sanphamchitiet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\wwwroot\\css\\kicks.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\wwwroot\\css\\kicks.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\taikhoan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\taikhoan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\checkout\\ordersuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\checkout\\ordersuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\models\\loaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\loaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\checkout\\paymentsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\checkout\\paymentsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\checkout\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\checkout\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\models\\kichthuoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\kichthuoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\sanphams\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\sanphams\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\store\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\store\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\controllers\\taikhoancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\taikhoancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\sanphams\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\sanphams\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\sanphams\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\store\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\store\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\controllers\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\viewcomponents\\cartbadgeviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\viewcomponents\\cartbadgeviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\models\\giohangitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\giohangitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\models\\giohangviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\giohangviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\giohang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\giohang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\models\\chitietdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\chitietdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\donhangs\\lichsugiaodich.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\donhangs\\lichsugiaodich.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\donhangs\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\donhangs\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\vouchers\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\vouchers\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\vouchers\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\vouchers\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\vouchers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\vouchers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\vouchers\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\vouchers\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\migrations\\20251216152454_updatevouchertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\migrations\\20251216152454_updatevouchertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\controllers\\voucherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\voucherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\models\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\models\\theballstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\theballstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\controllers\\taikhoancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\taikhoancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\loaisanphams\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\loaisanphams\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\loaisanphams\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\loaisanphams\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\loaisanphams\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\loaisanphams\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\loaisanphams\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\loaisanphams\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\controllers\\loaisanphamscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\loaisanphamscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\sanphams\\nhapkho.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\sanphams\\nhapkho.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\sanphams\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\sanphams\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\sanphams\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\sanphams\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\controllers\\sanphamscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\sanphamscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\sanphams\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\sanphams\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\sanphams\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\sanphams\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\controllers\\donhangscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\donhangscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\theballstores\\theballstores\\models\\theballstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\theballstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\models\\hinhanhsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\hinhanhsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\models\\loaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\loaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\wwwroot\\css\\kicks.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\wwwroot\\css\\kicks.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\controllers\\doanhthucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\doanhthucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\doanhthu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\doanhthu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\donhangs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\donhangs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\thanhtoan\\online.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\thanhtoan\\online.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\shared\\components\\cartbadge\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\shared\\components\\cartbadge\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\theballstores.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\theballstores.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\models\\sanphamchitiet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\sanphamchitiet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\taikhoan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\taikhoan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\models\\kichthuoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\models\\kichthuoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\sanphams\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\sanphams\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|d:\\project-demo-sport\\theballstores\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AFD30234-A8FE-42E3-9E96-0047FF655A23}|TheBallStores\\TheBallStores.csproj|solutionrelative:theballstores\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -218,7 +282,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -226,50 +290,427 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "CheckoutController.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Controllers\\CheckoutController.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\CheckoutController.cs",
               "RelativeDocumentMoniker": "TheBallStores\\Controllers\\CheckoutController.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Controllers\\CheckoutController.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\CheckoutController.cs",
               "RelativeToolTip": "TheBallStores\\Controllers\\CheckoutController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAGEAAABcAAAAAAAAAA==",
+              "ViewState": "AgIAANEAAAAAAAAAAAAUwPkAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T20:35:07.549Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
+              "Title": "OrderSuccess.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Checkout\\OrderSuccess.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\Checkout\\OrderSuccess.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Checkout\\OrderSuccess.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\Checkout\\OrderSuccess.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-05T00:34:28.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T20:08:07.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "VnPayLibrary.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Helpers\\VnPayLibrary.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Helpers\\VnPayLibrary.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Helpers\\VnPayLibrary.cs",
+              "RelativeToolTip": "TheBallStores\\Helpers\\VnPayLibrary.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T17:39:07.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\appsettings.json",
+              "RelativeDocumentMoniker": "TheBallStores\\appsettings.json",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\appsettings.json",
+              "RelativeToolTip": "TheBallStores\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-27T20:01:54.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\SanPhams\\Details.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\SanPhams\\Details.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\SanPhams\\Details.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\SanPhams\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-04T17:20:36.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Controllers\\AccountController.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "TheBallStores\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\AccountController.cs",
               "RelativeToolTip": "TheBallStores\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAowEMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T20:55:49.008Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
+              "Title": "SessionExtensions.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Helpers\\SessionExtensions.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Helpers\\SessionExtensions.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Helpers\\SessionExtensions.cs",
+              "RelativeToolTip": "TheBallStores\\Helpers\\SessionExtensions.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAawBEAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T19:21:56.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Checkout\\Index.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\Checkout\\Index.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Checkout\\Index.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\Checkout\\Index.cshtml",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAEwAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-04T20:38:33.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PaymentSuccess.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Checkout\\PaymentSuccess.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\Checkout\\PaymentSuccess.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Checkout\\PaymentSuccess.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\Checkout\\PaymentSuccess.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-04T20:38:58.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAGAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T20:48:51.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-04T15:48:23.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Home\\Details.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\Home\\Details.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Home\\Details.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\Home\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T20:15:51.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GioHangController.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\GioHangController.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Controllers\\GioHangController.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\GioHangController.cs",
+              "RelativeToolTip": "TheBallStores\\Controllers\\GioHangController.cs",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAuwLIAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T19:36:08.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Store\\Details.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\Store\\Details.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Store\\Details.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\Store\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-04T19:13:52.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Store\\Index.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\Store\\Index.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Store\\Index.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\Store\\Index.cshtml",
+              "ViewState": "AgIAADoAAAAAAAAAAAAmwGoAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T21:15:25.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CartBadgeViewComponent.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\ViewComponents\\CartBadgeViewComponent.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\ViewComponents\\CartBadgeViewComponent.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\ViewComponents\\CartBadgeViewComponent.cs",
+              "RelativeToolTip": "TheBallStores\\ViewComponents\\CartBadgeViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T20:16:06.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GioHangItem.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Models\\GioHangItem.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Models\\GioHangItem.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Models\\GioHangItem.cs",
+              "RelativeToolTip": "TheBallStores\\Models\\GioHangItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T16:11:30.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GioHangViewModel.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Models\\GioHangViewModel.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Models\\GioHangViewModel.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Models\\GioHangViewModel.cs",
+              "RelativeToolTip": "TheBallStores\\Models\\GioHangViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T19:17:06.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\GioHang\\Index.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\GioHang\\Index.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\GioHang\\Index.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\GioHang\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-04T19:37:25.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "LichSuGiaoDich.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\DonHangs\\LichSuGiaoDich.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\DonHangs\\LichSuGiaoDich.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\DonHangs\\LichSuGiaoDich.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\DonHangs\\LichSuGiaoDich.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAwCYAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-05T01:38:46.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\DonHangs\\Details.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\DonHangs\\Details.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\DonHangs\\Details.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\DonHangs\\Details.cshtml",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAwJIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-05T03:13:53.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Vouchers\\Create.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\Vouchers\\Create.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Vouchers\\Create.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\Vouchers\\Create.cshtml",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAUwLIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-16T15:19:10.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ChiTietDonHang.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Models\\ChiTietDonHang.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Models\\ChiTietDonHang.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Models\\ChiTietDonHang.cs",
+              "RelativeToolTip": "TheBallStores\\Models\\ChiTietDonHang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T17:21:21.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAFIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T20:59:18.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Vouchers\\Index.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\Vouchers\\Index.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Vouchers\\Index.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\Vouchers\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAmwLUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-16T15:17:14.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Vouchers\\Edit.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\Vouchers\\Edit.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Vouchers\\Edit.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\Vouchers\\Edit.cshtml",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAUwLAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-16T15:21:07.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Vouchers\\Delete.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\Vouchers\\Delete.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Vouchers\\Delete.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\Vouchers\\Delete.cshtml",
+              "ViewState": "AgIAABEAAAAAAAAAAAAUwE8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-16T15:21:51.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "20251216152454_UpdateVoucherTable.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Migrations\\20251216152454_UpdateVoucherTable.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Migrations\\20251216152454_UpdateVoucherTable.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Migrations\\20251216152454_UpdateVoucherTable.cs",
+              "RelativeToolTip": "TheBallStores\\Migrations\\20251216152454_UpdateVoucherTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T15:24:55.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "VouchersController.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\VouchersController.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Controllers\\VouchersController.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\VouchersController.cs",
+              "RelativeToolTip": "TheBallStores\\Controllers\\VouchersController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAiwDMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T15:10:14.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
               "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\Account\\Login.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "TheBallStores\\Views\\Account\\Login.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Account\\Login.cshtml",
               "RelativeToolTip": "TheBallStores\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-27T20:57:29.955Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 43,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\SanPhams\\Edit.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\SanPhams\\Edit.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\SanPhams\\Edit.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\SanPhams\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-04T17:20:30.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
               "Title": "Register.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\Account\\Register.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "TheBallStores\\Views\\Account\\Register.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\Account\\Register.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Account\\Register.cshtml",
               "RelativeToolTip": "TheBallStores\\Views\\Account\\Register.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -278,153 +719,292 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 40,
+              "Title": "NhapKho.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\SanPhams\\NhapKho.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\SanPhams\\NhapKho.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\SanPhams\\NhapKho.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\SanPhams\\NhapKho.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACEAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-04T14:46:01.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\SanPhams\\Create.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\SanPhams\\Create.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\SanPhams\\Create.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\SanPhams\\Create.cshtml",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAUwHEAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-04T14:42:54.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Voucher.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Models\\Voucher.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Models\\Voucher.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Models\\Voucher.cs",
+              "RelativeToolTip": "TheBallStores\\Models\\Voucher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T14:01:04.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "TaiKhoanController.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\TaiKhoanController.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Controllers\\TaiKhoanController.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\TaiKhoanController.cs",
+              "RelativeToolTip": "TheBallStores\\Controllers\\TaiKhoanController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T15:04:21.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "TheballStoreContext.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Models\\TheballStoreContext.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Models\\TheballStoreContext.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Models\\TheballStoreContext.cs",
+              "RelativeToolTip": "TheBallStores\\Models\\TheballStoreContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T19:50:49.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "LoaiSanPhamsController.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\LoaiSanPhamsController.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Controllers\\LoaiSanPhamsController.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\LoaiSanPhamsController.cs",
+              "RelativeToolTip": "TheBallStores\\Controllers\\LoaiSanPhamsController.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAswLQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T14:23:36.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\Admin\\Index.cshtml",
-              "RelativeDocumentMoniker": "TheBallStores\\Views\\Admin\\Index.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\Admin\\Index.cshtml",
-              "RelativeToolTip": "TheBallStores\\Views\\Admin\\Index.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAAUAAABKAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\LoaiSanPhams\\Index.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\LoaiSanPhams\\Index.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\LoaiSanPhams\\Index.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\LoaiSanPhams\\Index.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwD4AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-27T20:59:18.323Z",
+              "WhenOpened": "2025-12-16T14:41:05.554Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\Checkout\\Index.cshtml",
-              "RelativeDocumentMoniker": "TheBallStores\\Views\\Checkout\\Index.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\Checkout\\Index.cshtml",
-              "RelativeToolTip": "TheBallStores\\Views\\Checkout\\Index.cshtml",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAC8AAACLAAAAAAAAAA==",
+              "DocumentIndex": 35,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\LoaiSanPhams\\Delete.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\LoaiSanPhams\\Delete.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\LoaiSanPhams\\Delete.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\LoaiSanPhams\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-04T20:38:33.403Z",
+              "WhenOpened": "2025-12-16T14:42:38.997Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PaymentSuccess.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\Checkout\\PaymentSuccess.cshtml",
-              "RelativeDocumentMoniker": "TheBallStores\\Views\\Checkout\\PaymentSuccess.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\Checkout\\PaymentSuccess.cshtml",
-              "RelativeToolTip": "TheBallStores\\Views\\Checkout\\PaymentSuccess.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAUAAAA2AAAAAAAAAA==",
+              "DocumentIndex": 38,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\LoaiSanPhams\\Create.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\LoaiSanPhams\\Create.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\LoaiSanPhams\\Create.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\LoaiSanPhams\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-04T20:38:58.463Z",
+              "WhenOpened": "2025-12-16T14:41:45.059Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OrderSuccess.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\Checkout\\OrderSuccess.cshtml",
-              "RelativeDocumentMoniker": "TheBallStores\\Views\\Checkout\\OrderSuccess.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\Checkout\\OrderSuccess.cshtml",
-              "RelativeToolTip": "TheBallStores\\Views\\Checkout\\OrderSuccess.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAeAAAAAAAAAA==",
+              "DocumentIndex": 36,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\LoaiSanPhams\\Edit.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\LoaiSanPhams\\Edit.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\LoaiSanPhams\\Edit.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\LoaiSanPhams\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-05T00:34:28.695Z",
+              "WhenOpened": "2025-12-16T14:42:20.311Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DoanhThuController.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Controllers\\DoanhThuController.cs",
-              "RelativeDocumentMoniker": "TheBallStores\\Controllers\\DoanhThuController.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Controllers\\DoanhThuController.cs",
-              "RelativeToolTip": "TheBallStores\\Controllers\\DoanhThuController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T14:58:18.839Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DonHangsController.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Controllers\\DonHangsController.cs",
-              "RelativeDocumentMoniker": "TheBallStores\\Controllers\\DonHangsController.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Controllers\\DonHangsController.cs",
-              "RelativeToolTip": "TheBallStores\\Controllers\\DonHangsController.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAlwC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T00:52:39.564Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GioHangController.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Controllers\\GioHangController.cs",
-              "RelativeDocumentMoniker": "TheBallStores\\Controllers\\GioHangController.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Controllers\\GioHangController.cs",
-              "RelativeToolTip": "TheBallStores\\Controllers\\GioHangController.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAApwEkAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T19:36:08.937Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "TheBallStores\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "TheBallStores\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T20:07:44.023Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 42,
               "Title": "SanPhamsController.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Controllers\\SanPhamsController.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\SanPhamsController.cs",
               "RelativeDocumentMoniker": "TheBallStores\\Controllers\\SanPhamsController.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Controllers\\SanPhamsController.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\SanPhamsController.cs",
               "RelativeToolTip": "TheBallStores\\Controllers\\SanPhamsController.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAnwDEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGMBAAAAAAAAAAAcwKIBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T14:42:29.389Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "StoreController.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Controllers\\StoreController.cs",
-              "RelativeDocumentMoniker": "TheBallStores\\Controllers\\StoreController.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Controllers\\StoreController.cs",
-              "RelativeToolTip": "TheBallStores\\Controllers\\StoreController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAA2AAAAAAAAAA==",
+              "DocumentIndex": 45,
+              "Title": "DonHang.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Models\\DonHang.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Models\\DonHang.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Models\\DonHang.cs",
+              "RelativeToolTip": "TheBallStores\\Models\\DonHang.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAUwDcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T21:14:27.076Z",
+              "WhenOpened": "2025-12-04T17:21:22.358Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "SessionExtensions.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Helpers\\SessionExtensions.cs",
-              "RelativeDocumentMoniker": "TheBallStores\\Helpers\\SessionExtensions.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Helpers\\SessionExtensions.cs",
-              "RelativeToolTip": "TheBallStores\\Helpers\\SessionExtensions.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAawBEAAAATAAAAAAAAAA==",
+              "DocumentIndex": 47,
+              "Title": "DonHangsController.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\DonHangsController.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Controllers\\DonHangsController.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\DonHangsController.cs",
+              "RelativeToolTip": "TheBallStores\\Controllers\\DonHangsController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAvwEYAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T19:21:56.729Z"
+              "WhenOpened": "2025-12-05T00:52:39.564Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 44,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\SanPhams\\Delete.cshtml",
+              "RelativeDocumentMoniker": "TheBallStores\\Views\\SanPhams\\Delete.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\SanPhams\\Delete.cshtml",
+              "RelativeToolTip": "TheBallStores\\Views\\SanPhams\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-16T14:14:32.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "SanPham.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Models\\SanPham.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Models\\SanPham.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Models\\SanPham.cs",
+              "RelativeToolTip": "TheBallStores\\Models\\SanPham.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAIwDMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T20:09:53.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "HinhAnhSanPham.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Models\\HinhAnhSanPham.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Models\\HinhAnhSanPham.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Models\\HinhAnhSanPham.cs",
+              "RelativeToolTip": "TheBallStores\\Models\\HinhAnhSanPham.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T20:59:02.255Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "LoaiSanPham.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Models\\LoaiSanPham.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Models\\LoaiSanPham.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Models\\LoaiSanPham.cs",
+              "RelativeToolTip": "TheBallStores\\Models\\LoaiSanPham.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T17:21:19.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "kicks.css",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\css\\kicks.css",
+              "RelativeDocumentMoniker": "TheBallStores\\wwwroot\\css\\kicks.css",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\css\\kicks.css",
+              "RelativeToolTip": "TheBallStores\\wwwroot\\css\\kicks.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-27T20:55:06.151Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Program.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Program.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Program.cs",
+              "RelativeToolTip": "TheBallStores\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T20:03:07.229Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "DoanhThuController.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\DoanhThuController.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Controllers\\DoanhThuController.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\DoanhThuController.cs",
+              "RelativeToolTip": "TheBallStores\\Controllers\\DoanhThuController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T14:58:18.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "TheBallStores\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T20:07:44.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "StoreController.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\StoreController.cs",
+              "RelativeDocumentMoniker": "TheBallStores\\Controllers\\StoreController.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\StoreController.cs",
+              "RelativeToolTip": "TheBallStores\\Controllers\\StoreController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T21:14:27.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\DoanhThu\\Index.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\DoanhThu\\Index.cshtml",
               "RelativeDocumentMoniker": "TheBallStores\\Views\\DoanhThu\\Index.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\DoanhThu\\Index.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\DoanhThu\\Index.cshtml",
               "RelativeToolTip": "TheBallStores\\Views\\DoanhThu\\Index.cshtml",
               "ViewState": "AgIAADYAAAAAAAAAAAAAAEwAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -432,47 +1012,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\DonHangs\\Details.cshtml",
-              "RelativeDocumentMoniker": "TheBallStores\\Views\\DonHangs\\Details.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\DonHangs\\Details.cshtml",
-              "RelativeToolTip": "TheBallStores\\Views\\DonHangs\\Details.cshtml",
-              "ViewState": "AgIAADsAAAAAAAAAAAAiwFMAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-05T03:13:53.372Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 56,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "TheBallStores\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "TheBallStores\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-27T20:08:07.354Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "LichSuGiaoDich.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\DonHangs\\LichSuGiaoDich.cshtml",
-              "RelativeDocumentMoniker": "TheBallStores\\Views\\DonHangs\\LichSuGiaoDich.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\DonHangs\\LichSuGiaoDich.cshtml",
-              "RelativeToolTip": "TheBallStores\\Views\\DonHangs\\LichSuGiaoDich.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAD0AAABnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-05T01:38:46.308Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\DonHangs\\Index.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\DonHangs\\Index.cshtml",
               "RelativeDocumentMoniker": "TheBallStores\\Views\\DonHangs\\Index.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\DonHangs\\Index.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\DonHangs\\Index.cshtml",
               "RelativeToolTip": "TheBallStores\\Views\\DonHangs\\Index.cshtml",
               "ViewState": "AgIAAA4AAAAAAAAAAAAgwDAAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -480,59 +1024,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\Home\\Details.cshtml",
-              "RelativeDocumentMoniker": "TheBallStores\\Views\\Home\\Details.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\Home\\Details.cshtml",
-              "RelativeToolTip": "TheBallStores\\Views\\Home\\Details.cshtml",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAiwEcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-27T20:15:51.793Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "NhapKho.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\SanPhams\\NhapKho.cshtml",
-              "RelativeDocumentMoniker": "TheBallStores\\Views\\SanPhams\\NhapKho.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\SanPhams\\NhapKho.cshtml",
-              "RelativeToolTip": "TheBallStores\\Views\\SanPhams\\NhapKho.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAACEAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-04T14:46:01.537Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "TheBallStores\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "TheBallStores\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAHkAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-27T20:48:51.635Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\GioHang\\Index.cshtml",
-              "RelativeDocumentMoniker": "TheBallStores\\Views\\GioHang\\Index.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\GioHang\\Index.cshtml",
-              "RelativeToolTip": "TheBallStores\\Views\\GioHang\\Index.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAFQAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-04T19:37:25.227Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 57,
               "Title": "Online.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\ThanhToan\\Online.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\ThanhToan\\Online.cshtml",
               "RelativeDocumentMoniker": "TheBallStores\\Views\\ThanhToan\\Online.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\ThanhToan\\Online.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\ThanhToan\\Online.cshtml",
               "RelativeToolTip": "TheBallStores\\Views\\ThanhToan\\Online.cshtml",
               "ViewState": "AgIAADMAAAAAAAAAAAAAAEIAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -540,59 +1036,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\SanPhams\\Details.cshtml",
-              "RelativeDocumentMoniker": "TheBallStores\\Views\\SanPhams\\Details.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\SanPhams\\Details.cshtml",
-              "RelativeToolTip": "TheBallStores\\Views\\SanPhams\\Details.cshtml",
-              "ViewState": "AgIAABMAAAAAAAAAAAAEwCgAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-04T17:20:36.421Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\Store\\Details.cshtml",
-              "RelativeDocumentMoniker": "TheBallStores\\Views\\Store\\Details.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\Store\\Details.cshtml",
-              "RelativeToolTip": "TheBallStores\\Views\\Store\\Details.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEoAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-04T19:13:52.62Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "GioHangViewModel.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Models\\GioHangViewModel.cs",
-              "RelativeDocumentMoniker": "TheBallStores\\Models\\GioHangViewModel.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Models\\GioHangViewModel.cs",
-              "RelativeToolTip": "TheBallStores\\Models\\GioHangViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T19:17:06.722Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Program.cs",
-              "RelativeDocumentMoniker": "TheBallStores\\Program.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Program.cs",
-              "RelativeToolTip": "TheBallStores\\Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAUwBkAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T20:03:07.229Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 58,
               "Title": "Default.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\Shared\\Components\\CartBadge\\Default.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Shared\\Components\\CartBadge\\Default.cshtml",
               "RelativeDocumentMoniker": "TheBallStores\\Views\\Shared\\Components\\CartBadge\\Default.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\Shared\\Components\\CartBadge\\Default.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Shared\\Components\\CartBadge\\Default.cshtml",
               "RelativeToolTip": "TheBallStores\\Views\\Shared\\Components\\CartBadge\\Default.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -600,23 +1048,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "CartBadgeViewComponent.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\ViewComponents\\CartBadgeViewComponent.cs",
-              "RelativeDocumentMoniker": "TheBallStores\\ViewComponents\\CartBadgeViewComponent.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\ViewComponents\\CartBadgeViewComponent.cs",
-              "RelativeToolTip": "TheBallStores\\ViewComponents\\CartBadgeViewComponent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T20:16:06.863Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 59,
               "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "TheBallStores\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeToolTip": "TheBallStores\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -624,23 +1060,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\Store\\Index.cshtml",
-              "RelativeDocumentMoniker": "TheBallStores\\Views\\Store\\Index.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\Store\\Index.cshtml",
-              "RelativeToolTip": "TheBallStores\\Views\\Store\\Index.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAEgAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-27T21:15:25.644Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 60,
               "Title": "TheBallStores.csproj",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\TheBallStores.csproj",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\TheBallStores.csproj",
               "RelativeDocumentMoniker": "TheBallStores\\TheBallStores.csproj",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\TheBallStores.csproj",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\TheBallStores.csproj",
               "RelativeToolTip": "TheBallStores\\TheBallStores.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -648,11 +1072,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 61,
               "Title": "SanPhamChiTiet.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Models\\SanPhamChiTiet.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Models\\SanPhamChiTiet.cs",
               "RelativeDocumentMoniker": "TheBallStores\\Models\\SanPhamChiTiet.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Models\\SanPhamChiTiet.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Models\\SanPhamChiTiet.cs",
               "RelativeToolTip": "TheBallStores\\Models\\SanPhamChiTiet.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -660,71 +1084,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "kicks.css",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\wwwroot\\css\\kicks.css",
-              "RelativeDocumentMoniker": "TheBallStores\\wwwroot\\css\\kicks.css",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\wwwroot\\css\\kicks.css",
-              "RelativeToolTip": "TheBallStores\\wwwroot\\css\\kicks.css",
-              "ViewState": "AgIAABoBAAAAAAAAAAAAAMQAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-27T20:55:06.151Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\appsettings.json",
-              "RelativeDocumentMoniker": "TheBallStores\\appsettings.json",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\appsettings.json",
-              "RelativeToolTip": "TheBallStores\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-27T20:01:54.446Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "LoaiSanPham.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Models\\LoaiSanPham.cs",
-              "RelativeDocumentMoniker": "TheBallStores\\Models\\LoaiSanPham.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Models\\LoaiSanPham.cs",
-              "RelativeToolTip": "TheBallStores\\Models\\LoaiSanPham.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T17:21:19.86Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "ChiTietDonHang.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Models\\ChiTietDonHang.cs",
-              "RelativeDocumentMoniker": "TheBallStores\\Models\\ChiTietDonHang.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Models\\ChiTietDonHang.cs",
-              "RelativeToolTip": "TheBallStores\\Models\\ChiTietDonHang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T17:21:21.32Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "DonHang.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Models\\DonHang.cs",
-              "RelativeDocumentMoniker": "TheBallStores\\Models\\DonHang.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Models\\DonHang.cs",
-              "RelativeToolTip": "TheBallStores\\Models\\DonHang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T17:21:22.358Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 62,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\TaiKhoan\\Index.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\TaiKhoan\\Index.cshtml",
               "RelativeDocumentMoniker": "TheBallStores\\Views\\TaiKhoan\\Index.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\TaiKhoan\\Index.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\TaiKhoan\\Index.cshtml",
               "RelativeToolTip": "TheBallStores\\Views\\TaiKhoan\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -732,11 +1096,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 63,
               "Title": "KhachHang.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Models\\KhachHang.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Models\\KhachHang.cs",
               "RelativeDocumentMoniker": "TheBallStores\\Models\\KhachHang.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Models\\KhachHang.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Models\\KhachHang.cs",
               "RelativeToolTip": "TheBallStores\\Models\\KhachHang.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -744,11 +1108,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 64,
               "Title": "KichThuoc.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Models\\KichThuoc.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Models\\KichThuoc.cs",
               "RelativeDocumentMoniker": "TheBallStores\\Models\\KichThuoc.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Models\\KichThuoc.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Models\\KichThuoc.cs",
               "RelativeToolTip": "TheBallStores\\Models\\KichThuoc.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -756,35 +1120,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\SanPhams\\Edit.cshtml",
-              "RelativeDocumentMoniker": "TheBallStores\\Views\\SanPhams\\Edit.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\SanPhams\\Edit.cshtml",
-              "RelativeToolTip": "TheBallStores\\Views\\SanPhams\\Edit.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-04T17:20:30.285Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "TaiKhoanController.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Controllers\\TaiKhoanController.cs",
-              "RelativeDocumentMoniker": "TheBallStores\\Controllers\\TaiKhoanController.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Controllers\\TaiKhoanController.cs",
-              "RelativeToolTip": "TheBallStores\\Controllers\\TaiKhoanController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T15:04:21.209Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 65,
               "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Controllers\\AdminController.cs",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "TheBallStores\\Controllers\\AdminController.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Controllers\\AdminController.cs",
               "RelativeToolTip": "TheBallStores\\Controllers\\AdminController.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAQwCEAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -792,23 +1132,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\Home\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "TheBallStores\\Views\\Home\\Privacy.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\Home\\Privacy.cshtml",
-              "RelativeToolTip": "TheBallStores\\Views\\Home\\Privacy.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-04T15:48:23.79Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 66,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\SanPhams\\Index.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\SanPhams\\Index.cshtml",
               "RelativeDocumentMoniker": "TheBallStores\\Views\\SanPhams\\Index.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\SanPhams\\Index.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\SanPhams\\Index.cshtml",
               "RelativeToolTip": "TheBallStores\\Views\\SanPhams\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -816,51 +1144,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\SanPhams\\Create.cshtml",
-              "RelativeDocumentMoniker": "TheBallStores\\Views\\SanPhams\\Create.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\SanPhams\\Create.cshtml",
-              "RelativeToolTip": "TheBallStores\\Views\\SanPhams\\Create.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAIBJwBYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-04T14:42:54.253Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 67,
               "Title": "Error.cshtml",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Views\\Shared\\Error.cshtml",
+              "DocumentMoniker": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "TheBallStores\\Views\\Shared\\Error.cshtml",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "D:\\Project-Demo-sport\\TheBallStores\\Views\\Shared\\Error.cshtml",
               "RelativeToolTip": "TheBallStores\\Views\\Shared\\Error.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-27T20:51:58.643Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "SanPham.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Models\\SanPham.cs",
-              "RelativeDocumentMoniker": "TheBallStores\\Models\\SanPham.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Models\\SanPham.cs",
-              "RelativeToolTip": "TheBallStores\\Models\\SanPham.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA2wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T20:09:53.296Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "TheballStoreContext.cs",
-              "DocumentMoniker": "D:\\TheBallStores\\TheBallStores\\Models\\TheballStoreContext.cs",
-              "RelativeDocumentMoniker": "TheBallStores\\Models\\TheballStoreContext.cs",
-              "ToolTip": "D:\\TheBallStores\\TheBallStores\\Models\\TheballStoreContext.cs",
-              "RelativeToolTip": "TheBallStores\\Models\\TheballStoreContext.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T19:50:49.911Z"
             }
           ]
         }

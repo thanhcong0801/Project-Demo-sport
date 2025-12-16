@@ -1,93 +1,146 @@
 ﻿@model TheBallStores.Models.KhachHang
 @{
     ViewData["Title"] = "Xác nhận Đơn hàng";
+
+    // Lấy dữ liệu từ Controller
     var cart = ViewBag.Cart as List<TheBallStores.Models.GioHangItem>;
-    var tongTien = ViewBag.TongTien as decimal? ?? 0;
+
+    // Các biến tính toán Voucher
+    decimal tongTienHang = ViewBag.TongTienHang ?? (ViewBag.TongTien ?? 0); // Tổng tiền hàng gốc
+    decimal giamGia = ViewBag.GiamGia ?? 0;                                 // Tiền giảm
+    decimal tongThanhToan = ViewBag.TongThanhToan ?? tongTienHang;          // Số tiền khách phải trả
+    string maVoucher = ViewBag.MaVoucher as string;
 }
 
-<h1 class="text-info mb-4">XÁC NHẬN ĐƠN HÀNG VÀ THANH TOÁN</h1>
+<!-- ĐÃ SỬA: Đổi text-info thành text-white cho dễ nhìn -->
+<h1 class="text-white mb-4 text-uppercase text-center">Xác nhận Đơn hàng & Thanh toán</h1>
 <hr class="border-secondary" />
 
 <div class="row g-4">
-    <!-- CỘT 1: THÔNG TIN GIAO HÀNG & HÌNH THỨC TT -->
-    <div class="col-md-6">
-        <div class="card-vortex p-4">
-            <h4 class="text-warning mb-3">THÔNG TIN GIAO HÀNG</h4>
-            <p class="text-muted">Vui lòng xác nhận thông tin dưới đây là chính xác.</p>
+    <!-- CỘT 1: FORM ĐIỀN THÔNG TIN -->
+    <div class="col-lg-7">
+        <div class="card-vortex p-4 h-100">
+            <h4 class="text-warning mb-3"><i class="bi bi-person-lines-fill me-2"></i>THÔNG TIN GIAO HÀNG</h4>
+            <p class="text-muted small mb-4">Vui lòng kiểm tra kỹ thông tin trước khi đặt hàng.</p>
 
-            <form asp-action="Confirm" method="post">
-                <!-- Mã Khách hàng là BẮT BUỘC -->
-                <input type="hidden" name="MaKh" value="@Model.MaKh" />
+            <form asp-action="Confirm" method="post" id="checkoutForm">
+                <!-- Mã Khách hàng (Hidden) -->
+                <input type="hidden" asp-for="MaKh" />
 
-                <!-- 1. Họ tên người nhận -->
                 <div class="mb-3">
                     <label class="form-label text-white">Họ tên người nhận</label>
-                    <input name="HoTen" class="form-control form-control-vortex" value="@(Model.HoTen ?? "")" required />
+                    <input asp-for="HoTen" class="form-control form-control-vortex" required placeholder="Nhập họ tên..." />
                 </div>
-                <!-- 2. Email (CHỈ ĐỌC) -->
-                <div class="mb-3">
-                    <label class="form-label text-white">Email</label>
-                    <input name="Email" class="form-control form-control-vortex" value="@(Model.Email ?? "")" readonly />
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label text-white">Số điện thoại</label>
+                        <input asp-for="DienThoai" class="form-control form-control-vortex" required placeholder="Nhập SĐT..." />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label text-white">Email xác nhận</label>
+                        <!-- ĐÃ SỬA: Thêm style đè để nền không bị trắng khi readonly -->
+                        <input asp-for="Email" class="form-control form-control-vortex" readonly style="background-color: #2b3035; color: #aaa; border-color: #444;" />
+                    </div>
                 </div>
-                <!-- 3. Số điện thoại -->
-                <div class="mb-3">
-                    <label class="form-label text-white">Số điện thoại</label>
-                    <input name="DienThoai" class="form-control form-control-vortex" value="@(Model.DienThoai ?? "")" required />
-                </div>
-                <!-- 4. Địa chỉ giao hàng (ĐÃ SỬA TÊN INPUT) -->
+
                 <div class="mb-4">
                     <label class="form-label text-white">Địa chỉ giao hàng</label>
-                    <textarea name="DiaChiGiaoHang" class="form-control form-control-vortex" required>@(Model.DiaChi ?? "")</textarea>
+                    <textarea asp-for="DiaChi" class="form-control form-control-vortex" rows="3" required placeholder="Số nhà, đường, phường/xã..."></textarea>
                 </div>
 
                 <!-- HÌNH THỨC THANH TOÁN -->
-                <h4 class="text-info mb-3 mt-4">HÌNH THỨC THANH TOÁN</h4>
-                <div class="card-vortex p-3 mb-4">
-                    <!-- COD (Thanh toán khi nhận hàng) -->
-                    <div class="form-check mb-2">
-                        <input class="form-check-input" type="radio" name="HinhThucThanhToan" id="paymentCod" value="COD" checked required>
-                        <label class="form-check-label text-white" for="paymentCod">
-                            Thanh toán khi nhận hàng (COD)
+                <h4 class="text-white mb-3 mt-4 pt-3 border-top border-secondary"><i class="bi bi-wallet2 me-2"></i>PHƯƠNG THỨC THANH TOÁN</h4>
+                <div class="card-vortex p-3 mb-4 border border-secondary bg-dark bg-opacity-50">
+
+                    <!-- 1. COD -->
+                    <div class="form-check mb-3 p-3 rounded border border-secondary" style="cursor: pointer;">
+                        <input class="form-check-input mt-2" type="radio" name="HinhThucThanhToan" id="paymentCod" value="COD" checked>
+                        <label class="form-check-label text-white w-100 cursor-pointer ps-2" for="paymentCod">
+                            <span class="d-block fw-bold text-success"><i class="bi bi-cash-stack me-2"></i> Thanh toán khi nhận hàng (COD)</span>
+                            <small class="text-muted">Thanh toán tiền mặt cho shipper khi nhận được hàng.</small>
                         </label>
                     </div>
-                    <!-- ONLINE (Chuyển khoản) -->
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="HinhThucThanhToan" id="paymentOnline" value="ONLINE" required>
-                        <label class="form-check-label text-white" for="paymentOnline">
-                            Chuyển khoản Ngân hàng (Online)
+
+                    <!-- 2. VNPAY -->
+                    <div class="form-check p-3 rounded border border-secondary" style="cursor: pointer;">
+                        <input class="form-check-input mt-2" type="radio" name="HinhThucThanhToan" id="paymentVnPay" value="ONLINE">
+                        <label class="form-check-label text-white w-100 cursor-pointer ps-2" for="paymentVnPay">
+                            <span class="d-block fw-bold text-primary"><i class="bi bi-credit-card-2-front me-2"></i> Cổng thanh toán VNPay</span>
+                            <small class="text-muted">Quét mã QR hoặc dùng thẻ ATM/Visa (An toàn, Nhanh chóng).</small>
                         </label>
                     </div>
+
                 </div>
 
-                <button type="submit" class="btn btn-neon w-100 py-2">
-                    <i class="bi bi-box-seam me-2"></i> XÁC NHẬN & ĐẶT HÀNG
+                <button type="submit" class="btn btn-neon w-100 py-3 fw-bold text-white fs-5 shadow-neon">
+                    <i class="bi bi-check2-circle me-2"></i> Xác nhận đặt hàng
                 </button>
             </form>
         </div>
     </div>
 
-    <!-- CỘT 2: CHI TIẾT ĐƠN HÀNG & TỔNG KẾT (Giữ nguyên) -->
-    <div class="col-md-6">
-        <div class="card-vortex p-4">
-            <h4 class="text-info mb-3">CHI TIẾT ĐƠN HÀNG</h4>
-            @if (cart != null)
+    <!-- CỘT 2: TÓM TẮT ĐƠN HÀNG -->
+    <div class="col-lg-5">
+        <div class="card-vortex p-4 h-100 sticky-top" style="top: 20px; z-index: 1;">
+            <h4 class="text-info mb-3"><i class="bi bi-bag-check-fill me-2"></i>CHI TIẾT ĐƠN HÀNG</h4>
+
+            @if (cart != null && cart.Any())
             {
-                @foreach (var item in cart)
-                {
-                    <div class="d-flex justify-content-between mb-2 pb-2 border-bottom border-secondary">
-                        <span class="text-muted">@item.TenSp (@item.TenSize) x @item.SoLuong</span>
-                        <span class="text-white">@item.ThanhTien.ToString("#,##0") đ</span>
-                    </div>
-                }
+                <div class="mb-3 pe-2" style="max-height: 400px; overflow-y: auto;">
+                    @foreach (var item in cart)
+                    {
+                        <div class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom border-secondary">
+                            <div class="d-flex align-items-center">
+                                <div class="position-relative me-3">
+                                    <img src="@(string.IsNullOrEmpty(item.AnhDaiDien) ? "/images/no-image.png" : "/images/products/" + item.AnhDaiDien)"
+                                         style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;" class="border border-secondary">
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-dark">
+                                        @item.SoLuong
+                                    </span>
+                                </div>
+                                <div>
+                                    <div class="text-white fw-bold small text-truncate" style="max-width: 200px;">@item.TenSp</div>
+                                    <small class="text-muted">Size: @item.TenSize</small>
+                                </div>
+                            </div>
+                            <span class="text-white fw-bold">@item.ThanhTien.ToString("#,##0") đ</span>
+                        </div>
+                    }
+                </div>
             }
 
-            <h4 class="text-white mt-4 pt-3 border-top border-secondary">
-                TỔNG TIỀN: <span class="text-success fw-bold float-end">@tongTien.ToString("#,##0") đ</span>
-            </h4>
+            <!-- PHẦN TÍNH TIỀN -->
+            <div class="mt-auto pt-3 border-top border-secondary">
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Tạm tính:</span>
+                    <span class="text-white">@tongTienHang.ToString("#,##0") đ</span>
+                </div>
 
-            <p class="text-warning mt-3">
-                Xin cảm ơn sự tin tưởng của bạn!
-            </p>
+                <!-- Hiển thị Voucher nếu có -->
+                @if (giamGia > 0)
+                {
+                    <div class="d-flex justify-content-between mb-2 text-success">
+                        <span><i class="bi bi-ticket-perforated-fill me-1"></i> Voucher (@maVoucher):</span>
+                        <span>- @giamGia.ToString("#,##0") đ</span>
+                    </div>
+                    <hr class="border-secondary my-3" />
+                }
+                else
+                {
+                    <hr class="border-secondary my-3" />
+                }
+
+                <!-- Tổng cộng -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-white fs-5 fw-bold text-uppercase">Tổng thanh toán:</span>
+                    <span class="text-neon fs-3 fw-bold">@tongThanhToan.ToString("#,##0") đ</span>
+                </div>
+
+                <div class="alert alert-info bg-transparent border-info text-info small mb-0">
+                    <i class="bi bi-shield-lock me-1"></i> Thông tin thanh toán của bạn được bảo mật tuyệt đối.
+                </div>
+            </div>
         </div>
     </div>
 </div>

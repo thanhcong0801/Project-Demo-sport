@@ -1,0 +1,179 @@
+﻿@model TheBallStores.Models.Voucher
+
+@{
+    ViewData["Title"] = "Tạo Voucher Mới";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container py-5 bg-light">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <!-- Header -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="fw-bold text-dark mb-1">Tạo Mã Giảm Giá Mới</h2>
+                    <p class="text-muted mb-0">Thiết lập thông tin cho chương trình khuyến mãi.</p>
+                </div>
+                <a asp-action="Index" class="btn btn-outline-secondary rounded-pill px-4 shadow-sm">
+                    <i class="fa fa-arrow-left me-2"></i> Quay lại
+                </a>
+            </div>
+
+            <form asp-action="Create" class="needs-validation" novalidate>
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger shadow-sm mb-4 border-0" role="alert"></div>
+
+                <div class="row">
+                    <!-- Cột Trái: Thông tin chung -->
+                    <div class="col-md-7">
+                        <div class="card shadow-sm border-0 mb-4 h-100 rounded-3">
+                            <div class="card-header bg-white py-3 border-bottom border-light">
+                                <h5 class="card-title fw-bold mb-0 text-primary"><i class="fa fa-info-circle me-2"></i>Thông Tin Chung</h5>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="mb-4">
+                                    <label asp-for="MaVoucher" class="form-label fw-bold small text-uppercase text-secondary"></label>
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-text bg-light border-end-0 text-muted"><i class="fa fa-barcode"></i></span>
+                                        <input asp-for="MaVoucher" class="form-control bg-light border-start-0 ps-0 fw-bold text-uppercase" placeholder="VD: SUMMER2025" style="letter-spacing: 1px;" />
+                                    </div>
+                                    <span asp-validation-for="MaVoucher" class="text-danger small mt-1 d-block"></span>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label asp-for="TenChuongTrinh" class="form-label fw-bold small text-uppercase text-secondary"></label>
+                                    <input asp-for="TenChuongTrinh" class="form-control form-control-lg" placeholder="VD: Khuyến mãi chào hè..." />
+                                    <span asp-validation-for="TenChuongTrinh" class="text-danger small mt-1 d-block"></span>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <label asp-for="NgayBatDau" class="form-label fw-bold small text-uppercase text-secondary"></label>
+                                        <input asp-for="NgayBatDau" class="form-control" type="datetime-local" />
+                                        <span asp-validation-for="NgayBatDau" class="text-danger small"></span>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label asp-for="NgayKetThuc" class="form-label fw-bold small text-uppercase text-secondary"></label>
+                                        <input asp-for="NgayKetThuc" class="form-control" type="datetime-local" />
+                                        <span asp-validation-for="NgayKetThuc" class="text-danger small"></span>
+                                    </div>
+                                </div>
+
+                                <div class="p-3 bg-light rounded-3 d-flex align-items-center">
+                                    <div class="form-check form-switch ps-0 d-flex align-items-center w-100">
+                                        <input class="form-check-input ms-0 fs-4 me-3" type="checkbox" id="KichHoatSwitch" asp-for="KichHoat" style="cursor: pointer;" checked />
+                                        <label class="form-check-label fw-bold cursor-pointer user-select-none" for="KichHoatSwitch">
+                                            Kích hoạt voucher ngay sau khi tạo
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cột Phải: Thiết lập giảm giá -->
+                    <div class="col-md-5">
+                        <div class="card shadow-sm border-0 mb-4 h-100 rounded-3">
+                            <div class="card-header bg-white py-3 border-bottom border-light">
+                                <h5 class="card-title fw-bold mb-0 text-success"><i class="fa fa-percent me-2"></i>Thiết Lập Giá Trị</h5>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="mb-4">
+                                    <label asp-for="LoaiGiamGia" class="form-label fw-bold small text-uppercase text-secondary"></label>
+                                    <select asp-for="LoaiGiamGia" class="form-select form-select-lg" id="LoaiGiamGiaSelect">
+                                        <option value="2">Giảm tiền mặt (VNĐ)</option>
+                                        <option value="1">Giảm theo phần trăm (%)</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label asp-for="GiaTriGiam" class="form-label fw-bold small text-uppercase text-secondary">Mức giảm</label>
+                                    <div class="input-group input-group-lg">
+                                        <input asp-for="GiaTriGiam" class="form-control fw-bold text-success fs-4" type="number" min="0" />
+                                        <span class="input-group-text fw-bold text-muted bg-white border-start-0" id="unit-label">VNĐ</span>
+                                    </div>
+                                    <span asp-validation-for="GiaTriGiam" class="text-danger small"></span>
+                                </div>
+
+                                <div class="mb-4 bg-light p-3 rounded" id="GiamToiDaGroup" style="display: none;">
+                                    <label asp-for="GiamToiDa" class="form-label fw-bold small text-uppercase text-secondary"></label>
+                                    <div class="input-group">
+                                        <input asp-for="GiamToiDa" class="form-control" type="number" min="0" placeholder="Không giới hạn" />
+                                        <span class="input-group-text">VNĐ</span>
+                                    </div>
+                                    <div class="form-text small mt-1">Mức giảm tối đa (chỉ áp dụng cho %)</div>
+                                    <span asp-validation-for="GiamToiDa" class="text-danger small"></span>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label asp-for="DonToiThieu" class="form-label fw-bold small text-uppercase text-secondary"></label>
+                                    <div class="input-group">
+                                        <input asp-for="DonToiThieu" class="form-control" type="number" min="0" value="0" />
+                                        <span class="input-group-text">VNĐ</span>
+                                    </div>
+                                    <div class="form-text small">Đơn hàng phải đạt mức này mới được dùng mã.</div>
+                                    <span asp-validation-for="DonToiThieu" class="text-danger small"></span>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label asp-for="SoLuongConLai" class="form-label fw-bold small text-uppercase text-secondary">Số lượng phát hành</label>
+                                    <input asp-for="SoLuongConLai" class="form-control" type="number" value="100" min="1" />
+                                    <span asp-validation-for="SoLuongConLai" class="text-danger small"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="d-flex justify-content-end mt-4 pb-5">
+                    <button type="submit" class="btn btn-primary btn-lg px-5 rounded-pill shadow fw-bold text-uppercase hover-scale">
+                        <i class="fa fa-save me-2"></i> Lưu Voucher
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        // Script tự động thay đổi giao diện theo loại giảm giá
+        document.addEventListener('DOMContentLoaded', function() {
+            const selectType = document.getElementById('LoaiGiamGiaSelect');
+            const unitLabel = document.getElementById('unit-label');
+            const maxDiscountGroup = document.getElementById('GiamToiDaGroup');
+
+            function updateUI() {
+                if (selectType.value === '1') { // Phần trăm
+                    unitLabel.textContent = '%';
+                    // Hiệu ứng hiện dần
+                    maxDiscountGroup.style.display = 'block';
+                } else { // Tiền mặt
+                    unitLabel.textContent = 'VNĐ';
+                    maxDiscountGroup.style.display = 'none';
+                    // Reset giá trị nếu cần
+                    document.getElementById('GiamToiDa').value = '';
+                }
+            }
+
+            selectType.addEventListener('change', updateUI);
+
+            // Chạy ngay khi tải trang để set trạng thái ban đầu
+            updateUI();
+        });
+    </script>
+
+    <style>
+        .hover-scale {
+            transition: transform 0.2s;
+        }
+
+            .hover-scale:hover {
+                transform: scale(1.02);
+            }
+    </style>
+}

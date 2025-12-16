@@ -1,0 +1,43 @@
+﻿@model TheBallStores.Models.LoaiSanPham
+
+@{
+    ViewData["Title"] = "Sửa Danh Mục";
+}
+
+<h1 class="text-info mb-4 text-center">SỬA DANH MỤC: @Model.TenLoai</h1>
+<hr class="border-secondary mb-5" />
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card-vortex p-4 shadow-lg">
+            <h4 class="text-warning mb-3">Thông Tin Chỉnh Sửa</h4>
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="MaLoai" />
+
+                <div class="form-group mb-3">
+                    <label asp-for="TenLoai" class="control-label text-white fw-bold"></label>
+                    <input asp-for="TenLoai" class="form-control form-control-vortex" placeholder="Tên Loại Sản Phẩm" />
+                    <span asp-validation-for="TenLoai" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="NhomLoai" class="control-label text-white fw-bold"></label>
+                    <input asp-for="NhomLoai" class="form-control form-control-vortex" placeholder="Nhóm Loại" />
+                    <span asp-validation-for="NhomLoai" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-4 d-flex gap-2">
+                    <input type="submit" value="LƯU THAY ĐỔI" class="btn btn-warning" />
+                    <a asp-action="Index" class="btn btn-secondary">Quay Lại Danh Sách</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

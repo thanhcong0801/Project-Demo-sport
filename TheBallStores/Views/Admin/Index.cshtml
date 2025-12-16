@@ -1,5 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Quản Lý";
+    // Đảm bảo ViewBag có giá trị null-safe
+    int totalProducts = ViewBag.TotalProducts ?? 0;
+    int totalCustomers = ViewBag.TotalCustomers ?? 0;
+    int newOrders = ViewBag.NewOrders ?? 0;
 }
 
 <div class="text-center mb-5">
@@ -7,14 +11,51 @@
     <p class="text-muted">Quản lý toàn bộ hệ thống Kicks Vortex</p>
 </div>
 
+<!-- THẺ HIỂN THỊ SỐ LIỆU THỐNG KÊ (MỚI) -->
+<div class="row g-4 mb-5">
+    <!-- Thẻ 1: Tổng Sản Phẩm -->
+    <div class="col-md-4">
+        <div class="card-vortex p-4 text-center h-100 border-info">
+            <h3 class="text-info fw-bold">@totalProducts</h3>
+            <p class="text-muted mb-0">TỔNG SỐ SẢN PHẨM</p>
+        </div>
+    </div>
+    <!-- Thẻ 2: Tổng Khách Hàng -->
+    <div class="col-md-4">
+        <div class="card-vortex p-4 text-center h-100 border-success">
+            <h3 class="text-success fw-bold">@totalCustomers</h3>
+            <p class="text-muted mb-0">TỔNG KHÁCH HÀNG</p>
+        </div>
+    </div>
+    <!-- Thẻ 3: Đơn Hàng Mới -->
+    <div class="col-md-4">
+        <div class="card-vortex p-4 text-center h-100 border-warning">
+            <h3 class="text-warning fw-bold">@newOrders</h3>
+            <p class="text-muted mb-0">ĐƠN HÀNG CẦN XỬ LÝ</p>
+        </div>
+    </div>
+</div>
+<!-- KẾT THÚC THẺ HIỂN THỊ SỐ LIỆU THỐNG KÊ -->
+
+
 <div class="row g-4">
-    <!--  Quản lý Sản phẩm-->
+    <!-- Quản lý Sản phẩm-->
     <div class="col-md-4">
         <div class="card-vortex p-4 h-100 text-center">
             <i class="bi bi-box-seam fs-1 mb-3" style="color: var(--accent-purple);"></i>
             <h3>Quản Lý Sản Phẩm</h3>
             <p class="text-muted">Quản lý nhập/xuất giày, chỉnh sửa thông tin sản phẩm.</p>
             <a asp-controller="SanPhams" asp-action="Index" class="btn btn-vortex w-100">TRUY CẬP</a>
+        </div>
+    </div>
+
+    <!-- THẺ MỚI: Quản Lý Danh Mục -->
+    <div class="col-md-4">
+        <div class="card-vortex p-4 h-100 text-center">
+            <i class="bi bi-tags fs-1 mb-3 text-danger"></i>
+            <h3>Quản Lý Danh Mục</h3>
+            <p class="text-muted">Thêm, sửa, xóa các loại sản phẩm (giày, bóng, phụ kiện...).</p>
+            <a asp-controller="LoaiSanPhams" asp-action="Index" class="btn btn-vortex w-100">TRUY CẬP</a>
         </div>
     </div>
 
@@ -36,7 +77,16 @@
             <h3>Quản Lý Tài Khoản </h3>
             <p class="text-muted">Quản lý danh sách khách hàng và quản trị viên.</p>
             <!-- LIÊN KẾT ĐẾN TAI KHOAN CONTROLLER -->
-            <a asp-controller="TaiKhoan" asp-action="Index" class="btn btn-vortex w-100">QUẢN LÝ</a>
+            <a asp-controller="TaiKhoan" asp-action="Index" class="btn btn-vortex w-100">TRUY CẬP</a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card-vortex p-4 h-100 text-center">
+            <i class="bi bi-people fs-1 mb-3 text-info"></i>
+            <h3>Quản Lý Khuyến Mãi </h3>
+            <p class="text-muted">Quản lý Khuyến Mãi.</p>
+            <!-- LIÊN KẾT ĐẾN Vochers CONTROLLER -->
+            <a asp-controller="Vouchers" asp-action="Index" class="btn btn-vortex w-100">TRUY CẬP</a>
         </div>
     </div>
 </div>

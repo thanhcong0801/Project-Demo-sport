@@ -1,71 +1,123 @@
-﻿@{
+﻿@using System
+@using Microsoft.AspNetCore.Http
+@{
     ViewData["Title"] = "Thanh toán";
-    var tongTien = ViewBag.TongTien as decimal? ?? 0;
-    var maDonHang = ViewBag.MaDonHang as int? ?? 0; // Đã thêm biến MaDonHang
+    Layout = "~/Views/Shared/_Layout.cshtml";
 
-    // ===============================================
-    // THÔNG TIN TÀI KHOẢN CỦA BẠN (Đã xác nhận)
-    // ===============================================
-    var stk = "1032162391";
-    var bankName = "Ngân hàng Vietcombank"; // SỬ DỤNG VCB
-    var accountName = "NGUYỄN THÀNH CÔNG";
+    // 1. Lấy mã đơn hàng (mặc định 0 nếu null)
+    var maDonHang = ViewBag.MaDonHang ?? 0;
 
-    // TẠO NỘI DUNG MÃ QR DỰA TRÊN API CHUYỂN KHOẢN VIỆT NAM (Giả định MoMo/VietQR)
-    // Nội dung chuyển khoản cần có: STK, Tên, Ngân hàng, Số tiền
-    var qrContent = $"STK:{stk}|BANK:{bankName}|AMOUNT:{tongTien.ToString("F0")}|NAME:{accountName}|ORDER:KV{maDonHang}";
+    // 2. Lấy tổng tiền an toàn (tránh lỗi null hoặc sai format)
+    decimal tongTienDec = 0;
+    if (ViewBag.TongTien != null)
+    {
+        decimal.TryParse(ViewBag.TongTien.ToString(), out tongTienDec);
+    }
+    long amountInt = (long)tongTienDec; // Chuyển sang số nguyên cho VietQR
 
-    // SỬA LỖI: Dùng QR API để tạo mã QR động
-    var qrCodeUrl = $"https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={Uri.EscapeDataString(qrContent)}";
+    // 3. Lấy chế độ hiển thị từ URL (QR hoặc VNPay)
+    string mode = Context.Request.Query["mode"].ToString();
+
+    // 4. Cấu hình VietQR
+    var bankId = "VCB";
+    var accountNo = "1032162391";
+    var accountName = "NGUYEN THANH CONG";
+    var description = $"KV{maDonHang}";
+
+    // Link QR Code (Mã hóa URL để tránh lỗi ký tự đặc biệt)
+    var qrCodeUrl = $"https://img.vietqr.io/image/{bankId}-{accountNo}-compact2.png?amount={amountInt}&addInfo={description}&accountName={Uri.EscapeDataString(accountName)}";
 }
 
+<div class="container py-5 text-center">
 
-<div class="text-center py-5">
-    <h1 class="display-4 fw-bold text-success mb-3">ĐẶT HÀNG THÀNH CÔNG!</h1>
-    <p class="lead text-white">Đơn hàng của bạn **#KV@maDonHang** đã được ghi nhận. Vui lòng thanh toán để đơn hàng được xử lý.</p>
-    <hr class="border-secondary mx-auto" style="max-width: 500px;">
-
-    <div class="card-vortex p-5 mx-auto" style="max-width: 700px;">
-        <h3 class="text-warning mb-4">TỔNG SỐ TIỀN CẦN CHUYỂN</h3>
-
-        <span class="display-3 fw-bold text-success mb-5 d-block">
-            @tongTien.ToString("#,##0") VNĐ
-        </span>
-
-        <div class="row">
-            <!-- Cột QR CODE -->
-            <div class="col-md-6 border-end border-secondary">
-                <h5 class="text-info mb-3">QUÉT MÃ QR ĐỂ CHUYỂN KHOẢN</h5>
-
-                <!-- SỬ DỤNG QR CODE ĐƯỢC TẠO TỪ API -->
-                <img src="@qrCodeUrl"
-                     alt="QR Code Thanh Toán"
-                     class="img-fluid rounded border border-info"
-                     style="max-width: 200px;" />
-
-                <p class="text-muted mt-2">
-                    Nội dung chuyển khoản: **KV@maDonHang**
-                </p>
+    @if (!string.IsNullOrEmpty(mode) && mode == "QR")
+    {
+        <!-- === TRƯỜNG HỢP 1: HIỂN THỊ MÃ QR (Chuyển khoản thủ công) === -->
+        <div class="card-vortex p-5 mx-auto border border-warning" style="max-width: 700px;">
+            <div class="mb-4">
+                <i class="bi bi-qr-code-scan text-warning" style="font-size: 4rem;"></i>
             </div>
 
-            <!-- Cột Thông tin tài khoản -->
-            <div class="col-md-6 text-start ps-5">
-                <h5 class="text-info mb-3">CHI TIẾT TÀI KHOẢN</h5>
+            <h3 class="text-white mb-2">QUÉT MÃ ĐỂ THANH TOÁN</h3>
+            <p class="text-muted mb-4">Vui lòng chuyển khoản đúng số tiền bên dưới</p>
 
-                <p class="mb-1 fw-bold text-white">Ngân hàng:</p>
-                <span class="text-muted">@bankName</span>
+            <span class="display-4 fw-bold text-success mb-4 d-block">
+                @tongTienDec.ToString("#,##0") đ
+            </span>
 
-                <p class="mb-1 fw-bold text-white mt-3">Chủ tài khoản:</p>
-                <span class="text-muted">@accountName</span>
+            <div class="bg-white p-3 rounded d-inline-block mb-4 shadow-sm">
+                <img src="@qrCodeUrl" class="img-fluid" style="max-width: 250px;" alt="Mã QR Vietcombank" />
+            </div>
 
-                <p class="mb-1 fw-bold text-white mt-3">Số tài khoản:</p>
-                <span class="text-danger fs-4 fw-bold">@stk</span>
+            <div class="text-white text-start mx-auto p-4 rounded bg-dark border border-secondary" style="max-width: 450px;">
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Ngân hàng:</span>
+                    <span class="text-info fw-bold">Vietcombank</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Số tài khoản:</span>
+                    <span class="text-white fw-bold fs-5" style="letter-spacing: 1px;">@accountNo</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Chủ tài khoản:</span>
+                    <span class="text-white fw-bold text-uppercase">@accountName</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span class="text-muted">Nội dung CK:</span>
+                    <span class="text-warning fw-bold">@description</span>
+                </div>
+            </div>
+
+            <div class="alert alert-info mt-4 bg-transparent border-info text-info small">
+                <i class="bi bi-info-circle me-1"></i> Sau khi chuyển khoản, vui lòng đợi nhân viên xác nhận đơn hàng.
+            </div>
+
+            <div class="mt-4">
+                <a asp-controller="Store" asp-action="Index" class="btn btn-neon px-5 rounded-pill fw-bold">
+                    <i class="bi bi-cart-plus me-2"></i> TIẾP TỤC MUA SẮM
+                </a>
             </div>
         </div>
-    </div>
+    }
+    else
+    {
+        <!-- === TRƯỜNG HỢP 2: THANH TOÁN THÀNH CÔNG (Qua VNPay) === -->
+        <div class="card-vortex p-5 mx-auto shadow-lg" style="max-width: 600px; border-top: 5px solid #0dcaf0;">
+            <div class="mb-4">
+                <div class="bg-success bg-opacity-10 text-success rounded-circle d-inline-flex align-items-center justify-content-center p-4">
+                    <i class="bi bi-check-circle-fill" style="font-size: 4rem;"></i>
+                </div>
+            </div>
 
-    <div class="mt-5">
-        <a asp-controller="Store" asp-action="Index" class="btn btn-neon btn-lg">
-            TIẾP TỤC MUA SẮM
-        </a>
-    </div>
+            <h2 class="fw-bold text-white mb-3 text-uppercase">THANH TOÁN THÀNH CÔNG!</h2>
+
+            <p class="text-light opacity-75 mb-4 fs-5">
+                Đơn hàng <strong class="text-info">#@maDonHang</strong> đã được thanh toán qua VNPay.
+            </p>
+
+            <div class="bg-dark rounded-3 p-4 mb-4 text-start border border-secondary">
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Mã đơn hàng:</span>
+                    <span class="text-info fw-bold">#@maDonHang</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Số tiền đã trả:</span>
+                    <span class="text-success fw-bold">@tongTienDec.ToString("#,##0") đ</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span class="text-muted">Trạng thái:</span>
+                    <span class="badge bg-success">Đã thanh toán (VNPay)</span>
+                </div>
+            </div>
+
+            <div class="d-grid gap-3 d-sm-flex justify-content-center">
+                <a asp-controller="DonHangs" asp-action="Details" asp-route-id="@maDonHang" class="btn btn-outline-light px-4 rounded-pill">
+                    <i class="bi bi-file-earmark-text me-2"></i> Xem đơn hàng
+                </a>
+                <a asp-controller="Store" asp-action="Index" class="btn btn-neon px-4 rounded-pill fw-bold">
+                    <i class="bi bi-cart-plus me-2"></i> Tiếp tục mua sắm
+                </a>
+            </div>
+        </div>
+    }
 </div>

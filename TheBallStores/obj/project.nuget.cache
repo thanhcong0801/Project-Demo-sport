@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jaXOoRpCw+U=",
+  "dgSpecHash": "j6VxQHmHQIU=",
   "success": true,
-  "projectFilePath": "D:\\TheBallStores\\TheBallStores\\TheBallStores.csproj",
+  "projectFilePath": "D:\\Project-Demo-sport\\TheBallStores\\TheBallStores.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thanh\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\thanh\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

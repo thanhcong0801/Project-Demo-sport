@@ -1,20 +1,21 @@
-﻿namespace TheBallStores.Models
+﻿using System.Collections.Generic;
+
+namespace TheBallStores.Models
 {
-    public class GioHangItem
+    public class GioHangViewModel
     {
-        public int MaSp { get; set; }
+        // Danh sách các sản phẩm trong giỏ (Sử dụng class GioHangItem)
+        public List<GioHangItem> Items { get; set; } = new List<GioHangItem>();
 
-        // Khởi tạo giá trị mặc định để tránh lỗi null
-        public string TenSp { get; set; } = string.Empty;
-        public string AnhDaiDien { get; set; } = string.Empty;
+        public decimal TongTienHang { get; set; }
 
-        public decimal DonGia { get; set; }
-        public int MaSize { get; set; }
+        public decimal SoTienGiam { get; set; }
 
-        // Khởi tạo giá trị mặc định
-        public string TenSize { get; set; } = string.Empty;
+        public decimal TongThanhToan { get; set; }
 
-        public int SoLuong { get; set; }
-        public decimal ThanhTien => SoLuong * DonGia;
+        // Cho phép null (?) để tránh lỗi biên dịch
+        public string? MaVoucher { get; set; }
+
+        public string? ThongBao { get; set; }
     }
 }

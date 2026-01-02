@@ -571,7 +571,6 @@ D:\Project-Demo-sport\TheBallStores\obj\Debug\net6.0\staticwebassets\msbuild.bui
 D:\Project-Demo-sport\TheBallStores\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.TheBallStores.props
 D:\Project-Demo-sport\TheBallStores\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.TheBallStores.props
 D:\Project-Demo-sport\TheBallStores\obj\Debug\net6.0\staticwebassets.pack.json
-D:\Project-Demo-sport\TheBallStores\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
 D:\Project-Demo-sport\TheBallStores\obj\Debug\net6.0\TheBallS.6FFBAC89.Up2Date
 D:\Project-Demo-sport\TheBallStores\obj\Debug\net6.0\TheBallStores.dll
 D:\Project-Demo-sport\TheBallStores\obj\Debug\net6.0\refint\TheBallStores.dll

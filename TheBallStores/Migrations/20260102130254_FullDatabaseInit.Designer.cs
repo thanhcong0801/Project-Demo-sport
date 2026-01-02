@@ -11,7 +11,7 @@ using TheBallStores.Models;
 namespace TheBallStores.Migrations
 {
     [DbContext(typeof(TheballStoreContext))]
-    [Migration("20260102125422_FullDatabaseInit")]
+    [Migration("20260102130254_FullDatabaseInit")]
     partial class FullDatabaseInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

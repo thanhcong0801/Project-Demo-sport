@@ -1,14 +1,25 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TheBallStores.Models;
 using TheBallStores.Helpers;
-using TheBallStores.Data; // Bắt buộc phải có dòng này để dùng DbInitializer
+using TheBallStores.Data;
+using Microsoft.AspNetCore.DataProtection; // Thêm namespace này để fix lỗi bảo mật
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Cấu hình Session (Giữ nguyên cấu hình cũ của bạn)
+// --- FIX LỖI DATA PROTECTION TRÊN RENDER ---
+// Lưu trữ key bảo mật vào file hệ thống thay vì bộ nhớ tạm, giúp token không bị lỗi khi redeploy
+var keysFolder = Path.Combine(builder.Environment.ContentRootPath, "keys");
+if (!Directory.Exists(keysFolder)) Directory.CreateDirectory(keysFolder);
+
+builder.Services.AddDataProtection()
+    .PersistKeysToFileSystem(new DirectoryInfo(keysFolder))
+    .SetApplicationName("TheBallStores");
+// ------------------------------------------
+
+// Cấu hình Session
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30);
@@ -17,7 +28,6 @@ builder.Services.AddSession(options =>
 });
 
 // Cấu hình Database SQLite
-// Lưu ý: Đảm bảo chuỗi kết nối trong appsettings.json là "Data Source=theballstore.db"
 builder.Services.AddDbContext<TheballStoreContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("TheballStoreContext")));
 

@@ -4,7 +4,7 @@
 
 namespace TheBallStores.Migrations
 {
-    public partial class FullDatabaseInit : Migration
+    public partial class InitCompleteDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

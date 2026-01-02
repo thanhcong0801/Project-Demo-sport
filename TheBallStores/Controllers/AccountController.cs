@@ -28,7 +28,14 @@ namespace TheBallStores.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Kiểm tra email trùng
+                // Kiểm tra null cho Email trước khi query
+                if (string.IsNullOrEmpty(khachHang.Email))
+                {
+                    ViewBag.Error = "Email không được để trống!";
+                    return View();
+                }
+
+                // Kiểm tra email trùng (Xử lý an toàn null)
                 var checkEmail = _context.KhachHangs.FirstOrDefault(k => k.Email == khachHang.Email);
                 if (checkEmail != null)
                 {
@@ -38,7 +45,10 @@ namespace TheBallStores.Controllers
 
                 // Gán vai trò mặc định là Customer
                 khachHang.VaiTro = "Customer";
-                // Lưu ý: Trong thực tế nên mã hóa mật khẩu ở đây
+
+                // Đảm bảo các trường không null nếu cần thiết
+                khachHang.HoTen ??= "";
+                khachHang.MatKhau ??= "";
 
                 _context.Add(khachHang);
                 _context.SaveChanges();
@@ -57,23 +67,34 @@ namespace TheBallStores.Controllers
         [HttpPost]
         public IActionResult Login(string email, string password)
         {
-            // Tìm user trong DB (So sánh plain text cho đơn giản, thực tế cần hash)
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            {
+                ViewBag.Error = "Vui lòng nhập Email và Mật khẩu!";
+                return View();
+            }
+
+            // Tìm user trong DB
+            // Lưu ý: SQLite phân biệt hoa thường, nên ta dùng ToLower() hoặc so sánh chính xác tùy nhu cầu
+            // Ở đây dùng so sánh trực tiếp để tận dụng Index
             var user = _context.KhachHangs.FirstOrDefault(u => u.Email == email && u.MatKhau == password);
 
             if (user != null)
             {
-                // 1. Lưu Session
+                // 1. Lưu Session (Sử dụng toán tử null-coalescing ?? để tránh lỗi nếu dữ liệu null)
                 HttpContext.Session.SetString("Email", user.Email ?? "");
                 HttpContext.Session.SetString("HoTen", user.HoTen ?? "Khách hàng");
-                HttpContext.Session.SetString("VaiTro", user.VaiTro ?? "Customer");
 
-                // === LƯU MÃ KHÁCH HÀNG VÀO SESSION (ĐÃ FIX) ===
-                // Đây là FIX quan trọng để Lịch sử Giao dịch hoạt động
+                // Chuẩn hóa vai trò về chữ thường hoặc chữ hoa đầu để so sánh dễ dàng hơn
+                string vaiTro = user.VaiTro ?? "Customer";
+                HttpContext.Session.SetString("VaiTro", vaiTro);
+
+                // === LƯU MÃ KHÁCH HÀNG VÀO SESSION ===
                 HttpContext.Session.SetInt32("MaKh", user.MaKh);
                 // ==============================================
 
                 // 2. Phân quyền chuyển hướng
-                if (user.VaiTro == "Admin")
+                // So sánh không phân biệt hoa thường để tránh lỗi "admin" vs "Admin"
+                if (string.Equals(vaiTro, "Admin", StringComparison.OrdinalIgnoreCase))
                 {
                     return RedirectToAction("Index", "Admin"); // Chuyển sang trang Admin
                 }
@@ -83,7 +104,7 @@ namespace TheBallStores.Controllers
                 }
             }
 
-            ViewBag.Error = "Sai thông tin đăng nhập!";
+            ViewBag.Error = "Sai thông tin đăng nhập hoặc mật khẩu!";
             return View();
         }
 

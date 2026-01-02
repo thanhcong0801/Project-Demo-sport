@@ -577,3 +577,4 @@ D:\Project-Demo-sport\TheBallStores\obj\Debug\net6.0\refint\TheBallStores.dll
 D:\Project-Demo-sport\TheBallStores\obj\Debug\net6.0\TheBallStores.pdb
 D:\Project-Demo-sport\TheBallStores\obj\Debug\net6.0\TheBallStores.genruntimeconfig.cache
 D:\Project-Demo-sport\TheBallStores\obj\Debug\net6.0\ref\TheBallStores.dll
+D:\Project-Demo-sport\TheBallStores\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt

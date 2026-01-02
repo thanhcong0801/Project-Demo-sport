@@ -194,10 +194,12 @@ namespace TheBallStores.Controllers
         }
 
         // --- XỬ LÝ KẾT QUẢ TRẢ VỀ TỪ VNPAY ---
+        // --- XỬ LÝ KẾT QUẢ TRẢ VỀ TỪ VNPAY (PHIÊN BẢN DEBUG) ---
         public async Task<IActionResult> PaymentCallback()
         {
             var vnpay = new VnPayLibrary();
-            // Lấy toàn bộ query parameters
+
+            // 1. Lấy toàn bộ dữ liệu từ VNPay trả về
             foreach (var (key, value) in Request.Query)
             {
                 if (!string.IsNullOrEmpty(key) && key.StartsWith("vnp_"))
@@ -206,42 +208,81 @@ namespace TheBallStores.Controllers
                 }
             }
 
-            // Xử lý an toàn khi chuyển đổi kiểu dữ liệu
-            long orderId = 0;
-            long.TryParse(vnpay.GetResponseData("vnp_TxnRef"), out orderId);
+            // 2. Lấy HashSecret từ cấu hình
+            string hashSecret = _configuration["VnPay:HashSecret"] ?? "";
 
-            string vnp_ResponseCode = vnpay.GetResponseData("vnp_ResponseCode");
-
-            // Sửa lỗi null reference ở vnp_SecureHash
+            // 3. Lấy chữ ký mà VNPay gửi về
             string vnp_SecureHash = Request.Query["vnp_SecureHash"].ToString() ?? "";
 
-            string hashSecret = _configuration["VnPay:HashSecret"] ?? "";
+            // 4. Validate chữ ký
             bool checkSignature = vnpay.ValidateSignature(vnp_SecureHash, hashSecret);
+
+            // --- LOGIC DEBUG (Chỉ dùng để tìm lỗi) ---
+            if (!checkSignature)
+            {
+                // Nếu chữ ký sai, mình sẽ hiển thị dữ liệu gốc ra màn hình để kiểm tra
+                string msg = "Lỗi sai chữ ký!";
+
+                // Kiểm tra xem có lấy được HashSecret không
+                if (string.IsNullOrEmpty(hashSecret))
+                {
+                    msg += " (Chưa cấu hình VnPay:HashSecret trong appsettings.json)";
+                }
+                else
+                {
+                    msg += $" Config Secret: {hashSecret.Substring(0, 5)}..."; // Chỉ hiện 5 ký tự đầu để check
+                }
+
+                TempData["Error"] = msg;
+                // Trả về trang Home để xem thông báo lỗi
+                return RedirectToAction("Index", "Store");
+            }
+            // -------------------------------------------
 
             if (checkSignature)
             {
+                long orderId = 0;
+                long.TryParse(vnpay.GetResponseData("vnp_TxnRef"), out orderId);
+                string vnp_ResponseCode = vnpay.GetResponseData("vnp_ResponseCode");
+
                 var donHang = await _context.DonHangs.FindAsync((int)orderId);
-                if (vnp_ResponseCode == "00")
+
+                if (donHang != null)
                 {
-                    if (donHang != null)
+                    // Check số tiền trả về có khớp số tiền đơn hàng không (Chống hack đổi tiền)
+                    long vnpAmount = 0;
+                    long.TryParse(vnpay.GetResponseData("vnp_Amount"), out vnpAmount);
+                    long amountOrder = (long)donHang.TongTien * 100;
+
+                    if (vnpAmount != amountOrder)
+                    {
+                        TempData["Error"] = "Số tiền thanh toán không khớp với đơn hàng!";
+                        return RedirectToAction("Index", "Store");
+                    }
+
+                    if (vnp_ResponseCode == "00")
                     {
                         donHang.TrangThai = "Đã thanh toán (VNPay)";
                         _context.Update(donHang);
                         await _context.SaveChangesAsync();
+
+                        ViewBag.MaDonHang = orderId;
+                        ViewBag.TongTien = donHang.TongTien;
+                        return View("PaymentSuccess");
                     }
-                    ViewBag.MaDonHang = orderId;
-                    ViewBag.TongTien = donHang?.TongTien ?? 0;
-                    return View("PaymentSuccess");
-                }
-                else
-                {
-                    if (donHang != null)
+                    else
                     {
                         donHang.TrangThai = "Hủy (Lỗi thanh toán)";
                         _context.Update(donHang);
                         await _context.SaveChangesAsync();
+
+                        TempData["Error"] = $"Thanh toán thất bại. Mã lỗi VNPay: {vnp_ResponseCode}";
+                        return RedirectToAction("Index", "Store");
                     }
-                    TempData["Error"] = $"Lỗi thanh toán VNPay: {vnp_ResponseCode}";
+                }
+                else
+                {
+                    TempData["Error"] = "Không tìm thấy đơn hàng.";
                     return RedirectToAction("Index", "Store");
                 }
             }

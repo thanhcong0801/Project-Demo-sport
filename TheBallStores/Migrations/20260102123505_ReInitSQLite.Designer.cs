@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TheBallStores.Models;
 
@@ -10,9 +11,10 @@ using TheBallStores.Models;
 namespace TheBallStores.Migrations
 {
     [DbContext(typeof(TheballStoreContext))]
-    partial class TheballStoreContextModelSnapshot : ModelSnapshot
+    [Migration("20260102123505_ReInitSQLite")]
+    partial class ReInitSQLite
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.36");

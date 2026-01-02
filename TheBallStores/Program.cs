@@ -1,26 +1,46 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.StaticFiles;
 using TheBallStores.Models;
+using TheBallStores.Helpers;
+using TheBallStores.Data; // Bắt buộc phải có dòng này để dùng DbInitializer
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Đăng ký DbContext
-builder.Services.AddDbContext<TheballStoreContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("TheballStoreContext")));
-
-// 2. Đăng ký dịch vụ MVC
+// Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// === [ĐÃ CẤU HÌNH] ĐĂNG KÝ DỊCH VỤ SESSION (Sẽ được gọi bởi builder) ===
+// Cấu hình Session (Giữ nguyên cấu hình cũ của bạn)
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(30); // Thời gian hết hạn session (30 phút)
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
-// =========================================================================
+
+// Cấu hình Database SQLite
+// Lưu ý: Đảm bảo chuỗi kết nối trong appsettings.json là "Data Source=theballstore.db"
+builder.Services.AddDbContext<TheballStoreContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("TheballStoreContext")));
 
 var app = builder.Build();
+
+// =========================================================================
+// PHẦN QUAN TRỌNG: TỰ ĐỘNG KHỞI TẠO DATABASE VÀ NẠP DỮ LIỆU
+// =========================================================================
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        // Gọi hàm Initialize để tạo bảng và thêm dữ liệu nếu chưa có
+        DbInitializer.Initialize(services);
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Lỗi xảy ra khi khởi tạo dữ liệu (Seeding DB).");
+    }
+}
+// =========================================================================
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -30,25 +50,16 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-// Cấu hình hỗ trợ file .avif (Code cũ của bạn)
-var provider = new FileExtensionContentTypeProvider();
-provider.Mappings[".avif"] = "image/avif";
-app.UseStaticFiles(new StaticFileOptions
-{
-    ContentTypeProvider = provider
-});
-
-// === [ĐÃ KÍCH HOẠT] MIDDLEWARE SESSION (Phải đặt trước UseRouting) ===
-app.UseSession();
-// ======================================================================
+app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseSession(); // Kích hoạt Session
 
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Store}/{action=Index}/{id?}");
 
 app.Run();

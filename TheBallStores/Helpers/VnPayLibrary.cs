@@ -68,6 +68,12 @@ namespace TheBallStores.Helpers
                 }
             }
             string checkSum = Utils.HmacSHA512(vnp_HashSecret, data.ToString());
+
+            // Console Log để debug trên Render (Xem trong tab Logs)
+            Console.WriteLine($"[VNPAY DEBUG] InputHash: {inputHash}");
+            Console.WriteLine($"[VNPAY DEBUG] Calculated: {checkSum}");
+            Console.WriteLine($"[VNPAY DEBUG] RawData: {data.ToString()}");
+
             return checkSum.Equals(inputHash, StringComparison.InvariantCultureIgnoreCase);
         }
     }
@@ -101,6 +107,29 @@ namespace TheBallStores.Helpers
                 }
             }
             return hash.ToString();
+        }
+
+        public static string GetIpAddress(HttpContext context)
+        {
+            var ipAddress = string.Empty;
+            try
+            {
+                var remoteIp = context.Connection.RemoteIpAddress;
+                if (remoteIp != null)
+                {
+                    if (remoteIp.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)
+                    {
+                        remoteIp = System.Net.Dns.GetHostEntry(remoteIp).AddressList
+                            .FirstOrDefault(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork);
+                    }
+                    ipAddress = remoteIp?.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                return "Invalid IP: " + ex.Message;
+            }
+            return string.IsNullOrEmpty(ipAddress) ? "127.0.0.1" : ipAddress;
         }
     }
 }

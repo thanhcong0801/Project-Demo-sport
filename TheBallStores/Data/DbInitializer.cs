@@ -10,19 +10,54 @@ namespace TheBallStores.Data
             using (var context = new TheballStoreContext(
                 serviceProvider.GetRequiredService<DbContextOptions<TheballStoreContext>>()))
             {
-                // Tự động migrate nếu chưa có DB (quan trọng cho Render)
+                // 1. Đảm bảo Database đã được tạo
                 context.Database.Migrate();
 
-                // Kiểm tra xem đã có dữ liệu chưa
-                if (context.SanPhams.Any())
+                // 2. TẠO TÀI KHOẢN ADMIN (Luôn kiểm tra trước tiên)
+                if (!context.KhachHangs.Any(k => k.Email == "admin@gmail.com"))
                 {
-                    return;   // DB đã có dữ liệu thì không làm gì cả
+                    var adminUser = new KhachHang
+                    {
+                        HoTen = "Admin Quản Trị",
+                        Email = "admin@gmail.com",
+                        MatKhau = "123456", // Pass demo
+                        DiaChi = "Hồ Chí Minh",
+                        DienThoai = "0909000111",
+                        VaiTro = "Admin"
+                        // Đã xóa NgaySinh, GioiTinh, HieuLuc vì Model không có
+                    };
+                    context.KhachHangs.Add(adminUser);
+                    context.SaveChanges(); // Lưu ngay để có thể đăng nhập được liền
                 }
 
-                // --- 1. SEED DANH MỤC (Loại Sản Phẩm) ---
+                // 3. TẠO TÀI KHOẢN KHÁCH DEMO (Nếu chưa có)
+                if (!context.KhachHangs.Any(k => k.Email == "khach@gmail.com"))
+                {
+                    var customerUser = new KhachHang
+                    {
+                        HoTen = "Khách Hàng Demo",
+                        Email = "khach@gmail.com",
+                        MatKhau = "123456",
+                        DiaChi = "Hà Nội",
+                        DienThoai = "0909000222",
+                        VaiTro = "Customer"
+                    };
+                    context.KhachHangs.Add(customerUser);
+                    context.SaveChanges();
+                }
+
+                // 4. KIỂM TRA DỮ LIỆU SẢN PHẨM
+                // Nếu đã có sản phẩm rồi thì thôi, không seed thêm để tránh trùng lặp
+                if (context.SanPhams.Any())
+                {
+                    return;
+                }
+
+                // --- NẾU CHƯA CÓ SẢN PHẨM THÌ TẠO MỚI (SEED DATA) ---
+
+                // A. Tạo Danh Mục
                 var loaiSanPhams = new LoaiSanPham[]
                 {
-                    // Đã xóa thuộc tính 'MoTa' vì Model của bạn không có
                     new LoaiSanPham { TenLoai = "Giày Bóng Đá" },
                     new LoaiSanPham { TenLoai = "Áo Bóng Đá" },
                     new LoaiSanPham { TenLoai = "Phụ Kiện" }
@@ -30,22 +65,19 @@ namespace TheBallStores.Data
                 context.LoaiSanPhams.AddRange(loaiSanPhams);
                 context.SaveChanges();
 
-                // --- 2. SEED SẢN PHẨM ---
-                // Lấy MaLoai thực tế sau khi insert
+                // B. Lấy ID danh mục vừa tạo
                 var giayBongDa = context.LoaiSanPhams.FirstOrDefault(l => l.TenLoai == "Giày Bóng Đá");
                 var aoBongDa = context.LoaiSanPhams.FirstOrDefault(l => l.TenLoai == "Áo Bóng Đá");
-
-                // Dùng toán tử null-coalescing (??) để đảm bảo không bị lỗi null
                 int maGiay = giayBongDa?.MaLoai ?? 1;
                 int maAo = aoBongDa?.MaLoai ?? 2;
 
+                // C. Tạo Sản Phẩm
                 var sanPhams = new SanPham[]
                 {
                     new SanPham
                     {
                         TenSp = "Nike Mercurial Superfly 9",
-                        GiaBan = 2500000, 
-                        // Đã xóa 'MoTa', 'SoLuongTon', 'NgayTao' vì Model không có
+                        GiaBan = 2500000,
                         AnhDaiDien = "nike_mercurial_9.jpg",
                         MaLoai = maGiay
                     },
@@ -66,7 +98,7 @@ namespace TheBallStores.Data
                 };
                 context.SanPhams.AddRange(sanPhams);
 
-                // --- 3. SEED VOUCHER ---
+                // D. Tạo Voucher
                 var vouchers = new Voucher[]
                 {
                     new Voucher

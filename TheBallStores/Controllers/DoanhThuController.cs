@@ -18,13 +18,14 @@ namespace TheBallStores.Controllers
         // Trang báo cáo chính
         public async Task<IActionResult> Index()
         {
-            // BẢO MẬT: Chỉ Admin được vào
-            if (HttpContext.Session.GetString("VaiTro") != "Admin")
+            // 1. Bảo mật: Chỉ Admin được vào
+            var vaiTro = HttpContext.Session.GetString("VaiTro");
+            if (string.IsNullOrEmpty(vaiTro) || vaiTro != "Admin")
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "Account");
             }
 
-            // Lấy 10 đơn hàng gần nhất
+            // 2. Lấy 10 đơn hàng mới nhất để hiển thị
             var lastOrders = await _context.DonHangs
                 .OrderByDescending(d => d.NgayDat)
                 .Take(10)
@@ -32,26 +33,33 @@ namespace TheBallStores.Controllers
 
             ViewBag.LastOrders = lastOrders;
 
-            // === LOGIC TÍNH TOÁN CHÍNH XÁC (ĐÃ SỬA LỖI NULL) ===
+            // === FIX LỖI SQLITE SUM DECIMAL (QUAN TRỌNG) ===
+            // Thay vì dùng .SumAsync() (gây lỗi trên SQLite), ta dùng .ToListAsync() trước
+            // Lấy hết các cột TongTien về RAM rồi mới cộng
 
-            // 1. Tổng Doanh thu (Chỉ tính đơn đã Hoàn thành)
-            // Sửa lỗi: Chuyển đổi d.TongTien ?? 0 để đảm bảo không cộng null
-            var completedOrders = _context.DonHangs.Where(d => d.TrangThai == "Hoàn thành");
+            var paidOrders = await _context.DonHangs
+                .Where(d => d.TrangThai == "Đã thanh toán (VNPay)" || d.TrangThai == "Hoàn thành")
+                .Select(d => d.TongTien) // Chỉ lấy cột tiền cho nhẹ
+                .ToListAsync(); // <--- Tải về RAM tại đây
 
-            // Cách fix: Select ra TongTien trước, xử lý null, rồi mới Sum
-            ViewBag.TotalRevenue = await completedOrders
-                .Select(d => d.TongTien ?? 0)
-                .SumAsync();
+            // Bây giờ cộng trên RAM (C# xử lý) -> Không bao giờ lỗi
+            decimal totalRevenue = paidOrders.Sum(t => t ?? 0);
 
-            // 2. Tổng Số Đơn Hàng (Trừ đơn Đã hủy)
-            ViewBag.TotalOrders = await _context.DonHangs
-                .CountAsync(d => d.TrangThai != "Đã hủy");
+            ViewBag.TotalRevenue = totalRevenue;
+            // ===============================================
 
-            // 3. Đơn mới cần xử lý (COD mới đặt hoặc Online chờ thanh toán)
-            ViewBag.NewOrders = await _context.DonHangs
-                .CountAsync(d => d.TrangThai == "Mới đặt (COD)" || d.TrangThai == "Chờ thanh toán");
+            // 3. Tổng số đơn hàng (Trừ đơn hủy)
+            var totalOrders = await _context.DonHangs
+                .CountAsync(d => d.TrangThai != "Đã hủy" && d.TrangThai != "Hủy (Lỗi thanh toán)");
 
-            // ===========================================
+            ViewBag.TotalOrders = totalOrders;
+
+            // 4. Đơn mới cần xử lý
+            var newOrderStatuses = new[] { "Mới đặt (COD)", "Chờ thanh toán", "Mới đặt" };
+            var newOrdersCount = await _context.DonHangs
+                .CountAsync(d => newOrderStatuses.Contains(d.TrangThai));
+
+            ViewBag.NewOrders = newOrdersCount;
 
             return View();
         }

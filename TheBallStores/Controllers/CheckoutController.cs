@@ -165,7 +165,7 @@ namespace TheBallStores.Controllers
                 vnPayModel.AddRequestData("vnp_Version", _configuration["VnPay:Version"] ?? "2.1.0");
                 vnPayModel.AddRequestData("vnp_Command", _configuration["VnPay:Command"] ?? "pay");
                 vnPayModel.AddRequestData("vnp_TmnCode", _configuration["VnPay:TmnCode"] ?? "");
-                vnPayModel.AddRequestData("vnp_Amount", ((long)donHang.TongTien * 100).ToString());
+                vnPayModel.AddRequestData("vnp_Amount", ((long)(donHang.TongTien ?? 0) * 100).ToString());
                 vnPayModel.AddRequestData("vnp_CreateDate", DateTime.Now.ToString("yyyyMMddHHmmss"));
                 vnPayModel.AddRequestData("vnp_CurrCode", _configuration["VnPay:CurrCode"] ?? "VND");
 
@@ -176,8 +176,14 @@ namespace TheBallStores.Controllers
                 vnPayModel.AddRequestData("vnp_OrderInfo", "ThanhToanDonHang" + donHang.MaDonHang);
                 vnPayModel.AddRequestData("vnp_OrderType", "other");
 
-                var returnUrl = Url.Action("PaymentCallback", "Checkout", null, Request.Scheme);
-                vnPayModel.AddRequestData("vnp_ReturnUrl", returnUrl ?? "");
+                // FIX URL TRÊN RENDER: Đảm bảo dùng HTTPS nếu đang chạy online
+                var domain = $"{Request.Scheme}://{Request.Host}";
+                if (Request.Host.Host.Contains("onrender.com") && !Request.IsHttps)
+                {
+                    domain = $"https://{Request.Host}";
+                }
+                var returnUrl = $"{domain}/Checkout/PaymentCallback";
+                vnPayModel.AddRequestData("vnp_ReturnUrl", returnUrl);
 
                 vnPayModel.AddRequestData("vnp_TxnRef", donHang.MaDonHang.ToString());
 
@@ -194,12 +200,10 @@ namespace TheBallStores.Controllers
         }
 
         // --- XỬ LÝ KẾT QUẢ TRẢ VỀ TỪ VNPAY ---
-        // --- XỬ LÝ KẾT QUẢ TRẢ VỀ TỪ VNPAY (PHIÊN BẢN DEBUG) ---
         public async Task<IActionResult> PaymentCallback()
         {
             var vnpay = new VnPayLibrary();
-
-            // 1. Lấy toàn bộ dữ liệu từ VNPay trả về
+            // Lấy toàn bộ query parameters
             foreach (var (key, value) in Request.Query)
             {
                 if (!string.IsNullOrEmpty(key) && key.StartsWith("vnp_"))
@@ -208,43 +212,20 @@ namespace TheBallStores.Controllers
                 }
             }
 
-            // 2. Lấy HashSecret từ cấu hình
-            string hashSecret = _configuration["VnPay:HashSecret"] ?? "";
+            // Xử lý an toàn khi chuyển đổi kiểu dữ liệu
+            long orderId = 0;
+            long.TryParse(vnpay.GetResponseData("vnp_TxnRef"), out orderId);
 
-            // 3. Lấy chữ ký mà VNPay gửi về
+            string vnp_ResponseCode = vnpay.GetResponseData("vnp_ResponseCode");
+
+            // Sửa lỗi null reference ở vnp_SecureHash
             string vnp_SecureHash = Request.Query["vnp_SecureHash"].ToString() ?? "";
 
-            // 4. Validate chữ ký
+            string hashSecret = _configuration["VnPay:HashSecret"] ?? "";
             bool checkSignature = vnpay.ValidateSignature(vnp_SecureHash, hashSecret);
-
-            // --- LOGIC DEBUG (Chỉ dùng để tìm lỗi) ---
-            if (!checkSignature)
-            {
-                // Nếu chữ ký sai, mình sẽ hiển thị dữ liệu gốc ra màn hình để kiểm tra
-                string msg = "Lỗi sai chữ ký!";
-
-                // Kiểm tra xem có lấy được HashSecret không
-                if (string.IsNullOrEmpty(hashSecret))
-                {
-                    msg += " (Chưa cấu hình VnPay:HashSecret trong appsettings.json)";
-                }
-                else
-                {
-                    msg += $" Config Secret: {hashSecret.Substring(0, 5)}..."; // Chỉ hiện 5 ký tự đầu để check
-                }
-
-                TempData["Error"] = msg;
-                // Trả về trang Home để xem thông báo lỗi
-                return RedirectToAction("Index", "Store");
-            }
-            // -------------------------------------------
 
             if (checkSignature)
             {
-                long orderId = 0;
-                long.TryParse(vnpay.GetResponseData("vnp_TxnRef"), out orderId);
-                string vnp_ResponseCode = vnpay.GetResponseData("vnp_ResponseCode");
-
                 var donHang = await _context.DonHangs.FindAsync((int)orderId);
 
                 if (donHang != null)
@@ -289,7 +270,10 @@ namespace TheBallStores.Controllers
             }
             else
             {
-                TempData["Error"] = "Có lỗi xảy ra trong quá trình xử lý (Sai chữ ký).";
+                // DEBUG: In ra lỗi nếu sai chữ ký
+                string debugMsg = "Lỗi sai chữ ký! Kiểm tra lại HashSecret.";
+                Console.WriteLine(debugMsg);
+                TempData["Error"] = debugMsg;
                 return RedirectToAction("Index", "Store");
             }
         }
@@ -306,33 +290,6 @@ namespace TheBallStores.Controllers
             ViewBag.TongTien = donHang?.TongTien ?? 0;
             ViewBag.MaDonHang = donHang?.MaDonHang ?? 0;
             return View();
-        }
-    }
-
-    // Helper để lấy IP, đặt ở đây để Controller sử dụng ngay mà không cần tìm file khác
-    public static class Utils
-    {
-        public static string GetIpAddress(HttpContext context)
-        {
-            var ipAddress = string.Empty;
-            try
-            {
-                var remoteIp = context.Connection.RemoteIpAddress;
-                if (remoteIp != null)
-                {
-                    if (remoteIp.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)
-                    {
-                        remoteIp = System.Net.Dns.GetHostEntry(remoteIp).AddressList
-                            .FirstOrDefault(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork);
-                    }
-                    ipAddress = remoteIp?.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                return "Invalid IP: " + ex.Message;
-            }
-            return ipAddress ?? "127.0.0.1";
         }
     }
 }

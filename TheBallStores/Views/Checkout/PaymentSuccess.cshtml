@@ -16,7 +16,8 @@
     long amountInt = (long)tongTienDec; // Chuyển sang số nguyên cho VietQR
 
     // 3. Lấy chế độ hiển thị từ URL (QR hoặc VNPay)
-    string mode = Context.Request.Query["mode"].ToString();
+    // Fix: Kiểm tra null an toàn cho Query["mode"]
+    string mode = Context.Request.Query.ContainsKey("mode") ? Context.Request.Query["mode"].ToString() : "";
 
     // 4. Cấu hình VietQR
     var bankId = "VCB";

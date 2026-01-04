@@ -2,13 +2,13 @@
 @{
     ViewData["Title"] = "Xác nhận Đơn hàng";
 
-    // Lấy dữ liệu từ Controller
-    var cart = ViewBag.Cart as List<TheBallStores.Models.GioHangItem>;
+    // Lấy dữ liệu từ Controller, xử lý null an toàn
+    var cart = ViewBag.Cart as List<TheBallStores.Models.GioHangItem> ?? new List<TheBallStores.Models.GioHangItem>();
 
     // Các biến tính toán Voucher
-    decimal tongTienHang = ViewBag.TongTienHang ?? (ViewBag.TongTien ?? 0); // Tổng tiền hàng gốc
-    decimal giamGia = ViewBag.GiamGia ?? 0;                                 // Tiền giảm
-    decimal tongThanhToan = ViewBag.TongThanhToan ?? tongTienHang;          // Số tiền khách phải trả
+    decimal tongTienHang = ViewBag.TongTienHang != null ? Convert.ToDecimal(ViewBag.TongTienHang) : (ViewBag.TongTien != null ? Convert.ToDecimal(ViewBag.TongTien) : 0);
+    decimal giamGia = ViewBag.GiamGia != null ? Convert.ToDecimal(ViewBag.GiamGia) : 0;
+    decimal tongThanhToan = ViewBag.TongThanhToan != null ? Convert.ToDecimal(ViewBag.TongThanhToan) : tongTienHang;
     string maVoucher = ViewBag.MaVoucher as string;
 }
 

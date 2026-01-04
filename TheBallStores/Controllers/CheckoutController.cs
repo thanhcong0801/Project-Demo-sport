@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using TheBallStores.Helpers; // Đảm bảo bạn đã đổi namespace trong VnPayLibrary.cs thành TheBallStores.Helpers
+using TheBallStores.Helpers;
 using TheBallStores.Models;
 using System.Linq;
 using System.Threading.Tasks;
@@ -63,12 +63,6 @@ namespace TheBallStores.Controllers
         {
             if (HttpContext.Session.GetString("HoTen") == null) return RedirectToAction("Login", "Account");
 
-            var userEmail = HttpContext.Session.GetString("Email");
-            if (string.IsNullOrEmpty(userEmail)) return RedirectToAction("Logout", "Account");
-
-            var khachHang = await _context.KhachHangs.FirstOrDefaultAsync(k => k.Email == userEmail);
-            if (khachHang == null) return RedirectToAction("Logout", "Account");
-
             var cart = LayGioHangTuSession();
             if (!cart.Any())
             {
@@ -84,6 +78,10 @@ namespace TheBallStores.Controllers
             ViewBag.GiamGia = result.SoTienGiam;
             ViewBag.TongThanhToan = tongTienHang - result.SoTienGiam;
             ViewBag.MaVoucher = result.MaVoucher;
+
+            // Lấy thông tin khách hàng để điền sẵn form
+            var userEmail = HttpContext.Session.GetString("Email");
+            var khachHang = await _context.KhachHangs.FirstOrDefaultAsync(k => k.Email == userEmail);
 
             return View(khachHang);
         }
@@ -158,25 +156,25 @@ namespace TheBallStores.Controllers
 
             if (HinhThucThanhToan == "ONLINE")
             {
-                // --- GỌI SANG VNPAY ---
+                // --- CẤU HÌNH VNPAY ---
                 var vnPayModel = new VnPayLibrary();
 
-                // Sử dụng toán tử ?? "" để đảm bảo không bị null
                 vnPayModel.AddRequestData("vnp_Version", _configuration["VnPay:Version"] ?? "2.1.0");
                 vnPayModel.AddRequestData("vnp_Command", _configuration["VnPay:Command"] ?? "pay");
                 vnPayModel.AddRequestData("vnp_TmnCode", _configuration["VnPay:TmnCode"] ?? "");
-                vnPayModel.AddRequestData("vnp_Amount", ((long)(donHang.TongTien ?? 0) * 100).ToString());
+
+                // QUAN TRỌNG: Tính tiền (VND nhân 100)
+                long amount = (long)((donHang.TongTien ?? 0) * 100);
+                vnPayModel.AddRequestData("vnp_Amount", amount.ToString());
+
                 vnPayModel.AddRequestData("vnp_CreateDate", DateTime.Now.ToString("yyyyMMddHHmmss"));
-                vnPayModel.AddRequestData("vnp_CurrCode", _configuration["VnPay:CurrCode"] ?? "VND");
-
-                // Gọi hàm Utils.GetIpAddress được định nghĩa ở cuối file này
+                vnPayModel.AddRequestData("vnp_CurrCode", "VND");
                 vnPayModel.AddRequestData("vnp_IpAddr", Utils.GetIpAddress(HttpContext));
-                vnPayModel.AddRequestData("vnp_Locale", _configuration["VnPay:Locale"] ?? "vn");
-
-                vnPayModel.AddRequestData("vnp_OrderInfo", "ThanhToanDonHang" + donHang.MaDonHang);
+                vnPayModel.AddRequestData("vnp_Locale", "vn");
+                vnPayModel.AddRequestData("vnp_OrderInfo", "Thanh toan don hang " + donHang.MaDonHang);
                 vnPayModel.AddRequestData("vnp_OrderType", "other");
 
-                // FIX URL TRÊN RENDER: Đảm bảo dùng HTTPS nếu đang chạy online
+                // QUAN TRỌNG: Cấu hình Return URL chính xác cho Render (HTTPS)
                 var domain = $"{Request.Scheme}://{Request.Host}";
                 if (Request.Host.Host.Contains("onrender.com") && !Request.IsHttps)
                 {
@@ -203,7 +201,6 @@ namespace TheBallStores.Controllers
         public async Task<IActionResult> PaymentCallback()
         {
             var vnpay = new VnPayLibrary();
-            // Lấy toàn bộ query parameters
             foreach (var (key, value) in Request.Query)
             {
                 if (!string.IsNullOrEmpty(key) && key.StartsWith("vnp_"))
@@ -212,33 +209,30 @@ namespace TheBallStores.Controllers
                 }
             }
 
-            // Xử lý an toàn khi chuyển đổi kiểu dữ liệu
-            long orderId = 0;
-            long.TryParse(vnpay.GetResponseData("vnp_TxnRef"), out orderId);
-
-            string vnp_ResponseCode = vnpay.GetResponseData("vnp_ResponseCode");
-
-            // Sửa lỗi null reference ở vnp_SecureHash
+            string hashSecret = _configuration["VnPay:HashSecret"] ?? "";
             string vnp_SecureHash = Request.Query["vnp_SecureHash"].ToString() ?? "";
 
-            string hashSecret = _configuration["VnPay:HashSecret"] ?? "";
+            // Validate chữ ký
             bool checkSignature = vnpay.ValidateSignature(vnp_SecureHash, hashSecret);
 
             if (checkSignature)
             {
+                long orderId = 0;
+                long.TryParse(vnpay.GetResponseData("vnp_TxnRef"), out orderId);
+                string vnp_ResponseCode = vnpay.GetResponseData("vnp_ResponseCode");
+
                 var donHang = await _context.DonHangs.FindAsync((int)orderId);
 
                 if (donHang != null)
                 {
-                    // Check số tiền trả về có khớp số tiền đơn hàng không (Chống hack đổi tiền)
+                    // Check lại số tiền (chống hack)
                     long vnpAmount = 0;
                     long.TryParse(vnpay.GetResponseData("vnp_Amount"), out vnpAmount);
-                    // Sửa lỗi: Nếu TongTien là null thì coi như là 0
-                    long amountOrder = (long)(donHang.TongTien ?? 0) * 100;
+                    long amountOrder = (long)((donHang.TongTien ?? 0) * 100);
 
                     if (vnpAmount != amountOrder)
                     {
-                        TempData["Error"] = "Số tiền thanh toán không khớp với đơn hàng!";
+                        TempData["Error"] = "Số tiền thanh toán không khớp!";
                         return RedirectToAction("Index", "Store");
                     }
 
@@ -258,7 +252,7 @@ namespace TheBallStores.Controllers
                         _context.Update(donHang);
                         await _context.SaveChangesAsync();
 
-                        TempData["Error"] = $"Thanh toán thất bại. Mã lỗi VNPay: {vnp_ResponseCode}";
+                        TempData["Error"] = $"Giao dịch thất bại. Mã lỗi VNPay: {vnp_ResponseCode}";
                         return RedirectToAction("Index", "Store");
                     }
                 }
@@ -270,10 +264,7 @@ namespace TheBallStores.Controllers
             }
             else
             {
-                // DEBUG: In ra lỗi nếu sai chữ ký
-                string debugMsg = "Lỗi sai chữ ký! Kiểm tra lại HashSecret.";
-                Console.WriteLine(debugMsg);
-                TempData["Error"] = debugMsg;
+                TempData["Error"] = "Có lỗi xảy ra trong quá trình xử lý (Sai chữ ký).";
                 return RedirectToAction("Index", "Store");
             }
         }

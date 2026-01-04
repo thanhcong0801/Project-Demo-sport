@@ -69,10 +69,9 @@ namespace TheBallStores.Helpers
             }
             string checkSum = Utils.HmacSHA512(vnp_HashSecret, data.ToString());
 
-            // Console Log để debug trên Render (Xem trong tab Logs)
+            // Console Log để debug lỗi chữ ký trên Render
             Console.WriteLine($"[VNPAY DEBUG] InputHash: {inputHash}");
             Console.WriteLine($"[VNPAY DEBUG] Calculated: {checkSum}");
-            Console.WriteLine($"[VNPAY DEBUG] RawData: {data.ToString()}");
 
             return checkSum.Equals(inputHash, StringComparison.InvariantCultureIgnoreCase);
         }

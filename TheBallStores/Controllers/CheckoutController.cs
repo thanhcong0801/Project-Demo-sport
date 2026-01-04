@@ -63,6 +63,12 @@ namespace TheBallStores.Controllers
         {
             if (HttpContext.Session.GetString("HoTen") == null) return RedirectToAction("Login", "Account");
 
+            var userEmail = HttpContext.Session.GetString("Email");
+            if (string.IsNullOrEmpty(userEmail)) return RedirectToAction("Logout", "Account");
+
+            var khachHang = await _context.KhachHangs.FirstOrDefaultAsync(k => k.Email == userEmail);
+            if (khachHang == null) return RedirectToAction("Logout", "Account");
+
             var cart = LayGioHangTuSession();
             if (!cart.Any())
             {
@@ -78,10 +84,6 @@ namespace TheBallStores.Controllers
             ViewBag.GiamGia = result.SoTienGiam;
             ViewBag.TongThanhToan = tongTienHang - result.SoTienGiam;
             ViewBag.MaVoucher = result.MaVoucher;
-
-            // Lấy thông tin khách hàng để điền sẵn form
-            var userEmail = HttpContext.Session.GetString("Email");
-            var khachHang = await _context.KhachHangs.FirstOrDefaultAsync(k => k.Email == userEmail);
 
             return View(khachHang);
         }
@@ -161,7 +163,7 @@ namespace TheBallStores.Controllers
 
                 vnPayModel.AddRequestData("vnp_Version", _configuration["VnPay:Version"] ?? "2.1.0");
                 vnPayModel.AddRequestData("vnp_Command", _configuration["VnPay:Command"] ?? "pay");
-                vnPayModel.AddRequestData("vnp_TmnCode", _configuration["VnPay:TmnCode"] ?? "");
+                vnPayModel.AddRequestData("vnp_TmnCode", (_configuration["VnPay:TmnCode"] ?? "").Trim());
 
                 // QUAN TRỌNG: Tính tiền (VND nhân 100)
                 long amount = (long)((donHang.TongTien ?? 0) * 100);
@@ -186,7 +188,7 @@ namespace TheBallStores.Controllers
                 vnPayModel.AddRequestData("vnp_TxnRef", donHang.MaDonHang.ToString());
 
                 string baseUrl = _configuration["VnPay:BaseUrl"] ?? "";
-                string hashSecret = _configuration["VnPay:HashSecret"] ?? "";
+                string hashSecret = (_configuration["VnPay:HashSecret"] ?? "").Trim();
 
                 string paymentUrl = vnPayModel.CreateRequestUrl(baseUrl, hashSecret);
                 return Redirect(paymentUrl);
@@ -209,7 +211,8 @@ namespace TheBallStores.Controllers
                 }
             }
 
-            string hashSecret = _configuration["VnPay:HashSecret"] ?? "";
+            // Trim HashSecret để tránh lỗi thừa khoảng trắng
+            string hashSecret = (_configuration["VnPay:HashSecret"] ?? "").Trim();
             string vnp_SecureHash = Request.Query["vnp_SecureHash"].ToString() ?? "";
 
             // Validate chữ ký
@@ -264,6 +267,8 @@ namespace TheBallStores.Controllers
             }
             else
             {
+                // DEBUG: In ra console trên Render để soi lỗi
+                Console.WriteLine($"[VNPAY ERROR] Invalid Signature. InputHash: {vnp_SecureHash}");
                 TempData["Error"] = "Có lỗi xảy ra trong quá trình xử lý (Sai chữ ký).";
                 return RedirectToAction("Index", "Store");
             }

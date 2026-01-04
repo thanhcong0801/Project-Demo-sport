@@ -3,6 +3,7 @@ using TheBallStores.Models;
 using TheBallStores.Helpers;
 using TheBallStores.Data;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.StaticFiles; // Thêm namespace này
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,18 +46,13 @@ using (var scope = app.Services.CreateScope())
         // --- LOGIC TỰ ĐỘNG SỬA LỖI ---
         try
         {
-            // Kiểm tra xem Database có bảng KhachHangs chưa bằng cách query thử
-            // Nếu chưa có bảng, lệnh này sẽ ném ra Exception -> Nhảy xuống catch
             if (!context.Database.CanConnect() || !context.KhachHangs.Any())
             {
-                // Nếu bảng trống hoặc chưa có, chạy lệnh tạo bảng
                 context.Database.Migrate();
             }
         }
         catch
         {
-            // Nếu lỗi nặng (như sai cấu trúc), xóa DB cũ đi làm lại từ đầu (Reset cứng)
-            // LƯU Ý: Chỉ dùng cách này khi đang sửa lỗi deploy ban đầu
             Console.WriteLine("--> Phát hiện lỗi Database Schema. Đang Reset lại Database...");
             context.Database.EnsureDeleted();
             context.Database.Migrate();
@@ -82,7 +78,16 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+
+// --- SỬA Ở ĐÂY: CẤU HÌNH ĐỂ SERVER HIỂU FILE .AVIF ---
+var provider = new FileExtensionContentTypeProvider();
+provider.Mappings[".avif"] = "image/avif";
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    ContentTypeProvider = provider
+});
+// -----------------------------------------------------
 
 app.UseRouting();
 

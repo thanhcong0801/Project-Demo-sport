@@ -42,7 +42,13 @@ namespace TheBallStores.Controllers
                 return RedirectToAction("Login", "Account");
             }
 
-            int maKh = HttpContext.Session.GetInt32("MaKh").Value;
+            // Sửa lỗi: Kiểm tra xem Session có null không trước khi lấy Value
+            var maKhSession = HttpContext.Session.GetInt32("MaKh");
+            if (maKhSession == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            int maKh = maKhSession.Value;
 
             // Khách hàng chỉ thấy đơn của chính mình
             var donHangs = await _context.DonHangs

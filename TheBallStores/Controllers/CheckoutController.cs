@@ -252,7 +252,8 @@ namespace TheBallStores.Controllers
                     // Check số tiền trả về có khớp số tiền đơn hàng không (Chống hack đổi tiền)
                     long vnpAmount = 0;
                     long.TryParse(vnpay.GetResponseData("vnp_Amount"), out vnpAmount);
-                    long amountOrder = (long)donHang.TongTien * 100;
+                    // Sửa lỗi: Nếu TongTien là null thì coi như là 0
+                    long amountOrder = (long)(donHang.TongTien ?? 0) * 100;
 
                     if (vnpAmount != amountOrder)
                     {

@@ -67,7 +67,7 @@ namespace TheBallStores.Migrations
                     b.Property<DateTime?>("NgayDat")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasDefaultValueSql("datetime('now')");
 
                     b.Property<string>("SoDienThoaiNguoiNhan")
                         .HasMaxLength(15)
@@ -88,7 +88,7 @@ namespace TheBallStores.Migrations
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(50)
                         .HasColumnType("TEXT")
-                        .HasDefaultValueSql("(N'Mới đặt')");
+                        .HasDefaultValueSql("'Mới đặt'");
 
                     b.HasKey("MaDonHang")
                         .HasName("PK__DonHangs__129584AD370F3EB8");
@@ -151,7 +151,7 @@ namespace TheBallStores.Migrations
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(20)
                         .HasColumnType("TEXT")
-                        .HasDefaultValueSql("('Customer')");
+                        .HasDefaultValueSql("'Customer'");
 
                     b.HasKey("MaKh")
                         .HasName("PK__KhachHan__2725CF1E7C01B1ED");
@@ -245,7 +245,7 @@ namespace TheBallStores.Migrations
                     b.Property<int?>("SoLuongTon")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER")
-                        .HasDefaultValueSql("((0))");
+                        .HasDefaultValueSql("0");
 
                     b.HasKey("MaChiTiet")
                         .HasName("PK__SanPhamC__CDF0A11446FCB7A6");

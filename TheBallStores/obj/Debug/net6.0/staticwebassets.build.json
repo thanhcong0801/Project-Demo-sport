@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2AYn9Xkk8il2GFi8fSTHBvofLe1OFUgnwEQr1DeJ+tc=",
+  "Hash": "hf9lm6K1ih+5s04EBUhi9kU48Yl4L/eGIYzbGzeYU7E=",
   "Source": "TheBallStores",
   "BasePath": "_content/TheBallStores",
   "Mode": "Default",
@@ -99,48 +99,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
-    },
-    {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\A'One dyNASTY EP-3,239,000vnd.avif",
-      "SourceId": "TheBallStores",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
-      "BasePath": "_content/TheBallStores",
-      "RelativePath": "images/products/A'One dyNASTY EP-3,239,000vnd#[.{fingerprint}]?.avif",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "iqkimxiput",
-      "Integrity": "hmw6jfJksSuu9mjHvwcPb7YFrU1Q2J+aKyt+lzwKCHA=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\products\\A'One dyNASTY EP-3,239,000vnd.avif"
-    },
-    {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\A'One MVPs EP-3,239,000vnd.avif",
-      "SourceId": "TheBallStores",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
-      "BasePath": "_content/TheBallStores",
-      "RelativePath": "images/products/A'One MVPs EP-3,239,000vnd#[.{fingerprint}]?.avif",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "24sijvry2h",
-      "Integrity": "0l1/GUOVsL5vNODEihXGxZQ0TxNcb1r5uznGepd8jOc=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\products\\A'One MVPs EP-3,239,000vnd.avif"
     },
     {
       "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Air Jordan 14 G-6,459,000vnd.avif",
@@ -395,12 +353,12 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\Áo Bóng Đá Câu Lạc Bộ Tottenham Hotspur Đen 2025-2026.avif"
     },
     {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Áo bóng rổ có tay  –Kobe- Lakers tím.avif",
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Áo bóng rổ có tay – Curry GWS Xanh.avif",
       "SourceId": "TheBallStores",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
       "BasePath": "_content/TheBallStores",
-      "RelativePath": "images/products/Áo bóng rổ có tay  –Kobe- Lakers tím#[.{fingerprint}]?.avif",
+      "RelativePath": "images/products/Áo bóng rổ có tay – Curry GWS Xanh#[.{fingerprint}]?.avif",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -409,11 +367,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ve7txskbr6",
-      "Integrity": "x3vZDwQ7uudQvkOGT/bIKi96gIfKnHE6hjS8zejsDss=",
+      "Fingerprint": "ztrhb2vs9c",
+      "Integrity": "2TW5z8BpSZyY5cuvRvxFE+5v3CCsUcaEBdDApjiNdGY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\products\\Áo bóng rổ có tay  –Kobe- Lakers tím.avif"
+      "OriginalItemSpec": "wwwroot\\images\\products\\Áo bóng rổ có tay – Curry GWS Xanh.avif"
     },
     {
       "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Áo bóng rổ có tay - Giannis Antetokounmpo-Đen.avif",
@@ -435,27 +393,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\Áo bóng rổ có tay - Giannis Antetokounmpo-Đen.avif"
-    },
-    {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Áo bóng rổ có tay – Curry GWS Xanh.avif",
-      "SourceId": "TheBallStores",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
-      "BasePath": "_content/TheBallStores",
-      "RelativePath": "images/products/Áo bóng rổ có tay – Curry GWS Xanh#[.{fingerprint}]?.avif",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "ztrhb2vs9c",
-      "Integrity": "2TW5z8BpSZyY5cuvRvxFE+5v3CCsUcaEBdDApjiNdGY=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\products\\Áo bóng rổ có tay – Curry GWS Xanh.avif"
     },
     {
       "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Áo bóng rổ có tay – Jordan Bulls Đỏ.avif",
@@ -498,6 +435,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\Áo bóng rổ có tay – Kevin Durant - Brooklyn trắng.avif"
+    },
+    {
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Áo bóng rổ có tay  –Kobe- Lakers tím.avif",
+      "SourceId": "TheBallStores",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
+      "BasePath": "_content/TheBallStores",
+      "RelativePath": "images/products/Áo bóng rổ có tay  –Kobe- Lakers tím#[.{fingerprint}]?.avif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ve7txskbr6",
+      "Integrity": "x3vZDwQ7uudQvkOGT/bIKi96gIfKnHE6hjS8zejsDss=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\Áo bóng rổ có tay  –Kobe- Lakers tím.avif"
     },
     {
       "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Áo bóng rổ có tay – Kyrie -Boston xanh.avif",
@@ -561,6 +519,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\Áo Hoodies bóng rổ -380,000vnd.avif"
+    },
+    {
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\A'One dyNASTY EP-3,239,000vnd.avif",
+      "SourceId": "TheBallStores",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
+      "BasePath": "_content/TheBallStores",
+      "RelativePath": "images/products/A'One dyNASTY EP-3,239,000vnd#[.{fingerprint}]?.avif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "iqkimxiput",
+      "Integrity": "hmw6jfJksSuu9mjHvwcPb7YFrU1Q2J+aKyt+lzwKCHA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\A'One dyNASTY EP-3,239,000vnd.avif"
+    },
+    {
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\A'One MVPs EP-3,239,000vnd.avif",
+      "SourceId": "TheBallStores",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
+      "BasePath": "_content/TheBallStores",
+      "RelativePath": "images/products/A'One MVPs EP-3,239,000vnd#[.{fingerprint}]?.avif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "24sijvry2h",
+      "Integrity": "0l1/GUOVsL5vNODEihXGxZQ0TxNcb1r5uznGepd8jOc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\A'One MVPs EP-3,239,000vnd.avif"
     },
     {
       "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\ASICS METARISE 2 - TRẮNG CAM ĐEN-3,995,000vnd.avif",
@@ -1613,6 +1613,27 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\Nike Pegasus PREMIUM-6,179,000vnd.avif"
     },
     {
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Nike Promina-1,909,000vnd.avif",
+      "SourceId": "TheBallStores",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
+      "BasePath": "_content/TheBallStores",
+      "RelativePath": "images/products/Nike Promina-1,909,000vnd#[.{fingerprint}]?.avif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "lj0tk9v2xl",
+      "Integrity": "/4+22nV72YmOKt3rJCXGFLnphVPKH8CRSQvcWucZUNs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\Nike Promina-1,909,000vnd.avif"
+    },
+    {
       "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Nike Phantom 6 High Elite EA SPORTS FC -9,089,000vnd.avif",
       "SourceId": "TheBallStores",
       "SourceType": "Discovered",
@@ -1653,27 +1674,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\Nike Phantom 6 Low Elite EA SPORTS FC-8,349,000vnd.avif"
-    },
-    {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Nike Promina-1,909,000vnd.avif",
-      "SourceId": "TheBallStores",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
-      "BasePath": "_content/TheBallStores",
-      "RelativePath": "images/products/Nike Promina-1,909,000vnd#[.{fingerprint}]?.avif",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "lj0tk9v2xl",
-      "Integrity": "/4+22nV72YmOKt3rJCXGFLnphVPKH8CRSQvcWucZUNs=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\products\\Nike Promina-1,909,000vnd.avif"
     },
     {
       "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Nike Reax 8 TR-2,499,000vnd.avif",
@@ -2243,6 +2243,174 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "SourceId": "TheBallStores",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
+      "BasePath": "_content/TheBallStores",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ozu22stjof",
+      "Integrity": "ZMvmWDSU4zY1Z29EQGm5Mubfz/YxF4hiReGqx84o4tA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "SourceId": "TheBallStores",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
+      "BasePath": "_content/TheBallStores",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.css#[.{fingerprint}]?.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "73kdqttayv",
+      "Integrity": "DRvWr0gangj5/5Q3DRn6ttzpcWDzl3OpHoAwAzNDR5Q=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "SourceId": "TheBallStores",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
+      "BasePath": "_content/TheBallStores",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6gzpyzhau4",
+      "Integrity": "SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "SourceId": "TheBallStores",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
+      "BasePath": "_content/TheBallStores",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css#[.{fingerprint}]?.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8inm30yfxf",
+      "Integrity": "gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "SourceId": "TheBallStores",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
+      "BasePath": "_content/TheBallStores",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gjcw7pocpk",
+      "Integrity": "hA1uBYAPgKq7OVoXF7sqU9NtylyP0K7AJn0a4zQcTbg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "SourceId": "TheBallStores",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
+      "BasePath": "_content/TheBallStores",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css#[.{fingerprint}]?.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4gxs3k148c",
+      "Integrity": "VFvmi/ZSwQFmjS6Pry9B8zXeZ/GA168TXLyykDhNMZE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "SourceId": "TheBallStores",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
+      "BasePath": "_content/TheBallStores",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6l4ir0ityv",
+      "Integrity": "ukKL5IDSyNoXFyp0wkgXeBpBITyM7JsCE6Dp96H1vI8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "SourceId": "TheBallStores",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
+      "BasePath": "_content/TheBallStores",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css#[.{fingerprint}]?.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fctod5rc9n",
+      "Integrity": "j7uqK5VoTT4rUHMr911QEU5Sa94lR3uh9E28XBMlzrM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
       "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "TheBallStores",
       "SourceType": "Discovered",
@@ -2747,174 +2915,6 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-      "SourceId": "TheBallStores",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
-      "BasePath": "_content/TheBallStores",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap#[.{fingerprint}]?.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "ozu22stjof",
-      "Integrity": "ZMvmWDSU4zY1Z29EQGm5Mubfz/YxF4hiReGqx84o4tA=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
-    },
-    {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-      "SourceId": "TheBallStores",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
-      "BasePath": "_content/TheBallStores",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.css#[.{fingerprint}]?.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "73kdqttayv",
-      "Integrity": "DRvWr0gangj5/5Q3DRn6ttzpcWDzl3OpHoAwAzNDR5Q=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
-    },
-    {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
-      "SourceId": "TheBallStores",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
-      "BasePath": "_content/TheBallStores",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.min#[.{fingerprint}]?.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "6gzpyzhau4",
-      "Integrity": "SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
-    },
-    {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
-      "SourceId": "TheBallStores",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
-      "BasePath": "_content/TheBallStores",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css#[.{fingerprint}]?.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "8inm30yfxf",
-      "Integrity": "gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
-    },
-    {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
-      "SourceId": "TheBallStores",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
-      "BasePath": "_content/TheBallStores",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl#[.{fingerprint}]?.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "gjcw7pocpk",
-      "Integrity": "hA1uBYAPgKq7OVoXF7sqU9NtylyP0K7AJn0a4zQcTbg=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
-    },
-    {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
-      "SourceId": "TheBallStores",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
-      "BasePath": "_content/TheBallStores",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css#[.{fingerprint}]?.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "4gxs3k148c",
-      "Integrity": "VFvmi/ZSwQFmjS6Pry9B8zXeZ/GA168TXLyykDhNMZE=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
-    },
-    {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
-      "SourceId": "TheBallStores",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
-      "BasePath": "_content/TheBallStores",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min#[.{fingerprint}]?.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "6l4ir0ityv",
-      "Integrity": "ukKL5IDSyNoXFyp0wkgXeBpBITyM7JsCE6Dp96H1vI8=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
-    },
-    {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
-      "SourceId": "TheBallStores",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
-      "BasePath": "_content/TheBallStores",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css#[.{fingerprint}]?.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "fctod5rc9n",
-      "Integrity": "j7uqK5VoTT4rUHMr911QEU5Sa94lR3uh9E28XBMlzrM=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
-    },
-    {
       "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "TheBallStores",
       "SourceType": "Discovered",
@@ -3188,12 +3188,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "TheBallStores",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
       "BasePath": "_content/TheBallStores",
-      "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive#[.{fingerprint}]?.js",
+      "RelativePath": "lib/jquery/dist/jquery#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3202,19 +3202,19 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "dvc2bfcndg",
-      "Integrity": "qbS02vMHZxdLNYKUtLPSYaSHXj1/ZwH1fv9f3XAY0LU=",
+      "Fingerprint": "ukz1g2vv03",
+      "Integrity": "oo12yYOwbYfrLG1t6v9+HU+vMvEnlKkr1eIcdUwG7Zs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "TheBallStores",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
       "BasePath": "_content/TheBallStores",
-      "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min#[.{fingerprint}]?.js",
+      "RelativePath": "lib/jquery/dist/jquery.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3223,19 +3223,19 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "mt9h37ga6s",
-      "Integrity": "BtVmVJsyUIncIatblQsAlI06bS8pb2yZBcrDOa7snJw=",
+      "Fingerprint": "rm8d4uw1xt",
+      "Integrity": "82hEkGrSMJh3quMSG4f7FbngmAPLTDM63H4eNayS4Us=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "TheBallStores",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
       "BasePath": "_content/TheBallStores",
-      "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE#[.{fingerprint}]?.txt",
+      "RelativePath": "lib/jquery/dist/jquery.min#[.{fingerprint}]?.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3244,11 +3244,32 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "wqejeusuyq",
-      "Integrity": "aBc/n/nO9esvq0e80G57lEYLonvE5dKKUgoozaiVfLM=",
+      "Fingerprint": "dsw5v3fbc5",
+      "Integrity": "PVB97BePQ5JED6qSU7EvSun5iseF5FinCKtqsv5X9uA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "SourceId": "TheBallStores",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
+      "BasePath": "_content/TheBallStores",
+      "RelativePath": "lib/jquery/LICENSE#[.{fingerprint}]?.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "afgyafcsqt",
+      "Integrity": "WtKlDye/qV68IA2W1tHFTyXyc/HjQvQKBpIK1CEulFM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
       "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
@@ -3356,12 +3377,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "TheBallStores",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
       "BasePath": "_content/TheBallStores",
-      "RelativePath": "lib/jquery/dist/jquery#[.{fingerprint}]?.js",
+      "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3370,19 +3391,19 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ukz1g2vv03",
-      "Integrity": "oo12yYOwbYfrLG1t6v9+HU+vMvEnlKkr1eIcdUwG7Zs=",
+      "Fingerprint": "dvc2bfcndg",
+      "Integrity": "qbS02vMHZxdLNYKUtLPSYaSHXj1/ZwH1fv9f3XAY0LU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "TheBallStores",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
       "BasePath": "_content/TheBallStores",
-      "RelativePath": "lib/jquery/dist/jquery.min#[.{fingerprint}]?.js",
+      "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3391,19 +3412,19 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "rm8d4uw1xt",
-      "Integrity": "82hEkGrSMJh3quMSG4f7FbngmAPLTDM63H4eNayS4Us=",
+      "Fingerprint": "mt9h37ga6s",
+      "Integrity": "BtVmVJsyUIncIatblQsAlI06bS8pb2yZBcrDOa7snJw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "TheBallStores",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
       "BasePath": "_content/TheBallStores",
-      "RelativePath": "lib/jquery/dist/jquery.min#[.{fingerprint}]?.map",
+      "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE#[.{fingerprint}]?.txt",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3412,32 +3433,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "dsw5v3fbc5",
-      "Integrity": "PVB97BePQ5JED6qSU7EvSun5iseF5FinCKtqsv5X9uA=",
+      "Fingerprint": "wqejeusuyq",
+      "Integrity": "aBc/n/nO9esvq0e80G57lEYLonvE5dKKUgoozaiVfLM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
-    },
-    {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\LICENSE.txt",
-      "SourceId": "TheBallStores",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
-      "BasePath": "_content/TheBallStores",
-      "RelativePath": "lib/jquery/LICENSE#[.{fingerprint}]?.txt",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "afgyafcsqt",
-      "Integrity": "WtKlDye/qV68IA2W1tHFTyXyc/HjQvQKBpIK1CEulFM=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     }
   ],
   "Endpoints": [
@@ -3602,170 +3602,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
-        }
-      ]
-    },
-    {
-      "Route": "images/products/A'One dyNASTY EP-3,239,000vnd.avif",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\A'One dyNASTY EP-3,239,000vnd.avif",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "18973"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"hmw6jfJksSuu9mjHvwcPb7YFrU1Q2J+aKyt+lzwKCHA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-hmw6jfJksSuu9mjHvwcPb7YFrU1Q2J+aKyt+lzwKCHA="
-        }
-      ]
-    },
-    {
-      "Route": "images/products/A'One dyNASTY EP-3,239,000vnd.iqkimxiput.avif",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\A'One dyNASTY EP-3,239,000vnd.avif",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "18973"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"hmw6jfJksSuu9mjHvwcPb7YFrU1Q2J+aKyt+lzwKCHA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "iqkimxiput"
-        },
-        {
-          "Name": "label",
-          "Value": "images/products/A'One dyNASTY EP-3,239,000vnd.avif"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-hmw6jfJksSuu9mjHvwcPb7YFrU1Q2J+aKyt+lzwKCHA="
-        }
-      ]
-    },
-    {
-      "Route": "images/products/A'One MVPs EP-3,239,000vnd.24sijvry2h.avif",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\A'One MVPs EP-3,239,000vnd.avif",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "24965"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"0l1/GUOVsL5vNODEihXGxZQ0TxNcb1r5uznGepd8jOc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "24sijvry2h"
-        },
-        {
-          "Name": "label",
-          "Value": "images/products/A'One MVPs EP-3,239,000vnd.avif"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-0l1/GUOVsL5vNODEihXGxZQ0TxNcb1r5uznGepd8jOc="
-        }
-      ]
-    },
-    {
-      "Route": "images/products/A'One MVPs EP-3,239,000vnd.avif",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\A'One MVPs EP-3,239,000vnd.avif",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "24965"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"0l1/GUOVsL5vNODEihXGxZQ0TxNcb1r5uznGepd8jOc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-0l1/GUOVsL5vNODEihXGxZQ0TxNcb1r5uznGepd8jOc="
         }
       ]
     },
@@ -4754,8 +4590,8 @@
       ]
     },
     {
-      "Route": "images/products/Áo bóng rổ có tay  –Kobe- Lakers tím.avif",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Áo bóng rổ có tay  –Kobe- Lakers tím.avif",
+      "Route": "images/products/Áo bóng rổ có tay – Curry GWS Xanh.avif",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Áo bóng rổ có tay – Curry GWS Xanh.avif",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4764,7 +4600,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "78590"
+          "Value": "50104"
         },
         {
           "Name": "Content-Type",
@@ -4772,7 +4608,7 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"x3vZDwQ7uudQvkOGT/bIKi96gIfKnHE6hjS8zejsDss=\""
+          "Value": "\"2TW5z8BpSZyY5cuvRvxFE+5v3CCsUcaEBdDApjiNdGY=\""
         },
         {
           "Name": "Last-Modified",
@@ -4786,13 +4622,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-x3vZDwQ7uudQvkOGT/bIKi96gIfKnHE6hjS8zejsDss="
+          "Value": "sha256-2TW5z8BpSZyY5cuvRvxFE+5v3CCsUcaEBdDApjiNdGY="
         }
       ]
     },
     {
-      "Route": "images/products/Áo bóng rổ có tay  –Kobe- Lakers tím.ve7txskbr6.avif",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Áo bóng rổ có tay  –Kobe- Lakers tím.avif",
+      "Route": "images/products/Áo bóng rổ có tay – Curry GWS Xanh.ztrhb2vs9c.avif",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Áo bóng rổ có tay – Curry GWS Xanh.avif",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4801,7 +4637,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "78590"
+          "Value": "50104"
         },
         {
           "Name": "Content-Type",
@@ -4809,7 +4645,7 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"x3vZDwQ7uudQvkOGT/bIKi96gIfKnHE6hjS8zejsDss=\""
+          "Value": "\"2TW5z8BpSZyY5cuvRvxFE+5v3CCsUcaEBdDApjiNdGY=\""
         },
         {
           "Name": "Last-Modified",
@@ -4823,15 +4659,15 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ve7txskbr6"
+          "Value": "ztrhb2vs9c"
         },
         {
           "Name": "label",
-          "Value": "images/products/Áo bóng rổ có tay  –Kobe- Lakers tím.avif"
+          "Value": "images/products/Áo bóng rổ có tay – Curry GWS Xanh.avif"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-x3vZDwQ7uudQvkOGT/bIKi96gIfKnHE6hjS8zejsDss="
+          "Value": "sha256-2TW5z8BpSZyY5cuvRvxFE+5v3CCsUcaEBdDApjiNdGY="
         }
       ]
     },
@@ -4914,88 +4750,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-JMeSgC3t3Kolk2d/1fPAwCHMtz/ARq3Urr4YQAFR/yQ="
-        }
-      ]
-    },
-    {
-      "Route": "images/products/Áo bóng rổ có tay – Curry GWS Xanh.avif",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Áo bóng rổ có tay – Curry GWS Xanh.avif",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "50104"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"2TW5z8BpSZyY5cuvRvxFE+5v3CCsUcaEBdDApjiNdGY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-2TW5z8BpSZyY5cuvRvxFE+5v3CCsUcaEBdDApjiNdGY="
-        }
-      ]
-    },
-    {
-      "Route": "images/products/Áo bóng rổ có tay – Curry GWS Xanh.ztrhb2vs9c.avif",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Áo bóng rổ có tay – Curry GWS Xanh.avif",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "50104"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"2TW5z8BpSZyY5cuvRvxFE+5v3CCsUcaEBdDApjiNdGY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ztrhb2vs9c"
-        },
-        {
-          "Name": "label",
-          "Value": "images/products/Áo bóng rổ có tay – Curry GWS Xanh.avif"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-2TW5z8BpSZyY5cuvRvxFE+5v3CCsUcaEBdDApjiNdGY="
         }
       ]
     },
@@ -5160,6 +4914,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-emY3VOmTy/qB+6wxsdOGMw++cXfReUKt3cBmkZhH0HM="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/Áo bóng rổ có tay  –Kobe- Lakers tím.avif",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Áo bóng rổ có tay  –Kobe- Lakers tím.avif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "78590"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"x3vZDwQ7uudQvkOGT/bIKi96gIfKnHE6hjS8zejsDss=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-x3vZDwQ7uudQvkOGT/bIKi96gIfKnHE6hjS8zejsDss="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/Áo bóng rổ có tay  –Kobe- Lakers tím.ve7txskbr6.avif",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Áo bóng rổ có tay  –Kobe- Lakers tím.avif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "78590"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"x3vZDwQ7uudQvkOGT/bIKi96gIfKnHE6hjS8zejsDss=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ve7txskbr6"
+        },
+        {
+          "Name": "label",
+          "Value": "images/products/Áo bóng rổ có tay  –Kobe- Lakers tím.avif"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-x3vZDwQ7uudQvkOGT/bIKi96gIfKnHE6hjS8zejsDss="
         }
       ]
     },
@@ -5406,6 +5242,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-LsXmOEjjHH3c6uoXb4rUpfbSTznAuBIUhRmNyImbgjU="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/A'One dyNASTY EP-3,239,000vnd.avif",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\A'One dyNASTY EP-3,239,000vnd.avif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18973"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hmw6jfJksSuu9mjHvwcPb7YFrU1Q2J+aKyt+lzwKCHA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hmw6jfJksSuu9mjHvwcPb7YFrU1Q2J+aKyt+lzwKCHA="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/A'One dyNASTY EP-3,239,000vnd.iqkimxiput.avif",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\A'One dyNASTY EP-3,239,000vnd.avif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18973"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hmw6jfJksSuu9mjHvwcPb7YFrU1Q2J+aKyt+lzwKCHA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "iqkimxiput"
+        },
+        {
+          "Name": "label",
+          "Value": "images/products/A'One dyNASTY EP-3,239,000vnd.avif"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hmw6jfJksSuu9mjHvwcPb7YFrU1Q2J+aKyt+lzwKCHA="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/A'One MVPs EP-3,239,000vnd.24sijvry2h.avif",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\A'One MVPs EP-3,239,000vnd.avif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24965"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0l1/GUOVsL5vNODEihXGxZQ0TxNcb1r5uznGepd8jOc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "24sijvry2h"
+        },
+        {
+          "Name": "label",
+          "Value": "images/products/A'One MVPs EP-3,239,000vnd.avif"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0l1/GUOVsL5vNODEihXGxZQ0TxNcb1r5uznGepd8jOc="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/A'One MVPs EP-3,239,000vnd.avif",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\A'One MVPs EP-3,239,000vnd.avif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24965"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0l1/GUOVsL5vNODEihXGxZQ0TxNcb1r5uznGepd8jOc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0l1/GUOVsL5vNODEihXGxZQ0TxNcb1r5uznGepd8jOc="
         }
       ]
     },
@@ -9510,6 +9510,88 @@
       ]
     },
     {
+      "Route": "images/products/Nike Promina-1,909,000vnd.avif",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Nike Promina-1,909,000vnd.avif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25493"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/4+22nV72YmOKt3rJCXGFLnphVPKH8CRSQvcWucZUNs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/4+22nV72YmOKt3rJCXGFLnphVPKH8CRSQvcWucZUNs="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/Nike Promina-1,909,000vnd.lj0tk9v2xl.avif",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Nike Promina-1,909,000vnd.avif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25493"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/4+22nV72YmOKt3rJCXGFLnphVPKH8CRSQvcWucZUNs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lj0tk9v2xl"
+        },
+        {
+          "Name": "label",
+          "Value": "images/products/Nike Promina-1,909,000vnd.avif"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/4+22nV72YmOKt3rJCXGFLnphVPKH8CRSQvcWucZUNs="
+        }
+      ]
+    },
+    {
       "Route": "images/products/Nike Phantom 6 High Elite EA SPORTS FC -9,089,000vnd.avif",
       "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Nike Phantom 6 High Elite EA SPORTS FC -9,089,000vnd.avif",
       "Selectors": [],
@@ -9670,88 +9752,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-hlsE/6Zq1EttiT/xVzXnXAFKeZmDClcyticDyDj/ckY="
-        }
-      ]
-    },
-    {
-      "Route": "images/products/Nike Promina-1,909,000vnd.avif",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Nike Promina-1,909,000vnd.avif",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "25493"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"/4+22nV72YmOKt3rJCXGFLnphVPKH8CRSQvcWucZUNs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-/4+22nV72YmOKt3rJCXGFLnphVPKH8CRSQvcWucZUNs="
-        }
-      ]
-    },
-    {
-      "Route": "images/products/Nike Promina-1,909,000vnd.lj0tk9v2xl.avif",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\images\\products\\Nike Promina-1,909,000vnd.avif",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "25493"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"/4+22nV72YmOKt3rJCXGFLnphVPKH8CRSQvcWucZUNs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "lj0tk9v2xl"
-        },
-        {
-          "Name": "label",
-          "Value": "images/products/Nike Promina-1,909,000vnd.avif"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-/4+22nV72YmOKt3rJCXGFLnphVPKH8CRSQvcWucZUNs="
         }
       ]
     },
@@ -11970,6 +11970,662 @@
       ]
     },
     {
+      "Route": "lib/bootstrap/dist/css/bootstrap.css",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "215356"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZMvmWDSU4zY1Z29EQGm5Mubfz/YxF4hiReGqx84o4tA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZMvmWDSU4zY1Z29EQGm5Mubfz/YxF4hiReGqx84o4tA="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.css.73kdqttayv.map",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "536547"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DRvWr0gangj5/5Q3DRn6ttzpcWDzl3OpHoAwAzNDR5Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "73kdqttayv"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap.css.map"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DRvWr0gangj5/5Q3DRn6ttzpcWDzl3OpHoAwAzNDR5Q="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.css.map",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "536547"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DRvWr0gangj5/5Q3DRn6ttzpcWDzl3OpHoAwAzNDR5Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DRvWr0gangj5/5Q3DRn6ttzpcWDzl3OpHoAwAzNDR5Q="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.min.6gzpyzhau4.css",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "162726"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6gzpyzhau4"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.min.css",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "162726"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.min.css.8inm30yfxf.map",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "449111"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8inm30yfxf"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap.min.css.map"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "449111"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.ozu22stjof.css",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "215356"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZMvmWDSU4zY1Z29EQGm5Mubfz/YxF4hiReGqx84o4tA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ozu22stjof"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZMvmWDSU4zY1Z29EQGm5Mubfz/YxF4hiReGqx84o4tA="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "214999"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hA1uBYAPgKq7OVoXF7sqU9NtylyP0K7AJn0a4zQcTbg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hA1uBYAPgKq7OVoXF7sqU9NtylyP0K7AJn0a4zQcTbg="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.css.4gxs3k148c.map",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "536461"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VFvmi/ZSwQFmjS6Pry9B8zXeZ/GA168TXLyykDhNMZE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4gxs3k148c"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap.rtl.css.map"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VFvmi/ZSwQFmjS6Pry9B8zXeZ/GA168TXLyykDhNMZE="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "536461"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VFvmi/ZSwQFmjS6Pry9B8zXeZ/GA168TXLyykDhNMZE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VFvmi/ZSwQFmjS6Pry9B8zXeZ/GA168TXLyykDhNMZE="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.gjcw7pocpk.css",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "214999"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hA1uBYAPgKq7OVoXF7sqU9NtylyP0K7AJn0a4zQcTbg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gjcw7pocpk"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap.rtl.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hA1uBYAPgKq7OVoXF7sqU9NtylyP0K7AJn0a4zQcTbg="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.min.6l4ir0ityv.css",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "162831"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ukKL5IDSyNoXFyp0wkgXeBpBITyM7JsCE6Dp96H1vI8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6l4ir0ityv"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap.rtl.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ukKL5IDSyNoXFyp0wkgXeBpBITyM7JsCE6Dp96H1vI8="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "162831"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ukKL5IDSyNoXFyp0wkgXeBpBITyM7JsCE6Dp96H1vI8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ukKL5IDSyNoXFyp0wkgXeBpBITyM7JsCE6Dp96H1vI8="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.fctod5rc9n.map",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "661035"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j7uqK5VoTT4rUHMr911QEU5Sa94lR3uh9E28XBMlzrM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fctod5rc9n"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-j7uqK5VoTT4rUHMr911QEU5Sa94lR3uh9E28XBMlzrM="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "661035"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j7uqK5VoTT4rUHMr911QEU5Sa94lR3uh9E28XBMlzrM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-j7uqK5VoTT4rUHMr911QEU5Sa94lR3uh9E28XBMlzrM="
+        }
+      ]
+    },
+    {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "Selectors": [],
@@ -13938,662 +14594,6 @@
       ]
     },
     {
-      "Route": "lib/bootstrap/dist/css/bootstrap.css",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "215356"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ZMvmWDSU4zY1Z29EQGm5Mubfz/YxF4hiReGqx84o4tA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ZMvmWDSU4zY1Z29EQGm5Mubfz/YxF4hiReGqx84o4tA="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.css.73kdqttayv.map",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "536547"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"DRvWr0gangj5/5Q3DRn6ttzpcWDzl3OpHoAwAzNDR5Q=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "73kdqttayv"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/bootstrap/dist/css/bootstrap.css.map"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-DRvWr0gangj5/5Q3DRn6ttzpcWDzl3OpHoAwAzNDR5Q="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.css.map",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "536547"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"DRvWr0gangj5/5Q3DRn6ttzpcWDzl3OpHoAwAzNDR5Q=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-DRvWr0gangj5/5Q3DRn6ttzpcWDzl3OpHoAwAzNDR5Q="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.min.6gzpyzhau4.css",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "162726"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "6gzpyzhau4"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/bootstrap/dist/css/bootstrap.min.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.min.css",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "162726"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.min.css.8inm30yfxf.map",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "449111"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "8inm30yfxf"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/bootstrap/dist/css/bootstrap.min.css.map"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.min.css.map",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "449111"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.ozu22stjof.css",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "215356"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ZMvmWDSU4zY1Z29EQGm5Mubfz/YxF4hiReGqx84o4tA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ozu22stjof"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/bootstrap/dist/css/bootstrap.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-ZMvmWDSU4zY1Z29EQGm5Mubfz/YxF4hiReGqx84o4tA="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.css",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "214999"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"hA1uBYAPgKq7OVoXF7sqU9NtylyP0K7AJn0a4zQcTbg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-hA1uBYAPgKq7OVoXF7sqU9NtylyP0K7AJn0a4zQcTbg="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.css.4gxs3k148c.map",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "536461"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"VFvmi/ZSwQFmjS6Pry9B8zXeZ/GA168TXLyykDhNMZE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "4gxs3k148c"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/bootstrap/dist/css/bootstrap.rtl.css.map"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-VFvmi/ZSwQFmjS6Pry9B8zXeZ/GA168TXLyykDhNMZE="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "536461"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"VFvmi/ZSwQFmjS6Pry9B8zXeZ/GA168TXLyykDhNMZE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-VFvmi/ZSwQFmjS6Pry9B8zXeZ/GA168TXLyykDhNMZE="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.gjcw7pocpk.css",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "214999"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"hA1uBYAPgKq7OVoXF7sqU9NtylyP0K7AJn0a4zQcTbg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "gjcw7pocpk"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/bootstrap/dist/css/bootstrap.rtl.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-hA1uBYAPgKq7OVoXF7sqU9NtylyP0K7AJn0a4zQcTbg="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.min.6l4ir0ityv.css",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "162831"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ukKL5IDSyNoXFyp0wkgXeBpBITyM7JsCE6Dp96H1vI8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "6l4ir0ityv"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/bootstrap/dist/css/bootstrap.rtl.min.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-ukKL5IDSyNoXFyp0wkgXeBpBITyM7JsCE6Dp96H1vI8="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "162831"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ukKL5IDSyNoXFyp0wkgXeBpBITyM7JsCE6Dp96H1vI8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ukKL5IDSyNoXFyp0wkgXeBpBITyM7JsCE6Dp96H1vI8="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.fctod5rc9n.map",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "661035"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"j7uqK5VoTT4rUHMr911QEU5Sa94lR3uh9E28XBMlzrM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "fctod5rc9n"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-j7uqK5VoTT4rUHMr911QEU5Sa94lR3uh9E28XBMlzrM="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "661035"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"j7uqK5VoTT4rUHMr911QEU5Sa94lR3uh9E28XBMlzrM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-j7uqK5VoTT4rUHMr911QEU5Sa94lR3uh9E28XBMlzrM="
-        }
-      ]
-    },
-    {
       "Route": "lib/bootstrap/dist/js/bootstrap.1piudyfv7h.js",
       "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "Selectors": [],
@@ -15660,8 +15660,8 @@
       ]
     },
     {
-      "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.dvc2bfcndg.js",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Route": "lib/jquery/dist/jquery.js",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -15670,7 +15670,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "19798"
+          "Value": "298502"
         },
         {
           "Name": "Content-Type",
@@ -15678,52 +15678,7 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qbS02vMHZxdLNYKUtLPSYaSHXj1/ZwH1fv9f3XAY0LU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "dvc2bfcndg"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-qbS02vMHZxdLNYKUtLPSYaSHXj1/ZwH1fv9f3XAY0LU="
-        }
-      ]
-    },
-    {
-      "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "19798"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"qbS02vMHZxdLNYKUtLPSYaSHXj1/ZwH1fv9f3XAY0LU=\""
+          "Value": "\"oo12yYOwbYfrLG1t6v9+HU+vMvEnlKkr1eIcdUwG7Zs=\""
         },
         {
           "Name": "Last-Modified",
@@ -15737,13 +15692,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-qbS02vMHZxdLNYKUtLPSYaSHXj1/ZwH1fv9f3XAY0LU="
+          "Value": "sha256-oo12yYOwbYfrLG1t6v9+HU+vMvEnlKkr1eIcdUwG7Zs="
         }
       ]
     },
     {
-      "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Route": "lib/jquery/dist/jquery.min.dsw5v3fbc5.map",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -15752,89 +15707,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5873"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"BtVmVJsyUIncIatblQsAlI06bS8pb2yZBcrDOa7snJw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-BtVmVJsyUIncIatblQsAlI06bS8pb2yZBcrDOa7snJw="
-        }
-      ]
-    },
-    {
-      "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.mt9h37ga6s.js",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5873"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"BtVmVJsyUIncIatblQsAlI06bS8pb2yZBcrDOa7snJw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "mt9h37ga6s"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-BtVmVJsyUIncIatblQsAlI06bS8pb2yZBcrDOa7snJw="
-        }
-      ]
-    },
-    {
-      "Route": "lib/jquery-validation-unobtrusive/LICENSE.txt",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "587"
+          "Value": "137974"
         },
         {
           "Name": "Content-Type",
@@ -15842,44 +15715,7 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aBc/n/nO9esvq0e80G57lEYLonvE5dKKUgoozaiVfLM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-aBc/n/nO9esvq0e80G57lEYLonvE5dKKUgoozaiVfLM="
-        }
-      ]
-    },
-    {
-      "Route": "lib/jquery-validation-unobtrusive/LICENSE.wqejeusuyq.txt",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "587"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"aBc/n/nO9esvq0e80G57lEYLonvE5dKKUgoozaiVfLM=\""
+          "Value": "\"PVB97BePQ5JED6qSU7EvSun5iseF5FinCKtqsv5X9uA=\""
         },
         {
           "Name": "Last-Modified",
@@ -15893,15 +15729,261 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "wqejeusuyq"
+          "Value": "dsw5v3fbc5"
         },
         {
           "Name": "label",
-          "Value": "lib/jquery-validation-unobtrusive/LICENSE.txt"
+          "Value": "lib/jquery/dist/jquery.min.map"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-aBc/n/nO9esvq0e80G57lEYLonvE5dKKUgoozaiVfLM="
+          "Value": "sha256-PVB97BePQ5JED6qSU7EvSun5iseF5FinCKtqsv5X9uA="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery/dist/jquery.min.js",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89478"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"82hEkGrSMJh3quMSG4f7FbngmAPLTDM63H4eNayS4Us=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-82hEkGrSMJh3quMSG4f7FbngmAPLTDM63H4eNayS4Us="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery/dist/jquery.min.map",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "137974"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PVB97BePQ5JED6qSU7EvSun5iseF5FinCKtqsv5X9uA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PVB97BePQ5JED6qSU7EvSun5iseF5FinCKtqsv5X9uA="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery/dist/jquery.min.rm8d4uw1xt.js",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89478"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"82hEkGrSMJh3quMSG4f7FbngmAPLTDM63H4eNayS4Us=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rm8d4uw1xt"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery/dist/jquery.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-82hEkGrSMJh3quMSG4f7FbngmAPLTDM63H4eNayS4Us="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery/dist/jquery.ukz1g2vv03.js",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "298502"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oo12yYOwbYfrLG1t6v9+HU+vMvEnlKkr1eIcdUwG7Zs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ukz1g2vv03"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery/dist/jquery.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oo12yYOwbYfrLG1t6v9+HU+vMvEnlKkr1eIcdUwG7Zs="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery/LICENSE.afgyafcsqt.txt",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1641"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WtKlDye/qV68IA2W1tHFTyXyc/HjQvQKBpIK1CEulFM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "afgyafcsqt"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery/LICENSE.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WtKlDye/qV68IA2W1tHFTyXyc/HjQvQKBpIK1CEulFM="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery/LICENSE.txt",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1641"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WtKlDye/qV68IA2W1tHFTyXyc/HjQvQKBpIK1CEulFM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WtKlDye/qV68IA2W1tHFTyXyc/HjQvQKBpIK1CEulFM="
         }
       ]
     },
@@ -16316,8 +16398,8 @@
       ]
     },
     {
-      "Route": "lib/jquery/dist/jquery.js",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.dvc2bfcndg.js",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -16326,7 +16408,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "298502"
+          "Value": "19798"
         },
         {
           "Name": "Content-Type",
@@ -16334,44 +16416,7 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"oo12yYOwbYfrLG1t6v9+HU+vMvEnlKkr1eIcdUwG7Zs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-oo12yYOwbYfrLG1t6v9+HU+vMvEnlKkr1eIcdUwG7Zs="
-        }
-      ]
-    },
-    {
-      "Route": "lib/jquery/dist/jquery.min.dsw5v3fbc5.map",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "137974"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"PVB97BePQ5JED6qSU7EvSun5iseF5FinCKtqsv5X9uA=\""
+          "Value": "\"qbS02vMHZxdLNYKUtLPSYaSHXj1/ZwH1fv9f3XAY0LU=\""
         },
         {
           "Name": "Last-Modified",
@@ -16385,21 +16430,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dsw5v3fbc5"
+          "Value": "dvc2bfcndg"
         },
         {
           "Name": "label",
-          "Value": "lib/jquery/dist/jquery.min.map"
+          "Value": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-PVB97BePQ5JED6qSU7EvSun5iseF5FinCKtqsv5X9uA="
+          "Value": "sha256-qbS02vMHZxdLNYKUtLPSYaSHXj1/ZwH1fv9f3XAY0LU="
         }
       ]
     },
     {
-      "Route": "lib/jquery/dist/jquery.min.js",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -16408,7 +16453,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "89478"
+          "Value": "19798"
         },
         {
           "Name": "Content-Type",
@@ -16416,7 +16461,7 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"82hEkGrSMJh3quMSG4f7FbngmAPLTDM63H4eNayS4Us=\""
+          "Value": "\"qbS02vMHZxdLNYKUtLPSYaSHXj1/ZwH1fv9f3XAY0LU=\""
         },
         {
           "Name": "Last-Modified",
@@ -16430,13 +16475,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-82hEkGrSMJh3quMSG4f7FbngmAPLTDM63H4eNayS4Us="
+          "Value": "sha256-qbS02vMHZxdLNYKUtLPSYaSHXj1/ZwH1fv9f3XAY0LU="
         }
       ]
     },
     {
-      "Route": "lib/jquery/dist/jquery.min.map",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -16445,15 +16490,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "137974"
+          "Value": "5873"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/plain"
+          "Value": "text/javascript"
         },
         {
           "Name": "ETag",
-          "Value": "\"PVB97BePQ5JED6qSU7EvSun5iseF5FinCKtqsv5X9uA=\""
+          "Value": "\"BtVmVJsyUIncIatblQsAlI06bS8pb2yZBcrDOa7snJw=\""
         },
         {
           "Name": "Last-Modified",
@@ -16467,13 +16512,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-PVB97BePQ5JED6qSU7EvSun5iseF5FinCKtqsv5X9uA="
+          "Value": "sha256-BtVmVJsyUIncIatblQsAlI06bS8pb2yZBcrDOa7snJw="
         }
       ]
     },
     {
-      "Route": "lib/jquery/dist/jquery.min.rm8d4uw1xt.js",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.mt9h37ga6s.js",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -16482,7 +16527,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "89478"
+          "Value": "5873"
         },
         {
           "Name": "Content-Type",
@@ -16490,7 +16535,7 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"82hEkGrSMJh3quMSG4f7FbngmAPLTDM63H4eNayS4Us=\""
+          "Value": "\"BtVmVJsyUIncIatblQsAlI06bS8pb2yZBcrDOa7snJw=\""
         },
         {
           "Name": "Last-Modified",
@@ -16504,21 +16549,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "rm8d4uw1xt"
+          "Value": "mt9h37ga6s"
         },
         {
           "Name": "label",
-          "Value": "lib/jquery/dist/jquery.min.js"
+          "Value": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-82hEkGrSMJh3quMSG4f7FbngmAPLTDM63H4eNayS4Us="
+          "Value": "sha256-BtVmVJsyUIncIatblQsAlI06bS8pb2yZBcrDOa7snJw="
         }
       ]
     },
     {
-      "Route": "lib/jquery/dist/jquery.ukz1g2vv03.js",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Route": "lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -16527,52 +16572,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "298502"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"oo12yYOwbYfrLG1t6v9+HU+vMvEnlKkr1eIcdUwG7Zs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ukz1g2vv03"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/jquery/dist/jquery.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-oo12yYOwbYfrLG1t6v9+HU+vMvEnlKkr1eIcdUwG7Zs="
-        }
-      ]
-    },
-    {
-      "Route": "lib/jquery/LICENSE.afgyafcsqt.txt",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\LICENSE.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1641"
+          "Value": "587"
         },
         {
           "Name": "Content-Type",
@@ -16580,52 +16580,7 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WtKlDye/qV68IA2W1tHFTyXyc/HjQvQKBpIK1CEulFM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "afgyafcsqt"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/jquery/LICENSE.txt"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-WtKlDye/qV68IA2W1tHFTyXyc/HjQvQKBpIK1CEulFM="
-        }
-      ]
-    },
-    {
-      "Route": "lib/jquery/LICENSE.txt",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery\\LICENSE.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1641"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"WtKlDye/qV68IA2W1tHFTyXyc/HjQvQKBpIK1CEulFM=\""
+          "Value": "\"aBc/n/nO9esvq0e80G57lEYLonvE5dKKUgoozaiVfLM=\""
         },
         {
           "Name": "Last-Modified",
@@ -16639,7 +16594,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WtKlDye/qV68IA2W1tHFTyXyc/HjQvQKBpIK1CEulFM="
+          "Value": "sha256-aBc/n/nO9esvq0e80G57lEYLonvE5dKKUgoozaiVfLM="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation-unobtrusive/LICENSE.wqejeusuyq.txt",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "587"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aBc/n/nO9esvq0e80G57lEYLonvE5dKKUgoozaiVfLM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 15 Dec 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wqejeusuyq"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery-validation-unobtrusive/LICENSE.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-aBc/n/nO9esvq0e80G57lEYLonvE5dKKUgoozaiVfLM="
         }
       ]
     },

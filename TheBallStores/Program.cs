@@ -3,21 +3,22 @@ using TheBallStores.Models;
 using TheBallStores.Helpers;
 using TheBallStores.Data;
 using Microsoft.AspNetCore.DataProtection;
-using Microsoft.AspNetCore.StaticFiles; // Thêm namespace này
+using Microsoft.AspNetCore.StaticFiles; // Để xử lý ảnh .avif
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// --- FIX LỖI DATA PROTECTION TRÊN RENDER ---
+// --- FIX LỖI SESSION & DATA PROTECTION TRÊN RENDER ---
+// Lưu khóa bảo mật vào thư mục 'keys' để không bị mất khi restart app
 var keysFolder = Path.Combine(builder.Environment.ContentRootPath, "keys");
 if (!Directory.Exists(keysFolder)) Directory.CreateDirectory(keysFolder);
 
 builder.Services.AddDataProtection()
     .PersistKeysToFileSystem(new DirectoryInfo(keysFolder))
     .SetApplicationName("TheBallStores");
-// ------------------------------------------
+// -----------------------------------------------------
 
 // Cấu hình Session
 builder.Services.AddSession(options =>
@@ -34,7 +35,7 @@ builder.Services.AddDbContext<TheballStoreContext>(options =>
 var app = builder.Build();
 
 // =========================================================================
-// PHẦN QUAN TRỌNG: TỰ ĐỘNG KHỞI TẠO VÀ SỬA LỖI DATABASE
+// TỰ ĐỘNG KHỞI TẠO & SỬA LỖI DATABASE
 // =========================================================================
 using (var scope = app.Services.CreateScope())
 {
@@ -43,34 +44,29 @@ using (var scope = app.Services.CreateScope())
     {
         var context = services.GetRequiredService<TheballStoreContext>();
 
-        // --- LOGIC TỰ ĐỘNG SỬA LỖI ---
+        // Tự động tạo bảng nếu chưa có (Fix lỗi no such table)
         try
         {
-            if (!context.Database.CanConnect() || !context.KhachHangs.Any())
-            {
-                context.Database.Migrate();
-            }
+            context.Database.Migrate();
         }
         catch
         {
-            Console.WriteLine("--> Phát hiện lỗi Database Schema. Đang Reset lại Database...");
-            context.Database.EnsureDeleted();
-            context.Database.Migrate();
+            // Nếu lỗi nặng quá thì xóa đi tạo lại (Chỉ dùng khi cần thiết)
+            // context.Database.EnsureDeleted();
+            // context.Database.Migrate();
         }
-        // -----------------------------
 
-        // Gọi hàm Initialize để thêm dữ liệu mẫu (Admin, Sản phẩm...)
+        // Nạp dữ liệu mẫu (Admin,...)
         DbInitializer.Initialize(services);
     }
     catch (Exception ex)
     {
         var logger = services.GetRequiredService<ILogger<Program>>();
-        logger.LogError(ex, "Lỗi nghiêm trọng khi khởi tạo Database (Seeding DB).");
+        logger.LogError(ex, "Lỗi khi khởi tạo Database.");
     }
 }
 // =========================================================================
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -79,15 +75,14 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// --- SỬA Ở ĐÂY: CẤU HÌNH ĐỂ SERVER HIỂU FILE .AVIF ---
+// --- CẤU HÌNH ĐỂ HIỂN THỊ ẢNH .AVIF ---
 var provider = new FileExtensionContentTypeProvider();
 provider.Mappings[".avif"] = "image/avif";
-
 app.UseStaticFiles(new StaticFileOptions
 {
     ContentTypeProvider = provider
 });
-// -----------------------------------------------------
+// --------------------------------------
 
 app.UseRouting();
 

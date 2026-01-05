@@ -4,33 +4,51 @@
     ViewData["Title"] = "Tạo Danh Mục Mới";
 }
 
-<h1 class="text-info mb-4 text-center">TẠO DANH MỤC SẢN PHẨM MỚI</h1>
-<hr class="border-secondary mb-5" />
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <!-- Header -->
+            <div class="text-center mb-4">
+                <h2 class="fw-bold text-uppercase text-dark">Tạo Danh Mục Mới</h2>
+                <p class="text-muted small">Thêm loại sản phẩm mới vào hệ thống</p>
+            </div>
 
-<div class="row justify-content-center">
-    <div class="col-md-6">
-        <div class="card-vortex p-4 shadow-lg">
-            <h4 class="text-warning mb-3">Thông Tin Danh Mục</h4>
-            <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                <div class="form-group mb-3">
-                    <label asp-for="TenLoai" class="control-label text-white fw-bold"></label>
-                    <input asp-for="TenLoai" class="form-control form-control-vortex" placeholder="Ví dụ: Giày Bóng Rổ" />
-                    <span asp-validation-for="TenLoai" class="text-danger"></span>
+            <!-- Form Card -->
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="card-header bg-primary text-white py-3">
+                    <h5 class="mb-0 fw-bold"><i class="bi bi-folder-plus me-2"></i>Thông Tin Danh Mục</h5>
                 </div>
+                <div class="card-body p-4 p-md-5">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger d-none"></div>
 
-                <div class="form-group mb-3">
-                    <label asp-for="NhomLoai" class="control-label text-white fw-bold"></label>
-                    <input asp-for="NhomLoai" class="form-control form-control-vortex" placeholder="Ví dụ: Giày (Tùy chọn)" />
-                    <span asp-validation-for="NhomLoai" class="text-danger"></span>
-                </div>
+                        <!-- Tên Loại -->
+                        <div class="mb-4">
+                            <label asp-for="TenLoai" class="form-label fw-bold text-dark">Tên Danh Mục <span class="text-danger">*</span></label>
+                            <input asp-for="TenLoai" class="form-control form-control-lg rounded-3" placeholder="Ví dụ: Giày Bóng Rổ" autofocus />
+                            <span asp-validation-for="TenLoai" class="text-danger small mt-1 d-block"></span>
+                        </div>
 
-                <div class="form-group mt-4 d-flex gap-2">
-                    <input type="submit" value="TẠO MỚI" class="btn btn-primary" />
-                    <a asp-action="Index" class="btn btn-secondary">Quay Lại Danh Sách</a>
+                        <!-- Nhóm Loại -->
+                        <div class="mb-4">
+                            <label asp-for="NhomLoai" class="form-label fw-bold text-dark">Nhóm Loại (Tùy chọn)</label>
+                            <input asp-for="NhomLoai" class="form-control rounded-3" placeholder="Ví dụ: Giày, Phụ kiện..." />
+                            <div class="form-text text-muted">Giúp gom nhóm các danh mục liên quan.</div>
+                            <span asp-validation-for="NhomLoai" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="d-grid gap-2 mt-5">
+                            <button type="submit" class="btn btn-primary btn-lg shadow-sm fw-bold text-uppercase">
+                                <i class="bi bi-check2-circle me-2"></i> Tạo Mới
+                            </button>
+                            <a asp-action="Index" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left me-1"></i> Quay lại danh sách
+                            </a>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>

@@ -1,48 +1,178 @@
 ﻿@model TheBallStores.Models.SanPham
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = Model.TenSp;
 }
 
-<h1>Details</h1>
+<div class="container py-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/" class="text-decoration-none text-muted">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="/Store" class="text-decoration-none text-muted">Cửa hàng</a></li>
+            <li class="breadcrumb-item active" aria-current="page">@Model.TenSp</li>
+        </ol>
+    </nav>
 
-<div>
-    <h4>SanPham</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TenSp)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TenSp)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GiaBan)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GiaBan)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AnhDaiDien)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AnhDaiDien)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MoTa)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MoTa)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MaLoaiNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MaLoaiNavigation.MaLoai)
-        </dd>
-    </dl>
+    <div class="row g-5">
+        <!-- CỘT TRÁI: ẢNH SẢN PHẨM -->
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-3">
+                <div class="p-4 bg-light text-center">
+                    <img id="mainImage" src="~/images/products/@(string.IsNullOrEmpty(Model.AnhDaiDien) ? "no-image.png" : Model.AnhDaiDien)"
+                         class="img-fluid rounded-3"
+                         style="max-height: 500px; object-fit: contain;"
+                         alt="@Model.TenSp"
+                         onerror="this.src='/images/no-image.png'">
+                </div>
+            </div>
+
+            <!-- Ảnh phụ (Thumbnails) -->
+            @if (Model.HinhAnhSanPhams != null && Model.HinhAnhSanPhams.Any())
+            {
+                <div class="d-flex gap-2 overflow-auto py-2">
+                    <!-- Ảnh chính -->
+                    <div class="thumbnail-wrapper active" onclick="changeImage(this, '/images/products/@Model.AnhDaiDien')">
+                        <img src="~/images/products/@Model.AnhDaiDien" class="img-thumbnail rounded-3" alt="Main" onerror="this.src='/images/no-image.png'">
+                    </div>
+                    <!-- Các ảnh phụ -->
+                    @foreach (var img in Model.HinhAnhSanPhams)
+                    {
+                        <div class="thumbnail-wrapper" onclick="changeImage(this, '/images/products/@img.DuongDanAnh')">
+                            <img src="~/images/products/@img.DuongDanAnh" class="img-thumbnail rounded-3" alt="Sub" onerror="this.src='/images/no-image.png'">
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+
+        <!-- CỘT PHẢI: THÔNG TIN CHI TIẾT -->
+        <div class="col-lg-6">
+            <h5 class="text-uppercase text-muted fw-bold mb-2">@Model.MaLoaiNavigation?.TenLoai</h5>
+            <h1 class="fw-bold text-dark mb-3">@Model.TenSp</h1>
+
+            <div class="d-flex align-items-center mb-4">
+                <h3 class="text-primary fw-bold mb-0 me-3">@Model.GiaBan.ToString("#,##0") đ</h3>
+                <span class="badge bg-success bg-opacity-10 text-success border border-success rounded-pill px-3 py-2">
+                    <i class="bi bi-check-circle me-1"></i> Còn hàng
+                </span>
+            </div>
+
+            <p class="text-muted mb-4 lead" style="font-size: 1rem;">
+                @Model.MoTa
+            </p>
+
+            <hr class="text-muted opacity-25 my-4">
+
+            <!-- FORM MUA HÀNG -->
+            <form asp-controller="GioHang" asp-action="ThemVaoGio" method="post">
+                <input type="hidden" name="maSp" value="@Model.MaSp" />
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold text-uppercase mb-3">Chọn Size:</label>
+                    <div class="d-flex flex-wrap gap-2">
+                        @if (Model.SanPhamChiTiets != null && Model.SanPhamChiTiets.Any())
+                        {
+                            @foreach (var chiTiet in Model.SanPhamChiTiets.OrderBy(ct => ct.MaSizeNavigation.TenSize))
+                            {
+                                var isDisabled = (chiTiet.SoLuongTon ?? 0) <= 0;
+                                <div class="position-relative">
+                                    <input type="radio" class="btn-check" name="maSize" id="size_@chiTiet.MaSize" value="@chiTiet.MaSize" @(isDisabled ? "disabled" : "") required>
+                                    <label class="btn btn-outline-dark rounded-3 px-3 py-2 fw-bold @(isDisabled ? "opacity-50 text-decoration-line-through" : "")" for="size_@chiTiet.MaSize">
+                                        @chiTiet.MaSizeNavigation.TenSize
+                                    </label>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <span class="text-danger">Hết hàng tạm thời</span>
+                        }
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold text-uppercase mb-2">Số lượng:</label>
+                    <div class="input-group" style="width: 140px;">
+                        <button class="btn btn-outline-secondary" type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
+                        <input type="number" name="soLuong" class="form-control text-center fw-bold border-secondary" value="1" min="1" max="10">
+                        <button class="btn btn-outline-secondary" type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+</button>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-3 mt-5">
+                    <button type="submit" class="btn btn-sport btn-lg flex-grow-1 py-3 text-uppercase shadow-sm">
+                        <i class="bi bi-bag-plus me-2"></i> Thêm vào giỏ
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4" title="Yêu thích">
+                        <i class="bi bi-heart"></i>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Chính sách -->
+            <div class="row mt-5 pt-4 border-top border-light">
+                <div class="col-6 mb-3">
+                    <div class="d-flex align-items-center text-muted">
+                        <i class="bi bi-truck fs-4 me-3 text-dark"></i>
+                        <span class="small">Giao hàng toàn quốc</span>
+                    </div>
+                </div>
+                <div class="col-6 mb-3">
+                    <div class="d-flex align-items-center text-muted">
+                        <i class="bi bi-arrow-repeat fs-4 me-3 text-dark"></i>
+                        <span class="small">Đổi trả trong 7 ngày</span>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="d-flex align-items-center text-muted">
+                        <i class="bi bi-shield-check fs-4 me-3 text-dark"></i>
+                        <span class="small">Hàng chính hãng 100%</span>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="d-flex align-items-center text-muted">
+                        <i class="bi bi-headset fs-4 me-3 text-dark"></i>
+                        <span class="small">Hỗ trợ 24/7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.MaSp">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+<style>
+    .thumbnail-wrapper {
+        cursor: pointer;
+        width: 80px;
+        height: 80px;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        transition: all 0.2s;
+    }
+
+        .thumbnail-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumbnail-wrapper.active, .thumbnail-wrapper:hover {
+            border-color: var(--bs-primary);
+            opacity: 0.8;
+        }
+    /* Ẩn input số mặc định */
+    input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+</style>
+
+<script>
+    function changeImage(element, src) {
+        // Đổi ảnh chính
+        document.getElementById('mainImage').src = src;
+
+        // Cập nhật active class cho thumbnail
+        document.querySelectorAll('.thumbnail-wrapper').forEach(el => el.classList.remove('active'));
+        element.classList.add('active');
+    }
+</script>

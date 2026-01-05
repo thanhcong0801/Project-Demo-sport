@@ -1,199 +1,104 @@
 ﻿@model IEnumerable<TheBallStores.Models.SanPham>
 @{
-    ViewData["Title"] = "Cửa hàng";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Cửa Hàng";
     var cacLoai = ViewBag.CacLoai as List<TheBallStores.Models.LoaiSanPham>;
-    var maLoaiHienTai = ViewBag.MaLoaiHienTai as int?;
+    int? maLoaiHienTai = ViewBag.MaLoaiHienTai;
 }
 
-<div class="container py-5">
-    <!-- Banner / Title -->
-    <div class="text-center mb-5">
-        <h1 class="display-4 fw-bold text-info" style="text-shadow: 0 0 15px rgba(13, 202, 240, 0.5);">KICK VORTEX STORE</h1>
-        <p class="text-muted fs-5">Khám phá bộ sưu tập giày thể thao đỉnh cao</p>
-    </div>
-
-    <div class="row">
-        <!-- MENU BÊN TRÁI (Danh mục) -->
-        <div class="col-lg-3 mb-4">
-            <div class="card-vortex p-3 sticky-top" style="top: 20px; z-index: 10;">
-                <h4 class="text-white mb-3 border-bottom border-secondary pb-2">
-                    <i class="bi bi-list-ul me-2"></i> DANH MỤC
-                </h4>
-                <div class="list-group list-group-flush">
-                    <!-- Tất cả sản phẩm -->
-                    <a asp-action="Index"
-                       class="list-group-item list-group-item-action d-flex justify-content-between align-items-center @(maLoaiHienTai == null ? "active-vortex" : "text-light bg-transparent")">
-                        <span>Tất cả sản phẩm</span>
-                        <i class="bi bi-chevron-right small"></i>
-                    </a>
-
-                    <!-- Danh sách loại -->
-                    @if (cacLoai != null)
-                    {
-                        foreach (var loai in cacLoai)
-                        {
-                            <a asp-action="Index" asp-route-maLoai="@loai.MaLoai"
-                               class="list-group-item list-group-item-action d-flex justify-content-between align-items-center @(maLoaiHienTai == loai.MaLoai ? "active-vortex" : "text-light bg-transparent")">
-                                <span>@loai.TenLoai</span>
-                                <i class="bi bi-chevron-right small"></i>
-                            </a>
-                        }
-                    }
-                </div>
-            </div>
-        </div>
-
-        <!-- DANH SÁCH SẢN PHẨM BÊN PHẢI -->
-        <div class="col-lg-9">
-            <!-- Form Tìm kiếm -->
-            <div class="card-vortex p-3 mb-4">
-                <form asp-action="Index" method="get" class="d-flex gap-2">
-                    @if (maLoaiHienTai != null)
-                    {
-                        <input type="hidden" name="maLoai" value="@maLoaiHienTai" />
-                    }
-                    <div class="input-group">
-                        <input type="text" class="form-control form-control-vortex border-secondary text-white"
-                               placeholder="Tìm kiếm tên sản phẩm..." name="searchString" value="@ViewBag.SearchString">
-                        <button class="btn btn-outline-info" type="submit">
-                            <i class="bi bi-search me-1"></i> TÌM KIẾM
-                        </button>
-                    </div>
-                </form>
-            </div>
-
-            <!-- Grid Sản phẩm -->
-            @if (Model != null && Model.Any())
-            {
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    @foreach (var item in Model)
-                    {
-                        <div class="col">
-                            <div class="card h-100 card-vortex product-card border border-secondary position-relative overflow-hidden">
-                                <!-- Badge -->
-                                <span class="position-absolute top-0 start-0 bg-danger text-white px-2 py-1 m-2 rounded small fw-bold shadow" style="z-index: 2;">HOT</span>
-
-                                <!-- Ảnh sản phẩm -->
-                                <div class="product-img-wrapper position-relative overflow-hidden">
-                                    <a asp-controller="SanPhams" asp-action="Details" asp-route-id="@item.MaSp">
-                                        <img src="@(string.IsNullOrEmpty(item.AnhDaiDien) ? "/images/no-image.png" : "/images/products/" + item.AnhDaiDien)"
-                                             class="card-img-top product-img"
-                                             alt="@item.TenSp">
-                                    </a>
-
-                                    <!-- Nút xem nhanh khi hover -->
-                                    <div class="product-overlay d-flex justify-content-center align-items-center">
-                                        <a asp-controller="SanPhams" asp-action="Details" asp-route-id="@item.MaSp" class="btn btn-light rounded-circle shadow-sm m-1" title="Xem chi tiết">
-                                            <i class="bi bi-eye-fill text-dark"></i>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- Thông tin sản phẩm -->
-                                <div class="card-body d-flex flex-column text-center">
-                                    <small class="text-muted text-uppercase mb-1">@(item.MaLoaiNavigation?.TenLoai ?? "Thể thao")</small>
-
-                                    <h5 class="card-title text-truncate mb-2">
-                                        <a asp-controller="SanPhams" asp-action="Details" asp-route-id="@item.MaSp" class="text-white text-decoration-none product-link">
-                                            @item.TenSp
-                                        </a>
-                                    </h5>
-
-                                    <div class="mt-auto">
-                                        <span class="text-info fw-bold fs-5">@item.GiaBan.ToString("#,##0") đ</span>
-                                    </div>
-
-                                    <a asp-controller="Store" asp-action="Details" asp-route-id="@item.MaSp"
-                                       class="btn btn-outline-info mt-3 rounded-pill fw-bold btn-sm text-uppercase">
-                                        Chọn Size & Mua
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                </div>
-            }
-            else
-            {
-                <div class="text-center py-5">
-                    <i class="bi bi-box-seam text-secondary" style="font-size: 4rem;"></i>
-                    <p class="text-muted mt-3 fs-5">Không tìm thấy sản phẩm nào phù hợp.</p>
-                    <a asp-action="Index" class="btn btn-neon mt-2">Xem tất cả sản phẩm</a>
-                </div>
-            }
-        </div>
+<!-- Page Header -->
+<div class="page-header">
+    <div class="container">
+        <h1 class="fw-bold">CỬA HÀNG</h1>
+        <p class="lead">Khám phá những sản phẩm thể thao chất lượng nhất</p>
     </div>
 </div>
 
-<style>
-    /* CSS Riêng cho trang Store (Vortex Style) */
-    .active-vortex {
-        background-color: rgba(13, 202, 240, 0.15) !important;
-        color: #0dcaf0 !important;
-        border-left: 3px solid #0dcaf0 !important;
-        font-weight: bold;
-    }
+<div class="container pb-5">
+    <div class="row">
+        <!-- Sidebar Filter -->
+        <div class="col-lg-3 mb-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white fw-bold py-3">
+                    <i class="bi bi-funnel me-2"></i> BỘ LỌC TÌM KIẾM
+                </div>
+                <div class="card-body">
+                    <h6 class="fw-bold mt-2 mb-3">Danh Mục</h6>
+                    <div class="list-group list-group-flush">
+                        <a href="/Store" class="list-group-item list-group-item-action border-0 @(maLoaiHienTai == null ? "active bg-light text-primary fw-bold" : "")">
+                            Tất cả sản phẩm
+                        </a>
+                        @if (cacLoai != null)
+                        {
+                            foreach (var loai in cacLoai)
+                            {
+                                <a href="/Store?maLoai=@loai.MaLoai" class="list-group-item list-group-item-action border-0 @(maLoaiHienTai == loai.MaLoai ? "active bg-light text-primary fw-bold" : "")">
+                                    @loai.TenLoai
+                                </a>
+                            }
+                        }
+                    </div>
 
-    .list-group-item {
-        border-bottom: 1px solid #333 !important;
-        transition: all 0.2s;
-    }
+                    <h6 class="fw-bold mt-4 mb-3">Tìm Kiếm</h6>
+                    <form action="/Store" method="get">
+                        <div class="input-group mb-3">
+                            <input type="text" name="searchString" class="form-control" placeholder="Tên sản phẩm..." value="@ViewBag.SearchString">
+                            <button class="btn btn-dark" type="submit"><i class="bi bi-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-        .list-group-item:hover {
-            background-color: rgba(255, 255, 255, 0.05) !important;
-            padding-left: 20px !important; /* Hiệu ứng trượt nhẹ */
-        }
+        <!-- Product Grid -->
+        <div class="col-lg-9">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <span class="text-muted">Hiển thị <strong>@Model.Count()</strong> sản phẩm</span>
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        Sắp xếp
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Mới nhất</a></li>
+                        <li><a class="dropdown-item" href="#">Giá thấp đến cao</a></li>
+                        <li><a class="dropdown-item" href="#">Giá cao đến thấp</a></li>
+                    </ul>
+                </div>
+            </div>
 
-    .product-img-wrapper {
-        height: 250px;
-        background-color: #1a1d20;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-    }
-
-    .product-img {
-        max-height: 100%;
-        width: auto;
-        object-fit: contain;
-        transition: transform 0.4s ease;
-    }
-
-    /* Zoom ảnh khi hover card */
-    .product-card:hover .product-img {
-        transform: scale(1.1);
-    }
-
-    /* Hiệu ứng Overlay nút xem */
-    .product-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.4);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .product-card:hover .product-overlay {
-        opacity: 1;
-    }
-
-    /* Glow Effect cho Card */
-    .product-card {
-        transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-    }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(13, 202, 240, 0.2);
-            border-color: #0dcaf0 !important;
-        }
-
-    .product-title:hover {
-        color: #0dcaf0 !important;
-    }
-</style>
+            <div class="row row-cols-2 row-cols-md-3 g-4">
+                @if (Model.Any())
+                {
+                    foreach (var item in Model)
+                    {
+                        <div class="col">
+                            <div class="product-card h-100 shadow-sm">
+                                <a href="/Store/Details/@item.MaSp" class="text-decoration-none text-dark">
+                                    <div class="product-img-wrapper">
+                                        <img src="~/images/products/@(string.IsNullOrEmpty(item.AnhDaiDien) ? "no-image.png" : item.AnhDaiDien)"
+                                             class="product-img" alt="@item.TenSp"
+                                             onerror="this.src='/images/no-image.png'">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title text-truncate" title="@item.TenSp">@item.TenSp</h5>
+                                        <div class="d-flex justify-content-between align-items-center mt-2">
+                                            <span class="price">@item.GiaBan.ToString("#,##0") đ</span>
+                                            <span class="btn btn-sm btn-light rounded-circle"><i class="bi bi-bag-plus"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="col-12 text-center py-5">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4076/4076432.png" width="100" class="mb-3 opacity-50">
+                        <p class="text-muted">Không tìm thấy sản phẩm nào phù hợp.</p>
+                        <a href="/Store" class="btn btn-outline-dark btn-sm">Xem tất cả</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

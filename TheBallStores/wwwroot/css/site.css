@@ -1,0 +1,193 @@
+﻿/* --- THEME CONFIGURATION --- */
+:root {
+    --primary-color: #000000; /* Đen chủ đạo */
+    --secondary-color: #ffffff; /* Trắng */
+    --accent-color: #ff4500; /* Cam thể thao (hoặc đổi thành #007bff xanh dương) */
+    --bg-light: #f8f9fa; /* Nền xám nhẹ */
+    --text-dark: #212529;
+    --text-light: #6c757d;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* --- HEADER & NAVBAR --- */
+.navbar-custom {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--primary-color) !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text-dark) !important;
+    margin: 0 10px;
+    position: relative;
+}
+
+    .nav-link:hover, .nav-link.active {
+        color: var(--accent-color) !important;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--accent-color);
+        transition: var(--transition);
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+    }
+
+/* --- BUTTONS --- */
+.btn-sport {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 600;
+    border: 2px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+    .btn-sport:hover {
+        background-color: transparent;
+        color: var(--primary-color);
+    }
+
+.btn-outline-sport {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+    .btn-outline-sport:hover {
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+    }
+
+/* --- PRODUCT CARD --- */
+.product-card {
+    background: white;
+    border: none;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+}
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--box-shadow);
+    }
+
+.product-img-wrapper {
+    position: relative;
+    padding-top: 100%; /* Ratio 1:1 */
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.product-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hoặc contain nếu muốn thấy toàn bộ giày */
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    height: 40px; /* Giới hạn chiều cao tên */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.price {
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #111;
+    color: #eee;
+    padding: 50px 0 20px;
+    margin-top: 50px;
+}
+
+.footer-link {
+    color: #aaa;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: var(--transition);
+}
+
+    .footer-link:hover {
+        color: var(--secondary-color);
+        padding-left: 5px;
+    }
+
+/* --- OTHER UTILS --- */
+.page-header {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1541252260730-0412e8e2108e?q=80&w=1974&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 0 0 20px 20px;
+}
+
+.badge-cart {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 0.7rem;
+}

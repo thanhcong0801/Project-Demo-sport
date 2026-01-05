@@ -158,14 +158,13 @@ namespace TheBallStores.Controllers
 
             if (HinhThucThanhToan == "ONLINE")
             {
-                // --- CẤU HÌNH VNPAY ---
                 var vnPayModel = new VnPayLibrary();
 
                 vnPayModel.AddRequestData("vnp_Version", _configuration["VnPay:Version"] ?? "2.1.0");
                 vnPayModel.AddRequestData("vnp_Command", _configuration["VnPay:Command"] ?? "pay");
                 vnPayModel.AddRequestData("vnp_TmnCode", (_configuration["VnPay:TmnCode"] ?? "").Trim());
 
-                // QUAN TRỌNG: Tính tiền (VND nhân 100)
+                // Tính tiền: Nhân 100 và ép kiểu long để tránh lỗi số lẻ
                 long amount = (long)((donHang.TongTien ?? 0) * 100);
                 vnPayModel.AddRequestData("vnp_Amount", amount.ToString());
 
@@ -173,10 +172,12 @@ namespace TheBallStores.Controllers
                 vnPayModel.AddRequestData("vnp_CurrCode", "VND");
                 vnPayModel.AddRequestData("vnp_IpAddr", Utils.GetIpAddress(HttpContext));
                 vnPayModel.AddRequestData("vnp_Locale", "vn");
-                vnPayModel.AddRequestData("vnp_OrderInfo", "Thanh toan don hang " + donHang.MaDonHang);
+
+                // Sửa lỗi OrderInfo: Viết liền không dấu để tránh lỗi mã hóa URL
+                vnPayModel.AddRequestData("vnp_OrderInfo", "ThanhToanDH" + donHang.MaDonHang);
                 vnPayModel.AddRequestData("vnp_OrderType", "other");
 
-                // QUAN TRỌNG: Cấu hình Return URL chính xác cho Render (HTTPS)
+                // Cấu hình Return URL: Tự động dùng HTTPS trên Render
                 var domain = $"{Request.Scheme}://{Request.Host}";
                 if (Request.Host.Host.Contains("onrender.com") && !Request.IsHttps)
                 {
@@ -199,7 +200,6 @@ namespace TheBallStores.Controllers
             }
         }
 
-        // --- XỬ LÝ KẾT QUẢ TRẢ VỀ TỪ VNPAY ---
         public async Task<IActionResult> PaymentCallback()
         {
             var vnpay = new VnPayLibrary();
@@ -211,7 +211,6 @@ namespace TheBallStores.Controllers
                 }
             }
 
-            // Trim HashSecret để tránh lỗi thừa khoảng trắng
             string hashSecret = (_configuration["VnPay:HashSecret"] ?? "").Trim();
             string vnp_SecureHash = Request.Query["vnp_SecureHash"].ToString() ?? "";
 

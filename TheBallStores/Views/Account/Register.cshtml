@@ -1,37 +1,80 @@
 ﻿@model TheBallStores.Models.KhachHang
 @{
-    ViewData["Title"] = "Đăng Ký";
+    ViewData["Title"] = "Đăng Ký Thành Viên";
 }
 
-<div class="row justify-content-center">
-    <div class="col-md-6">
-        <div class="card-vortex p-5">
-            <h2 class="text-center mb-4" style="color: var(--accent-purple);">THIẾT LẬP DANH TÍNH</h2>
-
-            <form asp-action="Register" method="post">
-                <div class="mb-3">
-                    <label class="form-label text-muted">HỌ VÀ TÊN</label>
-                    <input asp-for="HoTen" class="form-control form-control-vortex" required />
-                </div>
-                <div class="mb-3">
-                    <label class="form-label text-muted">EMAIL</label>
-                    <input asp-for="Email" type="email" class="form-control form-control-vortex" required />
-                </div>
-                <div class="mb-3">
-                    <label class="form-label text-muted">MẬT KHẨU</label>
-                    <input asp-for="MatKhau" type="password" class="form-control form-control-vortex" required />
-                </div>
-                <div class="mb-3">
-                    <label class="form-label text-muted">SỐ ĐIỆN THOẠI</label>
-                    <input asp-for="DienThoai" class="form-control form-control-vortex" />
-                </div>
-                <div class="mb-4">
-                    <label class="form-label text-muted">ĐỊA CHỈ</label>
-                    <input asp-for="DiaChi" class="form-control form-control-vortex" />
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <!-- Card trắng đổ bóng -->
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                <!-- Header Card màu tối -->
+                <div class="card-header bg-dark text-white text-center py-4">
+                    <h3 class="mb-0 fw-bold text-uppercase" style="letter-spacing: 1px;">Đăng Ký Thành Viên</h3>
+                    <p class="small text-white-50 mb-0">Tham gia cộng đồng The Ball Stores ngay hôm nay!</p>
                 </div>
 
-                <button type="submit" class="btn btn-vortex w-100">XÁC NHẬN</button>
-            </form>
+                <div class="card-body p-4 p-md-5">
+
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                            <div>@ViewBag.Error</div>
+                        </div>
+                    }
+
+                    <form asp-action="Register" method="post">
+
+                        <!-- Hàng 1: Họ tên + SĐT -->
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="HoTen" class="form-control rounded-3" id="floatingName" placeholder="Họ tên" required />
+                                    <label for="floatingName" class="text-muted">Họ và Tên</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="DienThoai" class="form-control rounded-3" id="floatingPhone" placeholder="Số điện thoại" required />
+                                    <label for="floatingPhone" class="text-muted">Số điện thoại</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-floating mb-3">
+                            <input asp-for="Email" type="email" class="form-control rounded-3" id="floatingEmail" placeholder="name@example.com" required />
+                            <label for="floatingEmail" class="text-muted">Email đăng nhập</label>
+                        </div>
+
+                        <!-- Mật khẩu -->
+                        <div class="form-floating mb-3">
+                            <input asp-for="MatKhau" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Mật khẩu" required />
+                            <label for="floatingPassword" class="text-muted">Mật khẩu</label>
+                        </div>
+
+                        <!-- Địa chỉ -->
+                        <div class="form-floating mb-4">
+                            <input asp-for="DiaChi" class="form-control rounded-3" id="floatingAddress" placeholder="Địa chỉ" />
+                            <label for="floatingAddress" class="text-muted">Địa chỉ nhận hàng</label>
+                        </div>
+
+                        <!-- Nút Submit -->
+                        <button type="submit" class="btn btn-sport w-100 btn-lg shadow-sm py-3 text-uppercase">
+                            <i class="bi bi-person-plus-fill me-2"></i> Xác Nhận Đăng Ký
+                        </button>
+                    </form>
+
+                    <!-- Footer chuyển hướng -->
+                    <div class="text-center mt-4 pt-3 border-top">
+                        <p class="text-muted mb-1">Bạn đã có tài khoản rồi?</p>
+                        <a asp-action="Login" class="text-decoration-none fw-bold text-primary fs-5">
+                            Đăng nhập ngay <i class="bi bi-box-arrow-in-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

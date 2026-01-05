@@ -1,141 +1,192 @@
 ﻿@model TheBallStores.Models.GioHangViewModel
 
 @{
-    ViewData["Title"] = "Giỏ hàng của bạn";
+    ViewData["Title"] = "Giỏ Hàng";
+    int soLuongSanPham = Model.Items.Sum(x => x.SoLuong);
 }
 
-<h1 class="text-info mb-4">GIỎ HÀNG CỦA BẠN</h1>
-
-<!-- HIỂN THỊ THÔNG BÁO (Logic Mới) -->
-@if (!string.IsNullOrEmpty(Model.ThongBao))
-{
-    var alertClass = Model.ThongBao.Contains("thành công") ? "alert-success" : "alert-danger";
-    <div class="alert @alertClass alert-dismissible fade show mb-4" role="alert">
-        @Model.ThongBao
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+<div class="container py-5">
+    <div class="d-flex align-items-center mb-4">
+        <h2 class="fw-bold text-uppercase mb-0">Giỏ Hàng Của Bạn</h2>
+        <span class="badge bg-dark rounded-pill ms-3">@soLuongSanPham sản phẩm</span>
     </div>
-}
 
-@if (Model.Items.Count == 0)
-{
-    <div class="text-center py-5">
-        <h3 class="text-muted">Giỏ hàng đang trống</h3>
-        <a asp-controller="Store" asp-action="Index" class="btn btn-neon mt-3 text-white">TIẾP TỤC MUA SẮM</a>
-    </div>
-}
-else
-{
-    <div class="row">
-        <!-- CỘT TRÁI: DANH SÁCH SẢN PHẨM (Logic Cũ + Model Mới) -->
-        <div class="col-md-8">
-            <div class="card-vortex p-0 overflow-hidden">
-                <table class="table table-dark table-hover mb-0">
-                    <thead>
-                        <tr class="text-info">
-                            <th>Sản phẩm</th>
-                            <th>Đơn giá</th>
-                            <th>Số lượng</th>
-                            <th>Thành tiền</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model.Items)
-                        {
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <img src="@(string.IsNullOrEmpty(item.AnhDaiDien) ? "/images/no-image.png" : "/images/products/" + item.AnhDaiDien)"
-                                             style="width: 60px; height: 60px; object-fit: cover; border-radius: 5px;" class="me-3">
-                                        <div>
-                                            <div class="fw-bold">@item.TenSp</div>
-                                            <small class="text-muted">Size: @item.TenSize</small>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="align-middle">@item.DonGia.ToString("#,##0") đ</td>
-                                <td class="align-middle">
-                                    <!-- Form Cập Nhật Số Lượng (Logic Cũ) -->
-                                    <form asp-controller="GioHang" asp-action="CapNhatSoLuong" method="post" onchange="this.submit()">
-                                        <input type="hidden" name="maSp" value="@item.MaSp" />
-                                        <input type="hidden" name="maSize" value="@item.MaSize" />
-                                        <input type="number" name="soLuongMoi" value="@item.SoLuong" min="1" class="form-control form-control-vortex text-center" style="width: 60px;">
-                                    </form>
-                                </td>
-                                <td class="align-middle text-warning fw-bold">@item.ThanhTien.ToString("#,##0") đ</td>
-                                <td class="align-middle">
-                                    <!-- Nút Xóa (Logic Cũ) -->
-                                    <a asp-controller="GioHang" asp-action="XoaKhoiGio" asp-route-maSp="@item.MaSp" asp-route-maSize="@item.MaSize" class="text-danger">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
+    <!-- THÔNG BÁO -->
+    @if (!string.IsNullOrEmpty(Model.ThongBao))
+    {
+        var alertClass = Model.ThongBao.Contains("thành công") ? "alert-success" : "alert-warning";
+        <div class="alert @alertClass alert-dismissible fade show shadow-sm border-0 rounded-3 mb-4" role="alert">
+            <i class="bi @(Model.ThongBao.Contains("thành công") ? "bi-check-circle-fill" : "bi-exclamation-triangle-fill") me-2"></i>
+            @Model.ThongBao
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
+    }
 
-        <!-- CỘT PHẢI: TỔNG TIỀN VÀ VOUCHER -->
-        <div class="col-md-4">
-            <div class="card-vortex p-4">
-                <h4 class="text-white mb-4">TỔNG ĐƠN HÀNG</h4>
+    @if (Model.Items.Count == 0)
+    {
+        <div class="text-center py-5 bg-white rounded-4 shadow-sm">
+            <div class="mb-4 text-muted opacity-25">
+                <i class="bi bi-cart-x" style="font-size: 5rem;"></i>
+            </div>
+            <h4 class="text-dark fw-bold mb-3">Giỏ hàng đang trống</h4>
+            <p class="text-muted mb-4">Bạn chưa chọn sản phẩm nào. Hãy dạo một vòng cửa hàng nhé!</p>
+            <a asp-controller="Store" asp-action="Index" class="btn btn-sport btn-lg shadow-sm">
+                TIẾP TỤC MUA SẮM
+            </a>
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            <!-- CỘT TRÁI: DANH SÁCH SẢN PHẨM -->
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="table-responsive">
+                        <table class="table align-middle mb-0">
+                            <thead class="bg-light text-muted fw-bold text-uppercase small">
+                                <tr>
+                                    <th class="ps-4 py-3" style="width: 45%;">Sản phẩm</th>
+                                    <th class="py-3 text-center">Đơn giá</th>
+                                    <th class="py-3 text-center">Số lượng</th>
+                                    <th class="py-3 text-end pe-4">Thành tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Items)
+                                {
+                                    <tr>
+                                        <td class="ps-4 py-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative me-3 flex-shrink-0">
+                                                    <img src="~/images/products/@(string.IsNullOrEmpty(item.AnhDaiDien) ? "no-image.png" : item.AnhDaiDien)"
+                                                         class="rounded-3 border"
+                                                         style="width: 80px; height: 80px; object-fit: cover;"
+                                                         onerror="this.src='/images/no-image.png'">
+                                                </div>
+                                                <div>
+                                                    <h6 class="fw-bold text-dark mb-1 text-uppercase text-decoration-none">
+                                                        <a href="/Store/Details/@item.MaSp" class="text-dark text-decoration-none hover-primary">@item.TenSp</a>
+                                                    </h6>
+                                                    <div class="text-muted small mb-2">Size: <span class="fw-bold text-dark">@item.TenSize</span></div>
 
-                <!-- KHU VỰC VOUCHER (MỚI - Style theo Theme) -->
-                <div class="mb-4">
-                    <label class="text-muted small mb-2 text-uppercase">Mã giảm giá</label>
-                    @if (Model.SoTienGiam > 0)
-                    {
-                        // Đã áp dụng voucher
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-dark text-success fw-bold border-success" value="@Model.MaVoucher" readonly />
-                            <a href="@Url.Action("HuyVoucher")" class="btn btn-outline-danger">Hủy</a>
-                        </div>
-                        <small class="text-success mt-1 d-block"><i class="bi bi-check-circle-fill"></i> Đã giảm @Model.SoTienGiam.ToString("#,##0")đ</small>
-                    }
-                    else
-                    {
-                        // Chưa áp dụng voucher
-                        <form asp-action="ApDungVoucher" method="post">
-                            <div class="input-group">
-                                <input type="text" name="maVoucher" class="form-control form-control-vortex text-white" placeholder="Nhập mã voucher..." required />
-                                <button class="btn btn-outline-info" type="submit">Áp dụng</button>
-                            </div>
-                        </form>
-                    }
-                </div>
-
-                <hr class="border-secondary">
-
-                <!-- TÍNH TOÁN TIỀN -->
-                <div class="d-flex justify-content-between mb-2">
-                    <span class="text-muted">Tạm tính:</span>
-                    <span class="text-white">@Model.TongTienHang.ToString("#,##0") đ</span>
-                </div>
-
-                @if (Model.SoTienGiam > 0)
-                {
-                    <div class="d-flex justify-content-between mb-2 text-success">
-                        <span>Giảm giá:</span>
-                        <span>- @Model.SoTienGiam.ToString("#,##0") đ</span>
+                                                    <!-- Nút Xóa (Mobile View & Desktop) -->
+                                                    <a asp-controller="GioHang" asp-action="XoaKhoiGio" asp-route-maSp="@item.MaSp" asp-route-maSize="@item.MaSize"
+                                                       class="text-danger text-decoration-none small hover-underline">
+                                                        <i class="bi bi-trash"></i> Xóa
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center fw-bold text-muted">
+                                            @item.DonGia.ToString("#,##0") đ
+                                        </td>
+                                        <td class="text-center">
+                                            <!-- Form Cập Nhật Số Lượng -->
+                                            <form asp-controller="GioHang" asp-action="CapNhatSoLuong" method="post" onchange="this.submit()" class="d-inline-block">
+                                                <input type="hidden" name="maSp" value="@item.MaSp" />
+                                                <input type="hidden" name="maSize" value="@item.MaSize" />
+                                                <input type="number" name="soLuongMoi" value="@item.SoLuong" min="1" max="99"
+                                                       class="form-control form-control-sm text-center fw-bold border-secondary" style="width: 70px;">
+                                            </form>
+                                        </td>
+                                        <td class="text-end pe-4 fw-bold text-primary fs-6">
+                                            @item.ThanhTien.ToString("#,##0") đ
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
                     </div>
-                }
-
-                <hr class="border-secondary">
-
-                <div class="d-flex justify-content-between mb-4">
-                    <span class="text-info fs-5 fw-bold">TỔNG CỘNG:</span>
-                    <span class="text-info fs-5 fw-bold">@Model.TongThanhToan.ToString("#,##0") đ</span>
                 </div>
 
-                <!-- NÚT THANH TOÁN (Logic Cũ) -->
-                <form asp-controller="Checkout" asp-action="Index" method="get">
-                    <button type="submit" class="text-white btn btn-neon w-100 py-3 fw-bold">
-                        THANH TOÁN NGAY
-                    </button>
-                </form>
+                <div class="mt-4">
+                    <a asp-controller="Store" asp-action="Index" class="text-decoration-none text-muted fw-bold">
+                        <i class="bi bi-arrow-left me-1"></i> Tiếp tục mua sắm
+                    </a>
+                </div>
+            </div>
 
+            <!-- CỘT PHẢI: TỔNG KẾT & VOUCHER -->
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm rounded-4 bg-white">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-4 text-uppercase">Tổng Quan Đơn Hàng</h5>
+
+                        <!-- VOUCHER -->
+                        <div class="mb-4">
+                            <label class="form-label text-muted small fw-bold text-uppercase">Mã giảm giá</label>
+                            @if (Model.SoTienGiam > 0)
+                            {
+                                <div class="input-group">
+                                    <span class="input-group-text bg-success text-white border-0"><i class="bi bi-ticket-perforated-fill"></i></span>
+                                    <input type="text" class="form-control border-success text-success fw-bold bg-white" value="@Model.MaVoucher" readonly />
+                                    <a href="@Url.Action("HuyVoucher")" class="btn btn-outline-danger border-start-0">Hủy</a>
+                                </div>
+                                <div class="mt-2 text-success small">
+                                    <i class="bi bi-check-circle-fill me-1"></i> Đã áp dụng mã giảm giá
+                                </div>
+                            }
+                            else
+                            {
+                                <form asp-action="ApDungVoucher" method="post">
+                                    <div class="input-group">
+                                        <input type="text" name="maVoucher" class="form-control" placeholder="Nhập mã voucher..." required />
+                                        <button class="btn btn-dark" type="submit">Áp dụng</button>
+                                    </div>
+                                </form>
+                            }
+                        </div>
+
+                        <hr class="text-muted opacity-25 my-4">
+
+                        <!-- TÍNH TIỀN -->
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="text-muted">Tạm tính:</span>
+                            <span class="fw-bold">@Model.TongTienHang.ToString("#,##0") đ</span>
+                        </div>
+
+                        @if (Model.SoTienGiam > 0)
+                        {
+                            <div class="d-flex justify-content-between mb-3 text-success">
+                                <span><i class="bi bi-gift-fill me-1"></i> Giảm giá:</span>
+                                <span class="fw-bold">- @Model.SoTienGiam.ToString("#,##0") đ</span>
+                            </div>
+                        }
+
+                        <div class="d-flex justify-content-between align-items-center mb-4 pt-3 border-top">
+                            <span class="fs-5 fw-bold text-dark">TỔNG CỘNG:</span>
+                            <span class="fs-3 fw-bold text-primary">@Model.TongThanhToan.ToString("#,##0") đ</span>
+                        </div>
+
+                        <!-- NÚT THANH TOÁN -->
+                        <form asp-controller="Checkout" asp-action="Index" method="get">
+                            <button type="submit" class="btn btn-sport w-100 py-3 text-uppercase fw-bold shadow-sm">
+                                TIẾN HÀNH THANH TOÁN <i class="bi bi-arrow-right ms-2"></i>
+                            </button>
+                        </form>
+
+                        <div class="mt-3 text-center">
+                            <small class="text-muted"><i class="bi bi-shield-check me-1"></i> Bảo mật thanh toán 100%</small>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-}
+    }
+</div>
+
+<style>
+    .hover-primary:hover {
+        color: var(--accent-color) !important;
+    }
+
+    .hover-underline:hover {
+        text-decoration: underline !important;
+    }
+    /* Tùy chỉnh input số lượng bỏ mũi tên mặc định */
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>

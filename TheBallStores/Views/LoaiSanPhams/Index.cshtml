@@ -4,60 +4,101 @@
     ViewData["Title"] = "Quản lý Danh Mục";
 }
 
-<h1 class="text-info">QUẢN LÝ DANH MỤC SẢN PHẨM</h1>
-<p class="mb-4">
-    <a asp-action="Create" class="btn btn-primary">Tạo Danh Mục Mới</a>
-    <a asp-controller="Admin" asp-action="Index" class="btn btn-secondary">Về Dashboard</a>
-</p>
-
-@if (TempData["ErrorMessage"] != null)
-{
-    <div class="alert alert-danger" role="alert">
-        @TempData["ErrorMessage"]
+<div class="container-fluid py-4">
+    <!-- Header Section -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold text-uppercase text-dark mb-0">Quản Lý Danh Mục</h2>
+            <p class="text-muted small mb-0">Phân loại các sản phẩm kinh doanh tại hệ thống</p>
+        </div>
+        <div class="d-flex gap-2">
+            <a asp-controller="Admin" asp-action="Index" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Dashboard
+            </a>
+            <a asp-action="Create" class="btn btn-primary fw-bold shadow-sm">
+                <i class="bi bi-plus-lg me-1"></i> Thêm Danh Mục
+            </a>
+        </div>
     </div>
-}
-@if (TempData["SuccessMessage"] != null)
-{
-    <div class="alert alert-success" role="alert">
-        @TempData["SuccessMessage"]
-    </div>
-}
 
-<div class="card p-0 shadow overflow-hidden">
-    <table class="table table-striped table-hover mb-0">
-        <thead>
-            <tr class="table-dark">
-                <th>
-                    @Html.DisplayNameFor(model => model.MaLoai)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TenLoai)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.NhomLoai)
-                </th>
-                <th>Thao tác</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
+    <!-- Alert Notifications -->
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show shadow-sm border-0 rounded-3 mb-4" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i> @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show shadow-sm border-0 rounded-3 mb-4" role="alert">
+            <i class="bi bi-check-circle-fill me-2"></i> @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <!-- Data Table Card -->
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="bg-light text-secondary text-uppercase small fw-bold">
+                        <tr>
+                            <th class="ps-4 py-3" style="width: 10%;">Mã Loại</th>
+                            <th class="py-3" style="width: 40%;">Tên Danh Mục</th>
+                            <th class="py-3" style="width: 30%;">Nhóm Loại</th>
+                            <th class="py-3 text-end pe-4" style="width: 20%;">Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="ps-4">
+                                    <span class="badge bg-dark bg-opacity-10 text-dark fw-bold">#@item.MaLoai</span>
+                                </td>
+                                <td>
+                                    <h6 class="fw-bold text-dark mb-0">@item.TenLoai</h6>
+                                </td>
+                                <td>
+                                    @if (!string.IsNullOrEmpty(item.NhomLoai))
+                                    {
+                                        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-3">
+                                            @item.NhomLoai
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted small fst-italic">Chưa phân nhóm</span>
+                                    }
+                                </td>
+                                <td class="text-end pe-4">
+                                    <div class="btn-group shadow-sm">
+                                        <a asp-action="Edit" asp-route-id="@item.MaLoai" class="btn btn-sm btn-outline-primary" title="Chỉnh sửa">
+                                            <i class="bi bi-pencil"></i>
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.MaLoai" class="btn btn-sm btn-outline-danger" title="Xóa danh mục">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            @if (!Model.Any())
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MaLoai)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TenLoai)
-                    </td>
-                    <td>
-                        @(item.NhomLoai ?? "Không có")
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.MaLoai" class="btn btn-sm btn-info text-white">Sửa</a>
-                        <a asp-action="Delete" asp-route-id="@item.MaLoai" class="btn btn-sm btn-danger">Xóa</a>
-                    </td>
-                </tr>
+                <div class="text-center py-5">
+                    <div class="mb-3 text-muted opacity-25">
+                        <i class="bi bi-tags" style="font-size: 4rem;"></i>
+                    </div>
+                    <h5 class="text-secondary fw-bold">Dữ liệu trống</h5>
+                    <p class="text-muted small">Chưa có danh mục sản phẩm nào được tạo.</p>
+                    <a asp-action="Create" class="btn btn-sm btn-primary mt-2">Tạo ngay</a>
+                </div>
             }
-        </tbody>
-    </table>
+        </div>
+    </div>
 </div>

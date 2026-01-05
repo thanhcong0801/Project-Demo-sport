@@ -2,34 +2,52 @@
     ViewData["Title"] = "Đăng Nhập";
 }
 
-<div class="row justify-content-center align-items-center" style="min-height: 60vh;">
-    <div class="col-md-5">
-        <div class="card-vortex p-5">
-            <h2 class="text-center mb-4" style="color: var(--accent-purple); text-shadow: var(--accent-glow);">
-                ĐĂNG NHẬP VÀO TRANG
-            </h2>
+<div class="container py-5">
+    <div class="row justify-content-center align-items-center" style="min-height: 60vh;">
+        <div class="col-md-6 col-lg-5">
+            <div class="card border-0 shadow-lg rounded-4">
+                <div class="card-body p-5">
 
-            @if (ViewBag.Error != null)
-            {
-                <div class="alert alert-danger bg-transparent text-danger border-danger">@ViewBag.Error</div>
-            }
+                    <div class="text-center mb-4">
+                        <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                            <i class="bi bi-person-circle fs-1 text-dark"></i>
+                        </div>
+                    </div>
 
-            <form asp-action="Login" method="post">
-                <div class="mb-4">
-                    <label class="form-label text-muted">EMAIL TRUY CẬP</label>
-                    <input type="email" name="email" class="form-control form-control-vortex" required placeholder="name@example.com">
+                    <h2 class="text-center fw-bold text-uppercase mb-4">Đăng Nhập</h2>
+
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                            <div>@ViewBag.Error</div>
+                        </div>
+                    }
+
+                    <form asp-action="Login" method="post">
+                        <div class="form-floating mb-3">
+                            <input type="email" name="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com" required>
+                            <label for="floatingInput" class="text-muted">Địa chỉ Email</label>
+                        </div>
+
+                        <div class="form-floating mb-4">
+                            <input type="password" name="password" class="form-control rounded-3" id="floatingPassword" placeholder="Mật khẩu" required>
+                            <label for="floatingPassword" class="text-muted">Mật khẩu</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-sport w-100 btn-lg shadow-sm">
+                            ĐĂNG NHẬP NGAY
+                        </button>
+                    </form>
+
+                    <div class="text-center mt-4 pt-3 border-top">
+                        <p class="text-muted mb-1">Bạn chưa có tài khoản?</p>
+                        <a asp-action="Register" class="text-decoration-none fw-bold text-primary fs-5">
+                            Đăng ký thành viên mới <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+
                 </div>
-                <div class="mb-4">
-                    <label class="form-label text-muted">MẬT KHẨU</label>
-                    <input type="password" name="password" class="form-control form-control-vortex" required>
-                </div>
-
-                <button type="submit" class="btn btn-vortex w-100 py-2 fs-5">ĐĂNG NHẬP</button>
-            </form>
-
-            <div class="text-center mt-4">
-                <span class="text-muted">Chưa có tài khoản?</span>
-                <a asp-action="Register" style="color: var(--accent-purple);">Thiết lập danh tính mới</a>
             </div>
         </div>
     </div>

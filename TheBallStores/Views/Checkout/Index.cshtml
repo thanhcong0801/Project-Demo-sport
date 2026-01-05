@@ -2,145 +2,191 @@
 @{
     ViewData["Title"] = "Xác nhận Đơn hàng";
 
-    // Lấy dữ liệu từ Controller, xử lý null an toàn
+    // Null-safe data retrieval
     var cart = ViewBag.Cart as List<TheBallStores.Models.GioHangItem> ?? new List<TheBallStores.Models.GioHangItem>();
 
-    // Các biến tính toán Voucher
     decimal tongTienHang = ViewBag.TongTienHang != null ? Convert.ToDecimal(ViewBag.TongTienHang) : (ViewBag.TongTien != null ? Convert.ToDecimal(ViewBag.TongTien) : 0);
     decimal giamGia = ViewBag.GiamGia != null ? Convert.ToDecimal(ViewBag.GiamGia) : 0;
     decimal tongThanhToan = ViewBag.TongThanhToan != null ? Convert.ToDecimal(ViewBag.TongThanhToan) : tongTienHang;
     string maVoucher = ViewBag.MaVoucher as string;
 }
 
-<!-- ĐÃ SỬA: Đổi text-info thành text-white cho dễ nhìn -->
-<h1 class="text-white mb-4 text-uppercase text-center">Xác nhận Đơn hàng & Thanh toán</h1>
-<hr class="border-secondary" />
-
-<div class="row g-4">
-    <!-- CỘT 1: FORM ĐIỀN THÔNG TIN -->
-    <div class="col-lg-7">
-        <div class="card-vortex p-4 h-100">
-            <h4 class="text-warning mb-3"><i class="bi bi-person-lines-fill me-2"></i>THÔNG TIN GIAO HÀNG</h4>
-            <p class="text-muted small mb-4">Vui lòng kiểm tra kỹ thông tin trước khi đặt hàng.</p>
-
-            <form asp-action="Confirm" method="post" id="checkoutForm">
-                <!-- Mã Khách hàng (Hidden) -->
-                <input type="hidden" asp-for="MaKh" />
-
-                <div class="mb-3">
-                    <label class="form-label text-white">Họ tên người nhận</label>
-                    <input asp-for="HoTen" class="form-control form-control-vortex" required placeholder="Nhập họ tên..." />
-                </div>
-
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label class="form-label text-white">Số điện thoại</label>
-                        <input asp-for="DienThoai" class="form-control form-control-vortex" required placeholder="Nhập SĐT..." />
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label text-white">Email xác nhận</label>
-                        <!-- ĐÃ SỬA: Thêm style đè để nền không bị trắng khi readonly -->
-                        <input asp-for="Email" class="form-control form-control-vortex" readonly style="background-color: #2b3035; color: #aaa; border-color: #444;" />
-                    </div>
-                </div>
-
-                <div class="mb-4">
-                    <label class="form-label text-white">Địa chỉ giao hàng</label>
-                    <textarea asp-for="DiaChi" class="form-control form-control-vortex" rows="3" required placeholder="Số nhà, đường, phường/xã..."></textarea>
-                </div>
-
-                <!-- HÌNH THỨC THANH TOÁN -->
-                <h4 class="text-white mb-3 mt-4 pt-3 border-top border-secondary"><i class="bi bi-wallet2 me-2"></i>PHƯƠNG THỨC THANH TOÁN</h4>
-                <div class="card-vortex p-3 mb-4 border border-secondary bg-dark bg-opacity-50">
-
-                    <!-- 1. COD -->
-                    <div class="form-check mb-3 p-3 rounded border border-secondary" style="cursor: pointer;">
-                        <input class="form-check-input mt-2" type="radio" name="HinhThucThanhToan" id="paymentCod" value="COD" checked>
-                        <label class="form-check-label text-white w-100 cursor-pointer ps-2" for="paymentCod">
-                            <span class="d-block fw-bold text-success"><i class="bi bi-cash-stack me-2"></i> Thanh toán khi nhận hàng (COD)</span>
-                            <small class="text-muted">Thanh toán tiền mặt cho shipper khi nhận được hàng.</small>
-                        </label>
-                    </div>
-
-                    <!-- 2. VNPAY -->
-                    <div class="form-check p-3 rounded border border-secondary" style="cursor: pointer;">
-                        <input class="form-check-input mt-2" type="radio" name="HinhThucThanhToan" id="paymentVnPay" value="ONLINE">
-                        <label class="form-check-label text-white w-100 cursor-pointer ps-2" for="paymentVnPay">
-                            <span class="d-block fw-bold text-primary"><i class="bi bi-credit-card-2-front me-2"></i> Cổng thanh toán VNPay</span>
-                            <small class="text-muted">Quét mã QR hoặc dùng thẻ ATM/Visa (An toàn, Nhanh chóng).</small>
-                        </label>
-                    </div>
-
-                </div>
-
-                <button type="submit" class="btn btn-neon w-100 py-3 fw-bold text-white fs-5 shadow-neon">
-                    <i class="bi bi-check2-circle me-2"></i> Xác nhận đặt hàng
-                </button>
-            </form>
-        </div>
+<div class="container py-5">
+    <!-- Header -->
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-uppercase">Thanh Toán & Đặt Hàng</h2>
+        <div class="divider mx-auto bg-primary mt-3" style="width: 60px; height: 4px; border-radius: 2px;"></div>
     </div>
 
-    <!-- CỘT 2: TÓM TẮT ĐƠN HÀNG -->
-    <div class="col-lg-5">
-        <div class="card-vortex p-4 h-100 sticky-top" style="top: 20px; z-index: 1;">
-            <h4 class="text-info mb-3"><i class="bi bi-bag-check-fill me-2"></i>CHI TIẾT ĐƠN HÀNG</h4>
+    <form asp-action="Confirm" method="post" id="checkoutForm">
+        <div class="row g-4">
+            <!-- CỘT 1: FORM ĐIỀN THÔNG TIN -->
+            <div class="col-lg-7">
+                <div class="card border-0 shadow-sm rounded-4 h-100">
+                    <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                        <h5 class="fw-bold text-primary mb-0">
+                            <i class="bi bi-person-lines-fill me-2"></i>THÔNG TIN GIAO HÀNG
+                        </h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <p class="text-muted small mb-4">Vui lòng kiểm tra kỹ thông tin trước khi đặt hàng.</p>
 
-            @if (cart != null && cart.Any())
-            {
-                <div class="mb-3 pe-2" style="max-height: 400px; overflow-y: auto;">
-                    @foreach (var item in cart)
-                    {
-                        <div class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom border-secondary">
-                            <div class="d-flex align-items-center">
-                                <div class="position-relative me-3">
-                                    <img src="@(string.IsNullOrEmpty(item.AnhDaiDien) ? "/images/no-image.png" : "/images/products/" + item.AnhDaiDien)"
-                                         style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;" class="border border-secondary">
-                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-dark">
-                                        @item.SoLuong
-                                    </span>
-                                </div>
-                                <div>
-                                    <div class="text-white fw-bold small text-truncate" style="max-width: 200px;">@item.TenSp</div>
-                                    <small class="text-muted">Size: @item.TenSize</small>
+                        <!-- Mã Khách hàng (Hidden) -->
+                        <input type="hidden" asp-for="MaKh" />
+
+                        <div class="form-floating mb-3">
+                            <input asp-for="HoTen" class="form-control rounded-3" id="floatingName" placeholder="Họ tên" required />
+                            <label for="floatingName" class="text-muted">Họ tên người nhận</label>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="DienThoai" class="form-control rounded-3" id="floatingPhone" placeholder="SĐT" required />
+                                    <label for="floatingPhone" class="text-muted">Số điện thoại</label>
                                 </div>
                             </div>
-                            <span class="text-white fw-bold">@item.ThanhTien.ToString("#,##0") đ</span>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="Email" class="form-control rounded-3 bg-light text-muted" id="floatingEmail" placeholder="Email" readonly />
+                                    <label for="floatingEmail" class="text-muted">Email xác nhận</label>
+                                </div>
+                            </div>
                         </div>
-                    }
-                </div>
-            }
 
-            <!-- PHẦN TÍNH TIỀN -->
-            <div class="mt-auto pt-3 border-top border-secondary">
-                <div class="d-flex justify-content-between mb-2">
-                    <span class="text-muted">Tạm tính:</span>
-                    <span class="text-white">@tongTienHang.ToString("#,##0") đ</span>
-                </div>
+                        <div class="form-floating mb-4">
+                            <textarea asp-for="DiaChi" class="form-control rounded-3" id="floatingAddress" placeholder="Địa chỉ" style="height: 100px" required></textarea>
+                            <label for="floatingAddress" class="text-muted">Địa chỉ giao hàng (Số nhà, đường...)</label>
+                        </div>
 
-                <!-- Hiển thị Voucher nếu có -->
-                @if (giamGia > 0)
-                {
-                    <div class="d-flex justify-content-between mb-2 text-success">
-                        <span><i class="bi bi-ticket-perforated-fill me-1"></i> Voucher (@maVoucher):</span>
-                        <span>- @giamGia.ToString("#,##0") đ</span>
+                        <!-- HÌNH THỨC THANH TOÁN -->
+                        <h5 class="fw-bold text-primary mt-5 mb-3">
+                            <i class="bi bi-wallet2 me-2"></i>PHƯƠNG THỨC THANH TOÁN
+                        </h5>
+
+                        <div class="d-flex flex-column gap-3">
+                            <!-- 1. COD -->
+                            <label class="payment-option card border-0 bg-light p-3 rounded-3 cursor-pointer position-relative">
+                                <div class="d-flex align-items-center">
+                                    <input class="form-check-input mt-0 me-3" type="radio" name="HinhThucThanhToan" id="paymentCod" value="COD" checked>
+                                    <div>
+                                        <span class="d-block fw-bold text-dark"><i class="bi bi-cash-stack me-2 text-success"></i> Thanh toán khi nhận hàng (COD)</span>
+                                        <small class="text-muted">Thanh toán tiền mặt cho shipper khi nhận được hàng.</small>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <!-- 2. VNPAY -->
+                            <label class="payment-option card border-0 bg-light p-3 rounded-3 cursor-pointer position-relative">
+                                <div class="d-flex align-items-center">
+                                    <input class="form-check-input mt-0 me-3" type="radio" name="HinhThucThanhToan" id="paymentVnPay" value="ONLINE">
+                                    <div>
+                                        <span class="d-block fw-bold text-dark"><i class="bi bi-credit-card-2-front me-2 text-primary"></i> Cổng thanh toán VNPay</span>
+                                        <small class="text-muted">Quét mã QR hoặc dùng thẻ ATM/Visa (An toàn, Nhanh chóng).</small>
+                                    </div>
+                                    <img src="https://vnpay.vn/assets/images/logo-icon/logo-primary.svg" alt="VNPay" class="ms-auto" style="height: 25px;">
+                                </div>
+                            </label>
+                        </div>
                     </div>
-                    <hr class="border-secondary my-3" />
-                }
-                else
-                {
-                    <hr class="border-secondary my-3" />
-                }
-
-                <!-- Tổng cộng -->
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-white fs-5 fw-bold text-uppercase">Tổng thanh toán:</span>
-                    <span class="text-neon fs-3 fw-bold">@tongThanhToan.ToString("#,##0") đ</span>
                 </div>
+            </div>
 
-                <div class="alert alert-info bg-transparent border-info text-info small mb-0">
-                    <i class="bi bi-shield-lock me-1"></i> Thông tin thanh toán của bạn được bảo mật tuyệt đối.
+            <!-- CỘT 2: TÓM TẮT ĐƠN HÀNG -->
+            <div class="col-lg-5">
+                <div class="card border-0 shadow-sm rounded-4 h-100 sticky-top" style="top: 100px; z-index: 1;">
+                    <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                        <h5 class="fw-bold text-secondary mb-0">
+                            <i class="bi bi-bag-check-fill me-2"></i>ĐƠN HÀNG CỦA BẠN
+                        </h5>
+                    </div>
+                    <div class="card-body p-4">
+                        @if (cart != null && cart.Any())
+                        {
+                            <div class="cart-items mb-4 pe-2" style="max-height: 350px; overflow-y: auto;">
+                                @foreach (var item in cart)
+                                {
+                                    <div class="d-flex align-items-center mb-3 pb-3 border-bottom border-light">
+                                        <div class="position-relative me-3 flex-shrink-0">
+                                            <img src="~/images/products/@(string.IsNullOrEmpty(item.AnhDaiDien) ? "no-image.png" : item.AnhDaiDien)"
+                                                 style="width: 60px; height: 60px; object-fit: cover;"
+                                                 class="rounded-3 border"
+                                                 onerror="this.src='/images/no-image.png'">
+                                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary border border-white">
+                                                @item.SoLuong
+                                            </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <div class="text-dark fw-bold small text-truncate" style="max-width: 180px;">@item.TenSp</div>
+                                            <small class="text-muted">Size: @item.TenSize</small>
+                                        </div>
+                                        <div class="text-end">
+                                            <span class="fw-bold text-dark">@item.ThanhTien.ToString("#,##0") đ</span>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        }
+
+                        <!-- TÍNH TOÁN TIỀN -->
+                        <div class="bg-light p-3 rounded-3 mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Tạm tính:</span>
+                                <span class="fw-bold text-dark">@tongTienHang.ToString("#,##0") đ</span>
+                            </div>
+
+                            @if (giamGia > 0)
+                            {
+                                <div class="d-flex justify-content-between mb-2 text-success">
+                                    <span><i class="bi bi-ticket-perforated-fill me-1"></i> Voucher (@maVoucher):</span>
+                                    <span class="fw-bold">- @giamGia.ToString("#,##0") đ</span>
+                                </div>
+                            }
+
+                            <hr class="border-secondary opacity-25 my-3" />
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-6 fw-bold text-dark text-uppercase">Tổng thanh toán:</span>
+                                <span class="fs-3 fw-bold text-primary">@tongThanhToan.ToString("#,##0") đ</span>
+                            </div>
+                        </div>
+
+                        <!-- NÚT THANH TOÁN -->
+                        <button type="submit" class="btn btn-sport w-100 py-3 fw-bold text-uppercase shadow-sm">
+                            <i class="bi bi-check2-circle me-2"></i> Xác nhận đặt hàng
+                        </button>
+
+                        <div class="mt-3 text-center">
+                            <small class="text-muted"><i class="bi bi-shield-check me-1"></i> Bảo mật thanh toán SSL 100%</small>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
+
+<style>
+    /* CSS Riêng cho trang Checkout */
+    .payment-option {
+        transition: all 0.2s ease;
+        border: 1px solid transparent !important;
+    }
+
+        .payment-option:hover {
+            background-color: #e9ecef !important;
+        }
+    /* Khi radio được chọn, đổi màu viền card cha */
+    .form-check-input:checked + div .text-dark {
+        color: var(--bs-primary) !important;
+    }
+
+    .payment-option:has(.form-check-input:checked) {
+        border-color: var(--bs-primary) !important;
+        background-color: #f0f8ff !important; /* Xanh nhạt */
+    }
+
+    .cursor-pointer {
+        cursor: pointer;
+    }
+</style>

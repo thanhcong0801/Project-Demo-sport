@@ -1,106 +1,158 @@
 ﻿@model TheBallStores.Models.SanPham
 
 @{
-    ViewData["Title"] = "Sửa Sản Phẩm";
+    ViewData["Title"] = "Chỉnh Sửa Sản Phẩm";
 }
 
-<h1 class="text-info">CHỈNH SỬA SẢN PHẨM</h1>
+<div class="container py-4">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold text-uppercase text-dark mb-0">Chỉnh Sửa Sản Phẩm</h2>
+            <p class="text-muted small mb-0">Cập nhật thông tin chi tiết sản phẩm #@Model.MaSp</p>
+        </div>
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left me-1"></i> Quay lại
+        </a>
+    </div>
 
-<div class="row">
-    <div class="col-md-8">
-        <!-- RẤT QUAN TRỌNG: enctype="multipart/form-data" -->
-        <form asp-action="Edit" enctype="multipart/form-data" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <!-- Main Form -->
+    <form asp-action="Edit" enctype="multipart/form-data" method="post">
+        <input type="hidden" asp-for="MaSp" />
+        <input type="hidden" asp-for="AnhDaiDien" />
 
-            <!-- Trường ẩn để giữ lại MaSp và tên ảnh đại diện cũ -->
-            <input type="hidden" asp-for="MaSp" />
-            <input type="hidden" asp-for="AnhDaiDien" />
+        <div class="row g-4">
+            <!-- CỘT TRÁI: THÔNG TIN CƠ BẢN -->
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm rounded-4 mb-4">
+                    <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                        <h5 class="fw-bold text-primary mb-0">
+                            <i class="bi bi-pencil-square me-2"></i>Thông Tin Cơ Bản
+                        </h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger d-none"></div>
 
-            <!-- Thông tin cơ bản -->
-            <fieldset class="border p-3 mb-4 rounded bg-dark-subtle">
-                <legend class="float-none w-auto px-2 text-info">Thông tin cơ bản</legend>
+                        <div class="mb-3">
+                            <label asp-for="TenSp" class="form-label fw-bold">Tên Sản Phẩm <span class="text-danger">*</span></label>
+                            <input asp-for="TenSp" class="form-control form-control-lg" placeholder="Nhập tên sản phẩm" />
+                            <span asp-validation-for="TenSp" class="text-danger small"></span>
+                        </div>
 
-                <div class="form-group mb-3">
-                    <label asp-for="TenSp" class="control-label fw-bold"></label>
-                    <input asp-for="TenSp" class="form-control" />
-                    <span asp-validation-for="TenSp" class="text-danger"></span>
-                </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="GiaBan" class="form-label fw-bold">Giá Bán (VNĐ) <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input asp-for="GiaBan" class="form-control" placeholder="0" />
+                                    <span class="input-group-text">₫</span>
+                                </div>
+                                <span asp-validation-for="GiaBan" class="text-danger small"></span>
+                            </div>
 
-                <div class="form-group mb-3">
-                    <label asp-for="GiaBan" class="control-label fw-bold"></label>
-                    <input asp-for="GiaBan" class="form-control" />
-                    <span asp-validation-for="GiaBan" class="text-danger"></span>
-                </div>
+                            <div class="col-md-6">
+                                <label asp-for="MaLoai" class="form-label fw-bold">Danh Mục</label>
+                                <select asp-for="MaLoai" class="form-select" asp-items="ViewBag.MaLoai">
+                                    <option value="">-- Chọn Danh Mục --</option>
+                                </select>
+                                <span asp-validation-for="MaLoai" class="text-danger small"></span>
+                            </div>
+                        </div>
 
-                <div class="form-group mb-3">
-                    <label asp-for="MoTa" class="control-label fw-bold"></label>
-                    <textarea asp-for="MoTa" class="form-control" rows="3"></textarea>
-                    <span asp-validation-for="MoTa" class="text-danger"></span>
-                </div>
-
-                <div class="form-group mb-3">
-                    <label asp-for="MaLoai" class="control-label fw-bold">Loại Sản Phẩm</label>
-                    <select asp-for="MaLoai" class="form-control" asp-items="ViewBag.MaLoai"></select>
-                    <span asp-validation-for="MaLoai" class="text-danger"></span>
-                </div>
-            </fieldset>
-
-            <!-- Quản lý Ảnh Đại Diện -->
-            <fieldset class="border p-3 mb-4 rounded bg-dark-subtle">
-                <legend class="float-none w-auto px-2 text-info">Ảnh Đại Diện</legend>
-
-                <div class="mb-3">
-                    <label class="control-label fw-bold">Ảnh hiện tại:</label>
-                    <div class="p-2 border rounded text-center">
-                        <img src="~/images/products/@Model.AnhDaiDien" alt="Ảnh đại diện" style="max-width: 150px; height: auto;" class="rounded shadow" onerror="this.onerror=null; this.src='https://placehold.co/150x150/E5E7EB/1F2937?text=No+Image';" />
+                        <div class="mb-0">
+                            <label asp-for="MoTa" class="form-label fw-bold">Mô Tả Chi Tiết</label>
+                            <textarea asp-for="MoTa" class="form-control" rows="5" placeholder="Mô tả sản phẩm..."></textarea>
+                            <span asp-validation-for="MoTa" class="text-danger small"></span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="HinhAnhDaiDienMoi" class="control-label fw-bold">Chọn Ảnh Đại Diện Mới:</label>
-                    <input type="file" id="HinhAnhDaiDienMoi" name="HinhAnhDaiDienMoi" class="form-control" accept="image/*" />
-                    <small class="form-text text-muted">Chỉ chọn file nếu bạn muốn thay thế ảnh hiện tại.</small>
+                <!-- Submit Button Area (Mobile) -->
+                <div class="d-lg-none d-grid gap-2 mb-4">
+                    <button type="submit" class="btn btn-warning btn-lg fw-bold text-uppercase shadow-sm">
+                        <i class="bi bi-save me-2"></i> Lưu Thay Đổi
+                    </button>
                 </div>
-            </fieldset>
-
-            <!-- Quản lý Ảnh Phụ (Chức năng Xóa/Thêm) -->
-            <fieldset class="border p-3 mb-4 rounded bg-dark-subtle">
-                <legend class="float-none w-auto px-2 text-info">Ảnh Phụ</legend>
-
-                <!-- Hiển thị Ảnh Phụ Hiện Có (Kèm chức năng xóa) -->
-                <label class="control-label fw-bold">Ảnh Phụ Hiện Có (Click để đánh dấu xóa):</label>
-                <div id="existing-images" class="d-flex flex-wrap gap-3 mb-3 p-2 border rounded">
-                    @if (Model.HinhAnhSanPhams != null && Model.HinhAnhSanPhams.Any())
-                    {
-                        @foreach (var img in Model.HinhAnhSanPhams)
-                        {
-                            <div class="image-wrapper position-relative border border-primary p-1 rounded" data-path="@(img.DuongDanAnh)" style="width: 100px; height: 100px;">
-                                <img src="~/images/products/@(img.DuongDanAnh)" alt="Ảnh phụ" style="width: 100%; height: 100%; object-fit: cover;" class="rounded" onerror="this.onerror=null; this.src='https://placehold.co/100x100/E5E7EB/1F2937?text=X';" />
-                                <!-- Input ẩn để đánh dấu xóa sẽ được thêm bằng JS -->
-                            </div>
-                        }
-                    }
-                    else
-                    {
-                        <p class="text-muted fst-italic">Không có ảnh phụ nào.</p>
-                    }
-                </div>
-
-                <!-- Upload Ảnh Phụ Mới -->
-                <div class="form-group">
-                    <label for="HinhAnhPhuMoi" class="control-label fw-bold">Thêm Ảnh Phụ Mới:</label>
-                    <input type="file" id="HinhAnhPhuMoi" name="HinhAnhPhuMoi" class="form-control" multiple accept="image/*" />
-                    <small class="form-text text-muted">Có thể chọn nhiều ảnh cùng lúc.</small>
-                </div>
-            </fieldset>
-
-            <!-- Nút Lưu -->
-            <div class="form-group mt-4">
-                <input type="submit" value="LƯU THAY ĐỔI" class="btn btn-warning" />
-                <a asp-action="Index" class="btn btn-secondary">Quay Lại Danh Sách</a>
             </div>
-        </form>
-    </div>
+
+            <!-- CỘT PHẢI: QUẢN LÝ ẢNH -->
+            <div class="col-lg-4">
+                <!-- 1. Ảnh Đại Diện -->
+                <div class="card border-0 shadow-sm rounded-4 mb-4">
+                    <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                        <h5 class="fw-bold text-success mb-0">
+                            <i class="bi bi-image me-2"></i>Ảnh Đại Diện
+                        </h5>
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <div class="mb-3 position-relative d-inline-block">
+                            <img src="~/images/products/@Model.AnhDaiDien"
+                                 alt="Current Image"
+                                 class="img-fluid rounded border shadow-sm"
+                                 style="max-height: 200px; object-fit: contain;"
+                                 onerror="this.src='/images/no-image.png'" />
+                            <span class="position-absolute bottom-0 start-50 translate-middle-x badge bg-dark opacity-75 mb-2">Hiện tại</span>
+                        </div>
+
+                        <div class="text-start">
+                            <label for="HinhAnhDaiDienMoi" class="form-label fw-bold small text-uppercase text-muted">Thay đổi ảnh mới:</label>
+                            <input type="file" id="HinhAnhDaiDienMoi" name="HinhAnhDaiDienMoi" class="form-control form-control-sm" accept="image/*" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Ảnh Phụ -->
+                <div class="card border-0 shadow-sm rounded-4">
+                    <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                        <h5 class="fw-bold text-info mb-0">
+                            <i class="bi bi-images me-2"></i>Ảnh Phụ
+                        </h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <!-- List ảnh cũ -->
+                        <label class="form-label fw-bold small text-muted mb-2">ẢNH HIỆN CÓ (Click để xóa):</label>
+                        <div id="existing-images" class="d-grid grid-cols-3 gap-2 mb-3">
+                            @if (Model.HinhAnhSanPhams != null && Model.HinhAnhSanPhams.Any())
+                            {
+                                @foreach (var img in Model.HinhAnhSanPhams)
+                                {
+                                    <div class="image-wrapper position-relative rounded overflow-hidden border"
+                                         data-path="@img.DuongDanAnh"
+                                         style="aspect-ratio: 1; cursor: pointer;">
+                                        <img src="~/images/products/@img.DuongDanAnh"
+                                             class="w-100 h-100 object-fit-cover"
+                                             onerror="this.src='/images/no-image.png'" />
+                                        <div class="overlay d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-trash-fill text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="text-center py-3 bg-light rounded text-muted small col-span-3">
+                                    Chưa có ảnh phụ
+                                </div>
+                            }
+                        </div>
+
+                        <!-- Upload mới -->
+                        <div class="mt-3">
+                            <label for="HinhAnhPhuMoi" class="form-label fw-bold small text-muted">THÊM ẢNH MỚI:</label>
+                            <input type="file" id="HinhAnhPhuMoi" name="HinhAnhPhuMoi" class="form-control form-control-sm" multiple accept="image/*" />
+                            <div class="form-text small"><i class="bi bi-info-circle me-1"></i>Giữ Ctrl để chọn nhiều ảnh</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button Area (Desktop) -->
+                <div class="d-none d-lg-block mt-4">
+                    <button type="submit" class="btn btn-warning btn-lg w-100 fw-bold text-uppercase shadow-sm py-3">
+                        <i class="bi bi-save me-2"></i> Lưu Thay Đổi
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 
 @section Scripts {
@@ -108,31 +160,27 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        // Logic JavaScript để đánh dấu ảnh cần xóa khi click
         $(document).ready(function () {
+            // Logic xóa ảnh: Click vào ảnh để toggle trạng thái xóa
             $('#existing-images .image-wrapper').on('click', function () {
-                var $this = $(this);
-                var path = $this.data('path');
-                var inputName = 'DeleteImagePaths';
+                var $wrapper = $(this);
+                var path = $wrapper.data('path');
+                var inputName = 'DeleteImagePaths'; // Tên tham số nhận trong Controller
 
-                // Kiểm tra input ẩn đã tồn tại (đã được chọn để xóa)
-                var $existingInput = $('input[name="' + inputName + '"][value="' + path + '"]');
-
-                if ($this.hasClass('selected-for-delete')) {
-                    // Hủy chọn: Xóa lớp đánh dấu và xóa input ẩn
-                    $this.removeClass('selected-for-delete');
-                    $this.css('opacity', 1);
-                    $existingInput.remove();
+                if ($wrapper.hasClass('selected-for-delete')) {
+                    // Bỏ chọn xóa
+                    $wrapper.removeClass('selected-for-delete');
+                    // Tìm và xóa input hidden tương ứng
+                    $('input[type="hidden"][name="' + inputName + '"][value="' + path + '"]').remove();
                 } else {
-                    // Chọn: Thêm lớp đánh dấu và thêm input ẩn vào form
-                    $this.addClass('selected-for-delete');
-                    $this.css('opacity', 0.5);
-
-                    // Thêm input ẩn vào form (sử dụng name[] để Controller nhận Array)
+                    // Chọn xóa
+                    $wrapper.addClass('selected-for-delete');
+                    // Tạo input hidden để gửi về server
                     $('<input>').attr({
                         type: 'hidden',
-                        name: inputName,
+                        name: inputName, // Controller sẽ nhận List<string> DeleteImagePaths
                         value: path
                     }).appendTo('form');
                 }
@@ -141,33 +189,39 @@
     </script>
 
     <style>
-        .image-wrapper {
-            transition: opacity 0.3s, border 0.3s;
-            cursor: pointer;
-            position: relative;
-            box-sizing: content-box; /* Quan trọng để border không làm thay đổi kích thước */
+        /* Grid 3 cột cho ảnh nhỏ */
+        .grid-cols-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
         }
 
-            .image-wrapper.selected-for-delete {
-                border: 2px solid red !important;
-                opacity: 0.5;
+        .col-span-3 {
+            grid-column: span 3;
+        }
+
+        /* Hiệu ứng chọn xóa ảnh */
+        .image-wrapper {
+            transition: all 0.2s ease;
+        }
+
+            .image-wrapper:hover {
+                border-color: var(--bs-danger) !important;
             }
 
-                .image-wrapper.selected-for-delete::after {
-                    content: 'ĐÃ CHỌN XÓA';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background: rgba(255, 0, 0, 0.5);
-                    color: white;
-                    font-size: 10px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-weight: bold;
-                    border-radius: 0.25rem;
-                }
+            .image-wrapper .overlay {
+                position: absolute;
+                inset: 0;
+                background: rgba(220, 53, 69, 0.7); /* Màu đỏ */
+                opacity: 0;
+                transition: opacity 0.2s;
+            }
+
+            .image-wrapper.selected-for-delete .overlay {
+                opacity: 1; /* Hiện lớp phủ đỏ khi đã chọn xóa */
+            }
+
+            .image-wrapper.selected-for-delete {
+                border: 2px solid var(--bs-danger) !important;
+            }
     </style>
 }

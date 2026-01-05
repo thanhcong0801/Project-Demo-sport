@@ -1,77 +1,136 @@
 ﻿@using TheBallStores.Models
 @{
-    ViewData["Title"] = "Doanh Thu";
+    ViewData["Title"] = "Báo Cáo Doanh Thu";
     var lastOrders = ViewBag.LastOrders as List<DonHang> ?? new List<DonHang>();
 }
 
-<h1 class="text-info mb-4">Doanh Thu</h1>
-<p class="text-muted">Tổng quan hiệu suất kinh doanh.</p>
-<hr class="border-secondary" />
+<div class="container-fluid py-4">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold text-uppercase text-dark mb-0">Báo Cáo Doanh Thu</h2>
+            <p class="text-muted small mb-0">Tổng quan hiệu suất kinh doanh và đơn hàng</p>
+        </div>
+        <a asp-controller="Admin" asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left me-1"></i> Dashboard
+        </a>
+    </div>
 
-<div class="row g-4 mb-5">
-    <!-- Thẻ 1: DOANH THU THỰC TẾ -->
-    <div class="col-md-4">
-        <div class="card-vortex p-4 text-center h-100">
-            <h3 class="text-success fw-bold">@((ViewBag.TotalRevenue as decimal? ?? 0).ToString("#,##0")) VNĐ</h3>
-            <p class="text-muted mb-0">DOANH THU THỰC TẾ (Đã hoàn thành)</p>
+    <!-- STATS CARDS -->
+    <div class="row g-4 mb-5">
+        <!-- Doanh Thu -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 bg-success bg-gradient text-white rounded-4 overflow-hidden">
+                <div class="card-body p-4 position-relative">
+                    <h6 class="text-uppercase text-white-50 fw-bold mb-2">Doanh Thu Thực Tế</h6>
+                    <div class="display-5 fw-bold mb-0">
+                        @((ViewBag.TotalRevenue as decimal? ?? 0).ToString("#,##0")) <small class="fs-6">VNĐ</small>
+                    </div>
+                    <p class="small text-white-50 mt-2 mb-0"><i class="bi bi-check-circle-fill me-1"></i> Đơn đã hoàn thành</p>
+                    <i class="bi bi-currency-dollar position-absolute top-50 end-0 translate-middle-y me-3 opacity-25" style="font-size: 5rem;"></i>
+                </div>
+            </div>
         </div>
-    </div>
-    <!-- Thẻ 2: TỔNG ĐƠN HÀNG -->
-    <div class="col-md-4">
-        <div class="card-vortex p-4 text-center h-100">
-            <h3 class="text-info fw-bold">@(ViewBag.TotalOrders ?? 0)</h3>
-            <p class="text-muted mb-0">TỔNG SỐ ĐƠN HÀNG</p>
-        </div>
-    </div>
-    <!-- Thẻ 3: CẦN XỬ LÝ -->
-    <div class="col-md-4">
-        <div class="card-vortex p-4 text-center h-100 border-warning">
-            <h3 class="text-warning fw-bold">@(ViewBag.NewOrders ?? 0)</h3>
-            <p class="text-muted mb-0">ĐƠN CẦN XỬ LÝ NGAY</p>
-        </div>
-    </div>
-</div>
 
-<h4 class="text-white mb-3">ĐƠN HÀNG GẦN NHẤT</h4>
-<div class="card-vortex p-0 overflow-hidden">
-    <table class="table table-dark table-striped table-hover mb-0">
-        <thead>
-            <tr>
-                <th>Mã ĐH</th>
-                <th>Khách hàng</th>
-                <th>Ngày đặt</th>
-                <th>Tổng tiền</th>
-                <th>Trạng thái</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var order in lastOrders)
-            {
-                <tr>
-                    <td class="text-muted">#@order.MaDonHang</td>
-                    <td class="text-info">@(order.TenNguoiNhan ?? "Khách vãng lai")</td>
-                    <td class="text-muted">@(order.NgayDat.HasValue ? order.NgayDat.Value.ToString("dd/MM/yyyy HH:mm") : "")</td>
-                    <td class="text-success fw-bold">@(order.TongTien.HasValue ? order.TongTien.Value.ToString("#,##0") : "0") đ</td>
-                    <td>
-                        @if (order.TrangThai.Contains("Mới") || order.TrangThai.Contains("Chờ"))
+        <!-- Tổng Đơn Hàng -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 bg-info bg-gradient text-white rounded-4 overflow-hidden">
+                <div class="card-body p-4 position-relative">
+                    <h6 class="text-uppercase text-white-50 fw-bold mb-2">Tổng Đơn Hàng</h6>
+                    <div class="display-5 fw-bold mb-0">@(ViewBag.TotalOrders ?? 0)</div>
+                    <p class="small text-white-50 mt-2 mb-0"><i class="bi bi-bag-check-fill me-1"></i> Tất cả đơn (trừ hủy)</p>
+                    <i class="bi bi-receipt position-absolute top-50 end-0 translate-middle-y me-3 opacity-25" style="font-size: 5rem;"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cần Xử Lý -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 bg-warning bg-gradient text-dark rounded-4 overflow-hidden">
+                <div class="card-body p-4 position-relative">
+                    <h6 class="text-uppercase text-black-50 fw-bold mb-2">Cần Xử Lý Ngay</h6>
+                    <div class="display-5 fw-bold mb-0">@(ViewBag.NewOrders ?? 0)</div>
+                    <p class="small text-black-50 mt-2 mb-0"><i class="bi bi-exclamation-circle-fill me-1"></i> Đơn mới / Chờ xác nhận</p>
+                    <i class="bi bi-bell-fill position-absolute top-50 end-0 translate-middle-y me-3 opacity-25" style="font-size: 5rem;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RECENT ORDERS TABLE -->
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+        <div class="card-header bg-white border-0 pt-4 px-4 pb-0 d-flex justify-content-between align-items-center">
+            <h5 class="fw-bold text-primary mb-0">
+                <i class="bi bi-clock-history me-2"></i>Đơn Hàng Gần Nhất
+            </h5>
+            <a asp-controller="DonHangs" asp-action="Index" class="btn btn-sm btn-link text-decoration-none">Xem tất cả</a>
+        </div>
+        <div class="card-body p-0 mt-3">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="bg-light text-secondary text-uppercase small fw-bold">
+                        <tr>
+                            <th class="ps-4 py-3">Mã ĐH</th>
+                            <th class="py-3">Khách Hàng</th>
+                            <th class="py-3">Ngày Đặt</th>
+                            <th class="py-3 text-end">Tổng Tiền</th>
+                            <th class="py-3 text-center">Trạng Thái</th>
+                            <th class="py-3 text-end pe-4">Chi Tiết</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (lastOrders.Any())
                         {
-                            <span class="badge bg-warning text-dark">@order.TrangThai</span>
-                        }
-                        else if (order.TrangThai == "Hoàn thành")
-                        {
-                            <span class="badge bg-success">@order.TrangThai</span>
+                            @foreach (var order in lastOrders)
+                            {
+                                <tr>
+                                    <td class="ps-4 fw-bold text-muted">#@order.MaDonHang</td>
+                                    <td>
+                                        <span class="fw-bold text-dark">@(order.TenNguoiNhan ?? "Khách vãng lai")</span>
+                                    </td>
+                                    <td class="text-muted small">
+                                        @(order.NgayDat.HasValue ? order.NgayDat.Value.ToString("dd/MM/yyyy HH:mm") : "")
+                                    </td>
+                                    <td class="text-end fw-bold text-primary">
+                                        @(order.TongTien.HasValue ? order.TongTien.Value.ToString("#,##0") : "0") đ
+                                    </td>
+                                    <td class="text-center">
+                                        @if (order.TrangThai.Contains("Mới") || order.TrangThai.Contains("Chờ"))
+                                        {
+                                            <span class="badge bg-warning text-dark border border-warning-subtle">@order.TrangThai</span>
+                                        }
+                                        else if (order.TrangThai.Contains("Đã thanh toán") || order.TrangThai == "Hoàn thành")
+                                        {
+                                            <span class="badge bg-success bg-opacity-10 text-success border border-success">@order.TrangThai</span>
+                                        }
+                                        else if (order.TrangThai.Contains("Hủy"))
+                                        {
+                                            <span class="badge bg-danger bg-opacity-10 text-danger border border-danger">@order.TrangThai</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary">@order.TrangThai</span>
+                                        }
+                                    </td>
+                                    <td class="text-end pe-4">
+                                        <a asp-controller="DonHangs" asp-action="Details" asp-route-id="@order.MaDonHang" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                            Xem
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
                         }
                         else
                         {
-                            <span class="badge bg-secondary">@order.TrangThai</span>
+                            <tr>
+                                <td colspan="6" class="text-center py-5 text-muted">
+                                    Chưa có đơn hàng nào.
+                                </td>
+                            </tr>
                         }
-                    </td>
-                    <td>
-                        <a asp-controller="DonHangs" asp-action="Details" asp-route-id="@order.MaDonHang" class="btn btn-sm btn-outline-info">Xem</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>

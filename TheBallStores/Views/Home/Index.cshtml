@@ -1,91 +1,191 @@
 ﻿@model IEnumerable<TheBallStores.Models.SanPham>
 @{
-    ViewData["Title"] = "Kicks Vortex";
-    var accentColor = "rgba(102, 252, 241, 0.5)";
+    ViewData["Title"] = "Trang Chủ";
 }
 
-<style>
-    @@keyframes float {
-        0%, 100% {
-            transform: translateY(0) rotate(-3deg);
-        }
+<!-- Banner Carousel -->
+<div id="heroCarousel" class="carousel slide mb-5 rounded-4 overflow-hidden shadow" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="height: 500px;">
+            <img src="https://images.pexels.com/photos/47730/the-ball-stadion-football-the-pitch-47730.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                 class="d-block w-100 h-100 object-fit-cover"
+                 alt="Football Banner"
+                 onerror="this.src='https://placehold.co/1920x500?text=Banner+Bong+Da'">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-4 rounded-3">
+                <h2 class="display-4 fw-bold text-uppercase">Chinh Phục Mọi Trận Đấu</h2>
+                <p class="lead">Bộ sưu tập giày đá bóng mới nhất 2024</p>
+                <a href="/Store" class="btn btn-sport btn-lg mt-3 fw-bold px-5">MUA NGAY</a>
+            </div>
+        </div>
+        <!-- Thêm slide 2 (Demo) -->
+        <div class="carousel-item" style="height: 500px;">
+            <img src="https://images.pexels.com/photos/3755440/pexels-photo-3755440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                 class="d-block w-100 h-100 object-fit-cover"
+                 alt="Training Banner"
+                 onerror="this.src='https://placehold.co/1920x500?text=Banner+Tap+Luyen'">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-4 rounded-3">
+                <h2 class="display-4 fw-bold text-uppercase">Sẵn Sàng Ra Sân</h2>
+                <p class="lead">Trang phục và phụ kiện thể thao chuyên nghiệp</p>
+                <a href="/Store" class="btn btn-sport btn-lg mt-3 fw-bold px-5">KHÁM PHÁ</a>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 
-        50% {
-            transform: translateY(-15px) rotate(3deg);
-        }
-    }
+<div class="container">
+    <!-- Danh mục nổi bật -->
+    <div class="row mb-5 text-center">
+        <div class="col-12 mb-4">
+            <h3 class="fw-bold text-uppercase">Danh Mục Nổi Bật</h3>
+            <div class="divider mx-auto bg-primary" style="width: 60px; height: 3px;"></div>
+        </div>
 
-    .carousel-item img {
-        transition: transform 0.5s ease-in-out;
-    }
-
-    .btn-neon {
-        background: transparent;
-        border: 2px solid var(--accent);
-        color: var(--accent);
-        font-family: var(--font-heading);
-        padding: 15px 40px;
-        font-weight: 700;
-        text-transform: uppercase;
-        transition: 0.4s;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 0 10px var(--accent-glow);
-        text-decoration: none;
-        display: inline-block;
-    }
-
-        .btn-neon:hover {
-            background: var(--accent);
-            color: var(--bg-deep);
-            box-shadow: var(--glow);
-        }
-</style>
-
-<div class="text-center py-5 hero-section" style="min-height: 80vh; display: flex; flex-direction: column; justify-content: center;">
-    <div class="hero-glow" style="top: 10%; left: 10%;"></div>
-
-    <h1 class="display-2 fw-bold text-white mb-3" style="text-shadow: 0 0 30px @accentColor; letter-spacing: 5px;">
-        KICKS VORTEX
-    </h1>
-    <p class="lead text-muted mb-5 fs-4">ĐỊNH HÌNH PHONG CÁCH - KIẾN TẠO TƯƠNG LAI</p>
-
-    <!-- Carousel (Hiển thị 4 sản phẩm ngẫu nhiên để làm cảnh) -->
-    <div id="productCarousel" class="carousel slide mb-5 mx-auto" data-bs-ride="carousel" style="max-width: 600px;">
-        <div class="carousel-inner">
-            @{
-                var sanPhams = Model?.ToList() ?? new List<TheBallStores.Models.SanPham>();
-            }
-            @for (int i = 0; i < sanPhams.Count; i++)
-            {
-                var item = sanPhams[i];
-                <div class="carousel-item @(i == 0 ? "active" : "")">
-                    <div class="d-flex align-items-center justify-content-center" style="height: 350px;">
-                        @if (!string.IsNullOrEmpty(item.AnhDaiDien))
-                        {
-                            <img src="~/images/products/@item.AnhDaiDien" class="d-block img-fluid" style="max-height: 100%; filter: drop-shadow(0 0 40px @accentColor); animation: float 6s ease-in-out infinite;" alt="@item.TenSp">
-                        }
-                    </div>
+        <!-- Danh mục 1: Giày -->
+        <div class="col-md-4 mb-3">
+            <div class="card border-0 overflow-hidden h-100 shadow-sm rounded-4 position-relative group-hover">
+                <div class="img-zoom-container" style="height: 300px;">
+                    <img src="https://images.pexels.com/photos/102448/pexels-photo-102448.jpeg?auto=compress&cs=tinysrgb&w=800"
+                         class="card-img w-100 h-100 object-fit-cover transition-transform"
+                         alt="Giày Bóng Đá"
+                         onerror="this.src='https://placehold.co/600x800?text=Giay+Bong+Da'">
                 </div>
-            }
+                <div class="card-img-overlay d-flex align-items-center justify-content-center bg-dark bg-opacity-25 hover-overlay">
+                    <a href="/Store?maLoai=1" class="btn btn-outline-light btn-lg fw-bold border-2 px-4 stretched-link text-uppercase">
+                        Giày Bóng Đá
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Danh mục 2: Áo Đấu -->
+        <div class="col-md-4 mb-3">
+            <div class="card border-0 overflow-hidden h-100 shadow-sm rounded-4 position-relative group-hover">
+                <div class="img-zoom-container" style="height: 300px;">
+                    <!-- Ảnh thay thế từ Pexels cho Áo Đấu -->
+                    <img src="https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=800"
+                         class="card-img w-100 h-100 object-fit-cover transition-transform"
+                         alt="Áo Đấu"
+                         onerror="this.src='https://placehold.co/600x800?text=Ao+Dau'">
+                </div>
+                <div class="card-img-overlay d-flex align-items-center justify-content-center bg-dark bg-opacity-25 hover-overlay">
+                    <a href="/Store?maLoai=2" class="btn btn-outline-light btn-lg fw-bold border-2 px-4 stretched-link text-uppercase">
+                        Áo Đấu
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Danh mục 3: Phụ Kiện -->
+        <div class="col-md-4 mb-3">
+            <div class="card border-0 overflow-hidden h-100 shadow-sm rounded-4 position-relative group-hover">
+                <div class="img-zoom-container" style="height: 300px;">
+                    <!-- Ảnh thay thế từ Pexels cho Phụ Kiện -->
+                    <img src="https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=800"
+                         class="card-img w-100 h-100 object-fit-cover transition-transform"
+                         alt="Phụ Kiện"
+                         onerror="this.src='https://placehold.co/600x800?text=Phu+Kien'">
+                </div>
+                <div class="card-img-overlay d-flex align-items-center justify-content-center bg-dark bg-opacity-25 hover-overlay">
+                    <a href="/Store?maLoai=3" class="btn btn-outline-light btn-lg fw-bold border-2 px-4 stretched-link text-uppercase">
+                        Phụ Kiện
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Nút Khám Phá Ngay -->
-    <div class="mt-4">
-        @if (Context.Session.GetString("HoTen") != null)
-        {
-            <!-- Đã đăng nhập -> Vào trang Store -->
-            <a asp-controller="Store" asp-action="Index" class="btn-neon fs-4">
-                KHÁM PHÁ NGAY <i class="bi bi-arrow-right ms-2"></i>
+    <!-- Sản phẩm mới nhất -->
+    <div class="row">
+        <div class="col-12 d-flex justify-content-between align-items-end mb-4">
+            <h3 class="fw-bold text-uppercase m-0">Sản Phẩm Mới</h3>
+            <a href="/Store" class="text-decoration-none fw-bold text-primary hover-underline">
+                Xem tất cả <i class="bi bi-arrow-right"></i>
             </a>
-        }
-        else
+        </div>
+
+        @foreach (var item in Model)
         {
-            <!-- Chưa đăng nhập -> Vào trang Login -->
-            <a asp-controller="Account" asp-action="Login" class="btn-neon fs-4">
-                ĐĂNG NHẬP ĐỂ KHÁM PHÁ <i class="bi bi-box-arrow-in-right ms-2"></i>
-            </a>
+            <div class="col-6 col-md-3 mb-4">
+                <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="position-relative">
+                        <a href="/Store/Details/@item.MaSp" class="text-decoration-none">
+                            <div class="ratio ratio-1x1 bg-light">
+                                <img src="~/images/products/@(string.IsNullOrEmpty(item.AnhDaiDien) ? "no-image.png" : item.AnhDaiDien)"
+                                     class="card-img-top object-fit-cover p-3 transition-scale"
+                                     alt="@item.TenSp"
+                                     onerror="this.src='/images/no-image.png'">
+                            </div>
+                        </a>
+                        <!-- Badge Mới -->
+                        <span class="position-absolute top-0 start-0 m-3 badge bg-danger rounded-pill shadow-sm">MỚI</span>
+
+                        <!-- Action Buttons (Hover) -->
+                        <div class="position-absolute bottom-0 end-0 m-3 d-none d-md-block">
+                            <a href="/Store/Details/@item.MaSp" class="btn btn-light rounded-circle shadow-sm btn-sm mb-2" title="Xem chi tiết">
+                                <i class="bi bi-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card-body text-center d-flex flex-column">
+                        <h6 class="card-title fw-bold text-truncate mb-1">
+                            <a href="/Store/Details/@item.MaSp" class="text-dark text-decoration-none hover-primary">@item.TenSp</a>
+                        </h6>
+                        <div class="mt-auto">
+                            <p class="card-text text-primary fw-bold mb-2">@item.GiaBan.ToString("#,##0") đ</p>
+                            <a href="/Store/Details/@item.MaSp" class="btn btn-outline-dark btn-sm w-100 rounded-pill fw-bold">
+                                <i class="bi bi-bag-plus me-1"></i> MUA NGAY
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         }
     </div>
 </div>
+
+<style>
+    /* Hiệu ứng Zoom ảnh khi hover vào card danh mục */
+    .group-hover:hover .transition-transform {
+        transform: scale(1.1);
+    }
+
+    .transition-transform {
+        transition: transform 0.5s ease;
+    }
+
+    /* Hiệu ứng overlay tối màu khi hover */
+    .hover-overlay {
+        transition: background-color 0.3s ease;
+    }
+
+    .group-hover:hover .hover-overlay {
+        background-color: rgba(0, 0, 0, 0.4) !important;
+    }
+
+    /* Hiệu ứng scale ảnh sản phẩm */
+    .product-card:hover .transition-scale {
+        transform: scale(1.05);
+    }
+
+    .transition-scale {
+        transition: transform 0.3s ease;
+    }
+
+    /* Link hover */
+    .hover-primary:hover {
+        color: var(--bs-primary) !important;
+    }
+
+    .hover-underline:hover {
+        text-decoration: underline;
+    }
+</style>

@@ -1,4 +1,5 @@
 ﻿@model TheBallStores.Models.SanPham
+
 @{
     ViewData["Title"] = Model.TenSp;
 }
@@ -7,264 +8,180 @@
     <!-- Breadcrumb -->
     <nav aria-label="breadcrumb" class="mb-4">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a asp-controller="Store" asp-action="Index" class="text-muted text-decoration-none">Cửa hàng</a></li>
-            <li class="breadcrumb-item active text-info" aria-current="page">@Model.TenSp</li>
+            <li class="breadcrumb-item"><a href="/" class="text-decoration-none text-muted">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="/Store" class="text-decoration-none text-muted">Cửa hàng</a></li>
+            <li class="breadcrumb-item active" aria-current="page">@Model.TenSp</li>
         </ol>
     </nav>
 
     <div class="row g-5">
-        <!-- CỘT TRÁI: ẢNH SẢN PHẨM (Sticky) -->
+        <!-- CỘT TRÁI: ẢNH SẢN PHẨM -->
         <div class="col-lg-6">
-            <div class="position-sticky" style="top: 100px;">
-                <div class="card-vortex p-4 text-center border-0 shadow-lg position-relative overflow-hidden product-image-container">
-                    <!-- Hiệu ứng nền Glow phía sau ảnh -->
-                    <div class="glow-bg"></div>
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-3">
+                <div class="p-4 bg-light text-center position-relative">
+                    <img id="mainImage" src="~/images/products/@(string.IsNullOrEmpty(Model.AnhDaiDien) ? "no-image.png" : Model.AnhDaiDien)"
+                         class="img-fluid rounded-3"
+                         style="max-height: 500px; object-fit: contain; transition: transform 0.3s ease;"
+                         alt="@Model.TenSp"
+                         onerror="this.src='/images/no-image.png'">
+                </div>
+            </div>
 
-                    @if (!string.IsNullOrEmpty(Model.AnhDaiDien))
+            <!-- Ảnh phụ (Thumbnails) -->
+            @if (Model.HinhAnhSanPhams != null && Model.HinhAnhSanPhams.Any())
+            {
+                <div class="d-flex gap-2 overflow-auto py-2">
+                    <!-- Ảnh chính thumbnail -->
+                    <div class="thumbnail-wrapper active" onclick="changeImage(this, '/images/products/@Model.AnhDaiDien')">
+                        <img src="~/images/products/@Model.AnhDaiDien" class="img-thumbnail rounded-3" alt="Main" onerror="this.src='/images/no-image.png'">
+                    </div>
+                    <!-- Các ảnh phụ thumbnails -->
+                    @foreach (var img in Model.HinhAnhSanPhams)
                     {
-                        <img src="~/images/products/@Model.AnhDaiDien" class="img-fluid position-relative z-1 product-zoom"
-                             alt="@Model.TenSp">
+                        <div class="thumbnail-wrapper" onclick="changeImage(this, '/images/products/@img.DuongDanAnh')">
+                            <img src="~/images/products/@img.DuongDanAnh" class="img-thumbnail rounded-3" alt="Sub" onerror="this.src='/images/no-image.png'">
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+
+        <!-- CỘT PHẢI: THÔNG TIN CHI TIẾT -->
+        <div class="col-lg-6">
+            <div class="ps-lg-4">
+                <h6 class="text-uppercase text-muted fw-bold mb-2">
+                    <i class="bi bi-tag-fill me-1"></i> @(Model.MaLoaiNavigation?.TenLoai ?? "Sản phẩm thể thao")
+                </h6>
+                <h1 class="fw-bolder text-dark mb-3">@Model.TenSp</h1>
+
+                <div class="d-flex align-items-center mb-4">
+                    <h3 class="text-primary fw-bold mb-0 me-3">@Model.GiaBan.ToString("#,##0") đ</h3>
+                    @if (Model.SanPhamChiTiets != null && Model.SanPhamChiTiets.Any(x => (x.SoLuongTon ?? 0) > 0))
+                    {
+                        <span class="badge bg-success bg-opacity-10 text-success border border-success rounded-pill px-3 py-2">
+                            <i class="bi bi-check-circle me-1"></i> Còn hàng
+                        </span>
                     }
                     else
                     {
-                        <img src="~/images/no-image.png" class="img-fluid position-relative z-1" alt="No Image">
+                        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger rounded-pill px-3 py-2">
+                            <i class="bi bi-x-circle me-1"></i> Hết hàng
+                        </span>
                     }
                 </div>
-            </div>
-        </div>
 
-        <!-- CỘT PHẢI: THÔNG TIN & MUA HÀNG -->
-        <div class="col-lg-6">
-            <div class="ps-lg-4">
-                <!-- Danh mục & Mã SP -->
-                <div class="d-flex align-items-center mb-3">
-                    <span class="badge bg-info text-dark me-2 rounded-pill px-3">@Model.MaLoaiNavigation?.TenLoai</span>
-                    <span class="text-muted small">SKU: #@Model.MaSp</span>
-                </div>
-
-                <!-- Tên Sản Phẩm -->
-                <h1 class="display-5 fw-bold text-white mb-3 text-uppercase" style="text-shadow: 0 0 10px rgba(255,255,255,0.1);">
-                    @Model.TenSp
-                </h1>
-
-                <!-- Giá bán -->
-                <div class="mb-4">
-                    <span class="text-success fw-bold display-6">@Model.GiaBan.ToString("#,##0") đ</span>
-                </div>
-
-                <!-- Mô tả ngắn -->
-                <p class="text-light opacity-75 mb-4 fs-5" style="line-height: 1.6;">
-                    @(Model.MoTa ?? "Sản phẩm chất lượng cao từ Kicks Vortex. Thiết kế tối ưu cho hiệu suất thi đấu đỉnh cao và phong cách thời thượng.")
+                <p class="text-muted mb-4 lead fs-6">
+                    @(string.IsNullOrEmpty(Model.MoTa) ? "Sản phẩm chất lượng cao từ The Ball Stores. Thiết kế hiện đại, bền bỉ, phù hợp cho mọi hoạt động thể thao của bạn." : Model.MoTa)
                 </p>
 
-                <hr class="border-secondary my-4">
+                <hr class="text-muted opacity-25 my-4">
 
+                <!-- FORM MUA HÀNG -->
                 <form asp-controller="GioHang" asp-action="ThemVaoGio" method="post">
                     <input type="hidden" name="maSp" value="@Model.MaSp" />
 
-                    <!-- CHỌN SIZE (Style ô vuông Neon mới) -->
                     <div class="mb-4">
-                        <label class="form-label text-info fw-bold mb-3 d-block text-uppercase small ls-1">Chọn Kích Thước</label>
-
-                        @if (Model.SanPhamChiTiets != null && Model.SanPhamChiTiets.Any())
-                        {
-                            <div class="d-flex flex-wrap gap-3">
-                                @foreach (var item in Model.SanPhamChiTiets.OrderBy(x => x.MaSizeNavigation.TenSize))
-                                {
-                                    if (item.SoLuongTon > 0)
-                                    {
-                                        <div class="size-option">
-                                            <input type="radio" class="btn-check" name="maSize" id="size_@item.MaSize" value="@item.MaSize" required>
-                                            <label class="size-label" for="size_@item.MaSize">
-                                                @item.MaSizeNavigation.TenSize
-                                            </label>
-                                        </div>
-                                    }
-                                    else
-                                    {
-                                        <div class="size-option">
-                                            <input type="radio" class="btn-check" disabled>
-                                            <label class="size-label disabled">
-                                                @item.MaSizeNavigation.TenSize
-                                            </label>
-                                        </div>
-                                    }
-                                }
-                            </div>
-                        }
-                        else
-                        {
-                            <div class="alert alert-danger bg-transparent border-danger text-danger">
-                                <i class="bi bi-exclamation-triangle me-2"></i> Sản phẩm này tạm hết hàng.
-                            </div>
-                        }
-                    </div>
-
-                    <!-- SỐ LƯỢNG & NÚT MUA -->
-                    <div class="row align-items-end g-3">
-                        <div class="col-4 col-md-3">
-                            <label class="form-label text-info fw-bold small text-uppercase ls-1">Số lượng</label>
-                            <input type="number" name="soLuong" class="form-control form-control-vortex text-center py-2 fs-5" value="1" min="1" max="10">
-                        </div>
-                        <div class="col-8 col-md-9">
-                            @if (Model.SanPhamChiTiets != null && Model.SanPhamChiTiets.Any(x => x.SoLuongTon > 0))
+                        <label class="form-label fw-bold text-uppercase small text-muted mb-2">Chọn Kích Thước (Size):</label>
+                        <div class="d-flex flex-wrap gap-2">
+                            @if (Model.SanPhamChiTiets != null && Model.SanPhamChiTiets.Any())
                             {
-                                <button type="submit" class="btn btn-neon w-100 py-3 fs-5 fw-bold text-uppercase shadow-neon hover-lift">
-                                    <i class="bi bi-bag-plus-fill me-2"></i> Thêm vào giỏ hàng
-                                </button>
+                                @foreach (var chiTiet in Model.SanPhamChiTiets.OrderBy(ct => ct.MaSizeNavigation.TenSize))
+                                {
+                                    var isDisabled = (chiTiet.SoLuongTon ?? 0) <= 0;
+                                    <div class="position-relative">
+                                        <input type="radio" class="btn-check" name="maSize" id="size_@chiTiet.MaSize" value="@chiTiet.MaSize" @(isDisabled ? "disabled" : "") required>
+                                        <label class="btn btn-outline-dark rounded-3 px-3 py-2 fw-bold @(isDisabled ? "opacity-50 text-decoration-line-through" : "")" for="size_@chiTiet.MaSize">
+                                            @chiTiet.MaSizeNavigation.TenSize
+                                        </label>
+                                    </div>
+                                }
                             }
                             else
                             {
-                                <button type="button" class="btn btn-secondary w-100 py-3 fw-bold text-uppercase" disabled>
-                                    Tạm Hết hàng
-                                </button>
+                                <span class="text-danger small fst-italic">Hiện chưa có thông tin size.</span>
                             }
                         </div>
                     </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold text-uppercase small text-muted mb-2">Số Lượng:</label>
+                        <div class="input-group" style="width: 140px;">
+                            <button class="btn btn-outline-secondary" type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
+                            <input type="number" name="soLuong" class="form-control text-center fw-bold border-secondary" value="1" min="1" max="10">
+                            <button class="btn btn-outline-secondary" type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+</button>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3 mt-5">
+                        <button type="submit" class="btn btn-dark btn-lg flex-grow-1 py-3 text-uppercase shadow-sm fw-bold">
+                            <i class="bi bi-cart-plus me-2"></i> Thêm vào giỏ hàng
+                        </button>
+                    </div>
                 </form>
 
-                <!-- Trust Signals -->
-                <div class="row mt-5 pt-4 border-top border-secondary g-4 text-center">
-                    <div class="col-4">
-                        <i class="bi bi-shield-check text-info fs-2 mb-2 d-block"></i>
-                        <span class="text-muted small text-uppercase">Chính hãng 100%</span>
+                <!-- Chính sách -->
+                <div class="row mt-5 pt-4 border-top border-light g-3">
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-truck fs-4 me-3 text-primary"></i>
+                            <div>
+                                <h6 class="fw-bold mb-0 text-dark">Giao hàng</h6>
+                                <small class="text-muted">Toàn quốc</small>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-4">
-                        <i class="bi bi-arrow-repeat text-info fs-2 mb-2 d-block"></i>
-                        <span class="text-muted small text-uppercase">Đổi trả 7 ngày</span>
-                    </div>
-                    <div class="col-4">
-                        <i class="bi bi-truck text-info fs-2 mb-2 d-block"></i>
-                        <span class="text-muted small text-uppercase">Giao hàng nhanh</span>
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-arrow-repeat fs-4 me-3 text-primary"></i>
+                            <div>
+                                <h6 class="fw-bold mb-0 text-dark">Đổi trả</h6>
+                                <small class="text-muted">Trong 7 ngày</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- TAB THÔNG TIN BỔ SUNG -->
-    <div class="mt-5 pt-5">
-        <ul class="nav nav-pills mb-4 justify-content-center" id="pills-tab" role="tablist">
-            <li class="nav-item">
-                <button class="nav-link active rounded-pill px-4 fw-bold" id="pills-desc-tab" data-bs-toggle="pill" data-bs-target="#pills-desc" type="button">Mô tả chi tiết</button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link rounded-pill px-4 fw-bold text-light" id="pills-spec-tab" data-bs-toggle="pill" data-bs-target="#pills-spec" type="button">Thông số kỹ thuật</button>
-            </li>
-        </ul>
-        <div class="tab-content card-vortex p-4 p-md-5 rounded-4" id="pills-tabContent">
-            <div class="tab-pane fade show active text-light" id="pills-desc">
-                <h4 class="text-info mb-3">Đặc điểm nổi bật</h4>
-                <p>@(Model.MoTa ?? "Thông tin chi tiết đang được cập nhật...")</p>
-            </div>
-            <div class="tab-pane fade text-light" id="pills-spec">
-                <table class="table table-dark table-striped mb-0 w-100" style="max-width: 600px; margin: 0 auto;">
-                    <tbody>
-                        <tr><th class="text-muted w-50">Thương hiệu</th><td>Kick Vortex</td></tr>
-                        <tr><th class="text-muted">Xuất xứ</th><td>Việt Nam / Nhập khẩu</td></tr>
-                        <tr><th class="text-muted">Chất liệu</th><td>Cao cấp</td></tr>
-                        <tr><th class="text-muted">Bảo hành</th><td>12 tháng</td></tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
 </div>
 
 <style>
-    /* CSS RIÊNG CHO TRANG CHI TIẾT */
-    .ls-1 {
-        letter-spacing: 1px;
-    }
-
-    /* Hiệu ứng ảnh */
-    .product-image-container {
-        background: radial-gradient(circle at center, rgba(13,202,240,0.1) 0%, rgba(0,0,0,0) 70%);
-        min-height: 400px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .glow-bg {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 60%;
-        height: 60%;
-        background: rgba(13, 202, 240, 0.25);
-        filter: blur(80px);
-        z-index: 0;
-    }
-
-    .product-zoom {
-        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        max-height: 500px;
-        filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
-    }
-
-    .product-image-container:hover .product-zoom {
-        transform: scale(1.08) rotate(-2deg);
-    }
-
-    /* ---- STYLE MỚI CHO NÚT CHỌN SIZE ---- */
-    .size-label {
-        width: 55px;
-        height: 55px; /* To hơn một chút */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #495057;
-        background-color: transparent;
-        color: #adb5bd;
-        font-weight: 600;
-        border-radius: 12px;
+    .thumbnail-wrapper {
         cursor: pointer;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
+        width: 70px;
+        height: 70px;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        transition: all 0.2s;
+        opacity: 0.6;
     }
 
-        /* Hiệu ứng Hover */
-        .size-label:hover:not(.disabled) {
-            border-color: #0dcaf0;
-            color: #0dcaf0;
-            box-shadow: 0 0 10px rgba(13, 202, 240, 0.3);
+        .thumbnail-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-    /* Trạng thái được chọn (Checked) */
-    .btn-check:checked + .size-label {
-        background-color: rgba(13, 202, 240, 0.15); /* Nền trong suốt màu xanh */
-        border-color: #0dcaf0;
-        color: #0dcaf0; /* Chữ màu xanh neon */
-        box-shadow: 0 0 15px rgba(13, 202, 240, 0.5), inset 0 0 10px rgba(13, 202, 240, 0.2); /* Glow cả trong lẫn ngoài */
-        transform: scale(1.05); /* Phóng to nhẹ */
-        font-weight: bold;
-    }
+        .thumbnail-wrapper.active, .thumbnail-wrapper:hover {
+            border-color: var(--bs-primary);
+            opacity: 1;
+        }
 
-    /* Size hết hàng */
-    .size-label.disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-        background-color: rgba(255, 255, 255, 0.05);
-        border-color: #343a40;
-        text-decoration: line-through;
-    }
-
-    /* Focus outline (xóa viền mặc định của trình duyệt) */
-    .btn-check:focus + .size-label {
-        box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.25);
-    }
-
-    /* Tabs */
-    .nav-pills .nav-link.active {
-        background-color: #0dcaf0;
-        color: #000;
-        box-shadow: 0 0 15px rgba(13, 202, 240, 0.4);
-    }
-
-    .hover-lift:hover {
-        transform: translateY(-3px);
+    input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
     }
 </style>
+
+<script>
+    function changeImage(element, src) {
+        var mainImg = document.getElementById('mainImage');
+        mainImg.style.opacity = 0;
+        setTimeout(function() {
+            mainImg.src = src;
+            mainImg.style.opacity = 1;
+        }, 150);
+
+        document.querySelectorAll('.thumbnail-wrapper').forEach(el => el.classList.remove('active'));
+        element.classList.add('active');
+    }
+</script>

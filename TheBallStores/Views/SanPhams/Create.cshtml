@@ -4,106 +4,140 @@
     ViewData["Title"] = "Thêm Sản Phẩm Mới";
 }
 
-<h1 class="text-info">THÊM SẢN PHẨM MỚI</h1>
-<hr />
+<div class="container py-4">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold text-uppercase text-dark mb-0">Thêm Sản Phẩm Mới</h2>
+            <p class="text-muted small mb-0">Nhập thông tin chi tiết để tạo sản phẩm</p>
+        </div>
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left me-1"></i> Quay lại
+        </a>
+    </div>
 
-<div class="row">
-    <div class="col-md-8">
-        <!-- RẤT QUAN TRỌNG: enctype="multipart/form-data" -->
-        <form asp-action="Create" enctype="multipart/form-data" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <!-- Main Form -->
+    <form asp-action="Create" enctype="multipart/form-data" method="post">
+        <div class="row g-4">
+            <!-- CỘT TRÁI: THÔNG TIN CƠ BẢN -->
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm rounded-4 mb-4">
+                    <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                        <h5 class="fw-bold text-primary mb-0">
+                            <i class="bi bi-info-circle me-2"></i>Thông Tin Cơ Bản
+                        </h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger d-none"></div>
 
-            <!-- THÔNG TIN CƠ BẢN -->
-            <fieldset class="border p-3 mb-4 rounded bg-dark-subtle">
-                <legend class="float-none w-auto px-2 text-info">Thông tin cơ bản</legend>
+                        <div class="mb-3">
+                            <label asp-for="TenSp" class="form-label fw-bold">Tên Sản Phẩm <span class="text-danger">*</span></label>
+                            <input asp-for="TenSp" class="form-control form-control-lg" placeholder="Ví dụ: Nike Mercurial Superfly 9" />
+                            <span asp-validation-for="TenSp" class="text-danger small"></span>
+                        </div>
 
-                <div class="form-group mb-3">
-                    <label asp-for="TenSp" class="control-label fw-bold"></label>
-                    <input asp-for="TenSp" class="form-control" />
-                    <span asp-validation-for="TenSp" class="text-danger"></span>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="GiaBan" class="form-label fw-bold">Giá Bán (VNĐ) <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input asp-for="GiaBan" class="form-control" placeholder="0" />
+                                    <span class="input-group-text">₫</span>
+                                </div>
+                                <span asp-validation-for="GiaBan" class="text-danger small"></span>
+                            </div>
+
+                            <!-- Danh Mục & Thêm Nhanh -->
+                            <div class="col-md-6">
+                                <label asp-for="MaLoai" class="form-label fw-bold">Danh Mục <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <select asp-for="MaLoai" id="MaLoaiDropdown" class="form-select" asp-items="ViewBag.MaLoai">
+                                        <option value="">-- Chọn Danh Mục --</option>
+                                    </select>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#AddCategoryModal" title="Thêm danh mục mới">
+                                        <i class="bi bi-plus-lg"></i>
+                                    </button>
+                                </div>
+                                <span asp-validation-for="MaLoai" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-0">
+                            <label asp-for="MoTa" class="form-label fw-bold">Mô Tả Chi Tiết</label>
+                            <textarea asp-for="MoTa" class="form-control" rows="5" placeholder="Nhập mô tả sản phẩm..."></textarea>
+                            <span asp-validation-for="MoTa" class="text-danger small"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CỘT PHẢI: QUẢN LÝ ẢNH -->
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm rounded-4 bg-white">
+                    <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                        <h5 class="fw-bold text-success mb-0">
+                            <i class="bi bi-images me-2"></i>Hình Ảnh
+                        </h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <!-- Ảnh Đại Diện -->
+                        <div class="mb-4">
+                            <label for="HinhAnhDaiDienMoi" class="form-label fw-bold">Ảnh Đại Diện <span class="text-danger">*</span></label>
+                            <div class="image-upload-wrapper text-center p-3 border border-2 border-dashed rounded-3 bg-light">
+                                <i class="bi bi-cloud-upload display-4 text-muted"></i>
+                                <div class="mt-2 small text-muted">Chọn ảnh chính</div>
+                                <input type="file" id="HinhAnhDaiDienMoi" name="HinhAnhDaiDienMoi" class="form-control mt-2" accept="image/*" required onchange="previewImage(this, 'mainImagePreview')" />
+                                <img id="mainImagePreview" class="img-fluid rounded mt-2 d-none" style="max-height: 150px;" />
+                            </div>
+                            <span class="text-danger small field-validation-valid" data-valmsg-for="HinhAnhDaiDienMoi" data-valmsg-replace="true"></span>
+                        </div>
+
+                        <!-- Ảnh Phụ -->
+                        <div class="mb-3">
+                            <label for="HinhAnhPhuMoi" class="form-label fw-bold">Ảnh Phụ (Tùy chọn)</label>
+                            <input type="file" id="HinhAnhPhuMoi" name="HinhAnhPhuMoi" class="form-control" multiple accept="image/*" />
+                            <small class="text-muted d-block mt-1"><i class="bi bi-info-circle me-1"></i>Giữ Ctrl để chọn nhiều ảnh</small>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group mb-3">
-                    <label asp-for="GiaBan" class="control-label fw-bold"></label>
-                    <input asp-for="GiaBan" class="form-control" />
-                    <span asp-validation-for="GiaBan" class="text-danger"></span>
-                </div>
-
-                <div class="form-group mb-3">
-                    <label asp-for="MoTa" class="control-label fw-bold"></label>
-                    <textarea asp-for="MoTa" class="form-control" rows="3"></textarea>
-                    <span asp-validation-for="MoTa" class="text-danger"></span>
-                </div>
-
-                <!-- TẠO NHANH DANH MỤC (PHẦN ĐÃ SỬA) -->
-                <div class="form-group mb-3">
-                    <label asp-for="MaLoai" class="control-label fw-bold">Loại Sản Phẩm</label>
-                    <div class="input-group">
-                        <!-- Dropdown đã được gắn ID để JS có thể cập nhật -->
-                        <select asp-for="MaLoai" id="MaLoaiDropdown" class="form-control" asp-items="ViewBag.MaLoai"></select>
-
-                        <!-- Nút kích hoạt Modal -->
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#AddCategoryModal">
-                            + Thêm Nhanh
+                <!-- Submit Button -->
+                <div class="card border-0 shadow-sm rounded-4 mt-4 bg-transparent">
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg shadow-sm fw-bold text-uppercase py-3">
+                            <i class="bi bi-check2-circle me-2"></i> Tạo Sản Phẩm
                         </button>
                     </div>
-                    <span asp-validation-for="MaLoai" class="text-danger"></span>
                 </div>
-            </fieldset>
-
-            <!-- CHỌN ẢNH ĐẠI DIỆN VÀ ẢNH PHỤ -->
-            <fieldset class="border p-3 mb-4 rounded bg-dark-subtle">
-                <legend class="float-none w-auto px-2 text-info">Quản lý Ảnh</legend>
-
-                <div class="form-group mb-3">
-                    <label for="HinhAnhDaiDienMoi" class="control-label fw-bold">Chọn Ảnh Đại Diện (Bắt buộc):</label>
-                    <input type="file" id="HinhAnhDaiDienMoi" name="HinhAnhDaiDienMoi" class="form-control" accept="image/*" required />
-                    <span class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="HinhAnhPhuMoi" class="control-label fw-bold">Chọn Ảnh Phụ (Tùy chọn):</label>
-                    <input type="file" id="HinhAnhPhuMoi" name="HinhAnhPhuMoi" class="form-control" multiple accept="image/*" />
-                    <small class="form-text text-muted">Có thể chọn nhiều ảnh cùng lúc.</small>
-                </div>
-            </fieldset>
-
-            <!-- Nút Lưu -->
-            <div class="form-group mt-4">
-                <input type="submit" value="TẠO MỚI SẢN PHẨM" class="btn btn-primary" />
-                <a asp-action="Index" class="btn btn-secondary">Quay Lại Danh Sách</a>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
 </div>
 
 <!-- MODAL TẠO NHANH DANH MỤC -->
 <div class="modal fade" id="AddCategoryModal" tabindex="-1" aria-labelledby="AddCategoryModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="AddCategoryModalLabel">Tạo Nhanh Danh Mục Mới</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg rounded-4">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title fw-bold" id="AddCategoryModalLabel"><i class="bi bi-folder-plus me-2"></i>Tạo Danh Mục Mới</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body p-4">
                 <div id="quickAddMessage" class="mb-3"></div>
                 <form id="quickAddForm">
-                    <!-- Thêm AntiForgeryToken vào form AJAX -->
                     @Html.AntiForgeryToken()
-
                     <div class="mb-3">
-                        <label for="TenLoaiInput" class="col-form-label">Tên Loại Sản Phẩm:</label>
-                        <input type="text" class="form-control" id="TenLoaiInput" name="TenLoai" required>
+                        <label for="TenLoaiInput" class="form-label fw-bold">Tên Danh Mục <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="TenLoaiInput" name="TenLoai" placeholder="Ví dụ: Giày Nike" required>
                     </div>
                     <div class="mb-3">
-                        <label for="NhomLoaiInput" class="col-form-label">Nhóm Loại (Tùy chọn):</label>
-                        <input type="text" class="form-control" id="NhomLoaiInput" name="NhomLoai">
+                        <label for="NhomLoaiInput" class="form-label fw-bold">Nhóm Loại (Tùy chọn)</label>
+                        <input type="text" class="form-control" id="NhomLoaiInput" name="NhomLoai" placeholder="Ví dụ: Giày Bóng Đá">
                     </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                <button type="button" class="btn btn-primary" id="saveQuickCategory">Lưu Danh Mục</button>
+            <div class="modal-footer border-0 pt-0 pb-4 px-4">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-primary px-4" id="saveQuickCategory">Lưu Danh Mục</button>
             </div>
         </div>
     </div>
@@ -114,82 +148,88 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 
-    <!-- FIX LỖI: Bổ sung tham chiếu trực tiếp đến jQuery CDN để đảm bảo thư viện được tải trước khi chạy mã JS tùy chỉnh -->
+    <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
-        // SỬA LỖI: Sử dụng $(function() { ... }); để đảm bảo jQuery đã được tải trước khi chạy code
-        $(function () {
-            // Lắng nghe sự kiện click nút Lưu Danh Mục trong Modal
-            $('#saveQuickCategory').click(function (e) {
-                e.preventDefault(); // Ngăn chặn submit form truyền thống
+        // Preview ảnh khi chọn
+        function previewImage(input, previewId) {
+            var preview = document.getElementById(previewId);
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.classList.remove('d-none');
+                }
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.src = "";
+                preview.classList.add('d-none');
+            }
+        }
 
+        // Logic AJAX tạo danh mục
+        $(function () {
+            $('#saveQuickCategory').click(function (e) {
+                e.preventDefault();
+
+                var btn = $(this);
                 var tenLoai = $('#TenLoaiInput').val();
                 var nhomLoai = $('#NhomLoaiInput').val();
                 var messageDiv = $('#quickAddMessage');
 
-                messageDiv.empty(); // Xóa thông báo cũ
+                messageDiv.empty();
 
                 if (tenLoai.trim() === '') {
-                    messageDiv.html('<div class="alert alert-danger">Tên loại không được để trống.</div>');
+                    messageDiv.html('<div class="alert alert-danger py-2"><small>Tên loại không được để trống.</small></div>');
                     return;
                 }
 
-                // Lấy AntiForgeryToken từ form ẩn
+                // Loading state
+                btn.prop('disabled', true).html('<span class="spinner-border spinner-border-sm me-1"></span> Đang lưu...');
+
                 var token = $('input[name="__RequestVerificationToken"]').val();
 
-                // Thực hiện gọi AJAX POST
                 $.ajax({
-                    url: '@Url.Action("CreateAjax", "LoaiSanPhams")', // Gọi Action AJAX đã sửa
+                    url: '@Url.Action("CreateAjax", "LoaiSanPhams")',
                     type: 'POST',
-                    headers: {
-                        "RequestVerificationToken": token
-                    },
-                    data: {
-                        TenLoai: tenLoai,
-                        NhomLoai: nhomLoai
-                    },
+                    headers: { "RequestVerificationToken": token },
+                    data: { TenLoai: tenLoai, NhomLoai: nhomLoai },
                     success: function (response) {
                         if (response.success) {
+                            messageDiv.html('<div class="alert alert-success py-2"><small><i class="bi bi-check-circle me-1"></i>Thêm thành công!</small></div>');
 
-                            // 1. Cập nhật thông báo
-                            messageDiv.html('<div class="alert alert-success">Đã thêm danh mục thành công!</div>');
-
-                            // 2. Tải lại danh sách dropdown bằng AJAX
+                            // Reload dropdown
                             $.get('@Url.Action("GetLoaiSanPhams", "LoaiSanPhams")', function(data) {
                                 var dropdown = $('#MaLoaiDropdown');
                                 dropdown.empty();
-
+                                dropdown.append($('<option>', { value: '', text: '-- Chọn Danh Mục --' }));
                                 $.each(data, function (i, item) {
-                                    // data trả về là {value: MaLoai, text: TenLoai}
                                     dropdown.append($('<option>', {
                                         value: item.value,
                                         text: item.text
                                     }));
                                 });
-
-                                // 3. Chọn danh mục vừa tạo
-                                dropdown.val(response.maLoai);
+                                dropdown.val(response.maLoai); // Auto-select new category
                             });
 
-                            // 4. Đặt lại form và đóng modal
+                            // Reset & Close Modal
                             $('#TenLoaiInput').val('');
                             $('#NhomLoaiInput').val('');
                             setTimeout(function() {
-                                // Sử dụng Bootstrap JS để đóng modal
-                                var modalElement = document.getElementById('AddCategoryModal');
-                                // Khởi tạo Modal instance nếu chưa có
-                                var modal = bootstrap.Modal.getInstance(modalElement) || new bootstrap.Modal(modalElement);
+                                var modal = bootstrap.Modal.getInstance(document.getElementById('AddCategoryModal'));
                                 modal.hide();
                                 messageDiv.empty();
+                                btn.prop('disabled', false).text('Lưu Danh Mục');
                             }, 1000);
                         } else {
-                            // Lỗi server (ví dụ: DB error hoặc validation)
-                            messageDiv.html('<div class="alert alert-danger">Lỗi: ' + (response.message || 'Không rõ lỗi server.') + '</div>');
+                            messageDiv.html('<div class="alert alert-danger py-2"><small>' + (response.message || 'Lỗi server.') + '</small></div>');
+                            btn.prop('disabled', false).text('Lưu Danh Mục');
                         }
                     },
                     error: function (xhr, status, error) {
-                         messageDiv.html('<div class="alert alert-danger">Lỗi kết nối server: ' + error + '</div>');
+                        messageDiv.html('<div class="alert alert-danger py-2"><small>Lỗi kết nối: ' + error + '</small></div>');
+                        btn.prop('disabled', false).text('Lưu Danh Mục');
                     }
                 });
             });

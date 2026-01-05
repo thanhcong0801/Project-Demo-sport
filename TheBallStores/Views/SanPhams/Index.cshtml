@@ -5,58 +5,99 @@
     var productCount = Model.Count();
 }
 
-<h1 class="text-info mb-4">QUẢN LÝ SẨN PHẨM (@productCount)</h1>
-<hr class="border-secondary" />
+<div class="container-fluid py-4">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold text-uppercase text-dark mb-0">Quản Lý Sản Phẩm</h2>
+            <p class="text-muted small">Tổng số: <span class="fw-bold text-primary">@productCount</span> sản phẩm</p>
+        </div>
+        <div>
+            <a asp-controller="Admin" asp-action="Index" class="btn btn-outline-secondary me-2">
+                <i class="bi bi-arrow-left"></i> Về Dashboard
+            </a>
+            <a asp-action="Create" class="btn btn-success fw-bold shadow-sm">
+                <i class="bi bi-plus-lg me-1"></i> Thêm Mới
+            </a>
+        </div>
+    </div>
 
-<p class="mb-4">
-    <a asp-action="Create" class="btn btn-vortex">
-        <i class="bi bi-plus-circle me-2"></i> THÊM SẢN PHẨM MỚI
-    </a>
-    <a asp-controller="Admin" asp-action="Index" class="btn btn-secondary text-white ms-2">
-        <i class="bi bi-arrow-left"></i> Về Dashboard
-    </a>
-</p>
-
-<div class="card-vortex p-4">
-    <table class="table table-dark table-striped table-hover">
-        <thead>
-            <tr>
-                <th>Mã SP</th>
-                <th>Ảnh</th>
-                <th>Tên Sản Phẩm</th>
-                <th>Giá Bán (VNĐ)</th>
-                <th>Loại</th>
-                <th>Mô tả</th>
-                <th>Thao tác</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td class="text-muted">@item.MaSp</td>
-                    <td style="width: 100px;">
-                        @if (!string.IsNullOrEmpty(item.AnhDaiDien))
+    <!-- Table Card -->
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="bg-light text-secondary text-uppercase small fw-bold">
+                        <tr>
+                            <th class="ps-4 py-3" style="width: 5%;">#</th>
+                            <th class="py-3" style="width: 10%;">Ảnh</th>
+                            <th class="py-3" style="width: 25%;">Tên Sản Phẩm</th>
+                            <th class="py-3" style="width: 15%;">Giá Bán</th>
+                            <th class="py-3" style="width: 15%;">Danh Mục</th>
+                            <th class="py-3" style="width: 15%;">Mô tả</th>
+                            <th class="py-3 text-end pe-4" style="width: 15%;">Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
                         {
-                            <img src="~/images/products/@item.AnhDaiDien" alt="@item.TenSp" style="width: 60px; height: 60px; object-fit: contain; background: #333; border-radius: 5px;">
+                            <tr>
+                                <td class="ps-4 text-muted fw-bold">@item.MaSp</td>
+                                <td>
+                                    <div class="position-relative" style="width: 60px; height: 60px;">
+                                        <img src="~/images/products/@(string.IsNullOrEmpty(item.AnhDaiDien) ? "no-image.png" : item.AnhDaiDien)"
+                                             class="rounded-3 border w-100 h-100 object-fit-cover"
+                                             alt="@item.TenSp"
+                                             onerror="this.src='/images/no-image.png'">
+                                    </div>
+                                </td>
+                                <td>
+                                    <h6 class="fw-bold text-dark mb-0 text-truncate" style="max-width: 250px;" title="@item.TenSp">
+                                        @item.TenSp
+                                    </h6>
+                                </td>
+                                <td>
+                                    <span class="text-primary fw-bold">@item.GiaBan.ToString("#,##0") đ</span>
+                                </td>
+                                <td>
+                                    <span class="badge bg-light text-dark border border-secondary fw-normal">
+                                        @(item.MaLoaiNavigation?.TenLoai ?? "Chưa phân loại")
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="text-muted small text-truncate" style="max-width: 200px;" title="@item.MoTa">
+                                        @(string.IsNullOrEmpty(item.MoTa) ? "—" : item.MoTa)
+                                    </div>
+                                </td>
+                                <td class="text-end pe-4">
+                                    <div class="btn-group">
+                                        <!-- Nút Nhập Kho -->
+                                        <a asp-action="NhapKho" asp-route-id="@item.MaSp" class="btn btn-sm btn-outline-warning" title="Quản lý Kho/Size">
+                                            <i class="bi bi-box-seam"></i>
+                                        </a>
+                                        <!-- Nút Sửa -->
+                                        <a asp-action="Edit" asp-route-id="@item.MaSp" class="btn btn-sm btn-outline-primary" title="Chỉnh sửa">
+                                            <i class="bi bi-pencil"></i>
+                                        </a>
+                                        <!-- Nút Xóa -->
+                                        <a asp-action="Delete" asp-route-id="@item.MaSp" class="btn btn-sm btn-outline-danger" title="Xóa sản phẩm">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
                         }
-                    </td>
-                    <td>@item.TenSp</td>
-                    <td class="text-info fw-bold">@item.GiaBan.ToString("#,##0")</td>
-                    <td>@item.MaLoaiNavigation?.TenLoai</td>
-                    <td class="text-muted" style="max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                        @item.MoTa
-                    </td>
-                    <td>
-                        <!-- Nút Sửa -->
-                        <a asp-action="Edit" asp-route-id="@item.MaSp" class="btn btn-sm btn-primary">Sửa</a>
-                        <!-- Nút Quản lý Kho -->
-                        <a asp-action="NhapKho" asp-route-id="@item.MaSp" class="btn btn-sm btn-warning">Kho Size</a>
-                        <!-- Nút Xóa -->
-                        <a asp-action="Delete" asp-route-id="@item.MaSp" class="btn btn-sm btn-danger">Xóa</a>
-                    </td>
-                </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            @if (!Model.Any())
+            {
+                <div class="text-center py-5">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4076/4076432.png" width="80" class="mb-3 opacity-25">
+                    <p class="text-muted mb-0">Chưa có sản phẩm nào trong hệ thống.</p>
+                </div>
             }
-        </tbody>
-    </table>
+        </div>
+    </div>
 </div>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hf9lm6K1ih+5s04EBUhi9kU48Yl4L/eGIYzbGzeYU7E=",
+  "Hash": "XLAEMg+7TtPm2mQduhK1AK+zKbDDudEo7fES98uEYho=",
   "Source": "TheBallStores",
   "BasePath": "_content/TheBallStores",
   "Mode": "Default",
@@ -59,12 +59,12 @@
       "OriginalItemSpec": "D:\\Project-Demo-sport\\TheBallStores\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\TheBallStores.bundle.scp.css"
     },
     {
-      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\css\\kicks.css",
+      "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\css\\site.css",
       "SourceId": "TheBallStores",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\",
       "BasePath": "_content/TheBallStores",
-      "RelativePath": "css/kicks#[.{fingerprint}]?.css",
+      "RelativePath": "css/site#[.{fingerprint}]?.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -73,11 +73,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "cq12e5em14",
-      "Integrity": "vChFhyUfClfTARE9oQP7jTa9TRN5CIvw/rhM4m7VbgA=",
+      "Fingerprint": "0ejn3spmt0",
+      "Integrity": "6KRmbLrfk+cXlfRy/d33oEdqBloQysPE96BbkfgfRRY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\kicks.css"
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
       "Identity": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\favicon.ico",
@@ -3442,8 +3442,8 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/kicks.cq12e5em14.css",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\css\\kicks.css",
+      "Route": "css/site.0ejn3spmt0.css",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3452,7 +3452,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7211"
+          "Value": "4490"
         },
         {
           "Name": "Content-Type",
@@ -3460,11 +3460,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"vChFhyUfClfTARE9oQP7jTa9TRN5CIvw/rhM4m7VbgA=\""
+          "Value": "\"6KRmbLrfk+cXlfRy/d33oEdqBloQysPE96BbkfgfRRY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:52:36 GMT"
+          "Value": "Sun, 04 Jan 2026 20:41:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3474,21 +3474,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "cq12e5em14"
+          "Value": "0ejn3spmt0"
         },
         {
           "Name": "label",
-          "Value": "css/kicks.css"
+          "Value": "css/site.css"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-vChFhyUfClfTARE9oQP7jTa9TRN5CIvw/rhM4m7VbgA="
+          "Value": "sha256-6KRmbLrfk+cXlfRy/d33oEdqBloQysPE96BbkfgfRRY="
         }
       ]
     },
     {
-      "Route": "css/kicks.css",
-      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\css\\kicks.css",
+      "Route": "css/site.css",
+      "AssetFile": "D:\\Project-Demo-sport\\TheBallStores\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3497,7 +3497,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7211"
+          "Value": "4490"
         },
         {
           "Name": "Content-Type",
@@ -3505,11 +3505,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"vChFhyUfClfTARE9oQP7jTa9TRN5CIvw/rhM4m7VbgA=\""
+          "Value": "\"6KRmbLrfk+cXlfRy/d33oEdqBloQysPE96BbkfgfRRY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 15 Dec 2025 20:52:36 GMT"
+          "Value": "Sun, 04 Jan 2026 20:41:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3519,7 +3519,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-vChFhyUfClfTARE9oQP7jTa9TRN5CIvw/rhM4m7VbgA="
+          "Value": "sha256-6KRmbLrfk+cXlfRy/d33oEdqBloQysPE96BbkfgfRRY="
         }
       ]
     },

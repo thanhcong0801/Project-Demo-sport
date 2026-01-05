@@ -1,51 +1,57 @@
 ﻿@model TheBallStores.Models.SanPham
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Xóa Sản Phẩm";
 }
 
-<h1>Delete</h1>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="card-header bg-danger text-white text-center py-4">
+                    <div class="mb-2">
+                        <i class="bi bi-exclamation-triangle-fill display-4"></i>
+                    </div>
+                    <h4 class="fw-bold text-uppercase mb-0">Xác Nhận Xóa</h4>
+                    <p class="text-white-50 mb-0 small">Hành động này không thể hoàn tác!</p>
+                </div>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>SanPham</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TenSp)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TenSp)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GiaBan)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GiaBan)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AnhDaiDien)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AnhDaiDien)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MoTa)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MoTa)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MaLoaiNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MaLoaiNavigation.MaLoai)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="MaSp" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+                <div class="card-body p-4 p-md-5">
+                    <h5 class="text-center text-dark mb-4">Bạn có chắc chắn muốn xóa sản phẩm này?</h5>
+
+                    <div class="d-flex align-items-center mb-4 p-3 bg-light rounded-3 border border-light">
+                        <div class="flex-shrink-0 me-3">
+                            <img src="~/images/products/@(string.IsNullOrEmpty(Model.AnhDaiDien) ? "no-image.png" : Model.AnhDaiDien)"
+                                 class="rounded-3 border bg-white"
+                                 style="width: 80px; height: 80px; object-fit: contain;"
+                                 onerror="this.src='/images/no-image.png'">
+                        </div>
+                        <div class="flex-grow-1 overflow-hidden">
+                            <h5 class="fw-bold text-dark text-truncate mb-1">@Model.TenSp</h5>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-secondary">@Model.MaLoaiNavigation?.TenLoai</span>
+                                <span class="fw-bold text-danger">@Model.GiaBan.ToString("#,##0") đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <dl class="row mb-4 text-muted small">
+                        <dt class="col-sm-4">Mã sản phẩm:</dt>
+                        <dd class="col-sm-8 fw-bold text-dark">#@Model.MaSp</dd>
+
+                        <dt class="col-sm-4">Mô tả ngắn:</dt>
+                        <dd class="col-sm-8 text-truncate">@(string.IsNullOrEmpty(Model.MoTa) ? "Không có mô tả" : Model.MoTa)</dd>
+                    </dl>
+
+                    <form asp-action="Delete" class="d-grid gap-2">
+                        <input type="hidden" asp-for="MaSp" />
+                        <button type="submit" class="btn btn-danger btn-lg fw-bold shadow-sm">
+                            <i class="bi bi-trash-fill me-2"></i> XÓA SẢN PHẨM
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary">Hủy bỏ</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

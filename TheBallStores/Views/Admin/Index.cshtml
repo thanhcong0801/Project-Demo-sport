@@ -1,92 +1,153 @@
 ﻿@{
-    ViewData["Title"] = "Quản Lý";
-    // Đảm bảo ViewBag có giá trị null-safe
+    ViewData["Title"] = "Dashboard Quản Trị";
+    // Null-safe values
     int totalProducts = ViewBag.TotalProducts ?? 0;
     int totalCustomers = ViewBag.TotalCustomers ?? 0;
     int newOrders = ViewBag.NewOrders ?? 0;
 }
 
-<div class="text-center mb-5">
-    <h1 class="display-4" style="text-shadow: var(--accent-glow);">Quản Lý (ADMIN)</h1>
-    <p class="text-muted">Quản lý toàn bộ hệ thống Kicks Vortex</p>
+<div class="container-fluid py-4">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <div>
+            <h1 class="fw-bold text-uppercase mb-0">Dashboard</h1>
+            <p class="text-muted">Xin chào Admin, chúc bạn một ngày làm việc hiệu quả!</p>
+        </div>
+        <div class="text-end">
+            <span class="badge bg-dark p-2 rounded-pill px-3">
+                <i class="bi bi-calendar3 me-2"></i> @DateTime.Now.ToString("dd/MM/yyyy")
+            </span>
+        </div>
+    </div>
+
+    <!-- THỐNG KÊ (Stats Cards) -->
+    <div class="row g-4 mb-5">
+        <!-- Tổng Sản Phẩm -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 overflow-hidden text-white bg-primary bg-gradient rounded-4">
+                <div class="card-body p-4 position-relative">
+                    <h5 class="card-title fw-bold text-white-50 text-uppercase">Sản Phẩm</h5>
+                    <div class="display-4 fw-bold mb-2">@totalProducts</div>
+                    <p class="mb-0 small"><i class="bi bi-box-seam me-1"></i> Mặt hàng đang kinh doanh</p>
+                    <i class="bi bi-box-seam position-absolute top-50 end-0 translate-middle-y me-3 opacity-25" style="font-size: 5rem;"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tổng Khách Hàng -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 overflow-hidden text-white bg-success bg-gradient rounded-4">
+                <div class="card-body p-4 position-relative">
+                    <h5 class="card-title fw-bold text-white-50 text-uppercase">Khách Hàng</h5>
+                    <div class="display-4 fw-bold mb-2">@totalCustomers</div>
+                    <p class="mb-0 small"><i class="bi bi-people-fill me-1"></i> Thành viên đã đăng ký</p>
+                    <i class="bi bi-people-fill position-absolute top-50 end-0 translate-middle-y me-3 opacity-25" style="font-size: 5rem;"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Đơn Hàng Mới -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 overflow-hidden text-white bg-warning bg-gradient rounded-4">
+                <div class="card-body p-4 position-relative">
+                    <h5 class="card-title fw-bold text-white-50 text-uppercase">Đơn Mới</h5>
+                    <div class="display-4 fw-bold mb-2">@newOrders</div>
+                    <p class="mb-0 small text-dark"><i class="bi bi-cart-plus-fill me-1"></i> Cần xử lý gấp</p>
+                    <i class="bi bi-cart-plus-fill position-absolute top-50 end-0 translate-middle-y me-3 opacity-25 text-dark" style="font-size: 5rem;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MENU QUẢN LÝ -->
+    <h4 class="fw-bold text-uppercase text-secondary mb-4 border-bottom pb-2">Chức Năng Quản Lý</h4>
+
+    <div class="row g-4">
+        <!-- 1. Quản lý Sản Phẩm -->
+        <div class="col-md-6 col-lg-3">
+            <a asp-controller="SanPhams" asp-action="Index" class="text-decoration-none">
+                <div class="card border-0 shadow-sm h-100 hover-elevate text-center py-4 rounded-4">
+                    <div class="card-body">
+                        <div class="mb-3 text-primary">
+                            <i class="bi bi-box-seam fs-1"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark">Sản Phẩm</h5>
+                        <p class="text-muted small mb-0">Thêm, sửa, xóa, nhập kho</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- 2. Quản lý Danh Mục -->
+        <div class="col-md-6 col-lg-3">
+            <a asp-controller="LoaiSanPhams" asp-action="Index" class="text-decoration-none">
+                <div class="card border-0 shadow-sm h-100 hover-elevate text-center py-4 rounded-4">
+                    <div class="card-body">
+                        <div class="mb-3 text-danger">
+                            <i class="bi bi-tags fs-1"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark">Danh Mục</h5>
+                        <p class="text-muted small mb-0">Phân loại hàng hóa</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- 3. Quản lý Đơn Hàng & Doanh Thu -->
+        <div class="col-md-6 col-lg-3">
+            <a asp-controller="DoanhThu" asp-action="Index" class="text-decoration-none">
+                <div class="card border-0 shadow-sm h-100 hover-elevate text-center py-4 rounded-4">
+                    <div class="card-body">
+                        <div class="mb-3 text-success">
+                            <i class="bi bi-graph-up-arrow fs-1"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark">Doanh Thu</h5>
+                        <p class="text-muted small mb-0">Báo cáo & Xử lý đơn hàng</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- 4. Quản lý Tài Khoản -->
+        <div class="col-md-6 col-lg-3">
+            <a asp-controller="TaiKhoan" asp-action="Index" class="text-decoration-none">
+                <div class="card border-0 shadow-sm h-100 hover-elevate text-center py-4 rounded-4">
+                    <div class="card-body">
+                        <div class="mb-3 text-info">
+                            <i class="bi bi-people fs-1"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark">Tài Khoản</h5>
+                        <p class="text-muted small mb-0">Danh sách khách hàng</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- 5. Quản lý Khuyến Mãi (Mới) -->
+        <div class="col-md-6 col-lg-3">
+            <a asp-controller="Vouchers" asp-action="Index" class="text-decoration-none">
+                <div class="card border-0 shadow-sm h-100 hover-elevate text-center py-4 rounded-4">
+                    <div class="card-body">
+                        <div class="mb-3 text-warning">
+                            <i class="bi bi-ticket-perforated fs-1"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark">Khuyến Mãi</h5>
+                        <p class="text-muted small mb-0">Quản lý mã giảm giá</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>
 
-<!-- THẺ HIỂN THỊ SỐ LIỆU THỐNG KÊ (MỚI) -->
-<div class="row g-4 mb-5">
-    <!-- Thẻ 1: Tổng Sản Phẩm -->
-    <div class="col-md-4">
-        <div class="card-vortex p-4 text-center h-100 border-info">
-            <h3 class="text-info fw-bold">@totalProducts</h3>
-            <p class="text-muted mb-0">TỔNG SỐ SẢN PHẨM</p>
-        </div>
-    </div>
-    <!-- Thẻ 2: Tổng Khách Hàng -->
-    <div class="col-md-4">
-        <div class="card-vortex p-4 text-center h-100 border-success">
-            <h3 class="text-success fw-bold">@totalCustomers</h3>
-            <p class="text-muted mb-0">TỔNG KHÁCH HÀNG</p>
-        </div>
-    </div>
-    <!-- Thẻ 3: Đơn Hàng Mới -->
-    <div class="col-md-4">
-        <div class="card-vortex p-4 text-center h-100 border-warning">
-            <h3 class="text-warning fw-bold">@newOrders</h3>
-            <p class="text-muted mb-0">ĐƠN HÀNG CẦN XỬ LÝ</p>
-        </div>
-    </div>
-</div>
-<!-- KẾT THÚC THẺ HIỂN THỊ SỐ LIỆU THỐNG KÊ -->
+<style>
+    .hover-elevate {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-
-<div class="row g-4">
-    <!-- Quản lý Sản phẩm-->
-    <div class="col-md-4">
-        <div class="card-vortex p-4 h-100 text-center">
-            <i class="bi bi-box-seam fs-1 mb-3" style="color: var(--accent-purple);"></i>
-            <h3>Quản Lý Sản Phẩm</h3>
-            <p class="text-muted">Quản lý nhập/xuất giày, chỉnh sửa thông tin sản phẩm.</p>
-            <a asp-controller="SanPhams" asp-action="Index" class="btn btn-vortex w-100">TRUY CẬP</a>
-        </div>
-    </div>
-
-    <!-- THẺ MỚI: Quản Lý Danh Mục -->
-    <div class="col-md-4">
-        <div class="card-vortex p-4 h-100 text-center">
-            <i class="bi bi-tags fs-1 mb-3 text-danger"></i>
-            <h3>Quản Lý Danh Mục</h3>
-            <p class="text-muted">Thêm, sửa, xóa các loại sản phẩm (giày, bóng, phụ kiện...).</p>
-            <a asp-controller="LoaiSanPhams" asp-action="Index" class="btn btn-vortex w-100">TRUY CẬP</a>
-        </div>
-    </div>
-
-    <!-- Quản lý Doanh thu -->
-    <div class="col-md-4">
-        <div class="card-vortex p-4 h-100 text-center">
-            <i class="bi bi-graph-up-arrow fs-1 mb-3 text-success"></i>
-            <h3>Quản Lý Doanh Thu,Đơn Hàng</h3>
-            <p class="text-muted">Thống kê doanh thu, báo cáo đơn hàng.</p>
-            <!-- LIÊN KẾT ĐẾN DOANH THU CONTROLLER -->
-            <a asp-controller="DoanhThu" asp-action="Index" class="btn btn-vortex w-100">PHÂN TÍCH</a>
-        </div>
-    </div>
-
-    <!-- Quản lý Tài khoản-->
-    <div class="col-md-4">
-        <div class="card-vortex p-4 h-100 text-center">
-            <i class="bi bi-people fs-1 mb-3 text-info"></i>
-            <h3>Quản Lý Tài Khoản </h3>
-            <p class="text-muted">Quản lý danh sách khách hàng và quản trị viên.</p>
-            <!-- LIÊN KẾT ĐẾN TAI KHOAN CONTROLLER -->
-            <a asp-controller="TaiKhoan" asp-action="Index" class="btn btn-vortex w-100">TRUY CẬP</a>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card-vortex p-4 h-100 text-center">
-            <i class="bi bi-people fs-1 mb-3 text-info"></i>
-            <h3>Quản Lý Khuyến Mãi </h3>
-            <p class="text-muted">Quản lý Khuyến Mãi.</p>
-            <!-- LIÊN KẾT ĐẾN Vochers CONTROLLER -->
-            <a asp-controller="Vouchers" asp-action="Index" class="btn btn-vortex w-100">TRUY CẬP</a>
-        </div>
-    </div>
-</div>
+        .hover-elevate:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+            background-color: #f8f9fa; /* Màu nền nhẹ khi hover */
+        }
+</style>

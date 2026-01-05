@@ -1,85 +1,166 @@
 ﻿@model TheBallStores.Models.SanPham
 @{
-    ViewData["Title"] = "Nhập Kho - " + Model.TenSp;
-    // Lấy danh sách size từ Controller
-    var availableSizes = ViewBag.AvailableSizes as List<TheBallStores.Models.KichThuoc>;
+    ViewData["Title"] = "Quản lý Tồn Kho - " + Model.TenSp;
+    var availableSizes = ViewBag.AvailableSizes as List<TheBallStores.Models.KichThuoc> ?? new List<TheBallStores.Models.KichThuoc>();
 }
 
-<h1 class="text-info">QUẢN LÝ TỒN KHO</h1>
-<h3 class="text-white">@Model.TenSp (Mã: @Model.MaSp)</h3>
-<p class="text-muted">Nhập/cập nhật size và số lượng tồn kho cho sản phẩm này.</p>
+<div class="container py-4">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold text-uppercase text-dark mb-0">Quản Lý Tồn Kho</h2>
+            <div class="text-muted mt-1">
+                Sản phẩm: <span class="fw-bold text-primary">@Model.TenSp</span> <span class="badge bg-light text-secondary border">#@Model.MaSp</span>
+            </div>
+        </div>
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left me-1"></i> Quay lại
+        </a>
+    </div>
 
-<!-- Quay lại danh sách sản phẩm -->
-<div class="mb-4">
-    <a asp-action="Index" class="btn btn-secondary btn-sm">Quay lại Danh sách</a>
+    <!-- Thông báo thành công -->
     @if (TempData["SuccessMessage"] != null)
     {
-        <div class="alert alert-success mt-2">@TempData["SuccessMessage"]</div>
+        <div class="alert alert-success alert-dismissible fade show shadow-sm border-0" role="alert">
+            <i class="bi bi-check-circle-fill me-2"></i> @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     }
-</div>
 
-<div class="row">
-    <!-- Cột TRÁI: Form nhập mới -->
-    <div class="col-md-5">
-        <div class="card-vortex p-4">
-            <h4 class="text-warning">Cập nhật/Thêm Size</h4>
-            <form asp-action="NhapKho" method="post">
-                <input type="hidden" name="MaSp" value="@Model.MaSp" />
-
-                <!-- Chọn Size -->
-                <div class="mb-3">
-                    <label class="form-label">Kích thước (Size)</label>
-                    <select name="MaSize" class="form-control form-control-vortex" required>
-                        <option value="">-- Chọn Size --</option>
-                        @foreach (var size in availableSizes)
-                        {
-                            <option value="@size.MaSize">@size.TenSize</option>
-                        }
-                    </select>
+    <div class="row g-4">
+        <!-- CỘT TRÁI: FORM NHẬP KHO -->
+        <div class="col-lg-4">
+            <div class="card border-0 shadow-sm rounded-4 h-100">
+                <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                    <h5 class="fw-bold text-warning mb-0">
+                        <i class="bi bi-plus-square-dotted me-2"></i>Cập Nhật / Thêm Size
+                    </h5>
                 </div>
+                <div class="card-body p-4">
+                    <form asp-action="NhapKho" method="post">
+                        <input type="hidden" name="MaSp" value="@Model.MaSp" />
 
-                <!-- Nhập Số lượng -->
-                <div class="mb-3">
-                    <label class="form-label">Số lượng tồn kho</label>
-                    <input type="number" name="SoLuongTon" class="form-control form-control-vortex" min="0" value="0" required />
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small text-muted text-uppercase">Kích thước (Size)</label>
+                            <select name="MaSize" class="form-select form-select-lg" required>
+                                <option value="">-- Chọn Size --</option>
+                                @if (availableSizes != null)
+                                {
+                                    foreach (var size in availableSizes)
+                                    {
+                                        <option value="@size.MaSize">Size @size.TenSize</option>
+                                    }
+                                }
+                            </select>
+                            <div class="form-text small">Chọn size cần thêm hoặc cập nhật số lượng.</div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold small text-muted text-uppercase">Số lượng tồn kho</label>
+                            <div class="input-group">
+                                <input type="number" name="SoLuongTon" class="form-control form-control-lg" min="0" value="0" required placeholder="0" />
+                                <span class="input-group-text bg-light text-muted">đôi/cái</span>
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-warning btn-lg shadow-sm text-uppercase fw-bold">
+                                <i class="bi bi-save me-2"></i> Lưu Tồn Kho
+                            </button>
+                        </div>
+                    </form>
                 </div>
+            </div>
+        </div>
 
-                <button type="submit" class="btn btn-vortex">Lưu Tồn Kho</button>
-            </form>
+        <!-- CỘT PHẢI: DANH SÁCH HIỆN TẠI -->
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm rounded-4 h-100">
+                <div class="card-header bg-white border-0 pt-4 px-4 pb-0 d-flex justify-content-between align-items-center">
+                    <h5 class="fw-bold text-primary mb-0">
+                        <i class="bi bi-list-check me-2"></i>Danh Sách Tồn Kho
+                    </h5>
+                    <span class="badge bg-primary rounded-pill">@(Model.SanPhamChiTiets?.Count() ?? 0) Size</span>
+                </div>
+                <div class="card-body p-0 mt-3">
+                    @if (Model.SanPhamChiTiets == null || !Model.SanPhamChiTiets.Any())
+                    {
+                        <div class="text-center py-5">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4076/4076432.png" width="80" class="mb-3 opacity-25">
+                            <p class="text-muted mb-0">Chưa có thông tin kho hàng.</p>
+                            <p class="text-muted small">Vui lòng thêm size ở cột bên trái.</p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="bg-light text-secondary text-uppercase small fw-bold">
+                                    <tr>
+                                        <th class="ps-4 py-3">Kích thước</th>
+                                        <th class="py-3 text-center">Số lượng</th>
+                                        <th class="py-3 text-center">Trạng thái</th>
+                                        <th class="py-3 text-end pe-4">Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var chiTiet in Model.SanPhamChiTiets.OrderBy(x => x.MaSizeNavigation.TenSize))
+                                    {
+                                        var sl = chiTiet.SoLuongTon ?? 0;
+                                        <tr>
+                                            <td class="ps-4">
+                                                <span class="fw-bold fs-5 text-dark">@chiTiet.MaSizeNavigation?.TenSize</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="fw-bold fs-5 @(sl > 0 ? "text-dark" : "text-danger")">@sl</span>
+                                            </td>
+                                            <td class="text-center">
+                                                @if (sl > 10)
+                                                {
+                                                    <span class="badge bg-success-subtle text-success border border-success-subtle px-3">Còn hàng</span>
+                                                }
+                                                else if (sl > 0)
+                                                {
+                                                    <span class="badge bg-warning-subtle text-warning border border-warning-subtle px-3">Sắp hết</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle px-3">Hết hàng</span>
+                                                }
+                                            </td>
+                                            <td class="text-end pe-4">
+                                                <!-- Nút Sửa nhanh (Load lại form bên trái) -->
+                                                <button type="button" class="btn btn-sm btn-outline-primary"
+                                                        onclick="fillForm('@chiTiet.MaSize', '@sl')" title="Chỉnh sửa số lượng">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                </button>
+                                                <!-- Nút Xóa (Disabled vì chưa có Action Delete ChiTiet) -->
+                                                <button class="btn btn-sm btn-outline-secondary" disabled title="Chức năng xóa chưa khả dụng">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                </div>
+            </div>
         </div>
     </div>
-
-    <!-- Cột PHẢI: Danh sách kho hiện tại -->
-    <div class="col-md-7">
-        <h4 class="text-info">Tồn kho hiện tại</h4>
-        @if (Model.SanPhamChiTiets == null || !Model.SanPhamChiTiets.Any())
-        {
-            <div class="alert alert-secondary bg-transparent text-muted">Chưa có thông tin tồn kho nào được nhập.</div>
-        }
-        else
-        {
-            <table class="table table-dark table-striped table-hover">
-                <thead>
-                    <tr>
-                        <th>Size</th>
-                        <th>Số lượng</th>
-                        <th>Thao tác</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var chiTiet in Model.SanPhamChiTiets)
-                    {
-                        <tr>
-                            <td>@chiTiet.MaSizeNavigation?.TenSize</td>
-                            <td><span class="fw-bold">@chiTiet.SoLuongTon</span></td>
-                            <td>
-                                <!-- Nút Xóa (Tùy chọn: cần thêm hàm Delete) -->
-                                <a asp-action="NhapKho" asp-route-id="@Model.MaSp" class="btn btn-sm btn-danger disabled">Xóa</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        }
-    </div>
 </div>
+
+@section Scripts {
+    <script>
+        // Hàm JavaScript nhỏ để điền dữ liệu vào form khi bấm nút Sửa
+        function fillForm(sizeId, quantity) {
+            document.querySelector('select[name="MaSize"]').value = sizeId;
+            document.querySelector('input[name="SoLuongTon"]').value = quantity;
+            // Cuộn lên đầu trang mobile để thấy form
+            if (window.innerWidth < 992) {
+                document.querySelector('form').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+}

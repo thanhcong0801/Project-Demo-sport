@@ -11,11 +11,11 @@
             <!-- Header -->
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <div>
-                    <h2 class="fw-bold text-dark mb-1">Cập Nhật Mã Giảm Giá</h2>
+                    <h2 class="fw-bold text-uppercase text-dark mb-1">Cập Nhật Mã Giảm Giá</h2>
                     <p class="text-muted mb-0">Chỉnh sửa thông tin chương trình khuyến mãi.</p>
                 </div>
                 <a asp-action="Index" class="btn btn-outline-secondary rounded-pill px-4 shadow-sm">
-                    <i class="fa fa-arrow-left me-2"></i> Quay lại
+                    <i class="bi bi-arrow-left me-2"></i> Quay lại
                 </a>
             </div>
 
@@ -25,18 +25,18 @@
                 <!-- Hidden Fields -->
                 <input type="hidden" asp-for="NgayTao" />
 
-                <div class="row">
+                <div class="row g-4">
                     <!-- Cột Trái: Thông tin chung -->
                     <div class="col-md-7">
-                        <div class="card shadow-sm border-0 mb-4 h-100 rounded-3">
+                        <div class="card border-0 shadow-sm rounded-4 h-100">
                             <div class="card-header bg-white py-3 border-bottom border-light">
-                                <h5 class="card-title fw-bold mb-0 text-primary"><i class="fa fa-info-circle me-2"></i>Thông Tin Chung</h5>
+                                <h5 class="card-title fw-bold mb-0 text-primary"><i class="bi bi-info-circle-fill me-2"></i>Thông Tin Chung</h5>
                             </div>
                             <div class="card-body p-4">
                                 <div class="mb-4">
                                     <label asp-for="MaVoucher" class="form-label fw-bold small text-uppercase text-secondary"></label>
                                     <div class="input-group input-group-lg">
-                                        <span class="input-group-text bg-light border-end-0 text-muted"><i class="fa fa-lock"></i></span>
+                                        <span class="input-group-text bg-light border-end-0 text-muted"><i class="bi bi-lock-fill"></i></span>
                                         <!-- Readonly for Edit -->
                                         <input asp-for="MaVoucher" class="form-control bg-light border-start-0 ps-0 fw-bold text-uppercase text-muted" readonly style="letter-spacing: 1px;" />
                                     </div>
@@ -49,7 +49,7 @@
                                     <span asp-validation-for="TenChuongTrinh" class="text-danger small mt-1 d-block"></span>
                                 </div>
 
-                                <div class="row">
+                                <div class="row g-3">
                                     <div class="col-md-6 mb-4">
                                         <label asp-for="NgayBatDau" class="form-label fw-bold small text-uppercase text-secondary"></label>
                                         <input asp-for="NgayBatDau" class="form-control" type="datetime-local" />
@@ -62,7 +62,7 @@
                                     </div>
                                 </div>
 
-                                <div class="p-3 bg-light rounded-3 d-flex align-items-center">
+                                <div class="p-3 bg-light rounded-3 d-flex align-items-center border border-light">
                                     <div class="form-check form-switch ps-0 d-flex align-items-center w-100">
                                         <input class="form-check-input ms-0 fs-4 me-3" type="checkbox" id="KichHoatSwitch" asp-for="KichHoat" style="cursor: pointer;" />
                                         <label class="form-check-label fw-bold cursor-pointer user-select-none" for="KichHoatSwitch">
@@ -76,9 +76,9 @@
 
                     <!-- Cột Phải: Thiết lập giảm giá -->
                     <div class="col-md-5">
-                        <div class="card shadow-sm border-0 mb-4 h-100 rounded-3">
+                        <div class="card border-0 shadow-sm rounded-4 h-100">
                             <div class="card-header bg-white py-3 border-bottom border-light">
-                                <h5 class="card-title fw-bold mb-0 text-success"><i class="fa fa-percent me-2"></i>Thiết Lập Giá Trị</h5>
+                                <h5 class="card-title fw-bold mb-0 text-success"><i class="bi bi-percent me-2"></i>Thiết Lập Giá Trị</h5>
                             </div>
                             <div class="card-body p-4">
                                 <div class="mb-4">
@@ -98,13 +98,13 @@
                                     <span asp-validation-for="GiaTriGiam" class="text-danger small"></span>
                                 </div>
 
-                                <div class="mb-4 bg-light p-3 rounded" id="GiamToiDaGroup" style="display: none;">
+                                <div class="mb-4 bg-light p-3 rounded border border-light" id="GiamToiDaGroup" style="display: none;">
                                     <label asp-for="GiamToiDa" class="form-label fw-bold small text-uppercase text-secondary"></label>
                                     <div class="input-group">
                                         <input asp-for="GiamToiDa" class="form-control" type="number" min="0" placeholder="Không giới hạn" />
-                                        <span class="input-group-text">VNĐ</span>
+                                        <span class="input-group-text bg-white">VNĐ</span>
                                     </div>
-                                    <div class="form-text small mt-1">Mức giảm tối đa (chỉ áp dụng cho %)</div>
+                                    <div class="form-text small mt-1 text-muted">Mức giảm tối đa (chỉ áp dụng cho %)</div>
                                     <span asp-validation-for="GiamToiDa" class="text-danger small"></span>
                                 </div>
 
@@ -112,9 +112,9 @@
                                     <label asp-for="DonToiThieu" class="form-label fw-bold small text-uppercase text-secondary"></label>
                                     <div class="input-group">
                                         <input asp-for="DonToiThieu" class="form-control" type="number" min="0" />
-                                        <span class="input-group-text">VNĐ</span>
+                                        <span class="input-group-text bg-white">VNĐ</span>
                                     </div>
-                                    <div class="form-text small">Đơn hàng phải đạt mức này mới được dùng mã.</div>
+                                    <div class="form-text small text-muted">Đơn hàng phải đạt mức này mới được dùng mã.</div>
                                     <span asp-validation-for="DonToiThieu" class="text-danger small"></span>
                                 </div>
 
@@ -131,7 +131,7 @@
                 <!-- Action Buttons -->
                 <div class="d-flex justify-content-end mt-4 pb-5">
                     <button type="submit" class="btn btn-warning btn-lg px-5 rounded-pill shadow fw-bold text-uppercase text-dark hover-scale">
-                        <i class="fa fa-save me-2"></i> Lưu Thay Đổi
+                        <i class="bi bi-save me-2"></i> Lưu Thay Đổi
                     </button>
                 </div>
             </form>
@@ -173,5 +173,12 @@
             .hover-scale:hover {
                 transform: scale(1.02);
             }
+
+        /* Ẩn input số mặc định */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
     </style>
 }

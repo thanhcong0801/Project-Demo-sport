@@ -1,84 +1,128 @@
 ﻿@model IEnumerable<TheBallStores.Models.DonHang>
 
 @{
-    ViewData["Title"] = "Lịch sử Giao dịch";
+    ViewData["Title"] = "Lịch Sử Giao Dịch";
     var totalOrders = Model.Count();
 }
 
-<h1 class="text-info mb-4">LỊCH SỬ GIAO DỊCH CỦA BẠN (@totalOrders)</h1>
-<p class="text-muted">Tất cả các đơn hàng đã đặt.</p>
-<hr class="border-secondary" />
+<div class="container py-5">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold text-uppercase text-dark mb-0">Lịch Sử Mua Hàng</h2>
+            <p class="text-muted small mb-0">Bạn đã thực hiện <span class="fw-bold text-primary">@totalOrders</span> đơn hàng</p>
+        </div>
+        <a asp-controller="Store" asp-action="Index" class="btn btn-outline-dark">
+            <i class="bi bi-cart-plus me-1"></i> Mua thêm
+        </a>
+    </div>
 
-@if (TempData["SuccessMessage"] != null)
-{
-    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
-}
-@if (TempData["ErrorMessage"] != null)
-{
-    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
-}
+    <!-- Alert Messages -->
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show shadow-sm border-0 rounded-3 mb-4" role="alert">
+            <i class="bi bi-check-circle-fill me-2"></i> @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show shadow-sm border-0 rounded-3 mb-4" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i> @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
 
-<div class="card-vortex p-0 overflow-hidden">
-    <table class="table table-dark table-striped table-hover mb-0">
-        <thead>
-            <tr class="text-warning">
-                <th>Mã ĐH</th>
-                <th>Ngày Đặt</th>
-                <th>Tổng Thanh Toán</th>
-                <th>Trạng Thái</th>
-                <th>Thao tác</th>
-            </tr>
-        </thead>
-        <tbody>
+    <!-- Orders List -->
+    @if (totalOrders > 0)
+    {
+        <div class="row g-4">
             @foreach (var order in Model)
             {
-                var trangThaiClass = order.TrangThai switch
+                var badgeClass = order.TrangThai switch
                 {
-                    "Hoàn thành" => "bg-success",
-                    "Đã hủy" => "bg-danger",
-                    "Chờ thanh toán" => "bg-warning text-dark",
-                    _ => "bg-info text-dark"
+                    "Hoàn thành" or "Đã thanh toán (VNPay)" => "bg-success bg-opacity-10 text-success border border-success",
+                    "Đã hủy" or "Hủy (Lỗi thanh toán)" => "bg-danger bg-opacity-10 text-danger border border-danger",
+                    "Chờ thanh toán" or "Mới đặt (COD)" => "bg-warning text-dark border border-warning-subtle",
+                    "Đang giao" => "bg-info bg-opacity-10 text-info border border-info",
+                    _ => "bg-secondary bg-opacity-10 text-secondary border border-secondary"
                 };
 
-                // Kiểm tra xem đơn có dùng voucher không
                 var coVoucher = (order.SoTienGiam ?? 0) > 0;
 
-                <tr>
-                    <td>
-                        <a asp-controller="DonHangs" asp-action="Details" asp-route-id="@order.MaDonHang" class="text-info fw-bold text-decoration-none">
-                            #@order.MaDonHang
-                        </a>
-                    </td>
-
-                    <td>@order.NgayDat?.ToString("dd/MM/yyyy HH:mm")</td>
-
-                    <td>
-                        <span class="text-success fw-bold">@(order.TongTien?.ToString("#,##0") ?? "0") đ</span>
-                        @if (coVoucher)
-                        {
-                            <span class="badge bg-secondary ms-1" title="Đã dùng voucher" style="font-size: 0.7rem;">
-                                <i class="bi bi-tag-fill text-warning"></i>
+                <div class="col-12">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+                        <div class="card-header bg-white border-bottom border-light py-3 px-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                            <div>
+                                <span class="text-muted small text-uppercase fw-bold me-2">Mã đơn:</span>
+                                <a asp-controller="DonHangs" asp-action="Details" asp-route-id="@order.MaDonHang" class="fw-bold text-dark text-decoration-none">
+                                    #@order.MaDonHang
+                                </a>
+                                <span class="text-muted mx-2">|</span>
+                                <span class="text-muted small">@order.NgayDat?.ToString("dd/MM/yyyy HH:mm")</span>
+                            </div>
+                            <span class="badge @badgeClass px-3 py-2 rounded-pill fw-normal">
+                                @order.TrangThai
                             </span>
-                        }
-                    </td>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-8 mb-3 mb-md-0">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="bg-light p-2 rounded-circle me-3 text-secondary">
+                                            <i class="bi bi-box-seam fs-4"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1 text-dark fw-bold">Tổng thanh toán</h6>
+                                            <div class="d-flex align-items-center">
+                                                <span class="fs-5 fw-bold text-primary me-2">@(order.TongTien?.ToString("#,##0") ?? "0") đ</span>
+                                                @if (coVoucher)
+                                                {
+                                                    <span class="badge bg-success-subtle text-success border border-success-subtle" title="Đã dùng voucher">
+                                                        <i class="bi bi-ticket-fill me-1"></i>Voucher
+                                                    </span>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-muted small mt-2 ps-5">
+                                        <i class="bi bi-geo-alt me-1"></i> @(string.IsNullOrEmpty(order.DiaChiGiaoHang) ? "Chưa cập nhật địa chỉ" : order.DiaChiGiaoHang)
+                                    </div>
+                                </div>
 
-                    <td>
-                        <span class="badge @trangThaiClass">@order.TrangThai</span>
-                    </td>
+                                <div class="col-md-4 text-md-end">
+                                    <a asp-controller="DonHangs" asp-action="Details" asp-route-id="@order.MaDonHang" class="btn btn-outline-primary fw-bold px-4">
+                                        Chi tiết
+                                    </a>
 
-                    <td>
-                        <a asp-controller="DonHangs" asp-action="Details" asp-route-id="@order.MaDonHang" class="btn btn-sm btn-primary">Xem</a>
-
-                        @* CHỈ HIỂN THỊ NÚT HỦY KHI Ở TRẠNG THÁI CHO PHÉP *@
-                        @if (order.TrangThai == "Chờ thanh toán" || order.TrangThai == "Mới đặt (COD)")
-                        {
-                            <a asp-controller="DonHangs" asp-action="HuyDonHang" asp-route-id="@order.MaDonHang"
-                               class="btn btn-sm btn-danger ms-1"
-                               onclick="return confirm('Bạn có chắc chắn muốn hủy đơn hàng #@order.MaDonHang?');">Hủy</a>
-                        }
-                    </td>
-                </tr>
+                                    @if (order.TrangThai == "Chờ thanh toán" || order.TrangThai == "Mới đặt (COD)" || order.TrangThai == "Mới đặt")
+                                    {
+                                        <a asp-controller="DonHangs" asp-action="HuyDonHang" asp-route-id="@order.MaDonHang"
+                                           class="btn btn-outline-danger ms-2 px-3"
+                                           onclick="return confirm('Bạn có chắc chắn muốn hủy đơn hàng #@order.MaDonHang?');"
+                                           title="Hủy đơn hàng">
+                                            <i class="bi bi-x-lg"></i> Hủy
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             }
-        </tbody>
-    </table>
+        </div>
+    }
+    else
+    {
+        <div class="text-center py-5 bg-light rounded-4">
+            <div class="mb-3 text-muted opacity-25">
+                <i class="bi bi-bag-x" style="font-size: 4rem;"></i>
+            </div>
+            <h5 class="text-secondary fw-bold">Bạn chưa có đơn hàng nào</h5>
+            <p class="text-muted small mb-4">Hãy khám phá các sản phẩm mới nhất của chúng tôi.</p>
+            <a asp-controller="Store" asp-action="Index" class="btn btn-primary px-4 py-2 shadow-sm fw-bold">
+                Bắt đầu mua sắm
+            </a>
+        </div>
+    }
 </div>
